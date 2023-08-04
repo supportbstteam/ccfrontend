@@ -1,0 +1,517 @@
+{
+  "sliders": [
+    {
+      "id": 1,
+      "sld_img": "banner.jpg",
+      "title": "Der führende Allroundanbieter für Ladeinfrastruktur Projekte in DACH",
+      "subtitle": "Wir errichten und betreiben die Ladeinfrastruktur von und für morgen.",
+      "description": "Steckfertig. Ganzheitlich. Aus einer Hand.",
+      "btnlink": {
+        "title": "Erstberatung anfragen",
+        "link": "/"
+      }
+    },
+    {
+      "id": 2,
+      "sld_img": "Product A",
+      "title": "Über Charge Construct",
+      "subtitle": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "btnlink": {
+        "title": "Die Geschichte dahinter",
+        "link": "/"
+      }
+    }
+  ],
+  "sections" :[
+    {
+      "id": 1,
+      "sec_type": "service_sec",
+      "bg_img": "attention.jpg",
+      "title": "Services",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 2,
+      "bg_img": "",
+      "sec_type": "kundengruppen_sec",
+      "title": "Kundengruppen",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 3,
+      "bg_img": "why.png",
+      "sec_type": "why_sec",
+      "title": "Our Why",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Charge Construct beschleunigt den Hochlauf der öffentlichen und gewerblichen Ladeinfrastruktur. Wir sind überzeugt, dass ein Wandel hin zu einer elektrischen Mobilität nur gelingen wird, wenn es eine flächendeckende Ladeinfrastruktur geben wird – besser heute als morgen. Und hierfür benötigt es Unternehmen, die den Kunden ganzheitlich beraten und begleiten."
+    },
+    {
+      "id": 4,
+      "bg_img": "how.png",
+      "sec_type": "how_sec",
+      "title": "Our How",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Charge Construct setzt genau dort an, wo es an Kapazitäten mangelt. Wir sind da, wenn der Kunde uns braucht. Wir unterstützen Unternehmen jeder Art und Größe und helfen Ladeinfrastruktur-Betreiber, Hersteller, und Full-Service-Provider bei der Skalierung ihrer eigenen Geschäftsmodelle, indem wir für eine schnelle Realisierung der Ladeinfrastruktur-Projekte sorgen. Unser Fokus liegt dabei auf der Errichtung von HPC-Ladeparks und der Elektrifizierung von Fahrzeugflotten."
+    },
+    {
+      "id": 5,
+      "bg_img": "what.png",
+      "sec_type": "why_sec",
+      "title": "Our What",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Als One-Stop-Shop für ganzheitliche Ladelösungen begleiten wir unsere Kunden bei jeder Herausforderung.\n\n\n Wir akquirieren, vermarkten und bewerten Standorte für die Errichtung von Ladeparks, erstellen Ladekonzepte, vertreiben Ladehardware und übernehmen die fachmännische Planung & Projektierung.\nAls Generalunternehmer übernehmen wir die Errichtung von Ladeinfrastruktur und bieten dabei Tiefbau & Elektroinstallation aus einer Hand.\nAls zuverlässiger Partner übernehmen wir ebenso Betrieb inkl. Abrechnung."
+    },
+    {
+      "id": 6,
+      "bg_img": "",
+      "sec_type": "bekannt_sec",
+      "title": "Bekannt aus",
+      "subtitle": "",
+      "description": "",
+      "bg_color":"#f3f3ef"
+    },
+    {
+      "id": 7,
+      "bg_img": "team.png",
+      "sec_type": "team_banner",
+      "title": "",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": ""
+    },
+    {
+      "id": 8,
+      "bg_img": "",
+      "sec_type": "project_insight",
+      "title": "Project Insights & Fallstudien",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Auf diese Erfolge sind wir stolz und wir stellen Dir hier ausgewählte Projekte vor, damit Du Dir selbst ein Bild von unserer Arbeit machen kannst."
+    },
+    {
+      "id" : 9,
+      "bg_img": "",
+      "sec_type": "usp_section",
+      "title": "",
+      "subtitle": "Die starke Kombination aus Experten aus verschiedensten Fachbereichen garantiert Ihnen die effektivste und effizienteste Umsetzung Ihres Ladeinfrastruktur Projekts, das versprechen wir.",
+      "bg_color":"#f3f3ef",
+      "description": ""
+    },
+    {
+      "id": 10,
+      "bg_img": "expertise.png",
+      "sec_type": "expertise_section",
+      "title": "",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "",
+      "right_data_title": "Profitieren auch Sie von der Expertise von Charge Construct",
+      "right_data_description": "Arbeiten Sie mit uns zusammen um die neue Mobilität voranzutreiben und Ihr Ladeinfrastrukturprojekt so schnell und effizient wie möglich realisierenzu können.",
+      "right_data_btnlink": {
+          "title": "Kontakt anfragen",
+          "link": "/"
+      }
+    },
+    {
+  "ïd" : 11,
+  "bg_img": "",
+      "sec_type": "OurCustomer_section",
+      "title": "Zahlreiche Kunden vertrauen auf unsere Expertise...",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Charge Construct realisiert als Generalunternehmer anspruchsvolle Ladeinfrastruktur-Projekte in der gesamten DACH-Region. Unsere Kernkompetenz liegt dabei in der Errichtung von Schnellladeparks sowie Ladelösungen für Unternehmen jeder Art und Größe. Nachfolgend finden Sie einen Auszug unserer zufriedenen Kunden sowie Insights zu den umgesetzten Projekten."
+    },
+    {
+      "ïd" :12,
+      "bg_img": "",
+      "sec_type": "newsroom_section",
+      "title": "Newsroom",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Sie wollen noch mehr über unsere Leistungen und die Elektromobilität erfahren? In unserem Newsroom finden Sie hilfreiche Beiträge sowie Empfehlungen für die Errichtung von Ladeinfrastruktur und bleiben immer up-to-date!"
+    },
+    {
+      "id": 13,
+      "bg_img" :"",
+      "sec_type": "homeform_section",
+      "title": "Ihr Draht zu uns",
+      "subtitle": "",
+      "bg_color":"#f3f3ef",
+      "description": "Sie haben individuelle Anforderungen an die Errichtung der Ladeinfrastruktur? Kein Problem! Wir helfen Ihnen weiter\n\n und erarbeiten ein für Sie passendes Konzept. Schreiben Sie uns, oder rufen Sie uns an +49 841 49399122"
+    }
+  ],
+  "about_section": [
+{
+  "id":1,
+  "title": "about the title",
+  "subtitle": "subtitle",
+  "paragraph": ""
+},
+{
+  "id":2,
+  "title": "Who we are",
+  "subtitle": "",
+  "paragraph": ""
+},
+{
+  "id":3,
+  "title": "Warum es uns gibt",
+  "subtitle": "",
+  "paragraph": "Charge Construct ist entstanden, weil wir davon überzeugt sind, dass ein Wandel hin zu einer elektrischen Mobilität nur gelingen wird, wenn es eine flächendeckende Ladeinfrastruktur geben wird – und das besser heute als morgen. Die Errichtung von Ladeinfrastruktur bringt jedoch viele Herausforderungen und Fragestellen mit sich.\n\nWir haben verstanden, dass wir als unabhängiger Partner für unsere Kunden ganzheitliche Konzepte und Lösungen erarbeiten müssen, bei der Errichtung inkl. Tiefbau und Elektroinstallation unterstützen und anschließend den Betrieb, Wartung sowie Abrechnung der Ladeinfrastruktur sicherstellen.\n\nCharge Construct – der One-Stop-Shop für ganzheitliche Ladelösungen. Unser Versprechen: Wir begleiten Sie von Anfang bis Ende und sind erst zufrieden, wenn Sie es auch sind!"
+},
+{
+  "id":4,
+  "title": "Unsere Werte bei Charge Construct",
+  "subtitle": "",
+  "paragraph": "Bei Charge Construct kommen die richtigen Branchen zusammen.\n\n Adrian hat über viele Jahre hinweg als Unternehmensberater bei der führenden Technologie- und Managementberatung P3 eine Vielzahl von Unternehmen beim Hochlauf der Elektromobilität unterstützt, bevor er innerhalb der Volkswagen AG (Elli) die Errichtung und den Betrieb von Ladeinfrastruktur für verschiedene Kundengruppen sichergestellt hat. So versteht und kennt er die Bedürfnisse und Anforderungen von kleineren Projekten wie Autohändlern oder großen Industrieprojekten wie das Laden von Elektrofahrzeugen an Werksstandorten bestens.\n\nDieses Branchenwissen ergänzt Tim durch jahrelange Erfahrung im Ausbau des Glasfasernetzwerks für diverse Telekommunikationsunternehmen. Dort war er verantwortlich für die Qualifizierung von Tiefbauunternehmen und stellte so die Umsetzung komplexer Projekte mit hoher Qualität sicher. Durch die Begleitung der Bauprojekte kennt Tim die Erfolgsfaktoren für eine erfolgreiche Realisierung von Infrastrukturvorhaben.\n\nZusammen sind Adrian und Tim die Köpfe hinter Charge Construct und stellen persönlich den Erfolg eines jeden Projekts sicher."
+}
+  ],
+  "customerlogo":[
+    {"ïd":1,
+  "cust_logo":"aral.png",
+  "cust_link":"/"
+  },
+  {"ïd":2,
+  "cust_logo":"citywait.png",
+  "cust_link":"/"
+  },
+  {"ïd":3,
+  "cust_logo":"enbw.png",
+  "cust_link":"/"
+  },
+  {"ïd":4,
+  "cust_logo":"mars.png",
+  "cust_link":"/"
+  },
+  {"ïd":5,
+  "cust_logo":"pealzweke.png",
+  "cust_link":"/"
+  },
+  {"ïd":6,
+  "cust_logo":"tesla.png",
+  "cust_link":"/"
+  },
+  {"ïd":7,
+  "cust_logo":"citywait.png",
+  "cust_link":"/"
+  },
+  {"ïd":8,
+  "cust_logo":"mars.png",
+  "cust_link":"/"
+  },
+  {"ïd":9,
+  "cust_logo":"aral.png",
+  "cust_link":"/"
+  },
+  {"ïd":10,
+  "cust_logo":"tesla.png",
+  "cust_link":"/"
+  },
+  {"ïd":11,
+  "cust_logo":"citywait.png",
+  "cust_link":"/"
+  },
+  {"ïd":12,
+  "cust_logo":"citywait.png",
+  "cust_link":"/"
+  },
+  {"ïd":13,
+  "cust_logo":"aral.png",
+  "cust_link":"/"
+  },
+  {"ïd":14,
+  "cust_logo":"citywait.png",
+  "cust_link":"/"
+  },
+  {"ïd":15,
+  "cust_logo":"citywait.png",
+  "cust_link":"/"
+  },
+  {"ïd":16,
+  "cust_logo":"tesla.png",
+  "cust_link":"/"
+  },
+  {"ïd":17,
+  "cust_logo":"mars.png",
+  "cust_link":"/"
+  },
+  {"ïd":18,
+  "cust_logo":"aral.png",
+  "cust_link":"/"
+  },
+  {"ïd":19,
+  "cust_logo":"aral.png",
+  "cust_link":"/"
+  },
+  {"ïd":20,
+  "cust_logo":"citywait.png",
+  "cust_link":"/"
+  }
+  ],
+  "homenewsroom" :[{
+   "featured_article":[ {
+      "id": 1,
+      "category" : "article",
+      "news_title": "",
+      "news_date": "December 22, 2023",
+      "news_img" : "news-1.png"
+    }],
+    "featured_insight":[{
+      "id": 2,
+      "category" : "insight",
+      "news_title": "Wir haben viele weitere Insights rund um die E-Mobility",
+      "news_date": "October 22, 2023",
+      "news_img" : "news-2.png"
+    }],
+    "featured_webiner":[{
+      "id": 3,
+      "category" : "webiner",
+      "news_title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
+      "news_date": "Dezember 22, 2023",
+      "news_img" : "news-3.png"
+    }],
+    "featured_blog":[{
+      "id": 4,
+      "category" : "Blog",
+      "news_title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
+      "news_date": "Dezember 22, 2023",
+      "news_img" : "news-4.png"
+    }],
+    "featured_podcast":[{
+      "id": 5,
+      "category" : "podcast",
+      "news_title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
+      "news_date": "Dezember 22, 2023",
+      "news_img" : "news-4.png"
+    }],
+    "featured_article_2":[ {
+      "id": 6,
+      "category" : "article",
+      "news_title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
+      "news_date": "Dezember 22, 2023",
+      "news_img" : "news-4.png"
+    }]
+  }],
+  "homeservices":[
+    {
+      "id": 1,
+      "src_img": "service-1.png",
+      "src_title": "Befähigung & Konzeptberatung",
+      "src_des": "Lorem ipsum dolore ipsum dolora ha duas dolora espedium",
+      "ser_btn_label": "Zum Service",
+      "ser_btn_txt": "/"
+    },
+    {
+      "id": 2,
+      "src_img": "service-2.png",
+      "src_title": "Standortakquise & Vermarktung",
+      "src_des": "Lorem ipsum dolore ipsum dolora ha duas dolora espedium",
+      "ser_btn_label": "Zum Service",
+      "ser_btn_txt": "/"
+    },
+    {
+      "id": 3,
+      "src_img": "service-3.png",
+      "src_title": "Planung & Projektierung",
+      "src_des": "Lorem ipsum dolore ipsum dolora ha duas dolora espedium",
+      "ser_btn_label": "Zum Service",
+      "ser_btn_txt": "/"
+    },
+    {
+      "id": 4,
+      "src_img": "service-4.png",
+      "src_title": "Wallboxen & Ladestationen",
+      "src_des": "Lorem ipsum dolore ipsum dolora ha duas dolora espedium",
+      "ser_btn_label": "Zum Service",
+      "ser_btn_txt": "/"
+    },
+    {
+      "id": 5,
+      "src_img": "service-5.png",
+      "src_title": "Tiefbau & Errichtung",
+      "src_des": "Lorem ipsum dolore ipsum dolora ha duas dolora espedium",
+      "ser_btn_label": "Zum Service",
+      "ser_btn_txt": "/"
+    },
+    {
+      "id": 6,
+      "src_img": "service-6.png",
+      "src_title": "Elektroinstallation & Inbetriebnahme",
+      "src_des": "Lorem ipsum dolore ipsum dolora ha duas dolora espedium",
+      "ser_btn_label": "Zum Service",
+      "ser_btn_txt": "/"
+    },
+    {
+      "id": 7,
+      "src_img": "service-7.png",
+      "src_title": "Betrieb & Wartung",
+      "src_des": "Lorem ipsum dolore ipsum dolora ha duas dolora espedium",
+      "ser_btn_label": "Zum Service",
+      "ser_btn_txt": "/"
+    },
+    {
+      "id": 8,
+      "src_img": "service-8.png",
+      "src_title": "Vermarktung & Abrechnung",
+      "src_des": "Lorem ipsum dolore ipsum dolora ha duas dolora espedium",
+      "ser_btn_label": "Zum Service",
+      "ser_btn_txt": "/"
+    }
+  ],
+  "kundengruppen":[
+    {
+      "id": 1,
+      "kun_title": "Unternehmer",
+      "kun_img": "unternehmer.png",
+      "kun_des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 2,
+      "kun_title": "Betreiber von Ladeflächen",
+      "kun_img": "betreiber.png",
+      "kun_des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 3,
+      "kun_title": "Eigentümer von Flächen",
+      "kun_img": "eigentnmer.png",
+      "kun_des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  ],
+  "home_expertise":[
+  {
+    "id": 1,
+    "title": "Profitieren auch Sie von der Expertise von Charge Construct",
+    "subtitle": "Arbeiten Sie mit uns zusammen um die neue Mobilität voranzutreiben und Ihr Ladeinfrastrukturprojekt so schnell und effizient wie möglich realisierenzu können.",
+    "btnlink": {
+      "title": "Kontakt anfragen",
+      "link": "/"
+    }
+  }
+  ],
+  "know_us":[
+    {
+      "id":1,
+      "logo_img":"kronen-zeitung.jpg",
+      "know_link":""
+      
+    },
+    {
+      "id":2,
+      "logo_img":"donaukurier.png",
+      "know_link":""
+    },
+    {
+      "id":3,
+      "logo_img":"electrive.png",
+      "know_link":""
+    }
+  ],
+  "project_categories":[
+    {
+      "id": "1",
+      "name" : "Gastronomie",
+      "slug" : "gastronomie",
+      "meta_title" :"",
+      "meta_description" : ""
+    },
+    {
+      "id": "2",
+      "name" : "Bau",
+      "slug" : "bau",
+      "meta_title" :"",
+      "meta_description" : ""
+    },
+    {
+      "id": "3",
+      "name" : "Bank",
+      "slug" : "bank",
+      "meta_title" :"",
+      "meta_description" : ""
+    }
+  ],
+  "homeproject_tabs":[
+    {
+      "id": "1",
+      "category": "Gastronomie",
+      "title": "Realisierung Ladeinfrastruktur mit BayWa",
+      "sub_title": "Errichtung - Ladeinfrastruktur Betreiber",
+      "logo": "BayWa.png",
+      "image": "project-post-banner.png",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+      "showimage" : "1",
+      "onhome": "1",
+      "order": "1",
+      "publish": "1",
+      "publish_date": ""
+
+    }, 
+    {
+      "id": 2,
+      "category": "Bank",
+      "title": "Realisierung Ladeinfrastruktur mit BayWa",
+      "sub_title": "Errichtung - Ladeinfrastruktur Betreiber",
+      "logo": "BayWa.png",
+      "image": "enbw-banner.png",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+      "showimage" : "1",
+      "onhome": "1",
+      "order": "1",
+      "publish": "1",
+      "publish_date": "10 July 2023"
+    },
+    {
+      "id": 3,
+      "category": "Bau",
+      "title": "Realisierung Ladeinfrastruktur mit BayWa",
+      "sub_title": "Errichtung - Ladeinfrastruktur Betreiber",
+      "logo": "BayWa.png",
+      "image": "enbw-banner-2.png",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ",
+      "showimage" : "1",
+      "onhome": "1",
+      "order": "1",
+      "publish": "1",
+      "publish_date": "10 July 2023"
+    }
+  ],
+  "the_founder":[
+    {
+      "id": 1,
+      "title": "Adrian Zierer",
+      "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "founder_img" : "adrian.png"
+    },
+    {
+      "id": 2,
+      "title": "Adrian Zierer",
+      "des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "founder_img" : "team-10.png"
+    }
+  ],
+  "footer":[
+    {
+      "id": 1,
+      "footer_logo": "footer_logo.png",
+      "footer_about" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+    },
+    {
+      "id" : 2,
+      "insight_title": "Insights & Neuigkeiten",
+      "insight_des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in"
+    },
+    {
+      "id": 3,
+      "kontakt_title": "Kontakt",
+      "kontakt_des": ""
+    }
+  ]
+}
