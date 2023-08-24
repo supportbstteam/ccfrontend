@@ -43,7 +43,7 @@ function ServiceCard() {
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-              {item.src_img?<img src={item.src_img?`images/service/${item.src_img}`:''}/>:''}
+              {item.src_img?<img src={item.src_img?`https://teamwebdevelopers.com/charge_construct/public/images/service/${item.src_img}`:''}/>:''}
                 <a href={item.ser_btn_txt}>{item.ser_btn_label}</a>
                 <div className='flip-front-card-contents'>
                 <h3>{item.src_title}</h3>
