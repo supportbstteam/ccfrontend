@@ -16,7 +16,7 @@ function Sections(data){
     backgroundImage: `url('images/section/${bg_img}')`,
 }
 const expertise = {
-    backgroundImage: `url('images/section/${bg_img}'),url ('assets/images/${bg_img}')`,
+    backgroundImage: `url('images/section/${bg_img}'),url ('images/section/${bg_img}')`,
     backgroundPosition: 'left top, right top',
     backgroundRepeat: 'no-repeat, no-repeat'
 }
