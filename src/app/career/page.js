@@ -10,7 +10,6 @@ const sliderbg = {
 }
 
 function careerContent(){
-
     useEffect(()=>{
         Aos.init({duration: 1700});
     },[])
@@ -126,66 +125,87 @@ function careerContent(){
             <div className='col-12'>
             <h2 className='section-title text-dark mb-5' data-aos="fade-up" data-aos-duration="1000">Unsere Benefits</h2>
             </div>
-            <div className='col-3' data-aos="zoom-in" data-aos-duration="1000">
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1000">
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace<br/>
+                    <h5>Lorem ipsum dolre firm solace
                     lorem ipsum dolre firm solace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
             </div>
 
-            <div className='col-3' data-aos="zoom-in" data-aos-duration="1200">
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1200">
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace<br/>
+                <h5>Lorem ipsum dolre firm solace
                     lorem ipsum dolre firm solace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+               
                 </div>
             </div>
 
-            <div className='col-3' data-aos="zoom-in" data-aos-duration="1400">
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1400">
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace<br/>
+                <h5>Lorem ipsum dolre firm solace
                     lorem ipsum dolre firm solace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+               
                 </div>
             </div>
 
-            <div className='col-3' data-aos="zoom-in" data-aos-duration="1600">
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1600">
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace<br/>
+                <h5>Lorem ipsum dolre firm solace
                     lorem ipsum dolre firm solace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+               
                 </div>
             </div>
 
-            <div className='col-3' data-aos="zoom-in" data-aos-duration="1800">
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1800">
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace<br/>
+                <h5>Lorem ipsum dolre firm solace
                     lorem ipsum dolre firm solace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+               
                 </div>
             </div>
 
-            <div className='col-3' data-aos="zoom-in" data-aos-duration="2000">
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="2000">
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace<br/>
+                <h5>Lorem ipsum dolre firm solace
                     lorem ipsum dolre firm solace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+               
                 </div>
             </div>
 
-            <div className='col-3' data-aos="zoom-in" data-aos-duration="2200">
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="2200">
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace<br/>
+                <h5>Lorem ipsum dolre firm solace
                     lorem ipsum dolre firm solace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+               
                 </div>
             </div>
 
-            <div className='col-3' data-aos="zoom-in" data-aos-duration="2400">
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="2400">
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace<br/>
+                <h5>Lorem ipsum dolre firm solace
                     lorem ipsum dolre firm solace</h5>
-                </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+               </div>
+            </div>
+            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="2400">
+                <div className='benefit-box'>
+                <h5>Lorem ipsum dolre firm solace
+                    lorem ipsum dolre firm solace</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+               </div>
             </div>
         </div>
     </div>
   </section>
 
-  <section className='position-relative warum-section bg-moredark d-flex align-items-center'>
+  <section className='position-relative warum-section bg-moredark d-flex align-items-end'>
   <video autoPlay loop muted className='w-100'>
 		<source src="../../assets/images/teamscc.mp4" type='video/mp4' />
 	  </video>

@@ -37,7 +37,9 @@ function GridPostList(){
 <div className="col-md-4 col-sm-12 col-12" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
     <div className="card mb-3 post-card">
+    <div className="post-img">
   <img src="../assets/images/newsroom/post-1.png" className="card-img-top" alt="..."/>
+  </div>
   <div className="card-body">
     <p className="post-published"><span>Podcast</span>, <span>Dezember 12, 2022</span></p>
     <h5 className="card-title">Lorem ipsum dolore radum daresorium: 5 top lorem</h5>
@@ -50,7 +52,9 @@ function GridPostList(){
 <div className="col-md-4 col-sm-12 col-12" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="2000">
  <div className="card mb-3 post-card  middle-post">
+ <div className="post-img">
   <img src="../assets/images/newsroom/post-2.png" className="card-img-top" alt="..."/>
+  </div>
   <div className="card-body">
   <p className="post-published"><span>Podcast</span>, <span>Dezember 12, 2022</span></p>
     <h5 className="card-title">Lorem ipsum dolore radum daresorium: 5 top lorem</h5>
@@ -63,7 +67,9 @@ function GridPostList(){
 <div className="col-md-4 col-sm-12 col-12" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="2500">
   <div className="card mb-3 post-card">
+  <div className="post-img">
   <img src="../assets/images/newsroom/post-3.png" className="card-img-top" alt="..."/>
+  </div>
   <div className="card-body">
    <p className="post-published"><span>Podcast</span>, <span>Dezember 12, 2022</span></p>
     <h5 className="card-title">Lorem ipsum dolore radum daresorium: 5 top lorem</h5>

@@ -4,7 +4,17 @@
   --dark-clr: #7B735B;
   --black-clr: #000;
 }
-
+html{
+  scroll-behavior: smooth;
+}
+a{
+  color: #fff;
+  text-decoration: none;
+}
+body{
+  background-color: #fff;
+  background: #fff;
+}
 @font-face {
     font-family: 'proxima-bold';
     src: url('../fonts/proxima-bold.woff2') format('woff2');
@@ -54,6 +64,7 @@
     color: #fff;
     font-size: 17px !important;
     font-family: 'proxima-medium';
+    text-decoration: none;
     }
 .home-nav ul li{
   margin-right: 23px;
@@ -208,7 +219,7 @@ text-align: left;
     }
     .main-section.home-sections p.section-desciption{
       font-size: 18px;
-      line-height: 28px;
+      line-height: 30px;
     }
     section.main-section .banner-content p{
 font-size: 20px;
@@ -230,6 +241,8 @@ margin: 30px 0;
         line-height: 25px;
         letter-spacing: 0em;
         text-align: left;
+        color: #fff;
+        text-decoration: none;
     }
     .card-service .flip-card .flip-front-card-contents {
       position: absolute;
@@ -252,12 +265,13 @@ margin: 30px 0;
     .card-service .flip-card .flip-card-front img{
       width: 100%;
       height: 100%;
+      border-radius: 10px;
     }
     section.service_sec{
       position: relative;
     }
     .main-section p.section-desciption {
-      max-width: 85%;
+      max-width: 95%;
       margin: 2% 0;
     }
     section.main-section.service_sec:before {
@@ -292,6 +306,24 @@ font-size: 55px;
 }
 .newsroom-col {
   padding-right: 60px;
+}
+.newsroom-col span{
+  font-family: 'proxima-bold';
+  font-size: 15px;
+  margin-bottom: 25px;
+  display: block;
+}
+.kann-btn {
+  background: #cba157;
+  border-radius: 0;
+  width: 60%;
+  display: block;
+  font-size: 16px;
+  padding: 15px 16px;
+  margin-bottom: 20px;
+}
+.blog-insights{
+  padding: 0.7em 2.1em;
 }
 section.main-section.bekannt_sec h2.section-title{
   text-align: center;
@@ -364,6 +396,7 @@ section.main-section.project_insight p,
 section.main-section.newsroom_section h2,
 section.main-section.newsroom_section p,
 section.main-section.OurCustomer_section h2,
+section.barchats_section h2,
 section.main-section.OurCustomer_section p{
 color: #000;
 }
@@ -386,7 +419,6 @@ section.main-section.expertise_section{
     background-size: 50% auto, cover !important;
     position: relative;
     overflow: hidden;
-    background-attachment: fixed;
     background-position: left !important;
 }
 section.main-section.OurCustomer_section {
@@ -863,7 +895,7 @@ section.main-section.charge_zahlen .counter-box {
   width: 285px;
   height: 240px;
   border: 1px solid #ffff;
-  transition: all 0.5s;
+  transition: all 0.4s;
   margin: 8% 0;
   display: flex;
   align-items: center;
@@ -872,12 +904,38 @@ section.main-section.charge_zahlen .counter-box {
 }
 section.main-section.charge_zahlen .counter-box:hover, .stand_in:hover{
   background: var(--primary-clr);
+  border: 0;
 }
-section.main-section.charge_zahlen .counter-box h4{
+.col-counter {
+  position: relative;
+}
+section.main-section.charge_zahlen .counter-box:hover .added_details{
+  display: flex;
+  transition: all 0.4s;
+}
+.added_details {
+  display: none;
+  position: absolute;
+  top: 33px;
+  transition: all 0.5s;
+  right: -68%;
+  background: var(--primary-clr);
+  width: 102%;
+  height: 240px;
+  z-index: 99;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2%;
+}
+section.main-section.charge_zahlen .counter-box h4,
+.added_details h4{
   font-size: 44px;
   font-family: 'proxima-bold';
 }
-section.main-section.charge_zahlen .counter-box p{
+section.main-section.charge_zahlen .counter-box p,
+.added_details p{
   font-size: 17px;
 }
 .stand_in h4{
@@ -948,6 +1006,9 @@ img.founder-profile{
     box-shadow: 0px 4px 4px 0px #0000000a;
     display: block;
 }
+.teams-boards-member .member-col h5 a{
+  color: #000;
+}
 .teams-boards-member  .member-col img{
 transition: all 0.5s;
 }
@@ -993,6 +1054,7 @@ span.follow_linked {
 .career-video-content{
   position: absolute;
   left:60px;
+  bottom: 90px;
 }
 /* Career page style start here */
 .career-banner,
@@ -1204,16 +1266,40 @@ ul.tabsview.founders-tabs li.actives{
   border-radius: 34px;
   display: flex;
   align-items: center;
+  transition: all 0.2s;
   justify-content: center;
   padding: 14% 7%;
   margin-bottom: 20px;
+  flex-direction: column;
 }
 .benefit-box h5{
   color: var(--primary-clr);
   font-size: 16px;
+  text-align: center;
+}
+.benefit-box p{
+  display: none;
+}
+.benefit-col{
+  position: relative;
+  transition: all 0.2s;
+}
+.benefit-col:hover{
+  z-index: 999;
+}
+.benefit-col:hover .benefit-box{
+position: absolute;
+background-color: #000;
+}
+.benefit-col:hover .benefit-box p{
+  display: block;
 }
 .deine-section, .warum-section{
   min-height: 500px;
+}
+.warum-section video {
+  height: 500px;
+  object-fit: cover;
 }
 .deine-section{
   background: linear-gradient(60deg, #f29c2f,#f8dd70, #ffcd05) !important;
@@ -1312,6 +1398,19 @@ text-align: center;
 .card-post-grids .top-posts img{
   animation: zoomInOut 6s infinite;
 }
+.card-post-grids .post-card{
+  cursor: pointer;
+    overflow: hidden;
+}
+.card-post-grids .post-card .post-img{
+  overflow: hidden;
+}
+.card-post-grids .post-card img{
+  transition: all .9s;
+}
+.card-post-grids .post-card:hover img{
+  transform: scale(1.1);
+}
 .card-post-grids .post-card:nth-child(1) {
   background: #D3B08E;
 }
@@ -1405,6 +1504,111 @@ line-height: 34px;
 font-family: 'proxima-medium';
 }
 /* quotation style end here */
+
+/* branche bar charts start here */
+
+.branche-figure .branche-cols{
+  background: var(--primary-clr);
+  padding: 2% 2%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.branche-figure .branche-cols h5{
+  font-family: 'proxima-medium';
+}
+.branche-figure .bar-charts{
+  background: #fff;
+  padding: 1.5% 5%;
+}
+.bar-charts .progress {
+  border-radius: 0;
+  height: auto;
+  flex-direction: column;
+  background: transparent;
+  align-items: self-start;
+  margin-bottom: 15px;
+}
+
+.bar-charts .progress img {
+  width: auto;
+  height: 30px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+.bar-charts .progress .progress-bar{
+background-color: var(--primary-clr);
+font-family: 'proxima-medium';
+text-align: left;
+padding: 1px 27px;
+font-size: 14px;
+}
+.branche-figure .barcharts-footer {
+  background: var(--primary-clr);
+  padding: 1.5% 1.5%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.branche-figure .barcharts-footer p {
+  font-size: 14px;
+  line-height: 24px;
+}
+section.main-section.why_we_exist p, section.main-section.our_values p {
+  text-align: justify;
+}
+/* branche bar charts end here */
+.single-blog-row {
+  background: #CBA157;
+}
+ul.share-blogs{
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+ul.share-blogs li h5{
+  margin-bottom: 0;
+}
+ul.share-blogs li img {
+  filter: grayscale(1) invert(1);
+}
+section.single-post .post-content p{
+  font-size: 16px;
+    font-family: 'proxima-medium';
+    text-align: justify;
+    line-height: 28px;
+    margin-bottom: 30px;
+}
+section.single-post .post-content h4{
+  margin-bottom: 15px;
+}
+section.single-post .post-content img{
+  margin-bottom: 25px;
+  width: 100%;
+}
+.post-tags{
+  font-size: 14px;
+  text-decoration: none;
+  font-family: 'proxima-medium';
+  background: #D9D9D9;
+  transition: 0.4s;
+  padding: 0.5em 1em;
+  color: #000;
+  display: inline-block;
+  border-radius: 0;
+}
+ul.blog-tags{
+padding: 0;
+list-style: none;
+display: flex;
+gap: 15px;
+margin-bottom: 0;
+margin-top: 20px;
+}
+.single-suggest-posts{
+  margin-top: 40px;
+}
 @media screen and (max-width: 768px) {
   .card-service {
     position: relative;
@@ -1499,6 +1703,9 @@ form.draht-forms.newsletter-form div{
 .project-details {
   padding: 5% 10%;
 }
+section.main-section.charge_zahlen .counter-box{
+  margin: 15px auto;
+}
 }
 @media screen and (min-width: 767px) and (max-width:991px){
   .newsletter-form input {
@@ -1526,6 +1733,18 @@ form.draht-forms.newsletter-form div{
 footer .footer-col {
   padding: 0 2%;
 }
+.cc-nav .container{
+  max-width: 800px;
+}
+.dynamic-Navbar{
+  justify-content: center;
+}
+.banner-slider {
+  padding: 25% 0 2%;
+}
+/* .home-nav ul li {
+  margin-right: 18px;
+} */
 }
 @media screen and (min-width: 992px) and (max-width: 1024px){
  

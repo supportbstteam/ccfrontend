@@ -19,7 +19,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "btnlink": {
         "title": "Die Geschichte dahinter",
-        "link": "/"
+        "link": "/about"
       }
     }
   ],
@@ -121,16 +121,16 @@
       }
     },
     {
-  "ïd" : 11,
-  "bg_img": "",
-      "sec_type": "OurCustomer_section",
-      "title": "Zahlreiche Kunden vertrauen auf unsere Expertise...",
+      "ïd" :12,
+      "bg_img": "",
+      "sec_type": "barchats_section",
+      "title": "Wir arbeiten mit den größten Anbietern der Branche",
       "subtitle": "",
       "bg_color":"#f3f3ef",
-      "description": "Charge Construct realisiert als Generalunternehmer anspruchsvolle Ladeinfrastruktur-Projekte in der gesamten DACH-Region. Unsere Kernkompetenz liegt dabei in der Errichtung von Schnellladeparks sowie Ladelösungen für Unternehmen jeder Art und Größe. Nachfolgend finden Sie einen Auszug unserer zufriedenen Kunden sowie Insights zu den umgesetzten Projekten."
+      "description": ""
     },
     {
-      "ïd" :12,
+      "ïd" :13,
       "bg_img": "",
       "sec_type": "newsroom_section",
       "title": "Newsroom",
@@ -139,7 +139,7 @@
       "description": "Sie wollen noch mehr über unsere Leistungen und die Elektromobilität erfahren? In unserem Newsroom finden Sie hilfreiche Beiträge sowie Empfehlungen für die Errichtung von Ladeinfrastruktur und bleiben immer up-to-date!"
     },
     {
-      "id": 13,
+      "id": 14,
       "bg_img" :"",
       "sec_type": "homeform_section",
       "title": "Ihr Draht zu uns",

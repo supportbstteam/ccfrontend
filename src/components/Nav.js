@@ -2,10 +2,12 @@ import Link from 'next/link'
 
 function NavMenu(){
     return (
-        <header className="navbar navbar-expand-md navbar-light fixed-top">
+        <header className="navbar navbar-expand-md navbar-light fixed-top cc-nav">
           <div className='container'>
 <nav className="navbar navbar-expand-lg dynamic-Navbar">
-<Link href="/" className="navbar-brand" ><img src="../../assets/images/logo.png" alt="Charge construct power on"/></Link>
+<Link href="/" className="navbar-brand" >
+  <img src="../../assets/images/logo.png" className='img-fluid' alt="Charge construct power on"/>
+  </Link>
     <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>

@@ -38,6 +38,17 @@ function About() {
     useEffect(()=>{
       Aos.init({duration: 1700});
   },[])
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseOver = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovered(false);
+  };
+
   // useEffect(() => {
   //   async function fetchDataFromAPI() {
   //     try {
@@ -67,7 +78,7 @@ function About() {
       <div className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="../../assets/images/pages/about_banner.png" className="d-block w-100" alt="..."/>
+      <img src="../../assets/images/pages/about_banner.jpg" className="d-block w-100" alt="..."/>
     </div>
   </div>
 </div> 
@@ -85,11 +96,11 @@ function About() {
 <section className="main-section about_who_we">
   <div className="container">
     <div className="row">
-      <div className="col-12">
-       <h2 className="section-title text-center mb-4">Who We Are</h2>
+      <div className="col-lg-8 offset-lg-1 offset-md-8 offset-md-1 col-12">
+       <h2 className="section-title mb-4">Who We Are</h2>
       </div>
-      <div className="col-12 justify-content-center d-flex" data-aos="fade-up">
-      <iframe width="80%" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      <div className="col-12 justify-content-end d-flex" data-aos="fade-up">
+      <iframe width="92%" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
       </div>
     </div>
   </div>
@@ -167,21 +178,31 @@ Zusammen sind Adrian und Tim die Köpfe hinter Charge Construct und stellen pers
       <h2 className="section-title mb-4">Charge Construct in Zahlen</h2>
       </div>
 
-      <div className='col-4'>
+      <div className='col-lg-4 col-md-4 col-12 col-counter'>
         <div className='counter-box'>
           <h4>{employee}+</h4>
           <p>Mitarbeiter</p>
+          <div className='added_details'>
+        <h4>50%</h4>
+          <p>schnellere Realisierung der Projekte als andere Wettbewerber</p>
         </div>
+        </div>
+        
       </div>
       
-      <div className='col-4'>
+      <div className='col-lg-4 col-md-4 col-12 col-counter'>
       <div className='counter-box'>
           <h4>{employee}+</h4>
           <p>team members</p>
+          <div className='added_details'>
+        <h4>50%</h4>
+          <p>schnellere Realisierung der Projekte als andere Wettbewerber</p>
         </div>
+        </div>
+       
       </div>
       
-      <div className='col-4'>
+      <div className='col-lg-4 col-md-4 col-12 col-counter'>
       <div className='counter-box'>
           <h4>{employee}+</h4>
           <p>finalisierte Projekte</p>

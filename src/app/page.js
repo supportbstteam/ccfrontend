@@ -6,9 +6,9 @@ import SEO from '@/components/Seo';
 import MainSlider from '@/components/Slider';
 import Sections from '@/components/Section';
 import { fetchData } from '@/apiConnection/apiService';
+import {Scrollbar} from 'smooth-scrollbar-react';
 export default function Home() {
-
-   const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
   const [sectionData, setSection] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -41,18 +41,22 @@ export default function Home() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
   return (
     <>
-     
     <main className={styles.main}>
+     
         <MainSlider slider={data}/>
-         {/* Render the fetched data here */}
          {sectionData.map((Secdata, index) => (
+          <Scrollbar
+          plugins={{
+            overscroll: {
+              effect: 'bounce',
+            },
+          }}>
         <Sections key={index} section={Secdata}/>
+        </Scrollbar>
         ))}
     </main>
-  
     </>
   )
 }

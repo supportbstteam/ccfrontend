@@ -84,10 +84,10 @@ function NewsRoom(){
             <div className="container" data-aos="fade-down" data-aos-easing="linear"
      data-aos-duration="1000">
                 <div className="row align-items-center py-3">
-        <div className="col-lg-6 col-md-6 col-sm-12 col-12">
-            <h4 className="text-white mb-0">Entdecken Sie unsere Beiträge</h4>
+        <div className="col-12">
+        <h5 className="text-white mb-0 text-center">“Entdecken Sie unsere Beiträge und seien Sie immer auf den neusten Stand”</h5>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center g-2 entdecken-gap">
+        {/* <div className="col-lg-6 col-md-6 col-sm-12 col-12 d-flex justify-content-center g-2 entdecken-gap">
             <select className="col-lg-3 col-md-3 col-12">
                 <option>Alle Industrien</option>
                 <option>Alle Industrien</option>
@@ -103,7 +103,7 @@ function NewsRoom(){
                 <option>Alle Content Typen</option>
                 <option>Alle Content Typen</option>
             </select>
-        </div>
+        </div> */}
              
         </div>
             </div>
@@ -111,7 +111,7 @@ function NewsRoom(){
         <section className="main-section pt-0">
             <div className="container-fluid p-0">
                 <div className="row">
-                    <div className="offset-lg-1 offset-md-1 col-lg-5 col-md-5 col-sm-12 col-12 d-flex align-items-center">
+                    <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
                     <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear"
      data-aos-duration="1000">
                     <h1 className='section-title text-dark mb-5'>Newsroom</h1>
@@ -123,7 +123,7 @@ Ladeinfrastruktur. Zusätzlich findest du hier Pressemitteilungen und unsere Bei
 Alles kompakt und an einem Ort, sodass keine Fragen offen bleiben.</p>
 </div>
                     </div>
-                    <div className="col-lg-6 col-md-6 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
+                    <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
      data-aos-duration="1000">
                     <Slider {...settings}>
                         {newsroom.map((news,i) => (
