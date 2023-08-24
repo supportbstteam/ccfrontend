@@ -1,5 +1,5 @@
 // apiService.js
-const API_BASE_URL = 'http://teamwebdevelopers.com/charge_construct/api'; // Replace with your API base URL
+const API_BASE_URL = 'https://teamwebdevelopers.com/charge_construct/api'; // Replace with your API base URL
 
 export async function fetchData(endpoint) {
    const response = await fetch(`${API_BASE_URL}${endpoint}`);
