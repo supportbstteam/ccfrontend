@@ -32,7 +32,7 @@ useEffect(()=>{
 
         <div className='container'>
             <div className='row'>
-                <div className='col-md-10'>
+                <div className='col-md-12'>
                 {title?<h2 data-aos="fade-up" className='section-title'>{title}</h2>:''}
                 {subtitle?<h4 data-aos="fade-up" className='section-subtitle'>{subtitle}</h4>:''}
                 {description?<p data-aos="fade-up" className='section-desciption'>{description}</p>:''}
