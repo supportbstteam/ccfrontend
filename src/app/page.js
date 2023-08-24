@@ -18,8 +18,8 @@ export default function Home() {
     document.querySelector("body").removeAttribute("class", '');
     async function fetchDataFromAPI() {
       try {
-        const responseData = await fetchData('/sliders'); // Replace '/data' with the API endpoint you want to fetch
-        const responseSection = await fetchData('/sections');
+        const responseData = await fetchData('/slider'); // Replace '/data' with the API endpoint you want to fetch
+        const responseSection = await fetchData('/section');
         setData(responseData);
         setSection(responseSection);
         setLoading(false);
