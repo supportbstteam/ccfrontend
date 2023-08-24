@@ -195,6 +195,7 @@ text-align: left;
     font-size: 45px;
 }
   section.main-section.why_sec,
+  section.main-section.what_sec,
   section.main-section.how_sec{
     min-height: 700px;
   }
