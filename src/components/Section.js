@@ -13,10 +13,10 @@ function Sections(data){
    const { id, bg_img, title,subtitle,description,sec_type,bg_color} = data.section;
 
    const sliderbg = {
-    backgroundImage: `url('assets/images/${bg_img}')`,
+    backgroundImage: `url('images/section/${bg_img}')`,
 }
 const expertise = {
-    backgroundImage: `url('assets/images/${bg_img}'),url ('assets/images/${bg_img}')`,
+    backgroundImage: `url('images/section/${bg_img}'),url ('assets/images/${bg_img}')`,
     backgroundPosition: 'left top, right top',
     backgroundRepeat: 'no-repeat, no-repeat'
 }
