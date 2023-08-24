@@ -38,7 +38,7 @@ useEffect(()=>{
                 {description?<p data-aos="fade-up" className='section-desciption'>{description}</p>:''}
                     
                 </div>
-                {sec_type==='service_sec'?(
+                {sec_type==='service_second'?(
                     <ServiceCard/>
                 ):(<></>)}
                 {sec_type==='kundengruppen_sec'?(
