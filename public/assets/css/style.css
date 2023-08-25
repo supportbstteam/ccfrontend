@@ -1614,6 +1614,7 @@ margin-top: 20px;
 }
 .cc-left-col{
       padding-right: 70px;
+}
 @media screen and (max-width: 768px) {
   .card-service {
     position: relative;
