@@ -65,7 +65,7 @@ return(
 
         <div className="col-lg-5 col-md-5 col-sm-5 col-12 footer-col">
             <h5>Newsletter</h5>
-            <form className="draht-forms newsletter-form row" data-aos="fade-down" data-aos-duration="2500"> 
+            <form className="draht-forms newsletter-form row"> 
             <div className='col-lg-6 col-md-12 col-12'>
             
       <InputField
