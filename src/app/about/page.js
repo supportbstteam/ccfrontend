@@ -126,7 +126,7 @@ Charge Construct – der One-Stop-Shop für ganzheitliche Ladelösungen. Unser V
     <section className="main-section our_values" style={{backgroundImage : `url(../../assets/images/cc_team.png)`}}>
   <div className="container">
     <div className="row">
-      <div className="col-lg-6 col-md-6 col-sm-6 col-12"  data-aos="fade-right">
+      <div className="col-lg-6 col-md-6 col-sm-6 col-12 cc-left-col"  data-aos="fade-right">
       <h2 className="section-title mb-4">Unsere Werte bei Charge Construct</h2>
       <p>
       Bei Charge Construct kommen die richtigen Branchen zusammen.
