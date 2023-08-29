@@ -190,6 +190,7 @@ text-align: left;
     background-repeat: no-repeat;
     background-position: center center;
     padding: 3.5% 0;
+    overflow: hidden;
   }
   .main-section h1 {
     font-size: 45px;
