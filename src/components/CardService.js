@@ -11,7 +11,7 @@ function ServiceCard() {
   useEffect(() => {
     async function fetchDataFromAPI() {
       try {
-        const responseService = await fetchData('/homeservices'); // Replace '/data' with the API endpoint you want to fetch
+        const responseService = await fetchData('/services'); // Replace '/data' with the API endpoint you want to fetch
         setData(responseService);
         setLoading(false);
         //Aos.init({duration: 1700});
