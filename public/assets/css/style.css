@@ -4,9 +4,6 @@
   --dark-clr: #7B735B;
   --black-clr: #000;
 }
-html{
-  scroll-behavior: smooth;
-}
 a{
   color: #fff;
   text-decoration: none;
@@ -62,7 +59,7 @@ body{
   }
   .home-nav ul li a{
     color: #fff;
-    font-size: 17px !important;
+    font-size: 18px !important;
     font-family: 'proxima-medium';
     text-decoration: none;
     }
@@ -74,6 +71,7 @@ body{
 }
 section.main-section.kundengruppen_sec {
   padding-bottom: 5.5%;
+    background: #f3f3ef !important;
 }
 .home-nav ul li:last-child{
   margin: 0;
@@ -101,8 +99,9 @@ section.main-section.kundengruppen_sec {
   top:-35px;
 }
 .fixed-top{
-  position: absolute;
+  position: absolute !important;
 }
+
 .dynamic-Navbar{
     display: flex;
     align-items: center;
@@ -190,13 +189,11 @@ text-align: left;
     background-repeat: no-repeat;
     background-position: center center;
     padding: 3.5% 0;
-    overflow: hidden;
   }
   .main-section h1 {
     font-size: 45px;
 }
   section.main-section.why_sec,
-  section.main-section.what_sec,
   section.main-section.how_sec{
     min-height: 700px;
   }
@@ -214,15 +211,15 @@ text-align: left;
   
   .main-section p{
     font-family: proxima-regular;
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 17px;
+    line-height: 27px;
     letter-spacing: 0em;
     word-spacing: 1px;
     }
-    .main-section.home-sections p.section-desciption{
+    /* .main-section.home-sections p.section-desciption{
       font-size: 18px;
       line-height: 30px;
-    }
+    } */
     section.main-section .banner-content p{
 font-size: 20px;
 font-family: 'proxima-bold';
@@ -288,10 +285,10 @@ margin: 30px 0;
   .kundengrup-card {
     position: relative;
   }
-  .kundengrup-card img{
+  .kundengrup-card .flip-card img {
     width: 100%;
-  }
-  
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
   .kundengrup-card h3 {
     position: absolute;
     top: 50%;
@@ -303,17 +300,29 @@ line-height: 44px;
 letter-spacing: 0em;
 text-align: center;
 }
+.kundengrup-card .flip-card-back{
+  justify-content: space-evenly;
+}
+.kundengrup-card .flip-card-back a{
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+}
 h1.section-title{
 font-size: 55px;
 }
 .newsroom-col {
   padding-right: 60px;
 }
-.newsroom-col span{
+.newsroom-col .post-category{
   font-family: 'proxima-bold';
   font-size: 15px;
   margin-bottom: 25px;
   display: block;
+}
+.newsroom-col .post-category span{
+  margin: 0 2px;
+  text-transform: uppercase;
 }
 .kann-btn {
   background: #cba157;
@@ -414,7 +423,9 @@ section.usp_section h4{
   font-size: 36px;
   color: var(--dark-clr);
 }
-
+section.main-section{
+  overflow:hidden
+}
 section.main-section.expertise_section{
   min-height: 563px;
     background-image: url('../images/expertise.png'), linear-gradient(115deg, #f29c2f, #f8dd70) !important;
@@ -675,7 +686,20 @@ section.main-section.service_sec{
   background-position: bottom center;
 }
 section.main-section.team_banner{
-  height: 700px;
+  height: 870px;
+  position: relative;
+}
+.team_banner a.zum-team{
+  position: absolute;
+    bottom: 4px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    height: 70px;
 }
 footer {
   background: #2a2a2a;
@@ -698,6 +722,7 @@ footer p, .contact-details ul li a{
 font-family: 'proxima-regular';
 font-size: 15px;
 line-height: 25px;
+color: #fff;
 text-align: justify;
 letter-spacing: 0em;
 }
@@ -736,6 +761,9 @@ footer .footer-menu{
 footer .footer-menu li{
   font-size: 15px;
   font-family: 'proxima-regular';
+}
+footer .footer-menu li a{
+  color: #fff;
 }
 form.newsletter-form input::placeholder,
 form.newsletter-form input:placeholder-shown,
@@ -797,6 +825,7 @@ p.copyright_txt{
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 8;
   overflow: hidden;
+  color: #fff !important;
   text-overflow: ellipsis;
   display: -webkit-box;
   text-align: justify;
@@ -821,8 +850,9 @@ text-decoration: underline;
   border-bottom: 3px solid;
   padding: 8px 0;
 }
-.flip-card-inner, .flip-card-front, .flip-card-back{
+.flip-card-front, .flip-card-back{
 transition: transform 0.8s;
+transform-style: preserve-3d;
 }
 .flip-card-inner:hover .flip-card-front {
   transform: rotateY(180deg);
@@ -1507,7 +1537,9 @@ font-family: 'proxima-medium';
 /* quotation style end here */
 
 /* branche bar charts start here */
-
+.branche-figure {
+  margin: 2% 0;
+}
 .branche-figure .branche-cols{
   background: var(--primary-clr);
   padding: 2% 2%;
@@ -1611,10 +1643,10 @@ margin-top: 20px;
   margin-top: 40px;
 }
 .branche-figure {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 .cc-left-col{
-      padding-right: 70px;
+  padding-right: 70px;
 }
 @media screen and (max-width: 768px) {
   .card-service {
