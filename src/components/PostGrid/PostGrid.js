@@ -1,7 +1,7 @@
 import Aos from "aos";
 import { useEffect } from "react";
 function GridPostList(props){
-const recom_blog = props.bloglist.recommendation_blog;
+// const recom_blog = props.bloglist.recommendation_blog;
   const post_list = [
     {
     "id": 3,
@@ -34,7 +34,7 @@ const recom_blog = props.bloglist.recommendation_blog;
 
     return(
         <div className="row card-post-grids">
-          {recom_blog.map((data) => (<span key={data}><h2>{data}</h2></span>))}
+          {/*recom_blog.map((data) => (<span key={data}><h2>{data}</h2></span>))*/}
 <div className="col-md-4 col-sm-12 col-12" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
     <div className="card mb-3 post-card">
