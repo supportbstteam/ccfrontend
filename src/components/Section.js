@@ -43,7 +43,7 @@ useEffect(()=>{
                 {sec_type==='team_banner'?(
                     <Button classs="no-arrow zum-team" title="Zum Team" link="/"/>
                 ):(<></>)}
-                {sec_type==='service_sec'?(
+                {sec_type==='service_second'?(
                     <ServiceCard/>
                 ):(<></>)}
                 {sec_type==='kundengruppen_sec'?(
