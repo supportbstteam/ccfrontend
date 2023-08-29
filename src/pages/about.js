@@ -1,4 +1,3 @@
-"use client"
 import { useEffect,useState } from 'react';
 import { fetchData } from '@/apiConnection/apiService';
 import Tabs from '@/components/FounderTabs/Tabs';
@@ -6,16 +5,15 @@ import TeamLeiter from '@/components/Teamleiter';
 import Aos from 'aos';
 import HomeForm from '@/components/HomForm';
 import Button from '@/components/Button';
+import Layout from '@/components/Layout';
 function About() {
-
-  const [data, setData] = useState(null);
-  const [sectionData, setSection] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [pageData, setPageContent] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [employee,setEmployee] = useState(0);
   const [member,setMember] = useState(0);
   const [project,setProject] = useState(0);
-  useEffect( () => { 
+  useEffect(() => { 
     document.querySelector("body").removeAttribute("class", '');
     document.querySelector("body").classList.add("about-template");
   });
@@ -34,7 +32,6 @@ function About() {
     };
   }, [employee]);
 
-
     useEffect(()=>{
       Aos.init({duration: 1700});
   },[])
@@ -52,8 +49,9 @@ function About() {
   // useEffect(() => {
   //   async function fetchDataFromAPI() {
   //     try {
-  //       const responseSection = await fetchData('/about_section');
-  //       setSection(responseSection);
+  //       const responseSection = await fetchData('/page_about');
+  //       setPageContent(responseSection);
+  //       console.log(pageData);
   //       setLoading(false);
   //     } catch (error) {
   //       setError(error);
@@ -64,16 +62,15 @@ function About() {
   //   fetchDataFromAPI();
   // }, []);
 
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
     return (
-      <>
+      <Layout title="About us">
     <section>
       <div className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
@@ -123,7 +120,7 @@ Charge Construct – der One-Stop-Shop für ganzheitliche Ladelösungen. Unser V
     </div>
     </section>
 
-    <section className="main-section our_values" style={{backgroundImage : `url(../../assets/images/cc_team.png)`}}>
+<section className="main-section our_values" style={{backgroundImage : `url(../../assets/images/cc_team.png)`}}>
   <div className="container">
     <div className="row">
       <div className="col-lg-6 col-md-6 col-sm-6 col-12 cc-left-col"  data-aos="fade-right">
@@ -160,7 +157,6 @@ Zusammen sind Adrian und Tim die Köpfe hinter Charge Construct und stellen pers
     </div>
     </section>
 
-
     <section className="main-section teamleiter">
   <div className="container">
     <div className="row">
@@ -171,7 +167,7 @@ Zusammen sind Adrian und Tim die Köpfe hinter Charge Construct und stellen pers
     </div>
     </section>
 
-    <section className="main-section charge_zahlen">
+<section className="main-section charge_zahlen">
   <div className="container">
     <div className="row">
       <div className="col-12">
@@ -219,7 +215,7 @@ Zusammen sind Adrian und Tim die Köpfe hinter Charge Construct und stellen pers
     </div>
     </section>
 
-    <section className="main-section usp_section about_usp">
+<section className="main-section usp_section about_usp">
     <div className="container">
     <div className="row">
       <div className="col-8 offset-2">
@@ -232,7 +228,7 @@ Zusammen sind Adrian und Tim die Köpfe hinter Charge Construct und stellen pers
       </div>
     </section>
 
-    <section className="main-section errichet_section min-height">
+<section className="main-section errichet_section min-height">
     <div className="container">
     <div className="row">
       <div className='col-lg-6 col-md-6 col-12'>
@@ -245,7 +241,7 @@ Zusammen sind Adrian und Tim die Köpfe hinter Charge Construct und stellen pers
       </div>
     </section>
 
-    <section className="main-section">
+<section className="main-section">
     <div className="container">
     <div className="row">
       <div className='col-12'>
@@ -261,8 +257,33 @@ Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-493991
     </div>
     </div>
     </section>
-</>
+</Layout>
     );
   }
+
+  export async function getServerSideProps() {
+    try {
+      // Fetch data from an API or any other data source
+      const response = await fetch('http://localhost:3001/page_about');
+      const data = await response.json(); // Parse the JSON content
+       
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      
+     console.log(data[0].banner_img); // Log the fetched data
+      
+      return {
+        props: { data },
+      };
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      return {
+        props: {
+          data: null, // You can set a default value or handle errors as needed
+        },
+      };
+    }
+  }  
 
 export default About;

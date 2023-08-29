@@ -370,19 +370,19 @@
     {
       "id": 1,
       "kun_title": "Unternehmer",
-      "kun_img": "unternehmer.png",
+      "kun_img": "betreiber.jpg",
       "kun_des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "id": 2,
       "kun_title": "Betreiber von Ladeflächen",
-      "kun_img": "betreiber.png",
+      "kun_img": "betreiber.jpg",
       "kun_des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     },
     {
       "id": 3,
       "kun_title": "Eigentümer von Flächen",
-      "kun_img": "eigentnmer.png",
+      "kun_img": "betreiber.jpg",
       "kun_des": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
   ],
@@ -513,5 +513,78 @@
       "kontakt_title": "Kontakt",
       "kontakt_des": ""
     }
+  ],
+  "page_about":[
+    {
+      "id": 1,
+      "main_banner": "about_banner.jpg",
+      "banner_content_after":"The strong combination of experts from a wide variety of disciplines guarantees you the most effective and efficient implementation of your charging infrastructure project, that's what we promise.",
+      "video_section_title": "Who We Are",
+      "video_section_url":"https://www.youtube.com/embed/mCEob8Jyecw",
+      "why_we_title": "Why we exist",
+      "why_we_content": "Charge Construct came about because we are convinced that a change towards electric mobility will only succeed if there is a nationwide charging infrastructure - and that's better today than tomorrow. However, the construction of charging infrastructure brings with it many challenges and questions. We have understood that, as an independent partner, we have to develop holistic concepts and solutions for our customers, support them during construction, including civil engineering and electrical installation, and then ensure the operation, maintenance and billing of the charging infrastructure.Charge Construct - the one-stop shop for holistic charging solutions. Our promise: We will accompany you from start to finish and are only satisfied when you are too!",
+      "why_we_image": "about_why.png",
+      "our_values_title": "Our values ​​at Charge Construct",
+      "our_values_content": "At Charge Construct, the right industries come together. For many years, Adrian has supported a large number of companies in the ramp-up of electromobility as a management consultant at the leading technology and management consultancy P3, before he ensured the installation and operation of charging infrastructure for various customer groups within Volkswagen AG (Elli). He understands and knows the needs and requirements of smaller projects such as car dealerships or large industrial projects such as charging electric vehicles at factory sites. Tim complements this industry knowledge with many years of experience in expanding the fiber optic network for various telecommunications companies. There he was responsible for the qualification of civil engineering companies and thus ensured the implementation of complex projects with high quality. By accompanying the construction projects, Tim knows the success factors for the successful realization of infrastructure projects. Together, Adrian and Tim are the brains behind Charge Construct and personally ensure the success of each project.",
+      "our_values_image": "cc_team.png",
+      "team_sec_title": "Meet the team",
+      "cc_status_number_title": "Charge Construct in numbers",
+      "what_we_promoice":"Die starke Kombination aus Experten aus verschiedensten Fachbereichen garantiert Ihnen die effektivste und effizienteste Umsetzung Ihres Ladeinfrastruktur Projekts, das versprechen wir.",
+      "constuct_project_logo" : "erricht-logo.png",
+      "constuct_project_bg_img": "errichtet.png",
+      "constuct_project_title" : "We Construct errichtet",
+      "constuct_project_description": "Mit unserem Tochterunternehmen We Construct sorgen wir für eine reibungslose Realisierung der Ladeinfrastruktur Projekte, bei uns kommt alles aus einer Hand und daher können wir Deine Wünsche und Dein Feedback direkt in das Projekt problemlos miteinfließen lassen.",
+      "constuct_project_btn": "Projekt anfragen",
+      "constuct_project_btn_link": "/"
+    }
+  ],
+  "blog_post":[{
+    "id": 1,
+    "post_title": "Fachwissen zu den Themengebieten Elektromobilität und Ladeinfrastruktur kompakt an einem Ort",
+    "banner_img": "post.jpg",
+    "post_content" : "Lorem ipsum lorem ipsum...",
+    "post_date": "02/08/2023",
+    "post_author": {
+      "author_id": 7,
+      "author_name": "Manish",
+      "author_url": "/manish"
+    },
+    "tags":[
+      {
+      "id":1,
+      "name": "Podcast",
+      "link": "/podcast"
+     },
+     {
+      "id":2,
+      "name": "Green Energy",
+      "link": "/podcast"
+     },
+     {
+      "id":3,
+      "name": "SUN Proof",
+      "link": "/proof"
+     } 
+    ],
+    "category":[
+      {
+      "id":1,
+      "name": "Energy",
+      "link": "/energy"
+     },
+     {
+      "id":2,
+      "name": "Green",
+      "link": "/green"
+     },
+     {
+      "id":3,
+      "name": "SUN",
+      "link": "/sun"
+     } 
+    ],
+    "recommendation_blog":[3,7,11]
+    }
+    
   ]
 }

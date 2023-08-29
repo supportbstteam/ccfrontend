@@ -6,7 +6,7 @@ function HomeForm() {
     Aos.init();
   })
   return (
-<form className="draht-forms row" data-aos="fade-up" data-aos-duration="2000"> 
+<form className="draht-forms row"> {/* data-aos="fade-up" data-aos-duration="2000" */} 
 <div className="col-lg-6 col-md-6 col-sm-12 form-fields">
     <InputField
         label=""

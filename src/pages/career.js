@@ -5,6 +5,7 @@ import Aos from 'aos';
 import ImageGallery from '@/components/GalleryView';
 import VacancyPost from '@/components/Vacancy/vacancyPost';
 import FaqList from '@/components/Faq';
+import Layout from '@/components/Layout';
 const sliderbg = {
     backgroundImage: `url('../../assets/images/career/banner.jpg')`,
 }
@@ -47,7 +48,7 @@ function careerContent(){
         document.querySelector("body").classList.add("career-template")
     });
     return(
-        <>
+        <Layout>
          <section className='career-banner position-relative' style={sliderbg}>
       
         <div className="carousel-caption d-md-block"  data-aos="fade-up">
@@ -275,7 +276,7 @@ Teams werden?</h2>
         </div>
         </div>
   </section>
-  </>
+  </Layout>
     );
 }
 

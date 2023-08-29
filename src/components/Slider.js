@@ -13,7 +13,7 @@ function MainSlider(slide){
 
     return (
         <>
-    <div className="banner-slider" style={{backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/slider/${slide.slider[0].sld_img})`}}>
+    <div className="banner-slider" style={{backgroundImage: `url(assets/images/${slide.slider[0].sld_img})`}}>
       <div className="container">
         <div className="row">
             <div className="offset-lg-0 col-lg-5 offset-md-1 col-md-10 col-sm-12">

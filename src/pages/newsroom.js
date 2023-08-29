@@ -7,6 +7,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Button from "@/components/Button";
 import GridPostList from "@/components/PostGrid/PostGrid";
 import HomeForm from "@/components/HomForm";
+import Layout from "@/components/Layout";
+import GridPostHorizontal from "@/components/PostGrid/PostHorizontal";
 function NewsRoom(){
 
     useEffect(()=>{
@@ -79,7 +81,7 @@ function NewsRoom(){
         document.querySelector("body").classList.add("newsroom-template")
     });
     return(
-        <>
+        <Layout>
         <section className="news-post-fillter bg-dark">
             <div className="container" data-aos="fade-down" data-aos-easing="linear"
      data-aos-duration="1000">
@@ -148,6 +150,7 @@ Alles kompakt und an einem Ort, sodass keine Fragen offen bleiben.</p>
                 <h2 className='section-title text-dark mb-5'  data-aos="fade-down" data-aos-easing="linear"
      data-aos-duration="1000">Neue Veröffentlichungen </h2>
                 </div>
+                <GridPostHorizontal/>
                 <GridPostList/>
                 </div>
                 </section>
@@ -240,7 +243,9 @@ Alles kompakt und an einem Ort, sodass keine Fragen offen bleiben.</p>
                 <h2 className='section-title text-dark mb-5'>Alle Insights</h2>
                 </div>
             </div>
+            <GridPostHorizontal/>
         <GridPostList/>
+        <GridPostHorizontal/>
         <GridPostList/>
         </div>
     </section>
@@ -261,7 +266,7 @@ Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-493991
     </div>
     </div>
     </section>
-        </>
+        </Layout>
     )
 }
 

@@ -34,8 +34,8 @@ function BekanntLogo(){
 
     return(
         <><ul className="bekannt_logo_details">{bekanntlogoData.map((item, index) => (
- <li key={index} data-aos="zoom-in"
- data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+2)}>
+ <li key={index}> {/* data-aos="zoom-in"
+data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+2)} */}
   {item.logo_img?<img src={item.logo_img?`assets/images/bekannt/${item.logo_img}`:''}/>:''}
   </li>
         ))}

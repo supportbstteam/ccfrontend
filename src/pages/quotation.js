@@ -1,8 +1,7 @@
-"use client"
-
 import { useEffect } from 'react';
 import Aos from 'aos';
 import Button from '@/components/Button';
+import Layout from '@/components/Layout';
 const sliderbg = {
     backgroundImage: `url('../../assets/images/quotation/quotation-banner.jpg')`,
 }
@@ -16,7 +15,7 @@ function quotationContent(){
     });
 
     return(
-        <>
+        <Layout>
         <section className='main-section d-flex align-items-center quotation-banner ' style={sliderbg}>
       <div className='container'>
         <div className='row'>
@@ -96,7 +95,7 @@ Sie erhalten umgehend ein freibleibendes Richtangebot.</p>
     </div>
 </section>
 
-</>
+</Layout>
     )
 
 }

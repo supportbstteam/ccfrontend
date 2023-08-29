@@ -1,18 +1,19 @@
-"use client"
 import { useEffect } from "react";
-import Slider from "react-slick";
-import Aos from "aos";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "@/components/Button";
 import GridPostList from "@/components/PostGrid/PostGrid";
 import HomeForm from "@/components/HomForm";
-function NewsRoom(){
-
+import Layout from "@/components/Layout";
+function Blog(props){
+    //console.log(props.data[0]);
     // useEffect(()=>{
     //     Aos.init({duration: 1700});
     // },[])
-    
+    const { id,post_title, banner_img, post_content,post_date,post_author,tags,category,recommendation_blog} = props.data[0];
+    // {{ category.map((datas)=>{
+    //     console.log(datas.name);
+    // })}}
     const newsroom = [
         {
             "id": 1,
@@ -74,28 +75,30 @@ function NewsRoom(){
         slidesToScroll: 1,
       };
 
-    useEffect( () => { 
+    useEffect(() => {
         document.querySelector("body").removeAttribute("class", '');
         document.querySelector("body").classList.add("newsroom-template")
     });
     return(
-        <>
+        <Layout>
         <section className="main-section pt-0">
             <div className="container-fluid p-0">
                 <div className="row single-blog-row">
                     <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
                     <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear"
      data-aos-duration="1000">
-        <span>PODCAST - DEZEMBER 12, 2022</span>
-        <h4 className="text-white">Fachwissen zu den Themengebieten Elektromobilität und Ladeinfrastruktur kompakt an einem Ort</h4>
+        <div className="post-category">
+            {category.map((datas) =>
+            (<span key={datas.id}>{datas.name}</span>))
+            } - {post_date}</div>
+        <h4 className="text-white">{post_title}</h4>
             </div>
                     </div>
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
      data-aos-duration="1000">
                    <div className="podcast-post">
-                            <img src="../assets/images/newsroom/post.jpg"/>
-                           </div>
-                        
+                   {banner_img?<img src={banner_img?`assets/images/newsroom/${banner_img}`:''}/>:''}
+                   </div>
                     </div>
                 </div>
             </div>
@@ -161,8 +164,9 @@ Here is your insider’s look at the future trends in FinTech and banking techno
             <div className="col-lg-7 col-md-7 col-sm-12">
                 <h4>Ähnliche Themen</h4>
                 <ul className="blog-tags">
-                    <li><a href="/" className="post-tags">Ladestationen</a></li>
-                    <li><a className="post-tags" href="/">Strategie</a></li>
+                {tags.map((datas) =>
+            (<li><a href={datas.link} className="post-tags">{datas.name}</a></li>))
+            } 
                 </ul>
                 
             </div>
@@ -177,7 +181,6 @@ Here is your insider’s look at the future trends in FinTech and banking techno
         </div>
     </div>
 </section>
-        
 
     <section className="main-section single-suggest-posts all-insights">
         <div className="container">
@@ -190,7 +193,7 @@ Here is your insider’s look at the future trends in FinTech and banking techno
             </div>
             </div>
             
-        <GridPostList/>
+        <GridPostList bloglist={{recommendation_blog}}/>
         </div>
     </section>
 
@@ -210,8 +213,34 @@ Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-493991
     </div>
     </div>
     </section>
-        </>
+
+        </Layout>
     )
 }
 
-export default NewsRoom;
+export async function getServerSideProps() {
+    try {
+      // Fetch data from an API or any other data source
+      const response = await fetch('http://localhost:3001/blog_post');
+      const data = await response.json(); // Parse the JSON content
+       
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      
+     console.log(data[0].banner_img); // Log the fetched data
+      
+      return {
+        props: { data },
+      };
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      return {
+        props: {
+          data: null, // You can set a default value or handle errors as needed
+        },
+      };
+    }
+  }
+
+export default Blog;
