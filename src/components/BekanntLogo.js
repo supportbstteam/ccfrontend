@@ -36,7 +36,7 @@ function BekanntLogo(){
         <><ul className="bekannt_logo_details">{bekanntlogoData.map((item, index) => (
  <li key={index}> {/* data-aos="zoom-in"
 data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+2)} */}
-<a href={cust_link?item.cust_link:''}>
+<a href={item.cust_link?item.cust_link:''}>
   {item.cust_logo?<img src={item.cust_logo?`assets/images/bekannt/${item.cust_logo}`:''}/>:''}
   </a>
   </li>
