@@ -11,7 +11,7 @@ function BekanntLogo(){
     useEffect(() => {
         async function fetchDataFromAPI() {
           try {
-            const responseService = await fetchData('/know_us'); // Replace '/data' with the API endpoint you want to fetch
+            const responseService = await fetchData('/customerLogo'); // Replace '/data' with the API endpoint you want to fetch
             setData(responseService);
             setLoading(false);
             Aos.init({duration: 1000});
@@ -36,7 +36,9 @@ function BekanntLogo(){
         <><ul className="bekannt_logo_details">{bekanntlogoData.map((item, index) => (
  <li key={index}> {/* data-aos="zoom-in"
 data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+2)} */}
-  {item.logo_img?<img src={item.logo_img?`assets/images/bekannt/${item.logo_img}`:''}/>:''}
+<a href={cust_link?item.cust_link:''}>
+  {item.cust_logo?<img src={item.cust_logo?`assets/images/bekannt/${item.cust_logo}`:''}/>:''}
+  </a>
   </li>
         ))}
        </ul> </>
