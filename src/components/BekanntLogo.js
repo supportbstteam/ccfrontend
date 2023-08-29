@@ -37,7 +37,7 @@ function BekanntLogo(){
  <li key={index}> {/* data-aos="zoom-in"
 data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+2)} */}
 <a href={item.cust_link?item.cust_link:''}>
-  {item.cust_logo?<img src={item.cust_logo?`assets/images/bekannt/${item.cust_logo}`:''}/>:''}
+  {item.cust_logo?<img src={item.cust_logo?`https://teamwebdevelopers.com/charge_construct/public/images/costomerLogo/${item.cust_logo}`:''}/>:''}
   </a>
   </li>
         ))}
