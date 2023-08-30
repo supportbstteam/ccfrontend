@@ -5,12 +5,31 @@ import Button from "@/components/Button";
 import GridPostList from "@/components/PostGrid/PostGrid";
 import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
-function Blog(props){
-    //console.log(props.data[0]);
-    // useEffect(()=>{
-    //     Aos.init({duration: 1700});
-    // },[])
-    const { id,post_title, banner_img, post_content,post_date,post_author,tags,category,recommendation_blog} = props.data[0];
+function Blog(){
+    const [data, setData] = useState(null);
+    const [sectionData, setSection] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+    useEffect(()=>{
+        Aos.init({duration: 1700});
+    },[])
+
+    useEffect(() => {
+        async function fetchDataFromAPI() {
+          try {
+            const responseData = await fetchData('/blogPost'); // Replace '/data' with the API endpoint you want to fetch
+             setData(responseData);
+            setLoading(false);
+          } catch (error) {
+            setError(error);
+            setLoading(false);
+          }
+        }
+    
+        fetchDataFromAPI();
+      }, []);
+
+    const { id,post_title, banner_img, post_content,post_date,post_author,tags,category,recommendation_blog} = data;
     // {{ category.map((datas)=>{
     //     console.log(datas.name);
     // })}}
@@ -217,30 +236,5 @@ Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-493991
         </Layout>
     )
 }
-
-export async function getStaticProps() {
-    try {
-      // Fetch data from an API or any other data source
-      const response = await fetch('https://teamwebdevelopers.com/charge_construct/api/blogPost');
-      const data = await response.json(); // Parse the JSON content
-       
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
-      
-     console.log(data[0].banner_img); // Log the fetched data
-      
-      return {
-        props: { data },
-      };
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      return {
-        props: {
-          data: null, // You can set a default value or handle errors as needed
-        },
-      };
-    }
-  }
 
 export default Blog;
