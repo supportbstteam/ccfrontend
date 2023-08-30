@@ -8,7 +8,7 @@ import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
 import { fetchData } from '@/apiConnection/apiService';
 function Blog(props) {
-    console.log(props)
+    console.log(props.data[0][0])
 
     //console.log('Hii value shows '+ids);
     const [data, setData] = useState(null);
@@ -34,8 +34,7 @@ function Blog(props) {
 //     fetchDataFromAPI()
 // }, [])
 
-const { id, post_title, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = props.data[0];
-//     console.log(id);
+const { id, post_title, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = props.data[0][0];
     const newsroom = [
         {
             "id": 1,
@@ -109,18 +108,19 @@ const { id, post_title, banner_img, post_content, post_date, post_author, tags, 
                     <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
                     <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear"
      data-aos-duration="1000">
-        {/* <div className="post-category">
-           
-            {category.map((datas) =>
+      
+         <div className="post-category">
+            {props.data['category'].map((datas) =>
             (<span key={datas.id}>{datas.name}</span>))
-            } - {post_date}</div> */}
+            } - {post_date}
+            </div>
         <h4 className="text-white">{post_title}</h4>
             </div>
                     </div>
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
      data-aos-duration="1000">
                    <div className="podcast-post">
-                   {banner_img?<img src={banner_img?`assets/images/newsroom/${banner_img}`:''}/>:''}
+                   {banner_img?<img src={banner_img?`https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${props.data[0][0].banner_img}`:''}/>:''}
                    </div>
                     </div>
                 </div>
@@ -131,49 +131,7 @@ const { id, post_title, banner_img, post_content, post_date, post_author, tags, 
     <div className="container">
         <div className="row">
             <div className="col-lg-7 col-mg-7 col-12 post-content">
-           <p>This year in Amsterdam, with over eight thousand attendees representing more than 2,300 companies and 90 countries, Money20/20 Europe once again showcased its centrality to the global conversation on FinTech.
-    
-    From startups and entrepreneurs to the world’s biggest banks, this three-day conference connected all types of innovators and disruptors within the money ecosystem through groundbreaking workshops, renowned speakers, and the latest FinTech products. Money20/20 is a leading global platform that enables individuals and organizations to achieve their goals and grow, while ultimately driving change in the overall industry – and we want to be the first to bring you the biggest highlights from the event.
-    
-    Here is your insider’s look at the future trends in FinTech and banking technology innovation from the conversations, panel discussions and insights shared by the industry’s leading experts.</p> 
-    
-    <img src="assets/images/newsroom/gemacht.jpg"/>
-    <h4>Lorem ipsum dolore radum daresorium: 5 top lorem</h4>
-    <p>This year in Amsterdam, with over eight thousand attendees representing more than 2,300 companies and 90 countries, Money20/20 Europe once again showcased its centrality to the global conversation on FinTech.
-    
-    From startups and entrepreneurs to the world’s biggest banks, this three-day conference connected all types of innovators and disruptors within the money ecosystem through groundbreaking workshops, renowned speakers, and the latest FinTech products. Money20/20 is a leading global platform that enables individuals and organizations to achieve their goals and grow, while ultimately driving change in the overall industry – and we want to be the first to bring you the biggest highlights from the event.
-    
-    Here is your insider’s look at the future trends in FinTech and banking technology innovation from the conversations, panel discussions and insights shared by the industry’s leading experts.
-    </p>
-    <h4>Lorem ipsum dolore radum daresorium: 5 top lorem</h4>
-    <p>This year in Amsterdam, with over eight thousand attendees representing more than 2,300 companies and 90 countries, Money20/20 Europe once again showcased its centrality to the global conversation on FinTech.
-    
-    From startups and entrepreneurs to the world’s biggest banks, this three-day conference connected all types of innovators and disruptors within the money ecosystem through groundbreaking workshops, renowned speakers, and the latest FinTech products. Money20/20 is a leading global platform that enables individuals and organizations to achieve their goals and grow, while ultimately driving change in the overall industry – and we want to be the first to bring you the biggest highlights from the event.
-    
-    Here is your insider’s look at the future trends in FinTech and banking technology innovation from the conversations, panel discussions and insights shared by the industry’s leading experts.
-    </p>
-    <h4>Lorem ipsum dolore radum daresorium: 5 top lorem</h4>
-    <p>This year in Amsterdam, with over eight thousand attendees representing more than 2,300 companies and 90 countries, Money20/20 Europe once again showcased its centrality to the global conversation on FinTech.
-    
-    From startups and entrepreneurs to the world’s biggest banks, this three-day conference connected all types of innovators and disruptors within the money ecosystem through groundbreaking workshops, renowned speakers, and the latest FinTech products. Money20/20 is a leading global platform that enables individuals and organizations to achieve their goals and grow, while ultimately driving change in the overall industry – and we want to be the first to bring you the biggest highlights from the event.
-    
-    Here is your insider’s look at the future trends in FinTech and banking technology innovation from the conversations, panel discussions and insights shared by the industry’s leading experts.
-    </p>
-    <img src="assets/images/newsroom/ladepark.jpg"/>
-    <h4>Lorem ipsum dolore radum daresorium: 5 top lorem</h4>
-    <p>This year in Amsterdam, with over eight thousand attendees representing more than 2,300 companies and 90 countries, Money20/20 Europe once again showcased its centrality to the global conversation on FinTech.
-    
-    From startups and entrepreneurs to the world’s biggest banks, this three-day conference connected all types of innovators and disruptors within the money ecosystem through groundbreaking workshops, renowned speakers, and the latest FinTech products. Money20/20 is a leading global platform that enables individuals and organizations to achieve their goals and grow, while ultimately driving change in the overall industry – and we want to be the first to bring you the biggest highlights from the event.
-    
-    Here is your insider’s look at the future trends in FinTech and banking technology innovation from the conversations, panel discussions and insights shared by the industry’s leading experts.
-    </p>
-    <h4>Lorem ipsum dolore radum daresorium: 5 top lorem</h4>
-    <p>This year in Amsterdam, with over eight thousand attendees representing more than 2,300 companies and 90 countries, Money20/20 Europe once again showcased its centrality to the global conversation on FinTech.
-    
-    From startups and entrepreneurs to the world’s biggest banks, this three-day conference connected all types of innovators and disruptors within the money ecosystem through groundbreaking workshops, renowned speakers, and the latest FinTech products. Money20/20 is a leading global platform that enables individuals and organizations to achieve their goals and grow, while ultimately driving change in the overall industry – and we want to be the first to bring you the biggest highlights from the event.
-    
-    Here is your insider’s look at the future trends in FinTech and banking technology innovation from the conversations, panel discussions and insights shared by the industry’s leading experts.
-    </p>
+           <p>{post_content}</p>
             </div>
             <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-center">
                 <div className="post-btn-group">
@@ -186,11 +144,11 @@ const { id, post_title, banner_img, post_content, post_date, post_author, tags, 
         <div className="row align-items-end mt-4">
             <div className="col-lg-7 col-md-7 col-sm-12">
                 <h4>Ähnliche Themen</h4>
-                {/* <ul className="blog-tags">
-                {tags.map((datas) =>
+                <ul className="blog-tags">
+                {props.data['tags'].map((datas) =>
             (<li><a href={datas.link} className="post-tags">{datas.name}</a></li>))
             } 
-                </ul> */}
+                </ul> 
                 
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12">
