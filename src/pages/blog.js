@@ -221,7 +221,7 @@ Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-493991
 export async function getServerSideProps() {
     try {
       // Fetch data from an API or any other data source
-      const response = await fetch('http://teamwebdevelopers.com/charge_construct/api/blogPost');
+      const response = await fetch('https://teamwebdevelopers.com/charge_construct/api/blogPost');
       const data = await response.json(); // Parse the JSON content
        
       if (!response.ok) {
