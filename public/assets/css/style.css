@@ -11,6 +11,13 @@ a{
 body{
   background-color: #fff;
   background: #fff;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+}
+div#__next {
+  height: 100%;
+  position: relative;
 }
 @font-face {
     font-family: 'proxima-bold';
@@ -98,7 +105,7 @@ section.main-section.kundengruppen_sec {
   position: relative;
   top:-35px;
 }
-.fixed-top{
+.fixed-top.home-page{
   position: absolute !important;
 }
 
@@ -194,6 +201,7 @@ text-align: left;
     font-size: 45px;
 }
   section.main-section.why_sec,
+  section.main-section.what_sec,
   section.main-section.how_sec{
     min-height: 700px;
   }
@@ -248,6 +256,9 @@ margin: 30px 0;
       bottom: 0;
       padding: 7% 9%;
     }
+    .cust-responsive{
+      padding: 0 3px;
+    }
     .card-service .flip-card .flip-front-card-contents h3{
       font-family: 'proxima-bold';
       font-size: 20px;
@@ -255,6 +266,7 @@ margin: 30px 0;
       line-height: 22px;
       letter-spacing: 0em;
       text-align: left;
+      margin-bottom: 30px;
     }
     .card-service .flip-card .flip-front-card-contents p{
       font-family: 'proxima-regular';
@@ -317,7 +329,7 @@ font-size: 55px;
 .newsroom-col .post-category{
   font-family: 'proxima-bold';
   font-size: 15px;
-  margin-bottom: 25px;
+  margin-bottom: 8px;
   display: block;
 }
 .newsroom-col .post-category span{
@@ -1051,24 +1063,15 @@ transition: all 0.5s;
 }
 /* About page start here */
 
-body.about-template header,
-body.career-template header,
-body.newsroom-template header,
-body.quotation-template header{
+body header.innerpages{
   position: relative;
   background: #F3F3EF;
-  ;
 }
-body.about-template .home-nav ul li a:not(.cc-button),
-body.career-template .home-nav ul li a:not(.cc-button),
-body.quotation-template .home-nav ul li a:not(.cc-button),
-body.newsroom-template .home-nav ul li a:not(.cc-button){
+body header.innerpages .home-nav ul li a:not(.cc-button)
+{
   color: #000;
 }
-body.about-template header img,
-body.career-template header img,
-body.quotation-template header img,
-body.newsroom-template header img{
+body header.innerpages img{
   filter: grayscale(1) invert(1);
 }
 .main-btn svg{
@@ -1591,6 +1594,14 @@ section.main-section.why_we_exist p, section.main-section.our_values p {
 /* branche bar charts end here */
 .single-blog-row {
   background: #CBA157;
+  align-items: center;
+  min-height: 300px;
+  height: 450px;
+  overflow: hidden;
+  overflow: hidden;
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
 }
 ul.share-blogs{
   display: flex;
@@ -1619,6 +1630,7 @@ section.single-post .post-content h4{
 section.single-post .post-content img{
   margin-bottom: 25px;
   width: 100%;
+  max-width: 100%;
 }
 .post-tags{
   font-size: 14px;

@@ -1,54 +1,49 @@
-import React, { useEffect, useRef } from "react";
-import "./SmoothScroll.css";
-import useWindowSize from "@/app/hooks/useWindowSize";
+import { useEffect, useRef } from "react";
+import Scrollbar from "smooth-scrollbar";
 
-const SmoothScroll = ({ children }) => {
-  // 1.
-  const windowSize = useWindowSize();
+const Scroll = () => {
+  const scrollbarRef = useRef(null);
 
-  //2.
-  const scrollingContainerRef = useRef();
-
-  // 3.
-  const data = {
-    ease: 0.1,
-    current: 0,
-    previous: 0,
-    rounded: 0
-  };
-
-  // 4.
   useEffect(() => {
-    setBodyHeight();
-  }, [windowSize.height]);
+    const options = {
+      damping: 0.07,
+    };
 
-  const setBodyHeight = () => {
-    document.body.style.height = `${
-      scrollingContainerRef.current.getBoundingClientRect().height
-    }px`;
-  };
+    // Initialize the scrollbar on the document body using the ref
+    scrollbarRef.current = Scrollbar.init(document.body, options);
 
-  // 5.
-  useEffect(() => {
-    requestAnimationFrame(() => smoothScrollingHandler());
-  }, []);
+    // Add a listener to handle animations
+    const handleScroll = () => {
+      const scrollY = scrollbarRef.current.scrollTop;
 
-  const smoothScrollingHandler = () => {
-    data.current = window.scrollY;
-    data.previous += (data.current - data.previous) * data.ease;
-    data.rounded = Math.round(data.previous * 100) / 100;
+      if (scrollY === 0) {
+        // Do something when scroll is at the top
+      } else {
+        // Do something when scroll is not at the top
+      }
 
-    scrollingContainerRef.current.style.transform = `translateY(-${data.previous}px)`;
+      // Check if an element with 'data-aos' attribute is visible
+      const elementsWithAOS = document.querySelectorAll('[data-aos]');
+      elementsWithAOS.forEach((el) => {
+        if (scrollbarRef.current.isVisible(el)) {
+          el.classList.add('aos-animate');
+        } else {
+          el.classList.remove('aos-animate');
+        }
+      });
+    };
 
-    // Recursive call
-    requestAnimationFrame(() => smoothScrollingHandler());
-  };
+    scrollbarRef.current.addListener(handleScroll);
 
-  return (
-    <div className="parent">
-      <div ref={scrollingContainerRef}>{children}</div>
-    </div>
-  );
+    return () => {
+      if (scrollbarRef.current) {
+        scrollbarRef.current.destroy();
+      }
+    };
+  }, []); // Add dependencies if needed
+
+  // Render something if necessary
+  return null;
 };
 
-export default SmoothScroll;
+export default Scroll;

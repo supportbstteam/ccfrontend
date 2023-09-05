@@ -8,11 +8,11 @@ import Expertise from './Home/Expertise';
 import HomeNewsRoom from './HomeNews';
 import HomeForm from './HomForm';
 import ChartsBar from './Home/ChartsBar';
+import { useParallax } from "react-scroll-parallax";
 import Button from './Button';
 function Sections(data){
    // console.log(data);
    const { id, bg_img, title,subtitle,description,sec_type,bg_color} = data.section;
-
    const sliderbg = {
     // Check if bg_img exists, and if it does, set backgroundImage
   ...(bg_img ? { backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/section/${bg_img})` } : {}),
@@ -24,13 +24,16 @@ const expertise = {
     backgroundPosition: 'left top, right top',
     backgroundRepeat: 'no-repeat, no-repeat'
 }
+
+
+  
 useEffect(()=>{
    // Aos.init({duration: 1700});
 },[])
 
     //const props = useSpring({ opacity: 1, from: { opacity: 0 } });
     return(
-<section className={`main-section home-sections ${sec_type}`} style={sliderbg}>
+<section className={`main-section home-sections ${sec_type}`} style={sliderbg} >
 
         <div className='container'>
             <div className='row'>

@@ -8,14 +8,14 @@ import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
 import { fetchData } from '@/apiConnection/apiService';
 function Blog(props) {
-    console.log(props.data[0][0])
-
+   
     //console.log('Hii value shows '+ids);
     const [data, setData] = useState(null);
     const [sectionData, setSection] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+  
 //     useEffect(() => {
 //     async function fetchDataFromAPI() {
 //         try {
@@ -35,7 +35,11 @@ function Blog(props) {
 // }, [])
 
 const { id, post_title, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = props.data[0][0];
-    const newsroom = [
+const postBanner = {
+    backgroundImage: `url('https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${props.data[0][0].banner_img}')`,
+}
+
+const newsroom = [
         {
             "id": 1,
             "img": "post.jpg",
@@ -104,7 +108,7 @@ const { id, post_title, banner_img, post_content, post_date, post_author, tags, 
         <Layout>
         <section className="main-section pt-0">
             <div className="container-fluid p-0">
-                <div className="row single-blog-row">
+                <div className="row single-blog-row" style={postBanner}>
                     <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
                     <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear"
      data-aos-duration="1000">
@@ -119,9 +123,9 @@ const { id, post_title, banner_img, post_content, post_date, post_author, tags, 
                     </div>
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
      data-aos-duration="1000">
-                   <div className="podcast-post">
-                   {banner_img?<img src={banner_img?`https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${props.data[0][0].banner_img}`:''}/>:''}
-                   </div>
+                   {/* <div className="podcast-post">
+                   {banner_img?<img className="img-fluid" src={banner_img?`https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${props.data[0][0].banner_img}`:''}/>:''}
+                   </div> */}
                     </div>
                 </div>
             </div>
@@ -130,8 +134,8 @@ const { id, post_title, banner_img, post_content, post_date, post_author, tags, 
     <section className="single-post">
     <div className="container">
         <div className="row">
-            <div className="col-lg-7 col-mg-7 col-12 post-content">
-           <p>{post_content}</p>
+            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: post_content }}>
+               
             </div>
             <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-center">
                 <div className="post-btn-group">
@@ -174,7 +178,7 @@ const { id, post_title, banner_img, post_content, post_date, post_author, tags, 
             </div>
             </div>
             
-        <GridPostList bloglist={{recommendation_blog}}/>
+        <GridPostList bloglist={[1,2,3]}/>
         </div>
     </section>
     

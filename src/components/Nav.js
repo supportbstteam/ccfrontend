@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-function NavMenu(){
+function NavMenu(props){
     return (
-        <header className="navbar navbar-expand-md navbar-light fixed-top cc-nav">
+        <header className={`navbar navbar-expand-md navbar-light fixed-top cc-nav ${props.addedCLass}`}>
           <div className='container'>
 <nav className="navbar navbar-expand-lg dynamic-Navbar">
 <Link href="/" className="navbar-brand" >

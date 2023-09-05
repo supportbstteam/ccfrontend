@@ -13,10 +13,6 @@ function About() {
   const [employee,setEmployee] = useState(0);
   const [member,setMember] = useState(0);
   const [project,setProject] = useState(0);
-  useEffect(() => { 
-    document.querySelector("body").removeAttribute("class", '');
-    document.querySelector("body").classList.add("about-template");
-  });
 
   useEffect(() => {
     const interval = setInterval(() => {

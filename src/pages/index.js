@@ -12,8 +12,6 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    document.querySelector("body").classList.add("home-template")
-    document.querySelector("body").removeAttribute("class", '');
     async function fetchDataFromAPI() {
       try {
         const responseData = await fetchData('/slider'); // Replace '/data' with the API endpoint you want to fetch
@@ -40,7 +38,7 @@ export default function Home() {
     return <div>Error: {error.message}</div>;
   }
   return (
-    <Layout>
+    <Layout viewClass="home-page">
    <MainSlider slider={data}/>
          {sectionData.map((Secdata, index) => (
           

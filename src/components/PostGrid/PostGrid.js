@@ -1,6 +1,7 @@
 import Aos from "aos";
 import { useEffect } from "react";
-function GridPostList(){
+function GridPostList(props){
+  console.log('List propsing: '+JSON.stringify(props.bloglist));
 /* const recom_blog = props.bloglist.recommendation_blog; */
   const post_list = [
     {
