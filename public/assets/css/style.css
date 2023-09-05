@@ -234,6 +234,9 @@ font-family: 'proxima-bold';
 line-height: 1.3em;
 margin: 30px 0;
     }
+    a.navbar-brand{
+      margin-right: 60px;
+    }
     .card-service {
       position: relative;
       margin-bottom: 5px;
