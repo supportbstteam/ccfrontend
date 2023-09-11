@@ -1,7 +1,7 @@
 import { useEffect,useState } from 'react';
 import { fetchData } from '@/apiConnection/apiService';
 import Tabs from '@/components/FounderTabs/Tabs';
-import TeamLeiter from '@/components/Teamleiter';
+import TeamLeiter from '@/components/FounderTabs/Teamleiter';
 import Aos from 'aos';
 import HomeForm from '@/components/HomForm';
 import Button from '@/components/Button';
@@ -92,7 +92,7 @@ function About() {
       <div className="col-lg-8 offset-lg-1 offset-md-8 offset-md-1 col-12">
        <h2 className="section-title mb-4">Who We Are</h2>
       </div>
-      <div className="col-12 justify-content-end d-flex" data-aos="fade-up">
+      <div className="col-12 justify-content-end d-flex">
       <iframe width="92%" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
       </div>
     </div>
@@ -257,29 +257,29 @@ Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-493991
     );
   }
 
-  export async function getServerSideProps() {
-    try {
-      // Fetch data from an API or any other data source
-      const response = await fetch('http://localhost:3001/page_about');
-      const data = await response.json(); // Parse the JSON content
+  // export async function getServerSideProps() {
+  //   try {
+  //     // Fetch data from an API or any other data source
+  //     const response = await fetch('http://localhost:3001/page_about');
+  //     const data = await response.json(); // Parse the JSON content
        
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch data');
+  //     }
       
-     console.log(data[0].banner_img); // Log the fetched data
+  //    console.log(data[0].banner_img); // Log the fetched data
       
-      return {
-        props: { data },
-      };
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      return {
-        props: {
-          data: null, // You can set a default value or handle errors as needed
-        },
-      };
-    }
-  }  
+  //     return {
+  //       props: { data },
+  //     };
+  //   } catch (error) {
+  //     console.error('Error fetching data:', error);
+  //     return {
+  //       props: {
+  //         data: null, // You can set a default value or handle errors as needed
+  //       },
+  //     };
+  //   }
+  // }  
 
 export default About;

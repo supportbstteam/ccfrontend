@@ -20,9 +20,9 @@ function MainSlider(slide){
             <div className="banner-content" data-aos="fade-up"
      data-aos-easing="linear"
      data-aos-duration="1000">
-            <h2>{slide.slider[0].title}</h2>
-            <h1>{slide.slider[0].subtitle}</h1>
-            <p>{slide.slider[0].description}</p>
+            <h2>{slide.slider[1].title}</h2>
+            <h1>{slide.slider[1].subtitle}</h1>
+            <p>{slide.slider[1].description}</p>
             <Button title={slide.slider[0].btnlink.title} link={slide.slider[0].btnlink.link}/>
         </div>
             </div>
@@ -33,8 +33,8 @@ function MainSlider(slide){
             <div className="offset-lg-3 col-lg-6 offset-md-1 col-md-10 col-12">
             <div className="banner-content-2 text-center" data-aos="fade-down"
      data-aos-anchor-placement="top-bottom">
-            <h1>{slide.slider[1].title}</h1>
-            <p>{slide.slider[1].description}</p>
+            <h1>{slide.slider[0].title}</h1>
+            <p>{slide.slider[0].description}</p>
            
            <Button title={slide.slider[1].btnlink.title} classs="cc-transbutton" link={slide.slider[1].btnlink.link}/>
         </div>

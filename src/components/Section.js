@@ -15,9 +15,9 @@ function Sections(data){
    const { id, bg_img, title,subtitle,description,sec_type,bg_color} = data.section;
    const sliderbg = {
     // Check if bg_img exists, and if it does, set backgroundImage
-  ...(bg_img ? { backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/section/${bg_img})` } : {}),
+  ...(bg_img ? { backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/section/${bg_img})` } : {backgroundColor: bg_color}),
   // If bg_img doesn't exist, set backgroundColor
-  ...(bg_img ? {} : { backgroundColor: '#fff' }),
+  //...(bg_img ? {} : { backgroundColor: '#fff' }),
 }
 const expertise = {
     backgroundImage: `url('https://teamwebdevelopers.com/charge_construct/public/images/section/${bg_img}'),url ('https://teamwebdevelopers.com/charge_construct/public/images/section/${bg_img}')`,
@@ -37,10 +37,11 @@ useEffect(()=>{
 
         <div className='container'>
             <div className='row'>
-                <div className='col-md-12'>
+                <div className={sec_type==='expertise_section'?"offset-md-6 col-md-6 col-12 expertise_profit":"col-12"}>
                 {title?<h2 className='section-title'>{title}</h2>:''} {/* data-aos="fade-up" */}
                 {subtitle?<h4 className='section-subtitle' data-aos="fade-up">{subtitle}</h4>:''}
-                {description?<p className='section-desciption' data-aos="fade-up">{description}</p>:''}
+                
+                {description?<p className='section-desciption' data-aos="fade-up" dangerouslySetInnerHTML={{ __html: description }}></p>:''}
                     
                 </div>
                 {sec_type==='team_banner'?(
@@ -58,9 +59,9 @@ useEffect(()=>{
                 {sec_type==='project_insight'?(
                     <HomeprojectTabs/>
                 ):(<></>)}
-                {sec_type==='expertise_section'?(
+                {/* {sec_type==='expertise_section'?(
                     <Expertise secdata={data}/>
-                ):(<></>)}
+                ):(<></>)} */}
                 {/* {sec_type==='OurCustomer_section'?(
                     <CustomerLogo />
                 ):(<></>)} */}

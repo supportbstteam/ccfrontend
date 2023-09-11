@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useState,useEffect } from 'react';
+import { fetchData } from "../../apiConnection/apiService";
 const data = [
   {
     name: "Hearts",
@@ -24,15 +24,41 @@ const data = [
 ];
 
 function Bars() {
+  const [BarData, setBarData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  useEffect(() => {
+    async function fetchDataFromAPI() {
+      try {
+        const responseService = await fetchData('/infra-structure');
+        //console.log(chartData);
+        setBarData(responseService[0]);
+        //console.log(BarData);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      } 
+    }
+    fetchDataFromAPI();
+  }, []);
+console.log(BarData?BarData:'');
+  const {title,footer_content,infracat} = BarData?BarData:'';
+  console.log(title);
   return (
     <>
     <div className="branche-figure">
       <div className="branche-cols">
-      <h5>Wir arbeiten mit dem größten Ladeinfrastrukturbetreibern in Deutschland zusammen und konnten mit diesen schon zahlreiche Projekte realisieren.</h5>
-      </div>
-   <div className="bar-charts">
- <div className="progress">
+      <h5>{title?title:''}</h5>
+      </div> 
+   <div className="bar-charts"> 
+   {infracat?infracat.map((item, index) => (
+    <div className="progress" key={index}>
+  <img src={`https://teamwebdevelopers.com/charge_construct/public/images/infracat/${item.image}`}/>
+  <div className="progress-bar" role="progressbar" style={{ width: `${(item.number / 1000) * 100}%` }} aria-valuenow="5" aria-valuemin="0" aria-valuemax="1000">{item.number}</div>
+</div>
+   )):''}
+ {/* <div className="progress">
   <img src="assets/images/enbw.png"/>
   <div className="progress-bar" role="progressbar" style={{width : '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">523</div>
 </div>
@@ -55,10 +81,10 @@ function Bars() {
 <div className="progress">
 <img src="assets/images/citywatt.png"/>
   <div className="progress-bar" role="progressbar" style={{width : '50%'}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">240</div>
-</div>
+</div> */}
    </div>
    <div className="barcharts-footer">
-   <p>Stand 08.2023 - Datenbasis: goingelectric.de</p>
+   <p>{footer_content?footer_content:''}</p>
    </div>
    </div>
    </>

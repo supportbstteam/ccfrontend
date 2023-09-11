@@ -1,80 +1,114 @@
-import React, { useState,useEffect } from 'react';
-import { fetchData } from "../apiConnection/apiService";
-import Button from './Button';
-import Aos from 'aos';
-const HomeprojectTabs = () => {
-  const [activeTab, setActiveTab] = useState(1);
-  const [ProjectTabdata, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchDataFromAPI() {
-      try {
-        const responseService = await fetchData('/homeproject_tabs'); // Replace '/data' with the API endpoint you want to fetch
-        setData(responseService);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
+  import React, { useState,useEffect } from 'react';
+  import { fetchData } from "../apiConnection/apiService";
+  import Button from './Button';
+  import Aos from 'aos';
+  const HomeprojectTabs = () => {
+    const [activeTab, setActiveTab] = useState(0);
+    const [ProjectTabdata, setData] = useState(null);
+    const [Projectdata, setProjectData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [CategoryPost, setCategory] = useState([]);
+    
+    useEffect(() => {
+      async function fetchDataFromAPI() {
+        try {
+          const responseService = await fetchData('/projectCategory');
+          const postcat = responseService[0].name;
+          setData(responseService);
+          setCategory(postcat);
+  
+          // Load initial Projectdata here
+          const responsepost = await fetchData(`/project/${postcat}`);
+          setProjectData(responsepost);
+  
+          setLoading(false);
+        } catch (error) {
+          setError(error);
+          setLoading(false);
+        }
       }
+      fetchDataFromAPI();
+    }, []);
+
+  
+      async function fetchProjectApi(catnamshow) {
+        try {
+          console.log(CategoryPost);
+          const responsepost = await fetchData(`/project/${catnamshow}`); // Replace '/data' with the API endpoint you want to fetch
+          setProjectData(responsepost);
+          //console.log(responsepost);
+          setLoading(false);
+        } catch (error) {
+          setError(error);
+          setLoading(false);
+        }
+      }
+  
+
+    if (loading) {
+      return <div>Loading...</div>;
     }
 
-    fetchDataFromAPI();
-  }, []);
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    const handleTabClick = (tabId, catname) => {
+    setCategory(catname);
+    fetchProjectApi(catname);
+      setActiveTab(tabId);
+    };
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+    return (
+      <div className="tabs-container">
+        <ul className="tabs">
+          {ProjectTabdata.map((tab,index) => (
+            <li
+              key={index}
+              data-id={index}
+              data-cat={tab.slug}
+              className={`tab ${activeTab == index ? 'active' : ''}`}
+              onClick={() => handleTabClick(index,tab.slug)}
+            >
+              {tab.name}
+            </li>
+          ))}
+        </ul>
+        <div className="tab-content">
+          <div className='tab-pane active' data-cat={CategoryPost}>
+              <div className='row projects-row'>
+              {Projectdata ? Projectdata.map((tab,index) => {
+                if (index == 0 || index == 3 || index == 5) {
+                 return <div key={index} className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4" data-cat={index} style={tab.image?{backgroundImage:`url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})`}:''}>  {/* style={tab.image?{backgroundImage:`url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})`}:''} */}
+                      {/* {tab.image ? <img className="w-100 border-6" src={tab.image ? `https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image}` : ''} /> : ''} */}
+                      <div className='projects-insights-details with_image_view'>
+                      {tab.sub_title?<h5>{tab.sub_title}</h5>:''}
+                      {tab.title?<h3>{tab.title}</h3>:''}
+                          <Button title="Ganzer Beitrag" link="#" />
+                          </div>
+                  </div>
+                   } else {
+                return <div key={index} className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4" data-cat={index}>
+                      <div className='project-details'>
+                          {tab.logo ? <img src={tab.logo ? `https://teamwebdevelopers.com/charge_construct/public/images/project/logo/${tab.logo}` : ''} /> : ''}
+                          <div className='projects-insights-details'>
+                          {tab.sub_title?<h5>{tab.sub_title}</h5>:''}
+                          {tab.title?<h3>{tab.title}</h3>:''}
+                          {tab.content?<p dangerouslySetInnerHTML={{ __html: tab.content}}/>:''}
+                          </div>
+                          <Button title="Ganzer Beitrag" link="#" />
+                      </div>
+                  </div>
+                    }
+                }) : ''}
+              </div>
+          </div>
+  
+  </div>
 
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
+      </div>
+    );
   };
 
-  return (
-    <div className="tabs-container">
-      <ul className="tabs">
-        {ProjectTabdata.map((tab) => (
-          <li
-            key={tab.id}
-            data-id={activeTab}
-            className={`tab ${activeTab == tab.id ? 'active' : ''}`}
-            onClick={() => handleTabClick(tab.id)}
-          >
-            {tab.category}
-          </li>
-        ))}
-      </ul>
-      <div className="tab-content">
-        {ProjectTabdata.map((tab) => (
-          <div
-            key={tab.id}
-            className={`tab-pane ${activeTab == tab.id ? 'active' : ''}`}>
-            <div className='row projects-row'>
-             <div className="col-lg-6 col-md-6 col-sm-12 projects-col">
-             {tab.image?<img className="w-100 border-6" src={tab.image?`assets/images/projects/${tab.image}`:''}/>:''}
-        </div>
-        <div className="col-lg-6 col-md-6 col-sm-12 projects-col">
-        <div className='project-details'>
-            {tab.logo?<img src={tab.logo?`assets/images/projects/${tab.logo}`:''}/>:''}
-        <div className='projects-insights-details'>
-        <h5>{tab.sub_title}</h5>
-        <h3>{tab.title}</h3>
-        <p>{tab.content}</p>
-        </div>
-        <Button title="Ganzer Beitrag" link="#"/>
-        </div>
-        </div>
-        </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default HomeprojectTabs;
+  export default HomeprojectTabs;

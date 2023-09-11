@@ -1,5 +1,7 @@
 "use client"
 import InputField from "./Forms/InputField";
+import ContactDetails from "./GeneralDetails/ContactDetails";
+import SocialProfile from "./GeneralDetails/SocialProfile";
 function footer(){
 
 //     const [footerdata, setData] = useState(null);
@@ -44,23 +46,25 @@ return(
                  </div>
                  <div className="col-lg-3 col-md-3 col-sm-5 footer-col contact-details">
                 <h3>Kontakt</h3>
-                <ul>
+                <ContactDetails/>
+                {/* <ul>
                 <li><a href="tel:+4984149399122">ST-541, Sky Tower In West</a></li>
                     <li><a href="mailto:info@chargeconstruct.de">info@chargeconstruct.de</a></li>
                     <li><a href="tel:+4984149399122">+49 841 49399122</a></li>
-                </ul>
+                </ul> */}
                  </div>
         </div>
 
         <div className="row mb-4">
         <div className="col-lg-4 col-md-6 col-sm-7 col-12 footer-col">
             <h5>Socials</h5>
-            <ul className="social-follow">
+            <SocialProfile/>
+            {/* <ul className="social-follow">
                 <li><img src='../../assets/images/li.png'/></li>
                 <li><img src='../../assets/images/xa.png'/></li>
                 <li><img src='../../assets/images/fb.png'/></li>
                 <li><img src='../../assets/images/in.png'/></li>
-            </ul>
+            </ul> */}
         </div>
 
         <div className="col-lg-5 col-md-5 col-sm-5 col-12 footer-col">

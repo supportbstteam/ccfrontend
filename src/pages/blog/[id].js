@@ -9,7 +9,7 @@ import Layout from "@/components/Layout";
 import { fetchData } from '@/apiConnection/apiService';
 function Blog(props) {
    
-    //console.log('Hii value shows '+ids);
+    //console.log('Hii value shows '+JSON.stringify(props));
     const [data, setData] = useState(null);
     const [sectionData, setSection] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -213,7 +213,7 @@ export async function getServerSideProps(context) {
       // Fetch data from an API or any other data source
       const response = await fetch(`https://teamwebdevelopers.com/charge_construct/api/blogPost/${id}`);
       const data = await response.json(); // Parse the JSON content
-      console.log("value of response "+response);
+      //console.log("value of response "+response);
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

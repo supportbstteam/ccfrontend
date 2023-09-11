@@ -1,4 +1,5 @@
 import { fetchData } from "../apiConnection/apiService";
+import React from "react";
 import { useState, useEffect } from 'react';
 function HomeNewsRoom(){
   const [homenewsdata, setData] = useState(null);
@@ -8,16 +9,14 @@ function HomeNewsRoom(){
   useEffect(() => {
     async function fetchDataFromAPI() {
       try {
-        const responsehomenews = await fetchData('/homenewsroom'); // Replace '/data' with the API endpoint you want to fetch
-        setData(responsehomenews[0]);
-       // console.log(homenewsdata);
+        const responsehomenews = await fetchData('/homeBlogPost'); // Replace '/data' with the API endpoint you want to fetch
+        setData(responsehomenews);
         setLoading(false);
       } catch (error) {
         setError(error);
         setLoading(false);
       }
     }
-
     fetchDataFromAPI();
   }, []);
 
@@ -28,75 +27,103 @@ function HomeNewsRoom(){
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
+  //console.log(homenewsdata)
     return(
+       
         <div className="d-flex mb-3 w-100 home_news_posts">
-            <div className="newsroom-grids news-first-post">
+             {homenewsdata.map((item, index) => (
+        <React.Fragment key={index}>
+{item.post_category.name == 'Article' ?
+<div className="newsroom-grids news-first-post">
 <div className="bd-highlight" style={{backgroundImage: `url("assets/images/news/news-1.png")`}}>
-    <img src="assets/images/news/news-1.png"/>
-    <div className="newshome_content">
-        <h3>Wir haben viele weitere Insights rund um die E-Mobility</h3>
+    <a href={`blog/${item.id}`} className="newshome_content">
+        <h3>{item.post_title}</h3>
         <div className="article_config">
-            <span className="post_category">Article - </span>
+            <span className="post_category">{item.post_category.name} - </span>
             <span className="post_publish">Dezember 22, 2022</span>
         </div>
+    </a>
     </div>
     </div>
-    </div>
+:''}
+
+</React.Fragment>
+))}
 <div className="flex-column d-flex">
+{homenewsdata.map((item, index) => (
+    <React.Fragment key={index}>
+{item.post_category.name == 'Insights'?
 <div className="newsroom-grids">
     <div className="align-self-end bd-highlight sub-height mb-2"  style={{backgroundImage: `url("assets/images/news/news-2.png")`}}>
-        <img src="assets/images/news/news-2.png"/>
-        <div className="newshome_content">
-        <h3>Wir haben viele weitere Insights rund um die E-Mobility</h3>
+       <a href={`blog/${item.id}`} className="newshome_content">
+        <h3>{item.post_title}</h3>
         <div className="article_config">
-            <span className="post_category">Insights - </span>
+            <span className="post_category">{item.post_category.name} - </span>
             <span className="post_publish">Dezember 22, 2022</span>
         </div>
+    </a>
     </div>
     </div>
-    </div>
+    :''}
+    </React.Fragment>
+    ))}
+{homenewsdata.map((item, index) => (
+   <React.Fragment key={index}>
+    {item.post_category.name == 'Webinar'?
     <div className="newsroom-grids">
     <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("assets/images/news/news-3.png")`}}>
-        <img src="assets/images/news/news-3.png"/>
-        <div className="newshome_content">
-        <h3>Wir haben viele weitere Insights rund um die E-Mobility</h3>
+    <a href={`blog/${item.id}`} className="newshome_content">
+        <h3>{item.post_title}</h3>
         <div className="article_config">
-            <span className="post_category">Webinar - </span>
+            <span className="post_category">{item.post_category.name} - </span>
             <span className="post_publish">Dezember 22, 2022</span>
         </div>
-    </div>    
+    </a>    
     </div>
     </div>
+     :''}
+     </React.Fragment>
+     ))}
 </div>
+
 <div className="flex-column d-flex">
+{homenewsdata.map((item, index) => (
+    <React.Fragment key={index}>
+{item.post_category.name == 'Blog'?
 <div className="newsroom-grids">
     <div className="align-self-end bd-highlight sub-height mb-2" style={{backgroundImage: `url("assets/images/news/news-4.png")`}}>
-    <img src="assets/images/news/news-4.png"/>
-        <div className="newshome_content">
-        <h3>Wir haben viele weitere Insights rund um die E-Mobility</h3>
+    <a href={`blog/${item.id}`} className="newshome_content">
+        <h3>{item.post_title}</h3>
         <div className="article_config">
-            <span className="post_category">Blog - </span>
+            <span className="post_category">{item.post_category.name} - </span>
             <span className="post_publish">Dezember 22, 2022</span>
         </div>
+        </a>
         </div>
         </div>
-        </div>
-
-        <div className="newsroom-grids">
+:''}
+</React.Fragment>
+))}
+{homenewsdata.map((item, index) => (
+    <React.Fragment key={index}>
+{item.post_category.name == 'Podcast'?
+<div className="newsroom-grids">
     <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("assets/images/news/news-5.png")`}}>
-        <img src="assets/images/news/news-5.png"/>
-    <div className="newshome_content">
-        <h3>Wir haben viele weitere Insights rund um die E-Mobility</h3>
+    <a href={`blog/${item.id}`} className="newshome_content">
+        <h3>{item.post_title}</h3>
         <div className="article_config">
-            <span className="post_category">Podcast - </span>
+            <span className="post_category">{item.post_category.name} - </span>
             <span className="post_publish">Dezember 22, 2022</span>
         </div>
+    </a>
     </div>
     </div>
-    </div>
-
+:''}
+</React.Fragment>
+))}
 </div>
+
+{/* {item.post_category.name == 'Article'?
 <div className="newsroom-grids news-last-post">
 <div className="bd-highlight" style={{backgroundImage: `url("assets/images/news/news-6.png")`}}>
     <img src="assets/images/news/news-6.png"/>
@@ -109,7 +136,7 @@ function HomeNewsRoom(){
     </div>
     </div>
     </div>
-
+    :''} */}
   </div>
     )
 }
