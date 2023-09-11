@@ -146,7 +146,7 @@ section.main-section.kundengruppen_sec {
     font-size: 18px;
     text-decoration: none;
     font-family: 'proxima-medium';
-    border: 1px solid var(--primary-clr);
+    border: 2px solid var(--primary-clr);
     background: var(--primary-clr);
     transition: 0.4s;
     padding: 0.5em 1.0em;
@@ -164,6 +164,7 @@ section.main-section.kundengruppen_sec {
   font-size: 24px;
   line-height: 29px;
   letter-spacing: 0em;
+  margin-bottom: 30px;
   text-align: left;
   color: var(--primary-clr);
 }
@@ -362,6 +363,7 @@ section.main-section.bekannt_sec h2.section-title{
 ul.bekannt_logo_details {
   display: flex;
   align-items: center;
+  list-style: none;
   justify-content: space-around;
 }
 section.main-section.bekannt_sec{
@@ -417,7 +419,20 @@ section.main-section.project_insight {
 }
 .projects-row .projects-col{
   display: flex;
-  flex-wrap: wrap;
+    position: relative;
+    flex-wrap: wrap;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    align-items: end;
+    justify-content: center;
+    height: 580px;
+    min-height: 500px;
+}
+.with_image_view{
+  margin: 0 auto!important;
+  width: 70%;
+  margin-bottom: 30px !important;
 }
 .tabs-container ul li.active{
   background: #FBB900;
@@ -435,6 +450,33 @@ section.usp_section{
 min-height: auto;
 padding: 7.5% 0;
 }
+section.usp_section .section-title, .barchats_section .section-title{
+display: none;
+}
+.collapse.navbar-collapse.home-nav.show {
+  background: #000;
+  padding: 21px;
+  text-align: center;
+  border-radius: 3px;
+}
+.open-menu nav button {
+  margin-bottom: 2%;
+}
+button:focus:not(:focus-visible) {
+  outline: 0;
+  box-shadow: unset!important;
+}
+.collapse.navbar-collapse.home-nav.show ul.navbar-nav li {
+  margin: 2% 0;
+  position: relative;
+}
+/* .collapse.navbar-collapse.home-nav.show ul.navbar-nav li a:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+} */
 section.usp_section .section-subtitle {
   max-width: 70%;
   margin: 0 auto;
@@ -757,7 +799,7 @@ footer h5{
   text-transform: uppercase;
 }
 .expertise_profit{
-  padding-left: 70px;
+  padding-left: 70px !important;
 }
 footer ul.social-follow{
   list-style: none;
@@ -1196,6 +1238,12 @@ ul.tabsview.founders-tabs li.actives{
   border: 0;
   position: relative;
   box-shadow: 2px 2px 3px 3px #00000012;
+}
+.tabs-content.founders-list .show{
+  display: block;
+}
+.tabs-content.founders-list .hide{
+  display: none;
 }
 .vacancy-accordion:after{
   position: absolute;
@@ -1725,6 +1773,7 @@ section.main-section.expertise_section{
   background-position: center !important;}
 ul.bekannt_logo_details {
   flex-direction: column;
+  list-style: none !important;
   gap: 30px;
 }
   .main-section p.section-desciption{
