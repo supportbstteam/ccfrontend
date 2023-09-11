@@ -130,7 +130,7 @@ section.main-section.kundengruppen_sec {
   }
   .cc-transbutton:hover{
     background: var(--primary-clr) !important;
-    border: 1px solid var(--primary-clr);
+    border: 2px solid var(--primary-clr);
     color: #fff !important;
   }
   .cc-transbutton svg g{
