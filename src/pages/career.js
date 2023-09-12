@@ -6,6 +6,7 @@ import ImageGallery from '@/components/GalleryView';
 import VacancyPost from '@/components/Vacancy/vacancyPost';
 import FaqList from '@/components/Faq';
 import Layout from '@/components/Layout';
+import AboutHR from '@/components/About/AboutHr';
 const sliderbg = {
     backgroundImage: `url('../../assets/images/career/banner.jpg')`,
 }
@@ -101,7 +102,7 @@ function careerContent(){
     <div className='container'>
         <div className='row justify-content-center'>
             <div className='col-lg-11 col-md-11 col-sm-12 col-12 bg-white vacancy-cols'>
-           <VacancyPost/>
+           {/* <VacancyPost/> */}
             </div>
         </div>
     </div>
@@ -220,30 +221,7 @@ function careerContent(){
     </div>
   </section>
 
-  <section className='main-section deine-section py-5'>
-    <div className='container'>
-        <div className='row justify-content-between'>
-            <div className='col-lg-8 col-md-8 col-sm-12 col-12'>
-                <div className='contact-partner'>
-                <h2 className='text-white mb-4' data-aos="fade-left" data-aos-duration="2100">Deine Ansprech Partner im HR</h2>
-                <p className='text-white' data-aos="fade-left" data-aos-duration="2500">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.<br/><br/><br/>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </div>
-            <div className='col-lg-4 col-md-4 col-sm-12 col-12 text-center' data-aos="fade-right" data-aos-duration="2500">
-             <img src="/assets/images/hr.png" className='w-50' data-aos="zoom-in" data-aos-duration="1500"/>
-             <h5 data-aos="zoom-in" data-aos-duration="1500">Alexander Hötzel </h5>
-             <p className='text-center' data-aos="zoom-in" data-aos-duration="1500">HR Manager</p>
-            </div>
-        </div>
-    </div>
-  </section>
+  <AboutHR/>
 
   <section className='main-section faq-section py-5'>
     <div className='container'>

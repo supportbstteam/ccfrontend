@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRouter } from 'next/router'
 import Button from "@/components/Button";
 import GridPostList from "@/components/PostGrid/PostGrid";
 import HomeForm from "@/components/HomForm";

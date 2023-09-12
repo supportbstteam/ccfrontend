@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const InputField = ({ label, type, placeholder, minLength, maxLength,id }) => {
   const [value, setValue] = useState('');
   const [error, setError] = useState('');
-  const [showError, setShowError] = useState(false);
   const handleChange = (event) => {
     const inputValue = event.target.value;
     const types = event.target.type;
@@ -14,7 +13,6 @@ const InputField = ({ label, type, placeholder, minLength, maxLength,id }) => {
   const validateInput = (inputValue, types) => {
     const onlyLetters = /^[a-zA-Z]+$/;
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    setShowError(true);
     if(!emailRegex.test(inputValue) && types === 'email') {
       setError('Ungültige E-Mail-Adresse.');
     }
@@ -26,7 +24,6 @@ const InputField = ({ label, type, placeholder, minLength, maxLength,id }) => {
       setError('Darf nur Buchstaben enthalten.');
     } else {
       setError('');
-      setShowError(false);
     }
   };
 
@@ -37,7 +34,6 @@ const InputField = ({ label, type, placeholder, minLength, maxLength,id }) => {
         placeholder={placeholder}
         value={value}
         id={id}
-        error={showError}
         onChange={handleChange}
      required />
       {label?<label htmlFor={id}>{label}</label>:''}

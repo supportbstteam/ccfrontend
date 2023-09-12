@@ -42,9 +42,9 @@ function Bars() {
     }
     fetchDataFromAPI();
   }, []);
-console.log(BarData?BarData:'');
+//console.log(BarData?BarData:'');
   const {title,footer_content,infracat} = BarData?BarData:'';
-  console.log(title);
+  //console.log(title);
   return (
     <>
     <div className="branche-figure">

@@ -5,7 +5,10 @@ function HomeNewsRoom(){
   const [homenewsdata, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  
+  //console.log(`Month: ${monthName}, Date: ${day}`);
 
+  
   useEffect(() => {
     async function fetchDataFromAPI() {
       try {
@@ -30,17 +33,19 @@ function HomeNewsRoom(){
   //console.log(homenewsdata)
     return(
        
-        <div className="d-flex mb-3 w-100 home_news_posts">
+        <div className="d-flex mb-3 w-100 home_news_posts gap-1">
              {homenewsdata.map((item, index) => (
         <React.Fragment key={index}>
-{item.post_category.name == 'Article' ?
+{item.order == 1 ?
 <div className="newsroom-grids news-first-post">
-<div className="bd-highlight" style={{backgroundImage: `url("assets/images/news/news-1.png")`}}>
-    <a href={`blog/${item.id}`} className="newshome_content">
+<div className="bd-highlight" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
+    <a href={`blog/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
-            <span className="post_publish">Dezember 22, 2022</span>
+            <span className="post_publish">
+            {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </span>
         </div>
     </a>
     </div>
@@ -52,14 +57,16 @@ function HomeNewsRoom(){
 <div className="flex-column d-flex">
 {homenewsdata.map((item, index) => (
     <React.Fragment key={index}>
-{item.post_category.name == 'Insights'?
+{item.order == 2?
 <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height mb-2"  style={{backgroundImage: `url("assets/images/news/news-2.png")`}}>
+    <div className="align-self-end bd-highlight sub-height mb-2"  style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
        <a href={`blog/${item.id}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
-            <span className="post_publish">Dezember 22, 2022</span>
+            <span className="post_publish">
+            {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </span>
         </div>
     </a>
     </div>
@@ -69,14 +76,16 @@ function HomeNewsRoom(){
     ))}
 {homenewsdata.map((item, index) => (
    <React.Fragment key={index}>
-    {item.post_category.name == 'Webinar'?
+    {item.order == 3?
     <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("assets/images/news/news-3.png")`}}>
+    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
     <a href={`blog/${item.id}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
-            <span className="post_publish">Dezember 22, 2022</span>
+            <span className="post_publish">
+            {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </span>
         </div>
     </a>    
     </div>
@@ -89,14 +98,16 @@ function HomeNewsRoom(){
 <div className="flex-column d-flex">
 {homenewsdata.map((item, index) => (
     <React.Fragment key={index}>
-{item.post_category.name == 'Blog'?
+{item.order == 4?
 <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height mb-2" style={{backgroundImage: `url("assets/images/news/news-4.png")`}}>
+    <div className="align-self-end bd-highlight sub-height mb-2" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
     <a href={`blog/${item.id}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
-            <span className="post_publish">Dezember 22, 2022</span>
+            <span className="post_publish">
+            {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </span>
         </div>
         </a>
         </div>
@@ -106,14 +117,16 @@ function HomeNewsRoom(){
 ))}
 {homenewsdata.map((item, index) => (
     <React.Fragment key={index}>
-{item.post_category.name == 'Podcast'?
+{item.order == 5?
 <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("assets/images/news/news-5.png")`}}>
+    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
     <a href={`blog/${item.id}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
-            <span className="post_publish">Dezember 22, 2022</span>
+            <span className="post_publish">
+            {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </span>
         </div>
     </a>
     </div>
@@ -123,21 +136,27 @@ function HomeNewsRoom(){
 ))}
 </div>
 
-{/* {item.post_category.name == 'Article'?
+{homenewsdata.map((item, index) => (
+    <React.Fragment key={index}>
+{item.order == 6?
 <div className="newsroom-grids news-last-post">
-<div className="bd-highlight" style={{backgroundImage: `url("assets/images/news/news-6.png")`}}>
+<div className="bd-highlight" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
     <img src="assets/images/news/news-6.png"/>
-    <div className="newshome_content">
-        <h3>Wir haben viele weitere Insights rund um die E-Mobility</h3>
+    <a href={`blog/${item.id}`} className="newshome_content">
+        <h3>{item.post_title}</h3>
         <div className="article_config">
-            <span className="post_category">Article - </span>
-            <span className="post_publish">Dezember 22, 2022</span>
+            <span className="post_category">{item.post_category.name} - </span>
+            <span className="post_publish">
+            {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
+            </span>
         </div>
+    </a>
     </div>
     </div>
+    :''}
+    </React.Fragment>
+    ))}
     </div>
-    :''} */}
-  </div>
     )
 }
 

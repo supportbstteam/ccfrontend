@@ -9,8 +9,9 @@ import GridPostList from "@/components/PostGrid/PostGrid";
 import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
 import GridPostHorizontal from "@/components/PostGrid/PostHorizontal";
-function NewsRoom(){
+function NewsRoom(props){
 
+    console.log(props);
     useEffect(()=>{
         Aos.init({duration: 1700});
     },[])
@@ -271,3 +272,29 @@ Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-493991
 }
 
 export default NewsRoom;
+
+export async function getServerSideProps(context) {
+    try {
+        var {id} = context.query;
+    //const postID = router.query.id;
+    
+      // Fetch data from an API or any other data source
+      const response = await fetch(`https://teamwebdevelopers.com/charge_construct/api/blogPost/${id}`);
+      const data = await response.json(); // Parse the JSON content
+      //console.log("value of response "+response);
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+       
+      return {
+        props: { data },
+      };
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      return {
+        props: {
+          data: null, // You can set a default value or handle errors as needed
+        },
+      };
+    }
+  }

@@ -1,27 +1,5 @@
 import React, { useState,useEffect } from 'react';
 import { fetchData } from "../../apiConnection/apiService";
-const data = [
-  {
-    name: "Hearts",
-    value: 4000,
-    icon: "/assets/images/enbw.png", // Replace with the actual path to your image
-  },
-  {
-    name: "Clubs",
-    value: 3000,
-    icon: "/assets/images/enbw.png", // Replace with the actual path to your image
-  },
-  {
-    name: "Diamonds",
-    value: 2000,
-    icon: "/assets/images/enbw.png", // Replace with the actual path to your image
-  },
-  {
-    name: "Spades",
-    value: 2780,
-    icon: "/assets/images/enbw.png", // Replace with the actual path to your image
-  },
-];
 
 function ContactDetails() {
   const [BarData, setBarData] = useState(null);
