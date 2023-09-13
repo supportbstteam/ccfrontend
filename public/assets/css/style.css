@@ -753,11 +753,12 @@ section.main-section.service_second{
 }
 section.main-section.team_banner{
   height: 870px;
+  overflow:visible;
   position: relative;
 }
 .team_banner a.zum-team{
   position: absolute;
-    bottom: 4px;
+    bottom: -4%;
     width: 200px;
     display: flex;
     align-items: center;
@@ -1719,12 +1720,26 @@ margin-top: 20px;
 .cc-left-col{
   padding-right: 70px;
 }
+.float-img-to-right{
+  position: absolute;
+    left: 0;
+}
+.float-left{
+  position: absolute;
+  right:0;
+}
+.about-video{
+  width: 92%;
+}
 @media screen and (max-width: 768px) {
   .card-service {
     position: relative;
     margin-bottom: 23px;
     /* width: 243px; 
     height: 385px;*/
+}
+.about-video{
+  width: 100%;
 }
 .text-vs-center{
   text-align: center;
@@ -1764,7 +1779,7 @@ section.usp_section .section-subtitle{
    width: 33%; 
   }
   section.main-section.team_banner {
-    height: 250px;
+    height: 400px;
 }
 section.main-section.expertise_section{
   min-height: 960px;
@@ -1817,6 +1832,25 @@ form.draht-forms.newsletter-form div{
 section.main-section.charge_zahlen .counter-box{
   margin: 15px auto;
 }
+section.about_die:after{
+  width: 100%;
+}
+}
+@media screen and (max-width: 992px){
+  .kundengrup-card{
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .float-img-to-right, .float-left{
+    position: unset;
+    width: 100%;
+  }
+  .teams-boards-member .member-col{
+    text-align: center;
+  }
+  section.main-section.charge_zahlen .counter-box, .stand_in{
+    width: auto;
+  }
 }
 @media screen and (min-width: 767px) and (max-width:991px){
   .newsletter-form input {
@@ -1848,7 +1882,8 @@ footer .footer-col {
   max-width: 800px;
 }
 .dynamic-Navbar{
-  justify-content: center;
+  justify-content: center !important;
+  gap: 15px;
 }
 .banner-slider {
   padding: 25% 0 2%;
@@ -1857,6 +1892,8 @@ footer .footer-col {
   margin-right: 18px;
 } */
 }
-@media screen and (min-width: 992px) and (max-width: 1024px){
- 
+@media screen and (min-width: 991px) and (max-width: 1250px){
+  .float-img-to-right, .float-left{
+    width: 50%;
+  }
 }

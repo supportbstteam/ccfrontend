@@ -148,7 +148,7 @@ function TeamLeiter(){
             <div className='row'>
             <h3 className='text-dark'>Teamleiter</h3>
                 {servicedata.map((tab, i) =>
-                 <div className='col-lg-3 col-md-4 col-12 text-vs-center mb-5 px-0 member-col' data-aos="fade-up" data-aos-duration={1000*(i+2)} key={i}>
+                 <div className='col-lg-3 col-md-6 col-sm-6 col-12 text-vs-center mb-5 px-0 member-col' data-aos="fade-up" data-aos-duration={1000*(i+2)} key={i}>
         <img src={`https://teamwebdevelopers.com/charge_construct/public/images/team/`+tab.image} className='img-fluid border-6 mb-3'/>
                     <h5>{tab.name}</h5>
                     <h6>{tab.profession}</h6>

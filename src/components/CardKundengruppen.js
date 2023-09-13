@@ -35,7 +35,7 @@ function KundengruppenCard(){
 
     return(
         <> {kundengruppendata.map((item, index) => (
- <div key={index} className='col-lg-4 col-md-4 col-sm-6 col-12 ' data-aos="fade-up"
+ <div key={index} className='col-lg-4 col-md-6 col-sm-12 col-12 ' data-aos="fade-up"
  data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+1)}>
   <div className="kundengrup-card">
   <div className="flip-card">
