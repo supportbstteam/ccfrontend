@@ -1014,7 +1014,7 @@ section.main-section.charge_zahlen .counter-box:hover .added_details{
 .added_details {
   display: none;
   position: absolute;
-  top: 33px;
+  top: 33.5px;
   transition: all 0.5s;
   right: -68%;
   background: var(--primary-clr);
