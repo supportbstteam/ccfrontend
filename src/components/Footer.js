@@ -59,12 +59,6 @@ return(
         <div className="col-lg-4 col-md-6 col-sm-7 col-12 footer-col">
             <h5>Socials</h5>
             <SocialProfile/>
-            {/* <ul className="social-follow">
-                <li><img src='../../assets/images/li.png'/></li>
-                <li><img src='../../assets/images/xa.png'/></li>
-                <li><img src='../../assets/images/fb.png'/></li>
-                <li><img src='../../assets/images/in.png'/></li>
-            </ul> */}
         </div>
 
         <div className="col-lg-5 col-md-5 col-sm-5 col-12 footer-col">

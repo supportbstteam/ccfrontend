@@ -1,5 +1,6 @@
 import { fetchData } from "../apiConnection/apiService";
 import React from "react";
+import Link from "next/link";
 import { useState, useEffect } from 'react';
 function HomeNewsRoom(){
   const [homenewsdata, setData] = useState(null);
@@ -7,7 +8,6 @@ function HomeNewsRoom(){
   const [error, setError] = useState(null);
   
   //console.log(`Month: ${monthName}, Date: ${day}`);
-
   
   useEffect(() => {
     async function fetchDataFromAPI() {
@@ -39,7 +39,7 @@ function HomeNewsRoom(){
 {item.order == 1 ?
 <div className="newsroom-grids news-first-post">
 <div className="bd-highlight" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
-    <a href={`blog/${item.slug}`} className="newshome_content">
+    <Link href={`blog/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
@@ -47,7 +47,7 @@ function HomeNewsRoom(){
             {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
             </span>
         </div>
-    </a>
+    </Link>
     </div>
     </div>
 :''}
@@ -60,7 +60,7 @@ function HomeNewsRoom(){
 {item.order == 2?
 <div className="newsroom-grids">
     <div className="align-self-end bd-highlight sub-height mb-2"  style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
-       <a href={`blog/${item.id}`} className="newshome_content">
+       <Link href={`blog/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
@@ -68,7 +68,7 @@ function HomeNewsRoom(){
             {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
             </span>
         </div>
-    </a>
+    </Link>
     </div>
     </div>
     :''}
@@ -79,7 +79,7 @@ function HomeNewsRoom(){
     {item.order == 3?
     <div className="newsroom-grids">
     <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
-    <a href={`blog/${item.id}`} className="newshome_content">
+    <Link href={`blog/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
@@ -87,7 +87,7 @@ function HomeNewsRoom(){
             {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
             </span>
         </div>
-    </a>    
+    </Link>    
     </div>
     </div>
      :''}
@@ -101,7 +101,7 @@ function HomeNewsRoom(){
 {item.order == 4?
 <div className="newsroom-grids">
     <div className="align-self-end bd-highlight sub-height mb-2" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
-    <a href={`blog/${item.id}`} className="newshome_content">
+    <Link href={`blog/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
@@ -109,7 +109,7 @@ function HomeNewsRoom(){
             {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
             </span>
         </div>
-        </a>
+        </Link>
         </div>
         </div>
 :''}
@@ -120,7 +120,7 @@ function HomeNewsRoom(){
 {item.order == 5?
 <div className="newsroom-grids">
     <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
-    <a href={`blog/${item.id}`} className="newshome_content">
+    <Link href={`blog/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
@@ -128,7 +128,7 @@ function HomeNewsRoom(){
             {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
             </span>
         </div>
-    </a>
+    </Link>
     </div>
     </div>
 :''}
@@ -142,7 +142,7 @@ function HomeNewsRoom(){
 <div className="newsroom-grids news-last-post">
 <div className="bd-highlight" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
     <img src="assets/images/news/news-6.png"/>
-    <a href={`blog/${item.id}`} className="newshome_content">
+    <Link href={`blog/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
             <span className="post_category">{item.post_category.name} - </span>
@@ -150,7 +150,7 @@ function HomeNewsRoom(){
             {new Date(item.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}
             </span>
         </div>
-    </a>
+    </Link>
     </div>
     </div>
     :''}

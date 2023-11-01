@@ -16,11 +16,11 @@ const InputField = ({ label, type, placeholder, minLength, maxLength,id }) => {
     if(!emailRegex.test(inputValue) && types === 'email') {
       setError('Ungültige E-Mail-Adresse.');
     }
-    else if (minLength && inputValue.length < minLength && !(types === 'email')) {
+    else if (minLength && inputValue.length < minLength && !(types === 'email') && !(types === 'number')) {
       setError(`Muss mindestens ${minLength} Zeichen lang sein.`);
-    } else if (maxLength && inputValue.length > maxLength && !(types === 'email')) {
+    } else if (maxLength && inputValue.length > maxLength && !(types === 'email') && !(types === 'number')) {
       setError(`Darf ${maxLength} Zeichen nicht überschreiten.`);
-    } else if (!inputValue.match(onlyLetters) && !(types === 'email')) {
+    } else if (!inputValue.match(onlyLetters) && !(types === 'email') && !('number')) {
       setError('Darf nur Buchstaben enthalten.');
     } else {
       setError('');

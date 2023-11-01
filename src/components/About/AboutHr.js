@@ -10,7 +10,6 @@ function AboutHR(){
           try {
             const responseService = await fetchData('/prtner-hr');
             setAboutHR(responseService);
-            console.log(AboutHr);
           } catch (error) {
             setError(error);
             setLoading(false);

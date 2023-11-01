@@ -1,17 +1,19 @@
-"use client"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import Aos from 'aos';
 import ImageGallery from '@/components/GalleryView';
 import VacancyPost from '@/components/Vacancy/vacancyPost';
+import Certifications from '@/components/GeneralDetails/Certifications';
 import FaqList from '@/components/Faq';
 import Layout from '@/components/Layout';
 import AboutHR from '@/components/About/AboutHr';
-const sliderbg = {
-    backgroundImage: `url('../../assets/images/career/banner.jpg')`,
-}
+import SocialProfile from '@/components/GeneralDetails/SocialProfile';
 
-function careerContent(){
+function careerContent(props){
+  const [pageData, setPageData] = useState(props.data);
+  const sliderbg = {
+    backgroundImage: `url('https://teamwebdevelopers.com/charge_construct/public/images/career/${pageData.image}')`,
+}
     useEffect(()=>{
         Aos.init({duration: 1700});
     },[])
@@ -54,15 +56,9 @@ function careerContent(){
       
         <div className="carousel-caption d-md-block"  data-aos="fade-up">
         <h1 data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1000">Bewege mit uns die Zukunft bei<br/>Charge Construct!</h1>
-        <p data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1200">Charge Construct ist mehr als (d)ein Arbeitgeber. Wir sind ein Team. Mehr noch: Wir sind eine<br/>
-        Familie. Wir möchten unseren Beitrag zum Wandel hin zu einer elektrischen und nachhaltigen<br/>
-        Mobilität leisten. Dabei gestalten wir die Zukunft der E-Mobilität konsequent, nachhaltig und<br/>
-        ganzheitlich aktiv mit.<br/>
-        <br/>
-        Bist Du dabei?</p>
-        <Button link="#" title="Jetzt bewerben" data-aos="fade-up"  data-aos-easing="linear"
+     data-aos-duration="1000">{pageData.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: pageData.description}}></div>
+        <Button link={pageData.btnlink} title={pageData.btntext} data-aos="fade-up"  data-aos-easing="linear"
      data-aos-duration="1500"/>
   </div>
   </section>
@@ -71,18 +67,17 @@ function careerContent(){
   <div className='container py-5'>
     <div className='row align-items-end'>
         <div className='col-lg-4 col-md-6 col-sm-12 col-12 company-award p-0'>
-<img src='../../assets/images/top-company.png' data-aos="zoom-in" className="img-fluid"/>
-
-<img src='../../assets/images/2022.png' data-aos="zoom-in" className="img-fluid"/>
+            <Certifications/>
         </div>
         <div className='col-lg-4 col-md-6 col-sm-12 col-12 socials-content'>
         <h5>Finde uns auf</h5>
-        <ul className="social-follow">
+        <SocialProfile accept='title'/>
+        {/* <ul className="social-follow">
                 <li data-aos="zoom-in" data-aos-duration="1700"><a href="#"><img src='../../assets/images/li.png'/><span>Linkedin</span></a></li>
                 <li data-aos="zoom-in" data-aos-duration="1800"><a href="#"><img src='../../assets/images/xa.png'/><span>Xing</span></a></li>
                 <li data-aos="zoom-in" data-aos-duration="1900"><a href="#"><img src='../../assets/images/fb.png'/><span>Facebook</span></a></li>
                 <li data-aos="zoom-in" data-aos-duration="2000"><a href="#"><img src='../../assets/images/in.png'/><span>Instagram</span></a></li>
-            </ul>
+            </ul> */}
         </div>
     </div>
   </div>
@@ -257,5 +252,27 @@ Teams werden?</h2>
   </Layout>
     );
 }
+
+export async function getServerSideProps() {
+    try {
+      // Fetch data from an API or any other data source
+      const response = await fetch('https://teamwebdevelopers.com/charge_construct/api/career');
+      const data = await response.json(); // Parse the JSON content
+       //console.log('hii testing tested...............................');
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+      return {
+        props: { data },
+      };
+    } catch (error) {
+     // console.error('Error fetching data:', error);
+      return {
+        props: {
+          data: null, // You can set a default value or handle errors as needed
+        },
+      };
+    }
+  }  
 
 export default careerContent;

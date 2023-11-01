@@ -5,13 +5,14 @@ import Aos from "aos";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "@/components/Button";
-import GridPostList from "@/components/PostGrid/PostGrid";
 import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
-import GridPostHorizontal from "@/components/PostGrid/PostHorizontal";
-function NewsRoom(props){
+import NewReleasePost from "@/components/Newsroom/NewRelease";
+import ProjectInsights from "@/components/Newsroom/ProjectInsights";
+import Whitepaper from "@/components/Newsroom/WhitePaper";
+import AllinSIghts from "@/components/Newsroom/AllSights";
+function NewsRoom(){
 
-    console.log(props);
     useEffect(()=>{
         Aos.init({duration: 1700});
     },[])
@@ -76,11 +77,6 @@ function NewsRoom(props){
         slidesToShow: 1,
         slidesToScroll: 1,
       };
-
-    useEffect( () => { 
-        document.querySelector("body").removeAttribute("class", '');
-        document.querySelector("body").classList.add("newsroom-template")
-    });
     return(
         <Layout>
         <section className="news-post-fillter bg-dark">
@@ -151,79 +147,12 @@ Alles kompakt und an einem Ort, sodass keine Fragen offen bleiben.</p>
                 <h2 className='section-title text-dark mb-5'  data-aos="fade-down" data-aos-easing="linear"
      data-aos-duration="1000">Neue Veröffentlichungen </h2>
                 </div>
-                <GridPostHorizontal/>
-                <GridPostList/>
+                <NewReleasePost/>
                 </div>
                 </section>
+            <ProjectInsights/>
 
-
-                <section className="main-section newsroom-project-insights">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                <h2 className='section-title text-dark mb-5' data-aos="fade-down" data-aos-easing="linear"
-     data-aos-duration="1000">Project Insights</h2>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12 col-12 overlay-posts" data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1500">
-                    <div className="card bg-dark text-white border-0 rounded-0">
-  <img src="../assets/images/newsroom/realisierung.jpg" className="card-img" alt="..."/>
-  <div className="card-img-overlay">
-  <p className="post-published"><span>Errichtung</span> - <span>Ladeinfrastruktur Betreiber</span></p>
-    <h4 className="card-title">Realisierung einer Ladewelt für EnBW</h4>
-   <Button link="#" title="Ganzer Beitrag"/>
-  </div>
-</div>
-                </div>
-
-                <div className="col-lg-6 col-md-6 col-sm-12 col-12 overlay-posts" data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1800">
-                    <div className="card bg-dark text-white border-0 rounded-0">
-  <img src="../assets/images/newsroom/enbw.jpg" className="card-img" alt="..."/>
-  <div className="card-img-overlay">
-  <p className="post-published"><span>Errichtung</span> - <span>Ladeinfrastruktur Betreiber</span></p>
-    <h4 className="card-title">Realisierung einer Ladewelt für EnBW</h4>
-   <Button link="#" title="Ganzer Beitrag"/>
-  </div>
-</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section className="main-section whitepaper-section">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                <h2 className='section-title text-dark mb-5'>Whitepaper & Leitfäden</h2>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-12 col-12 overlay-posts" data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1500">
-                    <div className="card bg-dark text-white border-0 rounded-0">
-  <img src="../assets/images/newsroom/gemacht.jpg" className="card-img" alt="..."/>
-  <div className="card-img-overlay">
-  <p className="post-published"><span>Whitepaper</span></p>
-    <h4 className="card-title">Ladeinfrastruktur einfach gemacht</h4>
-   <Button link="#" title="Zum Whitepaper"/>
-  </div>
-</div>
-                </div>
-
-                <div className="col-lg-6 col-md-6 col-sm-12 col-12 overlay-posts" data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1800">
-                    <div className="card bg-dark text-white border-0 rounded-0">
-  <img src="../assets/images/newsroom/ladepark.jpg" className="card-img" alt="..."/>
-  <div className="card-img-overlay">
-  <p className="post-published"><span>Expertenbericht</span></p>
-    <h4 className="card-title">Ladepark von A - Z</h4>
-   <Button link="#" title="Zum Whitepaper"/>
-  </div>
-</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+            <Whitepaper/>
     <section className="main-section min-height bg-dark d-flex align-items-center" data-aos="zoom-in" data-aos-easing="linear"
      data-aos-duration="1500">
         <div className="container">
@@ -244,10 +173,9 @@ Alles kompakt und an einem Ort, sodass keine Fragen offen bleiben.</p>
                 <h2 className='section-title text-dark mb-5'>Alle Insights</h2>
                 </div>
             </div>
-            <GridPostHorizontal/>
-        <GridPostList/>
-        <GridPostHorizontal/>
-        <GridPostList/>
+           
+
+           <AllinSIghts/>
         </div>
     </section>
 
@@ -273,13 +201,11 @@ Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-493991
 
 export default NewsRoom;
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
     try {
-        var {id} = context.query;
-    //const postID = router.query.id;
-    
+
       // Fetch data from an API or any other data source
-      const response = await fetch(`https://teamwebdevelopers.com/charge_construct/api/blogPost/${id}`);
+      const response = await fetch(`https://teamwebdevelopers.com/charge_construct/api/blogPost/`);
       const data = await response.json(); // Parse the JSON content
       //console.log("value of response "+response);
       if (!response.ok) {

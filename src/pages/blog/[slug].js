@@ -5,90 +5,57 @@ import Button from "@/components/Button";
 import GridPostList from "@/components/PostGrid/PostGrid";
 import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
+import { useRouter } from 'next/router';
 import { fetchData } from '@/apiConnection/apiService';
-function Blog(props) {
-   
+function Blog() {
+
+  const router = useRouter();
+  const {slug} = router.query;
+// console.log(slug);
     //console.log('Hii value shows '+JSON.stringify(props));
-    const [data, setData] = useState(null);
-    const [sectionData, setSection] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+const [relatedpost, setmainpost] = useState({});
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState(null);
+//console.log(mainpost.tags);
+const [related, setrelated] = useState(null);
+//console.log(related);
 
-  
-//     useEffect(() => {
-//     async function fetchDataFromAPI() {
-//         try {
-//             console.log(postID);
-//             const responseData = await fetchData('/blogPost/'+postID); // Replace '/data' with the API endpoint you want to fetch
-//             console.log("success"+responseData);
-//             setData(responseData);
-//            setLoading(false);
-//         } catch (error) {
-//             setError("error"+error);
-//             setLoading(false);
-//         }
-//     }
-//    // Aos.init({ duration: 1700 });
+useEffect(() => {
+  if (slug) {
+    async function fetchDataFromAPI() {
+      try {
+        const responsehomenews = await fetchData(`/blogPost/${slug}`);
+        setmainpost(responsehomenews);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    }
+    fetchDataFromAPI();
+  }
+}, [slug]);
 
-//     fetchDataFromAPI()
-// }, [])
-
-const { id, post_title, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = props.data[0][0];
-const postBanner = {
-    backgroundImage: `url('https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${props.data[0][0].banner_img}')`,
-}
-
-const newsroom = [
-        {
-            "id": 1,
-            "img": "post.jpg",
-            "title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
-            "category": "Podcast",
-            "published": "Dezember 12, 2022"
-        },
-        {
-            "id": 2,
-            "img": "post.jpg",
-            "title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
-            "category": "Podcast",
-            "published": "Dezember 12, 2022"
-        },
-        {
-            "id": 3,
-            "img": "post.jpg",
-            "title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
-            "category": "Podcast",
-            "published": "Dezember 12, 2022"
-        },
-        {
-            "id": 4,
-            "img": "post.jpg",
-            "title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
-            "category": "Podcast",
-            "published": "Dezember 12, 2022"
-        },
-        {
-            "id": 5,
-            "img": "post.jpg",
-            "title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
-            "category": "Podcast",
-            "published": "Dezember 12, 2022"
-        },
-        {
-            "id": 6,
-            "img": "post.jpg",
-            "title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
-            "category": "Podcast",
-            "published": "Dezember 12, 2022"
-        },
-        {
-            "id": 7,
-            "img": "post.jpg",
-            "title": "Lorem ipsum dolore radum daresorium: 5 top lorem",
-            "category": "Podcast",
-            "published": "Dezember 12, 2022"
+useEffect(() => {
+    if (slug) {
+      async function fetchDataAPI() {
+        try {
+          const relpost = await fetchData(`/category-blog/${relatedpost.category[0].name}`);
+          setrelated(relpost);
+          setLoading(false);
+        } catch (error) {
+          setError(error);
+          setLoading(false);
         }
-    ]
+      }
+      fetchDataAPI();
+    }
+  }, [slug]);
+ 
+console.log( JSON.stringify(related));
+//   console.log('this is the list of value '+relatedpost.category[0].name);
+  const { id, post_title, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = relatedpost.post ? relatedpost.post[0] : {};
+
     var settings = {
         dots: false, // Show dots navigation
         infinite: true, // Loop the carousel
@@ -98,33 +65,28 @@ const newsroom = [
         slidesToShow: 1,
         slidesToScroll: 1,
     };
-
-    useEffect(() => {
-        document.querySelector("body").removeAttribute("class", '');
-        document.querySelector("body").classList.add("newsroom-template")
-    });
     return (
         <Layout>
         <section className="main-section pt-0">
             <div className="container-fluid p-0">
-                <div className="row single-blog-row" style={postBanner}>
+                <div className="row single-blog-row">
                     <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
                     <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear"
      data-aos-duration="1000">
       
          <div className="post-category">
-            {props.data['category'].map((datas) =>
+            {/* {relatedpost['category'].map((datas) =>
             (<span key={datas.id}>{datas.name}</span>))
-            } - {post_date}
+            } - {post_date} */}
             </div>
         <h4 className="text-white">{post_title}</h4>
             </div>
                     </div>
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
      data-aos-duration="1000">
-                   {/* <div className="podcast-post">
-                   {banner_img?<img className="img-fluid" src={banner_img?`https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${props.data[0][0].banner_img}`:''}/>:''}
-                   </div> */}
+                   <div className="podcast-post">
+                   {banner_img?<img className="img-fluid" src={banner_img?`https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${banner_img}`:''}/>:''}
+                   </div>
                     </div>
                 </div>
             </div>
@@ -133,9 +95,7 @@ const newsroom = [
     <section className="single-post">
     <div className="container">
         <div className="row">
-            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: post_content }}>
-               
-            </div>
+            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: post_content }}></div>
             <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-center">
                 <div className="post-btn-group">
             <Button link="#" title="Entdecke Sie wie unser Team auch Ihnen helfen kann" classs="withoutbtn no-arrow kann-btn"/>
@@ -148,9 +108,9 @@ const newsroom = [
             <div className="col-lg-7 col-md-7 col-sm-12">
                 <h4>Ähnliche Themen</h4>
                 <ul className="blog-tags">
-                {props.data['tags'].map((datas) =>
-            (<li><a href={datas.link} className="post-tags">{datas.name}</a></li>))
-            } 
+                {relatedpost.tags && relatedpost.tags.map((datas, index) =>
+            (<li key={index}><a href={datas.link} className="post-tags">{datas.name}</a></li>))
+                }
                 </ul> 
                 
             </div>
@@ -176,8 +136,9 @@ const newsroom = [
             <Button link="#" title="Mehr Insights" classs="withoutbtn blog-insights"/>
             </div>
             </div>
-            
-        <GridPostList bloglist={[1,2,3]}/>
+            { related.map((item, index) => (
+            <GridPostList key={item.id} postdata={item}/>
+            ))}
         </div>
     </section>
     
@@ -197,35 +158,15 @@ const newsroom = [
     </div>
     </div>
     </section>
-    
         </Layout>
     )
 }
 
 export default Blog;
 
-export async function getServerSideProps(context) {
-    try {
-        var {id} = context.query;
-    //const postID = router.query.id;
-    
-      // Fetch data from an API or any other data source
-      const response = await fetch(`https://teamwebdevelopers.com/charge_construct/api/blogPost/${id}`);
-      const data = await response.json(); // Parse the JSON content
-      //console.log("value of response "+response);
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
-       
-      return {
-        props: { data },
-      };
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      return {
-        props: {
-          data: null, // You can set a default value or handle errors as needed
-        },
-      };
-    }
-  }
+// export async function getServerSideProps(context) {
+//   var {slug} = context.query;
+//   return {
+//     props: {slug}
+//   }
+// }

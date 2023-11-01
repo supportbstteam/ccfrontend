@@ -23,7 +23,7 @@ const data = [
   },
 ];
 
-function SocialProfile() {
+function SocialProfile(props) {
   const [BarData, setBarData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -46,7 +46,11 @@ function SocialProfile() {
   return (
     <ul className="social-follow">
    {BarData?BarData.map((item, index) => (
-  <li key={item.id}><a href={item.link}><img src={`https://teamwebdevelopers.com/charge_construct/public/images/social/${item.logo_icon}`} alt={item.title}/></a></li>
+  <li key={item.id}>
+    <a href={item.link}>
+      <img src={`https://teamwebdevelopers.com/charge_construct/public/images/social/${item.logo_icon}`} alt={item.title}/>
+      {props.accept === 'title'?<span>{item.title}</span>:''}</a>
+      </li>
    )):''}
    </ul>
   );

@@ -666,6 +666,7 @@ ul.custom_logo_details li {
   display: none;
 }
 form.draht-forms input[type="text"],
+form.draht-forms input[type="number"],
 form.draht-forms input[type="email"]
 , form.draht-forms textarea{
   width: 80%;
@@ -674,6 +675,7 @@ form.draht-forms input[type="email"]
   border-bottom: 1.6px solid #737373;
 }
 form.draht-forms input[type="text"],
+form.draht-forms input[type="number"],
 form.draht-forms input[type="email"]{
   height: 40px;
 }
@@ -1017,7 +1019,7 @@ section.main-section.charge_zahlen .counter-box:hover .added_details{
   transition: all 0.5s;
   right: -68%;
   background: var(--primary-clr);
-  width: 102%;
+  width: 100%;
   height: 240px;
   z-index: 99;
   align-items: center;
@@ -1492,7 +1494,6 @@ text-align: center;
   animation: zoomInOut 6s infinite;
 }
 .card-post-grids .post-card{
-  cursor: pointer;
     overflow: hidden;
 }
 .card-post-grids .post-card .post-img{
@@ -1500,9 +1501,21 @@ text-align: center;
 }
 .card-post-grids .post-card img{
   transition: all .9s;
+  width: 100%;
+    height: 240px;
+    object-fit: cover;
 }
 .card-post-grids .post-card:hover img{
   transform: scale(1.1);
+}
+.post-sliding{
+  width: 100%;
+}
+.post-sliding .slick-slide {
+  padding: 0 12px;
+}
+.post-sliding .slick-list {
+  padding: 0 -12px;
 }
 .card-post-grids .post-card:nth-child(1) {
   background: #D3B08E;
@@ -1516,6 +1529,12 @@ text-align: center;
 .card-post-grids .post-card .post-published,
 .card-post-grids .post-card .card-title {
   color: #8D5D2D;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  font-family: 'proxima-bold';
+  line-height: 26px;
 }
 .card-post-grids .post-card p.post-published{
   text-transform: uppercase;
@@ -1730,6 +1749,25 @@ margin-top: 20px;
 .about-video{
   width: 92%;
 }
+.company-award ul{
+  list-style: none;
+  padding: 0;
+}
+.company-award ul li{
+  display: inline;
+}
+section.main-section.unsere-section {
+  overflow: visible;
+}
+.errorshowing, .successshowing{
+  color: red;
+  font-weight: 700;
+  font-size: 23px;
+  margin: 0 15px;
+}
+.successshowing{
+  color: green;
+}
 @media screen and (max-width: 768px) {
   .card-service {
     position: relative;
@@ -1758,7 +1796,7 @@ section.main-section.service_second {
   .banner-slider {
     padding: 38% 0 2%;
 }
-form.draht-forms input[type="text"], form.draht-forms input[type="email"], form.draht-forms textarea{
+form.draht-forms input[type="text"], form.draht-forms input[type="number"], form.draht-forms input[type="email"], form.draht-forms textarea{
   width: 100%;
 }
 .main-section {

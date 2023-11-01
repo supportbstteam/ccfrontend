@@ -11,7 +11,6 @@ function NavMenu(props){
           <div className={`container ${NavMenu?'open-menu':''}`}>
 <nav className="navbar navbar-expand-lg dynamic-Navbar">
 <Link href="/" className="navbar-brand" >
-
   <img src="../../assets/images/logo.svg" className='img-fluid' alt="Charge construct power on"/>
   </Link>
     <button className="navbar-toggler ms-auto" onClick={toggleMenu}  type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,8 +18,6 @@ function NavMenu(props){
             </button>
 
     <div className={`collapse navbar-collapse home-nav ${NavMenu?'show':''}`} id="navbarColor01">
-    <button className="border-6 cc-button cc-transbutton" type="button">Kundengruppen</button>
-    
       <ul className="navbar-nav ms-auto align-items-center">
         <li className="nav-item">
         <Link href="/about">About</Link>
