@@ -11,7 +11,6 @@ function PostSlider(){
           try {
             const responsehomenews = await fetchData('/category-blog/podcast'); // Replace '/data' with the API endpoint you want to fetch
             setPostSliderdata(responsehomenews);
-            console.log(PostSliderdata);
             setLoading(false);
           } catch (error) {
             setError(error);

@@ -1809,10 +1809,10 @@ section.main-section.unsere-section {
 }
 .react-responsive-modal-modal {
   width: 100%;
-  text-align: center;
-  background: #111;
+  text-align: center !important;
+  background: #111 !important;
   color: #fff;
-  padding: 2%;
+  padding: 2% !important;
 }
 .react-responsive-modal-modal button svg{
   fill: #fff;

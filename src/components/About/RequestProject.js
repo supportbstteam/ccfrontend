@@ -26,7 +26,6 @@ function RequestProject(){
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-  console.log(secProject);
 return(
     <section className="main-section errichet_section min-height">
     <div className="container">

@@ -13,7 +13,6 @@ function AllinSIghts(){
           try {
             const responsehomenews = await fetchData('/homeBlogPost'); // Replace '/data' with the API endpoint you want to fetch
             setAllInSightsData(responsehomenews);
-            console.log(AllInSightsdata);
             setLoading(false);
           } catch (error) {
             setError(error);

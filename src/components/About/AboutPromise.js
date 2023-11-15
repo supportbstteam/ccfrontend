@@ -10,7 +10,6 @@ function AboutPromise(){
       async function fetchDataFromAPI() {
         try {
           const responseSection = await fetchData('/promise');
-          console.log(responseSection);
           setSecPromise(responseSection);
           setLoading(false);
         } catch (error) {

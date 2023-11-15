@@ -2,7 +2,7 @@ import Aos from "aos";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 function GridPostList(props){
-  console.log('Details posts: '+JSON.stringify(props.postdata));
+  //console.log('Details posts: '+JSON.stringify(props.postdata));
   const post_list = props.postdata;
   const [postdata,setPostData] = useState(post_list?post_list:'');
   const [categoryPostdata,setCategoryPostdata] = useState(postdata.post_category?postdata.post_category:'');
