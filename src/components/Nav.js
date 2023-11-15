@@ -32,7 +32,7 @@ function NavMenu(props){
         <Link href="/newsroom">Newsroom</Link>
         </li>
         <li className="nav-item">
-        <Link href="#" className='border-6 cc-button'>Kontakt</Link>
+        <Link href="#" className='main-btn border-6 cc-button cc-transbutton'>Kontakt</Link>
         </li>
       </ul>
       {/* <form className="form-inline">

@@ -17,7 +17,7 @@ function NewsRoom(){
     },[])
 
     return(
-        <Layout>
+        <Layout title="Charge Construct Newsroom" metaDescription="Wir errichten die Ladeinfrastruktur von und für morgen. Steckerfertig, ganzheitlich und aus einer Hand.">
         <section className="news-post-fillter bg-dark">
             <div className="container" data-aos="fade-down" data-aos-easing="linear"
      data-aos-duration="1000">

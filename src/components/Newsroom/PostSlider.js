@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import { useState, useEffect } from 'react';
+import Link from "next/link";
 import { fetchData } from "../../apiConnection/apiService";
 function PostSlider(){
     const [PostSliderdata, setPostSliderdata] = useState([]);
@@ -19,7 +20,7 @@ function PostSlider(){
         }
         fetchDataFromAPI();
       }, []);
-
+console.log(PostSliderdata);
 const newsroom = [
     {
         "id": 1,
@@ -104,8 +105,10 @@ data-aos-duration="1000">
                 <div className="podcast-post" key={i}>
                     <img src="../assets/images/newsroom/post.jpg"/>
                     <div className="newsroom-post-slides">
+                        <Link href={news.category?`../${news.category.toLowerCase()}/${news.slug}`:''}>
                     <p><span>{news.category}</span>, <span>{new Date(news.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>
                     <h4>{news.post_title}</h4>
+                    </Link>
                     </div>
                 </div>
                 ))

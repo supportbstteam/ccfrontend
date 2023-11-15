@@ -46,9 +46,8 @@ function About(props) {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
     return (
-      <Layout title="About us">
+      <Layout title="About us" metaDescription="Wir errichten die Ladeinfrastruktur von und für morgen. Steckerfertig, ganzheitlich und aus einer Hand.">
     <section>
       <div className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">

@@ -570,6 +570,10 @@ ul.custom_logo_details li {
   width: 100%;
   padding: 5% 2.5%;
 }
+.newsroom-post-slides a{
+  color: inherit;
+  text-decoration: none;
+}
 .newsroom-post-slides p, .newsroom-post-slides p span{
   text-transform: uppercase;
   font-size: 15px;
@@ -1826,6 +1830,9 @@ section.main-section.unsere-section {
 }
 }
 @media screen and (max-width: 768px) {
+  .whitepaper-section .post-sliding .slick-slide{
+width: 100% !important;
+  }
   .career-video-content{
     left:0;
   }
