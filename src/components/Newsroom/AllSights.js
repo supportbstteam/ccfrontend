@@ -25,7 +25,7 @@ function AllinSIghts(){
 
     return(
 <div className="row card-post-grids">
-{AllInSightsdata.length && AllInSightsdata.map((item, index) => (
+{AllInSightsdata.length && AllInSightsdata.slice(0, 7).map((item, index) => (
         index === 3 || index === 7 ? <GridPostHorizontal key={item.id} postdata={item} /> : <GridPostList key={item.id} postdata={item} />
       )) || []}
 

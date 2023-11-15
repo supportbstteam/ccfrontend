@@ -25,10 +25,9 @@ data-aos-duration="1100">
 <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea c</p>
 <div className="posts-authors">
 <ul>
-<li><img src="../assets/images/newsroom/author-1.png"/></li>
-<li><img src="../assets/images/newsroom/author-2.png"/></li>
-<li>von John Doe</li>
-<li>John Doe</li>
+{/* <li><img src="../assets/images/newsroom/author-1.png"/></li>
+<li><img src="../assets/images/newsroom/author-2.png"/></li> */}
+<li>{categorydata.author && categorydata.author.toUpperCase()}</li>
 </ul>
 </div>
 </div>

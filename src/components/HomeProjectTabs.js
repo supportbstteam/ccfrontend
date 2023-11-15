@@ -37,7 +37,7 @@
           console.log(CategoryPost);
           const responsepost = await fetchData(`/project/${catnamshow}`); // Replace '/data' with the API endpoint you want to fetch
           setProjectData(responsepost);
-          //console.log(responsepost);
+          console.log(responsepost);
           setLoading(false);
         } catch (error) {
           setError(error);
@@ -78,7 +78,7 @@
         <div className="tab-content">
           <div className='tab-pane active' data-cat={CategoryPost}>
               <div className='row projects-row'>
-              {Projectdata ? Projectdata.map((tab,index) => {
+              {Projectdata ? Projectdata.slice(0, 4).map((tab,index) => {
                 if (index == 0 || index == 3 || index == 5) {
                  return <div key={index} className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4" data-cat={index} style={tab.image?{backgroundImage:`url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})`}:''}>  {/* style={tab.image?{backgroundImage:`url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})`}:''} */}
                       {/* {tab.image ? <img className="w-100 border-6" src={tab.image ? `https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image}` : ''} /> : ''} */}
@@ -97,7 +97,7 @@
                           {tab.title?<h3>{tab.title}</h3>:''}
                           {tab.content?<p dangerouslySetInnerHTML={{ __html: tab.content}}/>:''}
                           </div>
-                          <Button title="Ganzer Beitrag" link="#" />
+                          <Button title="Ganzer Beitrag" link='#' />
                       </div>
                   </div>
                     }

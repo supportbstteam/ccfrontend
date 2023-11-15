@@ -78,7 +78,7 @@ function ImageGallery() {
   
     return (
       <>
-        <div className="row positon-relative">
+        <div className="row position-relative">
           {
           lightboxDisplay ? 
           <div id="lightbox" onClick={hideLightBox}>

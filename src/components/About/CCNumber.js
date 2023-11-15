@@ -14,7 +14,6 @@ function InNumber(){
         const ccnumbers = await fetchData('/number'); // Replace '/data' with the API endpoint you want to fetch
         setNumbers(ccnumbers);
         setLoading(false);
-        console.log(CCNum?CCNum:'');
         //Aos.init({duration: 1700});
       } catch (error) {
         setError(error);
@@ -51,77 +50,24 @@ function InNumber(){
     return(
         <section className="main-section charge_zahlen">
   <div className="container">
-    <div className="row">
+    <div className="row justify-content-center">
       <div className="col-12">
       <h2 className="section-title mb-4">Charge Construct in Zahlen</h2>
       </div>
 
       {CCNum?CCNum.map((item, index) => (
          <React.Fragment key={index}>
-         {item.order == 1?
       <div className='col-lg-4 col-md-4 col-12 col-counter'>
         <div className='counter-box'>
           <h4>{item.number}</h4>
           <p>{item.title}</p>
           <div className='added_details'>
-          <React.Fragment dangerouslySetInnerHTML={{ __html: item.description }}></React.Fragment>
+          <div dangerouslySetInnerHTML={{ __html: item.description }}></div>
         </div>
         </div>
       </div>
-        :''}
         </React.Fragment>
       )):''}
-
-{CCNum?CCNum.map((item, index) => (
-         <React.Fragment key={index}>
-         {item.order == 2?
-      <div className='col-lg-4 col-md-4 col-12 col-counter'>
-      <div className='counter-box'>
-          <h4>{item.number}</h4>
-          <p>{item.title}</p>
-          <div className='added_details'>
-          <React.Fragment dangerouslySetInnerHTML={{ __html: item.description }}></React.Fragment>
-        </div>
-        </div>
-      </div>
-        :''}
-        </React.Fragment>
-      )):''}
-
-
-{CCNum?CCNum.map((item, index) => (
-         <React.Fragment key={index}>
-         {item.order == 3?
-      <div className='col-lg-4 col-md-4 col-12 col-counter'>
-      <div className='counter-box'>
-      <h4>{item.number}</h4>
-          <p>{item.title}</p>
-          <div className='added_details'>
-          <React.Fragment dangerouslySetInnerHTML={{ __html: item.description }}></React.Fragment>
-        </div>
-        </div>
-      </div>
-      :''}
-        </React.Fragment>
-      )):''}
-
-
-{CCNum?CCNum.map((item, index) => (
-         <React.Fragment key={index}>
-         {item.order == 4?
-      <div className='col-12'>
-        <div className='stand_in'>
-        <h4>{item.number}</h4>
-          <p>{item.title}</p>
-          <div className='added_details'>
-          <React.Fragment dangerouslySetInnerHTML={{ __html: item.description }}></React.Fragment>
-        </div>
-        </div>
-      </div>
- :''}
- </React.Fragment>
-)):''}
-
     </div>
     </div>
     </section>

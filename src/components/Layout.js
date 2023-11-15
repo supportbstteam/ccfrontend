@@ -15,7 +15,6 @@ export default function Layout({ children,title,viewClass }) {
 
   return (
       <>
-     
          <Head>
         <title>{title}</title>
       </Head>

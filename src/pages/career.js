@@ -7,7 +7,9 @@ import Certifications from '@/components/GeneralDetails/Certifications';
 import FaqList from '@/components/Faq';
 import Layout from '@/components/Layout';
 import AboutHR from '@/components/About/AboutHr';
+import Benefits from '@/components/Benefits'
 import SocialProfile from '@/components/GeneralDetails/SocialProfile';
+import BecomeTeam from '@/components/BecomeTeam';
 
 function careerContent(props){
   const [pageData, setPageData] = useState(props.data);
@@ -18,38 +20,6 @@ function careerContent(props){
         Aos.init({duration: 1700});
     },[])
 
-    const Faqs = [
-        {
-            id: "1",
-            question: "Was macht das Arbeiten bei uns so besonders?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-            id: "2",
-            question: "Was mache ich, wenn ich nicht innerhalb von einer Woche von euch eine Rückmeldung erhalte?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-            id: "3",
-            question: "Arbeitet ihr Remote oder im Office?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-            id: "4",
-            question: "Kann ich mich auch initiativ bewerben?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        },
-        {
-            id: "5",
-            question: "Kann ich mich auch auf zwei Stellen gleichzeitig bewerben?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        }
-    ];
-
-    useEffect( () => { 
-        document.querySelector("body").removeAttribute("class", '');
-        document.querySelector("body").classList.add("career-template")
-    });
     return(
         <Layout>
          <section className='career-banner position-relative' style={sliderbg}>
@@ -114,94 +84,8 @@ function careerContent(props){
     <div className='container-fluid'>
         <ImageGallery />
     </div>
-  </section>
-
-  <section className='main-section unsere-section'>
-    <div className='container'>
-        <div className='row'>
-            <div className='col-12'>
-            <h2 className='section-title text-dark mb-5' data-aos="fade-up" data-aos-duration="1000">Unsere Benefits</h2>
-            </div>
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1000">
-                <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </div>
-
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1200">
-                <div className='benefit-box'>
-                <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               
-                </div>
-            </div>
-
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1400">
-                <div className='benefit-box'>
-                <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               
-                </div>
-            </div>
-
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1600">
-                <div className='benefit-box'>
-                <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               
-                </div>
-            </div>
-
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1800">
-                <div className='benefit-box'>
-                <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               
-                </div>
-            </div>
-
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="2000">
-                <div className='benefit-box'>
-                <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               
-                </div>
-            </div>
-
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="2200">
-                <div className='benefit-box'>
-                <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               
-                </div>
-            </div>
-
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="2400">
-                <div className='benefit-box'>
-                <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               </div>
-            </div>
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="2400">
-                <div className='benefit-box'>
-                <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-               </div>
-            </div>
-        </div>
-    </div>
-  </section>
-
+  </section>  
+<Benefits/>
   <section className='position-relative warum-section bg-moredark d-flex align-items-end'>
   <video autoPlay loop muted className='w-100'>
 		<source src="../../assets/images/teamscc.mp4" type='video/mp4' />
@@ -227,28 +111,14 @@ function careerContent(props){
         
         <div className='col-lg-8 col-md-8 col-sm-12 col-12 offset-lg-2 offset-md-2 '>
         <div className="accordion" id="faqlists">
-        {Faqs.map((faq, index) =>
-       <FaqList faq={faq} ids={index} key={index}/>
-        )}
+       <FaqList />
             </div>
             </div>
         </div>
     </div>
   </section>
 
-  <section className='main-section become-team-section py-5' style={{backgroundImage: `url('../../assets/images/career/teampartner.jpg')`}}>
-  <div className='container'>
-        <div className='row'>
-        <div className='col-6' data-aos="fade-up" data-aos-duration="1800">
-            <h2 className='section-title mb-5'>Möchtest Du ein Teil unseres
-Teams werden?</h2>
-<p>Wir suchen motivierte und talentierte Persönlichkeiten, die unsere Vision einer flächendeckenden Ladeinfrastruktur teilen. Bist du bereit, gemeinsam mit uns die Herausforderungen auf diesem Weg zu meistern?
-    <br/> <br/>Wir freuen uns auf deine Bewerbung!</p>
-    <Button title="E-Mail schreiben" classs='no-arrow' link="#"/>
-        </div>
-        </div>
-        </div>
-  </section>
+  <BecomeTeam/>
   </Layout>
     );
 }

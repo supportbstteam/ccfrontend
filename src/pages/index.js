@@ -41,7 +41,6 @@ export default function Home() {
     <Layout viewClass="home-page">
    <MainSlider slider={data}/>
          {sectionData.map((Secdata, index) => (
-          
         <Sections key={index} section={Secdata}/>
         ))}
     </Layout>

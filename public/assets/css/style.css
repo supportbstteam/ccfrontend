@@ -66,7 +66,7 @@ div#__next {
   }
   .home-nav ul li a{
     color: #fff;
-    font-size: 18px !important;
+    font-size: 19px !important;
     font-family: 'proxima-medium';
     text-decoration: none;
     }
@@ -325,7 +325,7 @@ text-align: center;
   justify-content: space-evenly;
 }
 .kundengrup-card .flip-card-back a{
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
 }
@@ -424,7 +424,7 @@ section.main-section.project_insight {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
     height: 580px;
     min-height: 500px;
@@ -454,10 +454,25 @@ section.usp_section .section-title, .barchats_section .section-title{
 display: none;
 }
 .collapse.navbar-collapse.home-nav.show {
-  background: #000;
+  background: #000000eb;
   padding: 21px;
   text-align: center;
   border-radius: 3px;
+  position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+button.navbar-toggler.ms-auto{
+  z-index: 999;
+}
+.collapse.navbar-collapse.home-nav.show ul{
+  position: relative;
+  top: 80px;
+}
+.open-menu button.navbar-toggler .navbar-toggler-icon{
+background-image: url('../images/x.svg');
 }
 .open-menu nav button {
   margin-bottom: 2%;
@@ -1006,6 +1021,9 @@ section.main-section.charge_zahlen .counter-box:hover, .stand_in:hover{
   background: var(--primary-clr);
   border: 0;
 }
+section.main-section.charge_zahlen .col-counter:nth-child(4) .counter-box .added_details{
+  left: -97% !important;
+}
 .col-counter {
   position: relative;
 }
@@ -1291,15 +1309,17 @@ ul.tabsview.founders-tabs li.actives{
 }
 
 #lightbox-img {
-  height: 80vh;
   max-width: 90vw;
   object-fit: cover;
 }
-
+.popuplight-box{
+  position: relative;
+  top: 80px;
+}
 #lightbox {
   z-index: 99;
   position: absolute;
-  top: 0;
+ top:0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -1307,6 +1327,7 @@ ul.tabsview.founders-tabs li.actives{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  justify-content: center;
 }
 .search-vacancy{
   display: flex;
@@ -1623,16 +1644,20 @@ font-family: 'proxima-medium';
 }
 .branche-figure .branche-cols{
   background: var(--primary-clr);
-  padding: 2% 2%;
+  padding: 1.7% 1.7%;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 .branche-figure .branche-cols h5{
   font-family: 'proxima-medium';
+  line-height: inherit;
 }
 .branche-figure .bar-charts{
   background: #fff;
   padding: 1.5% 5%;
+}
+.branche-figure .bar-charts .recharts-wrapper{
+margin: 0 auto;
 }
 .bar-charts .progress {
   border-radius: 0;
@@ -1768,7 +1793,45 @@ section.main-section.unsere-section {
 .successshowing{
   color: green;
 }
+.branche-figure .barcharts-footer p{
+  margin: 0;
+}
+.card.post-card .post-img img {
+  height: 260px;
+  object-fit: cover;
+  object-position: center center;
+}
+.card-body a.card-title h4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.react-responsive-modal-modal {
+  width: 100%;
+  text-align: center;
+  background: #111;
+  color: #fff;
+  padding: 2%;
+}
+.react-responsive-modal-modal button svg{
+  fill: #fff;
+}
+@media screen and (max-width: 991px) and (min-width: 768px){
+  .navbar-expand-md .navbar-collapse{
+    justify-content: center;
+  }
+.navbar-expand-md .navbar-nav{
+  margin: 0 auto !important;
+}
+}
 @media screen and (max-width: 768px) {
+  .career-video-content{
+    left:0;
+  }
+  section.main-section.emobili-section {
+    flex-direction: column;
+}
   .card-service {
     position: relative;
     margin-bottom: 23px;

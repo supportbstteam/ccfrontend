@@ -45,7 +45,7 @@ function Whitepaper() {
             <h2 className='section-title text-dark mb-5'>Whitepaper & Leitfäden</h2>
           </div>
           <Slider {...settings2}>
-          {WhitePaperdata && WhitePaperdata.map((item,index)=>(
+          {WhitePaperdata && WhitePaperdata.slice(0, 2).map((item,index)=>(
 <div className="overlay-posts" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500" key={index}>
 <div className="card bg-dark text-white border-0 rounded-0">
   <img src={`http://teamwebdevelopers.com/charge_construct/public/images/whitepaper/${item.image}`} className="card-img" alt="..." />
