@@ -35,7 +35,7 @@ function AboutHR(){
             </div>
         </div>
         <div className='col-lg-4 col-md-4 col-sm-12 col-12 text-center' data-aos="fade-right" data-aos-duration="2500">
-         <img src="/assets/images/hr.png" className='w-50' data-aos="zoom-in" data-aos-duration="1500"/>
+         <img src={`https://teamwebdevelopers.com/charge_construct/public/images/partner/${AboutHr.image}`} className='w-50' data-aos="zoom-in" data-aos-duration="1500"/>
          <h5 data-aos="zoom-in" data-aos-duration="1500">{AboutHr.name}</h5>
          <p className='text-center' data-aos="zoom-in" data-aos-duration="1500">{AboutHr.profession}</p>
         </div>

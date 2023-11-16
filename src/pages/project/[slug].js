@@ -8,6 +8,7 @@ import Layout from "@/components/Layout";
 import { useRouter } from 'next/router';
 import { fetchData } from '@/apiConnection/apiService';
 function Blog() {
+
   const router = useRouter();
   const {slug} = router.query;
 const [relatedpost, setmainpost] = useState({});

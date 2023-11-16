@@ -109,6 +109,16 @@ function HomeForm() {
     });
   };
   return (
+    <section className="main-section">
+      <div className="container">
+        <div className="row">
+    <div className="col-12">
+      <h2 data-aoss="fade-up" className="section-title text-dark">Ihr Draht zu uns</h2>
+      <p className="text-dark section-desciption">Sie haben individuelle Anforderungen an 
+      die Errichtung der Ladeinfrastruktur? Kein Problem! Wir helfen Ihnen weiter 
+      und erarbeiten ein für Sie passendes Konzept.
+      Schreiben Sie uns, oder rufen Sie uns
+      an <a href="+4984149399122">+49-841-49399122</a></p></div>
     <form className="draht-forms row" onSubmit={handleSubmit}>
       <div className="col-lg-6 col-md-6 col-sm-12 form-fields">
         <input
@@ -193,6 +203,9 @@ function HomeForm() {
         <span className="successshowing"></span>
       </div>
     </form>
+    </div>
+      </div>
+    </section>
   );
 }
 

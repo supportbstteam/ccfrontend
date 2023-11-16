@@ -1821,6 +1821,15 @@ section.main-section.unsere-section {
 .react-responsive-modal-modal button svg{
   fill: #fff;
 }
+section.post-lists {
+  margin: 20px 0;
+}
+section.post-category-banners .carousel-caption h1{
+  font-size: 55px;
+}
+.carousel-caption{
+  top: 50% !important;
+}
 @media screen and (max-width: 991px) and (min-width: 768px){
   .navbar-expand-md .navbar-collapse{
     justify-content: center;

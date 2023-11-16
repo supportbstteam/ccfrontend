@@ -33,6 +33,10 @@ useEffect(()=>{
 
     //const props = useSpring({ opacity: 1, from: { opacity: 0 } });
     return(
+        <>
+         {sec_type==='homeform_section'?(
+            <HomeForm/>
+         ):(
 <section className={`main-section home-sections ${sec_type}`} style={sliderbg} >
 
         <div className='container'>
@@ -71,12 +75,11 @@ useEffect(()=>{
                 {sec_type==='newsroom_section'?(
                    <HomeNewsRoom/>
                 ):(<></>)}
-                {sec_type==='homeform_section'?(
-                   <HomeForm/>
-                ):(<></>)}
             </div>
         </div>
         </section>
+       )}
+         </>
     )
 }
 
