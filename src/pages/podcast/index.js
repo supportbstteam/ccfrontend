@@ -18,6 +18,13 @@ function ArticleList() {
         }
         fetchDataFromAPI();
       }, []);
+      // if (loading) {
+      //   return <div>Loading...</div>;
+      // }
+    
+      // if (error) {
+      //   return <div>Error: {error.message}</div>;
+      // }
     return (
         <Layout>
           <section className="post-category-banners">
