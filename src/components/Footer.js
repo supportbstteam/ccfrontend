@@ -37,7 +37,7 @@ return(
         <div className="container">
         <div className="row mb-4">
                 <div className="col-lg-4 col-md-6 col-sm-12 footer-col">
-               <img src="assets/images/footer_logo.png" className="footer-logo" alt="Charge construct power on"/>
+               <img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in</p>
                 </div>
                 <div className="col-lg-5 col-md-5 col-sm-7 footer-col">

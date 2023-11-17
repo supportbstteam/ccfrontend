@@ -16,14 +16,14 @@ const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 const [related, setrelated] = useState(null);
 const subcategory = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
-console.log(subcategory);
+//console.log(subcategory);
 
 useEffect(() => {
   if (slug) {
     async function fetchDataFromAPI() {
       try {
         const responsehomenews = await fetchData(`/blogPost/${slug}`);
-        //console.log(responsehomenews);
+        console.log(responsehomenews);
         setmainpost(responsehomenews);
         setLoading(false);
       } catch (error) {
@@ -49,9 +49,8 @@ useEffect(() => {
     }
     fetchDataAPI();
 }, [slug, subcategory]);
-console.log(related);
 //   console.log('this is the list of value '+relatedpost.category[0].name);
-  const { id, post_title, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = relatedpost.post ? relatedpost.post[0] : {};
+  const { id, post_title,metatitle, metadesc, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = relatedpost.post ? relatedpost.post[0] : {};
 
     var settings = {
         dots: false, // Show dots navigation
@@ -63,13 +62,12 @@ console.log(related);
         slidesToScroll: 1,
     };
     return (
-        <Layout>
+        <Layout title={metatitle} metaDescription={metadesc}>
         <section className="main-section pt-0">
             <div className="container-fluid p-0">
                 <div className="row single-blog-row">
                     <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
-                    <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear"
-     data-aos-duration="1000">
+                    <div className="newsroom-col">
       
          {/* <div className="post-category">
             {relatedpost['category'].map((datas) =>
@@ -79,8 +77,7 @@ console.log(related);
         <h4 className="text-white">{post_title}</h4>
             </div>
                     </div>
-                    <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
-     data-aos-duration="1000">
+                    <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" >
                    <div className="podcast-post">
                    {banner_img?<img className="img-fluid" src={banner_img?`https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${banner_img}`:''}/>:''}
                    </div>

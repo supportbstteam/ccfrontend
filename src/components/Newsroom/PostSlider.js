@@ -20,7 +20,7 @@ function PostSlider(){
         }
         fetchDataFromAPI();
       }, []);
-console.log(PostSliderdata);
+//console.log(PostSliderdata);
 const newsroom = [
     {
         "id": 1,

@@ -15,8 +15,6 @@ const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 const [related, setrelated] = useState(null);
 const subcategory = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
-console.log(subcategory);
-
 useEffect(() => {
   if (slug) {
     async function fetchDataFromAPI() {
@@ -48,9 +46,8 @@ useEffect(() => {
     }
     fetchDataAPI();
 }, [slug, subcategory]);
-console.log(related);
 //   console.log('this is the list of value '+relatedpost.category[0].name);
-  const { id, post_title, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = relatedpost.post ? relatedpost.post[0] : {};
+  const { id, post_title,metatitle, metadesc, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = relatedpost.post ? relatedpost.post[0] : {};
 
     var settings = {
         dots: false, // Show dots navigation
@@ -62,7 +59,7 @@ console.log(related);
         slidesToScroll: 1,
     };
     return (
-        <Layout>
+        <Layout title={metatitle} metaDescription={metadesc}>
         <section className="main-section pt-0">
             <div className="container-fluid p-0">
                 <div className="row single-blog-row">
