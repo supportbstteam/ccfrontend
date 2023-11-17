@@ -74,7 +74,7 @@ useEffect(() => {
             (<span key={datas.id}>{datas.name}</span>))
             } - {post_date}
             </div> */}
-        <h4 className="text-white">{post_title}</h4>
+        <h1 className="text-white">{post_title}</h1>
             </div>
                     </div>
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" >
