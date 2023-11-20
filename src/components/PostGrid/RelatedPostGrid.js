@@ -1,8 +1,8 @@
 import Aos from "aos";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-function GridPostList(props){
-  //console.log('Details posts: '+JSON.stringify(props.postdata));
+function RelatedPostGridList(props){
+ // console.log('Details posts: '+JSON.stringify(props.postdata));
   const post_list = props.postdata;
   const [postdata,setPostData] = useState(post_list?post_list:'');
   const [categoryPostdata,setCategoryPostdata] = useState(postdata.post_category?postdata.post_category:'');
@@ -18,7 +18,7 @@ function GridPostList(props){
   </div>
   <div className="card-body">
     <p className="post-published">{categoryPostdata.name && <span>{categoryPostdata.name}, </span>}<span>{new Date(postdata.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>
-    <Link className="card-title text-decoration-none" href={`/${categoryPostdata && categoryPostdata.name.toLowerCase()}/${postdata.slug && postdata.slug}`}>
+    <Link className="card-title text-decoration-none" href={`/${postdata && postdata.category.toLowerCase()}/${postdata.slug && postdata.slug}`}>
       <h4>{postdata.post_title}</h4>
     </Link>
     <p className="authors">{categoryPostdata.author && categoryPostdata.author.toUpperCase()}</p>
@@ -28,4 +28,4 @@ function GridPostList(props){
     )
 }
 
-export default GridPostList;
+export default RelatedPostGridList;

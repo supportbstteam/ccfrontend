@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
 import { fetchData } from '@/apiConnection/apiService';
-import GridPostList from "@/components/PostGrid/PostGrid";
+import RelatedPostGridList from "@/components/PostGrid/RelatedPostGrid";
 function ArticleList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -43,7 +43,7 @@ function ArticleList() {
                 <div className="container">
                     <div className="row">
                         { postList && postList.map((item, index) => (
-            <GridPostList key={index} postdata={item}/>
+            <RelatedPostGridList key={index} postdata={item}/>
             ))}
                     </div>
                 </div>

@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "@/components/Button";
-import GridPostList from "@/components/PostGrid/PostGrid";
 import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
 import { useRouter } from 'next/router';
 import { fetchData } from '@/apiConnection/apiService';
 import SocialProfile from "@/components/GeneralDetails/SocialProfile";
+import RelatedPostGridList from "@/components/PostGrid/RelatedPostGrid";
 function Blog() {
 
   const router = useRouter();
@@ -128,7 +128,7 @@ console.log(mainpost);
                 <Button link={`../${category?category.toLowerCase():''}`} title={`Mehr ${category&&category}`} classs="withoutbtn blog-insights"/>
             </div>
             { related && related.map((item, index) => (
-            <GridPostList key={index} postdata={item}/>
+            <RelatedPostGridList key={index} postdata={item}/>
             ))}   
           </div>
         </div>

@@ -1,36 +1,37 @@
-"use client"
+import { useEffect, useState } from "react";
 import InputField from "./Forms/InputField";
+import { fetchData } from "@/apiConnection/apiService";
 import ContactDetails from "./GeneralDetails/ContactDetails";
 import SocialProfile from "./GeneralDetails/SocialProfile";
+import Aos from 'aos';
 function footer(){
 
-//     const [footerdata, setData] = useState(null);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
+    const [footerdata, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-//   useEffect(() => {
-//     async function fetchDataFromAPI() {
-//       try {
-//         const responsefooter = await fetchData('/footer'); // Replace '/data' with the API endpoint you want to fetch
-//         setData(responsefooter);
-//         setLoading(false);
-//         Aos.init({duration: 1700});
-//         console.log(responsefooter);
-//       } catch (error) {
-//         setError(error);
-//         setLoading(false);
-//       }
-//     }
+  useEffect(() => {
+    async function fetchDataFromAPI() {
+      try {
+        const responsefooter = await fetchData('/colom1'); // Replace '/data' with the API endpoint you want to fetch
+        setData(responsefooter);
+        setLoading(false);
+        Aos.init({duration: 1700});
+        console.log(responsefooter);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    }
 
-//     fetchDataFromAPI();
-//   }, []);
-
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
-//   if (error) {
-//     return <div>Error: {error.message}</div>;
-//   }
+    fetchDataFromAPI();
+  }, []);
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
 return(
     <footer>

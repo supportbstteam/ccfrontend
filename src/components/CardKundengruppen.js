@@ -1,7 +1,6 @@
 import Button from "./Button";
 import { fetchData } from "@/apiConnection/apiService";
 import { useState, useEffect } from 'react';
-import Aos from 'aos';
 function KundengruppenCard(){
   const [animated, setAnimate] = useState(1000);
     const [kundengruppendata, setData] = useState(null);
