@@ -58,7 +58,7 @@ return(
         <div className="row mb-4">
         <div className="col-lg-4 col-md-6 col-sm-7 col-12 footer-col">
             <h5>Socials</h5>
-            <SocialProfile/>
+            <SocialProfile type="follow"/>
         </div>
 
         <div className="col-lg-5 col-md-5 col-sm-5 col-12 footer-col">
@@ -90,7 +90,7 @@ return(
             </div>
 
             <div className="col-lg-12 col-md-12 col-sm-12 form-fields check-fields">
-                <input placeholder="" id="acceptcondition" type="checkbox" value=""/>
+                <input placeholder="" id="acceptcondition" name="acceptcondition" type="checkbox"/>
                 <label htmlFor="acceptcondition">Ich kenne die Datenschutzrichtlinien und bin. *</label>
             </div>
             </form>

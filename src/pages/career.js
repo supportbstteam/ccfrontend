@@ -21,7 +21,7 @@ function careerContent(props){
     },[])
 
     return(
-        <Layout>
+        <Layout title="About us" metaDescription="Wir errichten die Ladeinfrastruktur von und für morgen. Steckerfertig, ganzheitlich und aus einer Hand.">
          <section className='career-banner position-relative' style={sliderbg}>
       
         <div className="carousel-caption d-md-block"  data-aos="fade-up">
