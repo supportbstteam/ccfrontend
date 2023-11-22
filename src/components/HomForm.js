@@ -128,7 +128,7 @@ function HomeForm() {
   };
 
   return (
-    <section className="main-section">
+    <section className="main-section main-form">
       <div className="container">
         <div className="row">
         <div className="col-12">

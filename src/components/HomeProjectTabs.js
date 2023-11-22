@@ -72,11 +72,12 @@ const HomeprojectTabs = () => {
           </li>
         ))}
       </ul>
-      <div className="tab-content">
+      <div className="tab-content overflow-hidden">
         <div className='tab-pane active' data-cat={CategoryPost}>
-          <div className='row projects-row'>
+          <div className='row projects-row gap-1'>
             {Projectdata ? Projectdata.slice(0, 4).map((tab, index) => {
               return (
+                
                 <div key={index} className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4" data-cat={index}>
                   <div className='project-details'>
                     {tab.logo && <img src={`https://teamwebdevelopers.com/charge_construct/public/images/project/logo/${tab.logo}`} />}

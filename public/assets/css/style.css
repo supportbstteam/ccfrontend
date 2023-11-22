@@ -199,7 +199,7 @@ text-align: left;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    padding: 3.5% 0;
+    padding: 4% 0;
   }
   .main-section h1 {
     font-size: 45px;
@@ -395,7 +395,6 @@ section.main-section.project_insight {
   padding: 5.5%;
 }
 .project-details {
-  background-color: #E8E8E8;
   padding: 5% 15%;
 }
 .projects-insights-details {
@@ -427,7 +426,9 @@ section.main-section.project_insight {
     align-items: flex-end;
     justify-content: center;
     height: 580px;
-    min-height: 500px;
+    max-height: 580px;
+    background-color: #E8E8E8;
+    width: 49%;
 }
 .with_image_view{
   margin: 0 auto!important;
@@ -1874,6 +1875,9 @@ section.post-category-banners .carousel-caption h1{
 }
 .standort-partner{
   padding: 80px 0;
+}
+.main-form{
+  padding-bottom: 90px;
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
   .navbar-expand-md .navbar-collapse{

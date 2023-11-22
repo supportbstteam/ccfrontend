@@ -36,7 +36,7 @@ function ServiceCard() {
     setOpenModal(false);
     setSelectedService(null);
   };
-
+//console.log(servicedata);
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -66,7 +66,7 @@ function ServiceCard() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
               {item.src_img?<img src={item.src_img?`https://teamwebdevelopers.com/charge_construct/public/images/service/${item.src_img}`:''}/>:''}
-                <a href={item.ser_btn_txt}>{item.ser_btn_label}</a>
+                <a href={item.ser_btn_txt}>{item.ser_btn_label} <img src="assets/images/refresh.png" className='w-auto'/></a>
                 <div className='flip-front-card-contents'>
                 <h3>{item.src_title}</h3>
                 <p>
@@ -76,7 +76,7 @@ function ServiceCard() {
               </div>
 
               <div className="flip-card-back">
-      <h4>Konzeptberatung</h4>
+      <h4>{item.src_title}</h4>
       <p>{item.src_des}</p>
 <a  href="#" className="main-btn border-6 cc-button cc-transbutton text-decoration-none" onClick={() => onOpenModal(item)}>lorem ipsum
     <svg width="18px" height="18px" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
