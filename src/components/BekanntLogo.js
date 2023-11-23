@@ -43,6 +43,5 @@ data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+2)} */}
         ))}
        </ul> </>
     )
-
 }
 export default BekanntLogo;

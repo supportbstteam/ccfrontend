@@ -44,7 +44,7 @@ function footer(){
   }
   const renderSwitch = (param,contentdata) => {
     switch (param) {
-      case 1:
+      case 10003:
         return (contentdata != '' && <li><img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/></li>);
       case 2:
         return(contentdata != '' && <li><div dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
@@ -65,7 +65,7 @@ return (
         <div className="row mb-4">
                 
                 <div className="col-lg-4 col-md-6 col-sm-12 footer-col" >
-                  <ul>
+                  <ul className="fot-box">
                   {footerdata && footerdata.map((tab, index) => (
                     <React.Fragment key={index}>
                     { renderSwitch(tab.id,tab.name)}
@@ -75,7 +75,7 @@ return (
                 </div>
                
                 <div className="col-lg-5 col-md-5 col-sm-7 footer-col">
-                <ul>
+                <ul className="fot-box">
                 {footerdata2 && footerdata2.map((tab, index) => (
                  <React.Fragment key={index}>
                 { renderSwitch(tab.id,tab.name)}
@@ -84,7 +84,7 @@ return (
                  </ul>
                 </div>
                  <div className="col-lg-3 col-md-3 col-sm-5 footer-col contact-details">
-                 <ul>
+                 <ul className="fot-box">
                  {footerdata3 && footerdata3.map((tab, index) => (
                 <React.Fragment key={index}>
                { renderSwitch(tab.id,tab.name)}
