@@ -45,17 +45,17 @@ function footer(){
   const renderSwitch = (param,contentdata) => {
     switch (param) {
       case 1:
-        return (contentdata != '' && <img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/>);
+        return (contentdata != '' && <li><img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/></li>);
       case 2:
-        return(contentdata != '' && <div dangerouslySetInnerHTML={{ __html: contentdata }}></div>);
+        return(contentdata != '' && <li><div dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
       case 3:
-        return(contentdata != '' && <div dangerouslySetInnerHTML={{ __html: contentdata }}></div>);
+        return(contentdata != '' && <li><div className="footer-menu" dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
       case 4:
-        return(contentdata > 0 && <><h5>Socials</h5> <SocialProfile type="follow"/></>);
+        return(contentdata > 0 && <li><h5>Socials</h5> <SocialProfile type="follow"/></li>);
       case 6:
-        return(contentdata > 0 && <><h3>Kontakt</h3> <ContactDetails/></>);
+        return(contentdata > 0 && <li><h3>Kontakt</h3> <ContactDetails/></li>);
       case 5:
-        return(contentdata > 0 && <Newsletter/>)
+        return(contentdata > 0 && <li><Newsletter/></li>)
       }
   };
   
@@ -68,7 +68,7 @@ return (
                   <ul>
                   {footerdata && footerdata.map((tab, index) => (
                     <React.Fragment key={index}>
-                     <li>{ renderSwitch(tab.id,tab.name)}</li>
+                    { renderSwitch(tab.id,tab.name)}
                     </React.Fragment >
                 ))}
                 </ul>
@@ -78,7 +78,7 @@ return (
                 <ul>
                 {footerdata2 && footerdata2.map((tab, index) => (
                  <React.Fragment key={index}>
-                 <li>{ renderSwitch(tab.id,tab.name)}</li>
+                { renderSwitch(tab.id,tab.name)}
                 </React.Fragment >
                 ))}
                  </ul>
@@ -87,7 +87,7 @@ return (
                  <ul>
                  {footerdata3 && footerdata3.map((tab, index) => (
                 <React.Fragment key={index}>
-                <li>{ renderSwitch(tab.id,tab.name)}</li>
+               { renderSwitch(tab.id,tab.name)}
                </React.Fragment >
                 ))}
                  </ul>

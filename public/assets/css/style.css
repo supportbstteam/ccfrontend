@@ -838,6 +838,7 @@ footer ul.social-follow{
   display: flex;
   align-items: center;
   gap:20px;
+  flex-direction: row;
 }
 footer ul.info-menu{
     list-style: none;
@@ -846,9 +847,17 @@ footer ul.info-menu{
 footer .footer-col {
   padding: 0 4%;
 }
+footer ul{
+  list-style: none;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
 .contact-details ul, .footer-menu ul{
 list-style: none;
 padding: 0;
+display: block;
 }
 footer .footer-menu{
     display: flex;
@@ -1998,6 +2007,9 @@ section.main-section.charge_zahlen .counter-box{
   margin: 15px auto;
 }
 section.about_die:after{
+  width: 100%;
+}
+.projects-row .projects-col{
   width: 100%;
 }
 }
