@@ -15,12 +15,12 @@ function Sections(data){
    const { id, bg_img, title,subtitle,description,sec_type,bg_color} = data.section;
    const sliderbg = {
     // Check if bg_img exists, and if it does, set backgroundImage
-  ...(bg_img ? { backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/section/${bg_img})` } : {backgroundColor: bg_color}),
+  ...(bg_img ? { backgroundImage: `url(${process.env.imgpath}/section/${bg_img})` } : {backgroundColor: bg_color}),
   // If bg_img doesn't exist, set backgroundColor
   //...(bg_img ? {} : { backgroundColor: '#fff' }),
 }
 const expertise = {
-    backgroundImage: `url('https://teamwebdevelopers.com/charge_construct/public/images/section/${bg_img}'),url ('https://teamwebdevelopers.com/charge_construct/public/images/section/${bg_img}')`,
+    backgroundImage: `url('${process.env.imgpath}/section/${bg_img}'),url ('${process.env.imgpath}/section/${bg_img}')`,
     backgroundPosition: 'left top, right top',
     backgroundRepeat: 'no-repeat, no-repeat'
 }

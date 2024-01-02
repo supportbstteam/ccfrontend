@@ -20,6 +20,13 @@ function RequestProject(){
     }
     fetchDataFromAPI();
   }, []);
+
+  const reqbanner = {
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    //backgroundImage: `url('${process.env.imgpath}/blogPost/${secProject.banner_img}')`,
+}
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -27,14 +34,14 @@ function RequestProject(){
     return <div>Error: {error.message}</div>;
   }
 return(
-    <section className="main-section errichet_section min-height">
+    <section className="main-section errichet_section min-height" style={reqbanner}>
     <div className="container">
     <div className="row">
       <div className='col-lg-6 col-md-6 col-12'>
-        <img src='../../assets/images/erricht-logo.png' className='w-50 mb-4'/>
+        <img src={`${process.env.imgpath}/request/logo/${secProject.logo}`} alt={secProject.title} className='w-50 mb-4'/>
         <h2 className='section-title'>{secProject.title}</h2>
-        <p className='my-4'>Mit unserem Tochterunternehmen We Construct sorgen wir für eine reibungslose Realisierung der Ladeinfrastruktur Projekte, bei uns kommt alles aus einer Hand und daher können wir Deine Wünsche und Dein Feedback direkt in das Projekt problemlos miteinfließen lassen. </p>
-        <Button link="#" title="Projekt anfragen" classs='no-arrow'/>
+        <div dangerouslySetInnerHTML={{ __html: secProject.description }}></div>
+        <Button link={`${secProject.btnlink}`} title={secProject.btntext} classs='no-arrow'/>
       </div>
       </div>
       </div>

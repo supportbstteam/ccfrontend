@@ -24,7 +24,7 @@ function Certifications() {
    {CertificationData?CertificationData.map((item, index) => (
     <React.Fragment key={index}>
   <li>
-    <img src={`https://teamwebdevelopers.com/charge_construct/public/images/certificate/${item.image}`} data-aos="zoom-in" className="img-fluid"/>
+    <img src={`${process.env.imgpath}/certificate/${item.image}`} data-aos="zoom-in" className="img-fluid"/>
     </li>
   </React.Fragment>
    )):''}

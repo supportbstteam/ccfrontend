@@ -38,7 +38,7 @@ function HomeNewsRoom(){
         <React.Fragment key={index}>
 {item.order == 1 ?
 <div className="newsroom-grids news-first-post">
-<div className="bd-highlight" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
+<div className="bd-highlight" style={{backgroundImage: `url(${process.env.imgpath}/blogPost/${item.banner_img})`}}>
     <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
@@ -59,7 +59,7 @@ function HomeNewsRoom(){
     <React.Fragment key={index}>
 {item.order == 2?
 <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height mb-2"  style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
+    <div className="align-self-end bd-highlight sub-height mb-2"  style={{backgroundImage: `url(${process.env.imgpath}/blogPost/${item.banner_img})`}}>
        <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
@@ -78,7 +78,7 @@ function HomeNewsRoom(){
    <React.Fragment key={index}>
     {item.order == 3?
     <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
+    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url('${process.env.imgpath}/blogPost/${item.banner_img}')`}}>
     <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
@@ -100,7 +100,7 @@ function HomeNewsRoom(){
     <React.Fragment key={index}>
 {item.order == 4?
 <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height mb-2" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
+    <div className="align-self-end bd-highlight sub-height mb-2" style={{backgroundImage: `url('${process.env.imgpath}/blogPost/${item.banner_img}')`}}>
     <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
@@ -119,7 +119,7 @@ function HomeNewsRoom(){
     <React.Fragment key={index}>
 {item.order == 5?
 <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
+    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url('${process.env.imgpath}/blogPost/${item.banner_img}')`}}>
     <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
@@ -140,8 +140,7 @@ function HomeNewsRoom(){
     <React.Fragment key={index}>
 {item.order == 6?
 <div className="newsroom-grids news-last-post">
-<div className="bd-highlight" style={{backgroundImage: `url("https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}")`}}>
-    <img src="assets/images/news/news-6.png"/>
+<div className="bd-highlight" style={{backgroundImage: `url('${process.env.imgpath}/blogPost/${item.banner_img}')`}}>
     <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">

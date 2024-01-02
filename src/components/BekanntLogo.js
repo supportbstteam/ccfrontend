@@ -37,7 +37,7 @@ function BekanntLogo(){
  <li key={index}> {/* data-aos="zoom-in"
 data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+2)} */}
 <a href={item.cust_link?item.cust_link:''}>
-  {item.cust_logo?<img className="img-fluid" src={item.cust_logo?`https://teamwebdevelopers.com/charge_construct/public/images/costomerLogo/${item.cust_logo}`:''}/>:''}
+  {item.cust_logo?<img className="img-fluid" src={item.cust_logo?`${process.env.imgpath}/costomerLogo/${item.cust_logo}`:''} alt="customer logo"/>:''}
   </a>
   </li>
         ))}

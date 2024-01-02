@@ -40,7 +40,7 @@ function KundengruppenCard(){
   <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-              {item.image?<img src={item.image?`https://teamwebdevelopers.com/charge_construct/public/images/customerGroup/${item.image}`:''}/>:''}
+              {item.image?<img src={item.image?`${process.env.imgpath}/customerGroup/${item.image}`:''} alt={item.title}/>:''}
                 <div className='flip-front-card-contents'>
                 {item.title?<h3>{item.title}</h3>:''}
                 {/* <p>{item.src_des}</p> */}

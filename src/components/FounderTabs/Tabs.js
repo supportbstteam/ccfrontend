@@ -56,7 +56,7 @@ function Tabs(){
             <div className='tabs founders-tabs' data-aos="fade-in">
                 <h4 className='text-dark'>Founders</h4>
                 {data.map((tab, i) =>
-            <img key={i} className={currentTab==i?'active':''} src={`https://teamwebdevelopers.com/charge_construct/public/images/team/`+tab.image}  id={i}  onClick={(handleTabClick)}/>
+            <img key={i} className={currentTab==i?'active':''} alt={tab.name} src={`${process.env.imgpath}/team/${tab.image}`}  id={i}  onClick={(handleTabClick)}/>
                 )}
             </div>
             <div className='tabs-content founders-list'>
@@ -64,7 +64,7 @@ function Tabs(){
                     <div key={i} className={currentTab==i?'show container p-0':'hide container p-0'}>
                          <div className='row'>
                             <div className='col-lg-4 col-md-6 col-sm-12 col-12 text-sm-center mb-4'>
-                            <img key={i} src={`https://teamwebdevelopers.com/charge_construct/public/images/team/`+tab.image} className='img-fluid border-6 founder-profile'/>
+                            <img key={i} src={`${process.env.imgpath}/team/${tab.image}`} alt={tab.name} className='img-fluid border-6 founder-profile'/>
                             </div>
                             <div className='col-lg-7 col-md-6 mx-lg-4 mx-sm-0 mx-md-0 mx-0 col-sm-12 col-12'>
                             <h2 className="section-title">{tab.name}</h2>

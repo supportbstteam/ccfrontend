@@ -14,7 +14,7 @@ import BecomeTeam from '@/components/BecomeTeam';
 function careerContent(props){
   const [pageData, setPageData] = useState(props.data);
   const sliderbg = {
-    backgroundImage: `url('https://teamwebdevelopers.com/charge_construct/public/images/career/${pageData.image}')`,
+    backgroundImage: `url('${process.env.imgpath}/career/${pageData.image}')`,
 }
     useEffect(()=>{
         Aos.init({duration: 1700});
@@ -42,12 +42,6 @@ function careerContent(props){
         <div className='col-lg-4 col-md-6 col-sm-12 col-12 socials-content'>
         <h5>Finde uns auf</h5>
         <SocialProfile accept='title'/>
-        {/* <ul className="social-follow">
-                <li data-aos="zoom-in" data-aos-duration="1700"><a href="#"><img src='../../assets/images/li.png'/><span>Linkedin</span></a></li>
-                <li data-aos="zoom-in" data-aos-duration="1800"><a href="#"><img src='../../assets/images/xa.png'/><span>Xing</span></a></li>
-                <li data-aos="zoom-in" data-aos-duration="1900"><a href="#"><img src='../../assets/images/fb.png'/><span>Facebook</span></a></li>
-                <li data-aos="zoom-in" data-aos-duration="2000"><a href="#"><img src='../../assets/images/in.png'/><span>Instagram</span></a></li>
-            </ul> */}
         </div>
     </div>
   </div>

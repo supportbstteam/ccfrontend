@@ -24,8 +24,8 @@ function ArticleList() {
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img className="d-block w-100" src="assets/images/post-banners.jpg" alt="First slide"/>
-      <div class="carousel-caption d-none d-md-block">
+      <img className="d-block w-100" src="assets/images/post-banners.jpg" alt="Article"/>
+      <div className="carousel-caption d-none d-md-block">
     <h1>Article</h1>
   </div>
     </div>

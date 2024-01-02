@@ -52,7 +52,7 @@ function About(props) {
       <div className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={`https://teamwebdevelopers.com/charge_construct/public/images/banner/${banner}`} className="d-block w-100" alt="..."/>
+      <img src={`${process.env.imgpath}/banner/${banner}`} className="d-block w-100" alt="About us"/>
     </div>
   </div>
 </div> 
@@ -85,7 +85,7 @@ function About(props) {
   <div className="container">
     <div className="row">
       <div className="col-lg-6 col-md-12 col-sm-12 col-12">
-      <img src={`https://teamwebdevelopers.com/charge_construct/public/images/aboutsection/${item.image}`} className='img-fluid float-img-to-right'/>
+      <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-img-to-right' title={item.title}/>
       </div>
       <div className="col-lg-6 col-md-12 col-sm-12 col-12" data-aoss="fade-left">
       <h2 className="section-title mb-4">{item.title}</h2>
@@ -104,7 +104,7 @@ function About(props) {
      </div>
 
       <div className="col-lg-6 col-md-12 col-sm-12 col-12">
-        <img src={`https://teamwebdevelopers.com/charge_construct/public/images/aboutsection/${item.image}`} className='img-fluid float-left'/>
+        <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-left' alt={item.title}/>
       </div>
     </div>
     </div>

@@ -37,7 +37,7 @@ function ProjectInsights(){
 <div className="col-lg-6 col-md-6 col-sm-12 col-12 overlay-posts" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
                     <div className="card bg-dark text-white border-0 rounded-0">
-  <img src={`https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${item.banner_img}`} className="card-img" alt="..."/>
+  <img src={`${process.env.imgpath}/blogPost/${item.banner_img}`} alt={item.post_title} className="card-img"/>
   <div className="card-img-overlay">
   <p className="post-published"><span>Errichtung</span> - <span>Ladeinfrastruktur Betreiber</span></p>
     <h4 className="card-title">{item.post_title}</h4>
@@ -47,18 +47,6 @@ function ProjectInsights(){
 </div>
 </>
     ))}
-                
-{/* 
-                <div className="col-lg-6 col-md-6 col-sm-12 col-12 overlay-posts" data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1800">
-                    <div className="card bg-dark text-white border-0 rounded-0">
-  <img src="../assets/images/newsroom/enbw.jpg" className="card-img" alt="..."/>
-  <div className="card-img-overlay">
-  <p className="post-published"><span>Errichtung</span> - <span>Ladeinfrastruktur Betreiber</span></p>
-    <h4 className="card-title">Realisierung einer Ladewelt für EnBW</h4>
-   <Button link="#" title="Ganzer Beitrag"/>
-  </div>
-</div>   </div> */}
             </div>
         </div>
     </section>

@@ -14,7 +14,7 @@ function GridPostList(props){
      data-aos-duration="1500">
     <div className="card mb-3 post-card">
     <div className="post-img">
-  <img src={`${process.env.imgpath}/blogPost/${postdata.banner_img}`} className="card-img-top" alt="..."/>
+  <img src={`${process.env.imgpath}/blogPost/${postdata.banner_img}`} className="card-img-top" alt={postdata.post_title}/>
   </div>
   <div className="card-body">
     <p className="post-published">{categoryPostdata.name && <span>{categoryPostdata.name}, </span>}<span>{new Date(postdata.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>

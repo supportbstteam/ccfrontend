@@ -44,15 +44,15 @@ function footer(){
   }
   const renderSwitch = (param,contentdata) => {
     switch (param) {
-      case 10003:
+      case 0:
         return (contentdata != '' && <li><img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/></li>);
-      case 2:
+      case 1:
         return(contentdata != '' && <li><div dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
-      case 3:
+      case 2:
         return(contentdata != '' && <li><div className="footer-menu" dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
-      case 4:
+      case 3:
         return(contentdata > 0 && <li><h5>Socials</h5> <SocialProfile type="follow"/></li>);
-      case 6:
+      case 4:
         return(contentdata > 0 && <li><h3>Kontakt</h3> <ContactDetails/></li>);
       case 5:
         return(contentdata > 0 && <li><Newsletter/></li>)

@@ -23,7 +23,7 @@ const [error, setError] = useState(null);
     return(
       <>
       {servicedata && servicedata.map((teams, index) => (
-        <section className='main-section become-team-section py-5' style={{backgroundImage: `url('../../assets/images/career/teampartner.jpg')`}} key={index}>
+        <section className='main-section become-team-section py-5' style={{backgroundImage: `url('${process.env.imgpath}/partteam/${teams.banner}')`}} key={index}>
         <div className='container'>
               <div className='row'>
               <div className='col-lg-6 col-md-6 col-sm-12 col-12' data-aos="fade-up" data-aos-duration="1800">

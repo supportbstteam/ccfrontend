@@ -80,7 +80,7 @@ const HomeprojectTabs = () => {
                 
                 <div key={index} className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4" data-cat={index}>
                   <div className='project-details'>
-                    {tab.logo && <img src={`https://teamwebdevelopers.com/charge_construct/public/images/project/logo/${tab.logo}`} />}
+                    {tab.logo && <img src={`${process.env.imgpath}/project/logo/${tab.logo}`} alt={tab.sub_title}/>}
                     <div className='projects-insights-details'>
                       {tab.sub_title && <h5>{tab.sub_title}</h5>}
                       {tab.title && <h3>{tab.title}</h3>}

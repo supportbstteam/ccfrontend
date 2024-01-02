@@ -48,7 +48,7 @@ function Whitepaper() {
           {WhitePaperdata && WhitePaperdata.slice(0, 2).map((item,index)=>(
 <div className="overlay-posts" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500" key={index}>
 <div className="card bg-dark text-white border-0 rounded-0">
-  <img src={`http://teamwebdevelopers.com/charge_construct/public/images/whitepaper/${item.image}`} className="card-img" alt="..." />
+  <img src={`${process.env.imgpath}/whitepaper/${item.image}`} className="card-img" alt={item.title} />
   <div className="card-img-overlay">
     <p className="post-published"><span>{item.category}</span></p>
     <h4 className="card-title">{item.title}</h4>

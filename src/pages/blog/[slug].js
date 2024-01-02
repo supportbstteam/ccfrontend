@@ -80,7 +80,7 @@ useEffect(() => {
                     </div>
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" >
                    <div className="podcast-post">
-                   {banner_img?<img className="img-fluid" src={banner_img?`https://teamwebdevelopers.com/charge_construct/public/images/blogPost/${banner_img}`:''}/>:''}
+                   {banner_img?<img className="img-fluid" src={banner_img?`${process.env.imgpath}/blogPost/${banner_img}`:''} alt={post_title}/>:''}
                    </div>
                     </div>
                 </div>
