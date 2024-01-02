@@ -23,7 +23,7 @@ function MainSlider(slide){
             <h2>{slide.slider[1].title}</h2>
             <h1>{slide.slider[1].subtitle}</h1>
             <p>{slide.slider[1].description}</p>
-            <Button title={slide.slider[0].btnlink.title} classs="main-btn border-6 cc-button cc-transbutton" link={slide.slider[0].btnlink.link}/>
+            <Button title={slide.slider[1].btnlink.title} classs="main-btn border-6 cc-button cc-transbutton" link={slide.slider[1].btnlink.link}/>
         </div>
             </div>
         </div>
@@ -36,7 +36,7 @@ function MainSlider(slide){
             <h1>{slide.slider[0].title}</h1>
             <p>{slide.slider[0].description}</p>
            
-           <Button title={slide.slider[1].btnlink.title} classs="cc-transbutton" link={slide.slider[1].btnlink.link}/>
+           <Button title={slide.slider[0].btnlink.title} classs="cc-transbutton" link={slide.slider[0].btnlink.link}/>
         </div>
             </div>
         </div>
