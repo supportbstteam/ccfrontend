@@ -53,7 +53,7 @@ function Tabs(){
 
     return (
         <div className='container'>
-            <div className='tabs founders-tabs' data-aos="fade-in">
+            <div className='tabs founders-tabs'>
                 <h4 className='text-dark'>Founders</h4>
                 {data.map((tab, i) =>
             <img key={i} className={currentTab==i?'active':''} alt={tab.name} src={`${process.env.imgpath}/team/${tab.image}`}  id={i}  onClick={(handleTabClick)}/>

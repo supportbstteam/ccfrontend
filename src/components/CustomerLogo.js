@@ -32,7 +32,9 @@ function CustomerLogo(){
       }
 
     return(
-        <><ul className="custom_logo_details">{customerlogoData.map((item, index) => (
+
+        <>
+        <ul className="custom_logo_details">{customerlogoData.map((item, index) => (
  <li key={index} data-aos={(index%2 !== 0?"fade-up":"fade-down")} data-aos-duration={1500*(index+2)}>
   {item.cust_logo?<img src={item.cust_logo?`assets/images/customer/${item.cust_logo}`:''} alt="Customers"/>:''}
   </li>

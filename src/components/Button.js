@@ -3,7 +3,7 @@ import Link from 'next/link'
 function Button({title,link,classs = 'withoutbtn'}){
 return(
     <>
-    <Link href={link} className={`main-btn border-6 cc-button ${classs}`}>{title}
+    <Link href={link} className={`main-btn border-6 cc-button cc-transbutton ${classs}`}>{title}
     <svg width="18px" height="18px" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g id="icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g transform="translate(-212.000000, -159.000000)" fill="#fff" fillRule="nonzero">

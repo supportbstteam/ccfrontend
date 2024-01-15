@@ -10,7 +10,6 @@ import InNumber from '@/components/About/CCNumber';
 import AboutPromise from '@/components/About/AboutPromise';
 import RequestProject from '@/components/About/RequestProject';
 function About(props) {
- // console.log(props.data);
   const [pageData, setPageContent] = useState(props.data);
   const [secData, setSecData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -47,7 +46,7 @@ function About(props) {
     return <div>Error: {error.message}</div>;
   }
     return (
-      <Layout title="About us" metaDescription="Wir errichten die Ladeinfrastruktur von und für morgen. Steckerfertig, ganzheitlich und aus einer Hand.">
+      <Layout title={metatitle} metaDescription={metadesc}>
     <section>
       <div className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
@@ -84,11 +83,13 @@ function About(props) {
 <section className="main-section why_we_exist">
   <div className="container">
     <div className="row">
+      <div className='col-12'>
+      <h2 className="section-title mb-4 text-end">{item.title}</h2>
+      </div>
       <div className="col-lg-6 col-md-12 col-sm-12 col-12">
       <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-img-to-right' title={item.title}/>
       </div>
       <div className="col-lg-6 col-md-12 col-sm-12 col-12" data-aoss="fade-left">
-      <h2 className="section-title mb-4">{item.title}</h2>
       <div dangerouslySetInnerHTML={{__html: item.description}}></div>
       </div>
     </div>
@@ -98,8 +99,10 @@ function About(props) {
 <section className="main-section our_values">
   <div className="container">
     <div className="row">
-      <div className="col-lg-6 col-md-12 col-sm-12 col-12 cc-left-col"  data-aoss="fade-right">
+      <div className='col-12'>
       <h2 className="section-title mb-4">{item.title}</h2>
+      </div>
+      <div className="col-lg-6 col-md-12 col-sm-12 col-12 cc-left-col"  data-aoss="fade-right">
       <div dangerouslySetInnerHTML={{__html: item.description}}></div>
      </div>
 

@@ -5,7 +5,7 @@ import Button from './Button';
 const HomeprojectTabs = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [ProjectTabdata, setData] = useState(null);
-  const [Projectdata, setProjectData] = useState(null);
+  const [Projectdata, setProjectDataPT] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [CategoryPost, setCategory] = useState([]);
@@ -13,14 +13,14 @@ const HomeprojectTabs = () => {
   useEffect(() => {
     async function fetchDataFromAPI() {
       try {
-        const responseService = await fetchData('/projectCategory');
-        setData(responseService);
+        const responseServicePT = await fetchData('/projectCategory');
+        setData(responseServicePT);
 
-        const initialCategory = responseService[0]?.name;
+        const initialCategory = responseServicePT[0]?.name;
         if (initialCategory) {
           setCategory(initialCategory);
           const responsepost = await fetchData(`/project/${initialCategory}`);
-          setProjectData(responsepost);
+          setProjectDataPT(responsepost);
         }
         setLoading(false);
       } catch (error) {
@@ -34,7 +34,7 @@ const HomeprojectTabs = () => {
   async function fetchProjectApi(catname) {
     try {
       const responsepost = await fetchData(`/project/${catname}`);
-      setProjectData(responsepost);
+      setProjectDataPT(responsepost);
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -66,33 +66,28 @@ const HomeprojectTabs = () => {
             data-id={index}
             data-cat={tab.slug}
             className={`tab ${activeTab === index ? 'active' : ''}`}
-            onClick={() => handleTabClick(index, tab.slug)}
-          >
-            {tab.name}
-          </li>
+            onClick={() => handleTabClick(index, tab.slug)}> {tab.name} </li>
         ))}
       </ul>
       <div className="tab-content overflow-hidden">
         <div className='tab-pane active' data-cat={CategoryPost}>
           <div className='row projects-row gap-1'>
-            {Projectdata ? Projectdata.slice(0, 4).map((tab, index) => {
-              return (
-                
-                <div key={index} className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4" data-cat={index}>
+           {Projectdata ? Projectdata.map((tab,index) => {
+               return ( <div key={index} className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4" data-cat={index} style={index === 0 || index === index+2 ? { backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})` } : {}}>
                   <div className='project-details'>
-                    {tab.logo && <img src={`${process.env.imgpath}/project/logo/${tab.logo}`} alt={tab.sub_title}/>}
-                    <div className='projects-insights-details'>
+                  {index === 0 || index === index+2 ? "" : tab.logo &&<img src={`${process.env.imgpath}/project/logo/${tab.logo}`} alt={tab.sub_title}/>}
+                    <div className= {index === 0 || index === index+2 ? "projects-insights-details with_image_view" : "projects-insights-details"}>
                       {tab.sub_title && <h5>{tab.sub_title}</h5>}
                       {tab.title && <h3>{tab.title}</h3>}
-                      {tab.content && <p dangerouslySetInnerHTML={{ __html: tab.content }} />}
+                      {index === 0 || index === index+2 ? "":<div className="home-tabs-content" dangerouslySetInnerHTML={{ __html: tab.content }}/>}
                       <Button title="Ganzer Beitrag" link={tab.category?`../project/${tab.slug}`:''} />
                     </div>
                   </div>
                 </div>
-              );
+                )
             }) : null}
-          </div>
         </div>
+      </div>
       </div>
     </div>
   );

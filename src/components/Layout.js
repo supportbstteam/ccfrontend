@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import NavMenu from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Head from 'next/head'
+import ContactDetails from '@/components/GeneralDetails/ContactDetails'
 import '../../public/assets/css/style.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'aos/dist/aos.css';
@@ -20,10 +21,10 @@ export default function Layout({ children,title,metaDescription,viewClass }) {
         <meta name="description" content={metaDescription ? metaDescription : 'Charge Construct'} />
       </Head>
         <NavMenu addedCLass={viewClass}/>
-         <Scroll/>
        <main>
         {children}
         </main>
+       <Scroll/>
         <Footer/>
         </>
   )

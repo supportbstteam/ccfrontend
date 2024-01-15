@@ -11,6 +11,7 @@ function ServiceCard() {
   const [error, setError] = useState(null);
   const [selectedService, setSelectedService] = useState(null);
   const [openModal, setOpenModal] = useState(false);
+  const [modalBackgroundImage, setModalBackgroundImage] = useState('');
 
   useEffect(() => {
     async function fetchDataFromAPI() {
@@ -29,6 +30,7 @@ function ServiceCard() {
 
   const onOpenModal = (service) => {
     setSelectedService(service);
+    setModalBackgroundImage(service.src_img ? `${process.env.imgpath}/service/${service.src_img}` : '');
     setOpenModal(true);
   };
 
@@ -49,11 +51,17 @@ function ServiceCard() {
     <>
 
   <div>
-      <Modal open={openModal} onClose={onCloseModal} center classNames="w-100">
+      <Modal open={openModal} onClose={onCloseModal} center classNames="w-100" styles={{
+    modal: {
+      backgroundImage: `linear-gradient(to right, rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url(${modalBackgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center center',
+    },
+  }}>
           {selectedService && (
             <>
               <h2>{selectedService.src_title}</h2>
-              <p>{selectedService.src_des}</p>
+              <div dangerouslySetInnerHTML={{ __html: selectedService.src_des }}></div>
             </>
           )}
         </Modal>
@@ -66,19 +74,21 @@ function ServiceCard() {
             <div className="flip-card-inner">
               <div className="flip-card-front">
               {item.src_img?<img src={item.src_img?`${process.env.imgpath}/service/${item.src_img}`:''} alt={item.src_title}/>:''}
-                <a href={item.ser_btn_txt}>{item.ser_btn_label} <img src="assets/images/refresh.png" className='w-auto'/></a>
+                {/* <a href={item.ser_btn_txt}>{item.ser_btn_label} <img src="assets/images/refresh.png" className='w-auto'/></a> */}
                 <div className='flip-front-card-contents'>
                 <h3>{item.src_title}</h3>
-                <p>
-                {item.src_des.length > 55 ?
-    `${item.src_des.substring(0, 55)}...` : item.src_des}</p>
+
+                <div dangerouslySetInnerHTML={{ __html: item.src_des.length > 55 ? item.src_des.substring(0, 55) : item.src_des }}>
+
+                </div>
+               
                 </div>
               </div>
 
               <div className="flip-card-back">
       <h4>{item.src_title}</h4>
-      <p>{item.src_des}</p>
-<a  href="#" className="main-btn border-6 cc-button cc-transbutton text-decoration-none" onClick={() => onOpenModal(item)}>lorem ipsum
+      <div dangerouslySetInnerHTML={{ __html: item.src_des }}></div>
+<a  href="#" className="main-btn border-6 cc-button cc-transbutton text-decoration-none" onClick={() => onOpenModal(item)}>{item.ser_btn_label}
     <svg width="18px" height="18px" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g id="icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g transform="translate(-212.000000, -159.000000)" fill="#fff" fillRule="nonzero">

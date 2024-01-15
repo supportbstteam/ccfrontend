@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import React from "react";
-import InputField from "./Forms/InputField";
+import Certifications from '@/components/GeneralDetails/Certifications';
 import { fetchData } from "@/apiConnection/apiService";
 import ContactDetails from "./GeneralDetails/ContactDetails";
 import SocialProfile from "./GeneralDetails/SocialProfile";
@@ -44,18 +44,22 @@ function footer(){
   }
   const renderSwitch = (param,contentdata) => {
     switch (param) {
-      case 0:
+        case 0:
         return (contentdata != '' && <li><img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/></li>);
-      case 1:
+        case 1:
         return(contentdata != '' && <li><div dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
-      case 2:
+        case 2:
         return(contentdata != '' && <li><div className="footer-menu" dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
-      case 3:
-        return(contentdata > 0 && <li><h5>Socials</h5> <SocialProfile type="follow"/></li>);
-      case 4:
-        return(contentdata > 0 && <li><h3>Kontakt</h3> <ContactDetails/></li>);
-      case 5:
-        return(contentdata > 0 && <li><Newsletter/></li>)
+        case 3:
+        return(contentdata > 0 && <li className="socialprofile"><h5>Socials</h5> <SocialProfile type="follow"/></li>);
+        case 4:
+        return(contentdata > 0 && <li className="newsletter"><Newsletter/></li>)
+        case 5:
+          return(contentdata > 0 && <li className="certifications"><Certifications/></li>)
+        case 6:
+        //return(contentdata > 0 && <li className="contact"><h3>Kontakt</h3> <ContactDetails/></li>);
+     
+      
       }
   };
   

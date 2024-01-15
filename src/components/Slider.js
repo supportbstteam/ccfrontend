@@ -38,7 +38,7 @@ function MainSlider(slide){
            
            <Button title={slide.slider[0].btnlink.title} classs="cc-transbutton" link={slide.slider[0].btnlink.link}/>
         </div>
-            </div>
+        </div>
         </div>
         </div>
         </div>
