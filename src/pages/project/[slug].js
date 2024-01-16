@@ -53,7 +53,7 @@ useEffect(() => {
 }, [slug, subcategory]);
 console.log(mainpost);
 //   console.log('this is the list of value '+mainpost.category[0].name);
-  const { id, post_title,metatitle, metadesc, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = mainpost;
+  const { id, title,metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = mainpost;
 
     var settings = {
         dots: false, // Show dots navigation
@@ -78,13 +78,13 @@ console.log(mainpost);
             (<span key={datas.id}>{datas.name}</span>))
             } - {post_date}
             </div> */}
-        <h1 className="text-white">{post_title}</h1>
+        <h1 className="text-white">{title}</h1>
             </div>
                     </div>
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
      data-aos-duration="1000">
                    <div className="podcast-post">
-                   {banner_img?<img className="img-fluid" src={banner_img?`${process.env.imgpath}/blogPost/${banner_img}`:''} alt={post_title}/>:''}
+                   {image?<img className="img-fluid" src={image?`${process.env.imgpath}/blogPost/${image}`:''} alt={post_title}/>:''}
                    </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ console.log(mainpost);
     <section className="single-post">
     <div className="container">
         <div className="row">
-            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: post_content }}></div>
+            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: content }}></div>
             <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-center">
                 <div className="post-btn-group">
             <Button link="/quotation" title="Entdecke Sie wie unser Team auch Ihnen helfen kann" classs="withoutbtn no-arrow kann-btn"/>
