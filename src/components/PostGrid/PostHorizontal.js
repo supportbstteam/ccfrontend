@@ -13,11 +13,11 @@ function GridPostHorizontal(props){
     
     return(
              <div className="col-12">
+                <Link className="card-title text-decoration-none" href={`blog/${Horpostdata.slug}`}>
 <div className="card mb-4" data-aos="fade-up"
 data-aos-duration="1100">
 <div className="row g-0">
-<div className="col-md-7 top-posts" style={sliderbg}>
-</div>
+<div className="col-md-7 top-posts" style={sliderbg}></div>
 <div className="col-md-5 top-posts-card">
 <div className="card-body ">
 <p className="post-published"><span>{categorydata.name}</span>, <span>{new Date(Horpostdata.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>
@@ -34,6 +34,7 @@ data-aos-duration="1100">
 </div>
 </div>
 </div>
+</Link>
 </div>
     )
 }

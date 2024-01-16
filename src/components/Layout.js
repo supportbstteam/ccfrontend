@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useState } from 'react'
 import NavMenu from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Head from 'next/head'
@@ -13,6 +13,22 @@ export const metadata = {
 }
 
 export default function Layout({ children,title,metaDescription,viewClass }) {
+  const [isTop, setIsTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const shouldBeTop = scrollTop === 0;
+
+      setIsTop(shouldBeTop);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
       <>
@@ -21,10 +37,10 @@ export default function Layout({ children,title,metaDescription,viewClass }) {
         <meta name="description" content={metaDescription ? metaDescription : 'Charge Construct'} />
       </Head>
         <NavMenu addedCLass={viewClass}/>
+        <Scroll/>
        <main>
         {children}
         </main>
-       <Scroll/>
         <Footer/>
         </>
   )

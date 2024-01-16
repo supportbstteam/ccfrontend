@@ -29,9 +29,8 @@ const [error, setError] = useState(null);
             {servicedata && servicedata.map((item, index) => (  
             <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1000" key={index}>
                 <div className='benefit-box'>
-                    <h5>Lorem ipsum dolre firm solace
-                    lorem ipsum dolre firm solace</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h5>{item.title}</h5>
+                    <p>{item.description}</p>
                 </div>
             </div>
             ))

@@ -47,9 +47,9 @@ function footer(){
         case 0:
         return (contentdata != '' && <li><img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/></li>);
         case 1:
-        return(contentdata != '' && <li><div dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
+        return(contentdata !== '<p><br></p>' && contentdata != '' && <li><div dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
         case 2:
-        return(contentdata != '' && <li><div className="footer-menu" dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
+        return(contentdata !== '<p><br></p>' && contentdata != '' && <li><div className="footer-menu" dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
         case 3:
         return(contentdata > 0 && <li className="socialprofile"><h5>Socials</h5> <SocialProfile type="follow"/></li>);
         case 4:

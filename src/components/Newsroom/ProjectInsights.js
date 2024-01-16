@@ -11,7 +11,7 @@ function ProjectInsights(){
     useEffect(() => {
         async function fetchDataFromAPI() {
           try {
-            const responsehomenews = await fetchData('/category-blog/Insights');
+            const responsehomenews = await fetchData('/category-blog/project/bau');
             setProjectInsightData(responsehomenews);
             setLoading(false);
           } catch (error) {
@@ -30,9 +30,7 @@ function ProjectInsights(){
                 <h2 className='section-title text-dark mb-5' data-aos="fade-down" data-aos-easing="linear"
      data-aos-duration="1000">Project Insights</h2>
                 </div>
-                
-
-                {projectInsightsdata && projectInsightsdata.slice(0, 2).map((item,index) => (
+        {projectInsightsdata && projectInsightsdata.map((item,index) => (
                 <>
 <div className="col-lg-6 col-md-6 col-sm-12 col-12 overlay-posts" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">

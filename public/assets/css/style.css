@@ -416,6 +416,9 @@ section.main-section.project_insight {
   letter-spacing: 0em;
   text-align: left;  
 }
+.with_image_view h3 {
+  color: #fff;
+}
 .projects-row .projects-col{
   display: flex;
     position: relative;
@@ -798,6 +801,9 @@ section.main-section.team_banner{
     left: 0;
     margin: 0 auto;
     height: 70px;
+    z-index: 99;
+    background: var(--primary-clr) !important;
+    color: #fff !important;
 }
 footer {
   background: #2a2a2a;
@@ -1228,6 +1234,7 @@ span.follow_linked {
 text-align: left;
 z-index: 99;
 left: 7%;
+top: 48% !important;
 }
 .career-banner .carousel-caption h1{
   font-size: 54px;
@@ -1457,7 +1464,7 @@ ul.tabsview.founders-tabs li.actives{
   z-index: 999;
 }
 .benefit-col:hover .benefit-box{
-position: absolute;
+/* position: absolute; */
 background-color: #000;
 }
 .benefit-col:hover .benefit-box p{
@@ -1910,6 +1917,11 @@ section.post-category-banners .carousel-caption h1{
 }
 .home-tabs-content{
   color: #000;
+}
+@media screen and (min-width: 786px) and (max-width: 1400px) {
+  section.main-section.charge_zahlen .counter-box:hover .added_details{
+    right: -79%;
+  }
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
   .navbar-expand-md .navbar-collapse{

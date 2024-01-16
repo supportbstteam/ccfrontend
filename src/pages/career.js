@@ -41,7 +41,7 @@ function careerContent(props){
         </div>
         <div className='col-lg-4 col-md-6 col-sm-12 col-12 socials-content'>
         <h5>Finde uns auf</h5>
-        <SocialProfile accept='title'/>
+        <SocialProfile type='follow'/>
         </div>
     </div>
   </div>

@@ -12,6 +12,7 @@ function GridPostList(props){
     return(
 <div className="col-md-4 col-sm-12 col-12" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
+      <Link className="card-title text-decoration-none" href={`/${categoryPostdata && categoryPostdata.name.toLowerCase()}/${postdata.slug && postdata.slug}`}>
     <div className="card mb-3 post-card">
     <div className="post-img">
   <img src={`${process.env.imgpath}/blogPost/${postdata.banner_img}`} className="card-img-top" alt={postdata.post_title}/>
@@ -24,6 +25,7 @@ function GridPostList(props){
     <p className="authors">{categoryPostdata.author && categoryPostdata.author.toUpperCase()}</p>
     </div>
 </div>
+</Link>
 </div>
     )
 }
