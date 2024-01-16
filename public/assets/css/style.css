@@ -872,6 +872,7 @@ footer .footer-col ul.fot-box li.certifications ul {
   flex-flow: row;
   padding: 0;
   justify-content: center;
+  gap: 15px;
 }
 footer .footer-col ul.fot-box li.certifications ul li{
   width: 75px;
@@ -1274,8 +1275,15 @@ text-align: center;
   flex-direction: column;
   gap: 30px;
 }
+.career-subbanner-content ul.social-follow li{
+  width: 30px;
+}
 .career-subbanner-content ul.social-follow li span{
   color: #fff;
+}
+.career-subbanner-content ul.social-follow li img {
+  width: 100%;
+  max-width: 100%;
 }
 .company-award img {
   width: 25%;
