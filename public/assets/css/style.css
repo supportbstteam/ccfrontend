@@ -725,19 +725,7 @@ form.draht-forms input:focus, form.draht-forms textarea:focus{
   outline: 0;
   background: none;
 }
-.submit-submission button {
-  background: #000;
-  border-color: #000;
-  color: #fff;
-  border-radius: 33px;
-  padding: 10px 45px;
-  font-size: 17px;
-  letter-spacing: 1px;
-}
-.submit-submission button:hover{
-  border-color: #000;
-  color: #000;
-}
+
 form.draht-forms textarea {
   width: 90%;
 }

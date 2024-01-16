@@ -45,7 +45,7 @@ useEffect(()=>{
                 {title?<h2 className='section-title'>{title}</h2>:''} {/* data-aos="fade-up" */}
                 {subtitle?<h4 className='section-subtitle' data-aos="fade-up">{subtitle}</h4>:''}
                 
-                {description?<p className='section-desciption' data-aos="fade-up" dangerouslySetInnerHTML={{ __html: description }}></p>:''}
+                {description?<p className='section-desciption' dangerouslySetInnerHTML={{ __html: description }}></p>:''}
                     
                 </div>
                 {sec_type==='team_banner'?(
