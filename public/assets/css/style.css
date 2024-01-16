@@ -871,7 +871,7 @@ footer .footer-col ul.fot-box li.certifications ul {
   justify-content: center;
 }
 footer .footer-col ul.fot-box li.certifications ul li{
-  width: 15%;
+  width: 75px;
 }
 footer .footer-col ul.fot-box li.certifications ul li img {
   max-width: max-content;
