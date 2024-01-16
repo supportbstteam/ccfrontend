@@ -732,6 +732,9 @@ form.draht-forms textarea {
 form.draht-forms label{
   color: #000;
 }
+footer .footer-col ul.fot-box li.certifications{
+  margin: 0 auto;
+}
 form.draht-forms input::placeholder,
 form.draht-forms input:placeholder-shown,
 form.draht-forms textarea::placeholder,
@@ -816,6 +819,7 @@ margin-bottom: 20px;
 footer p, .contact-details ul li a{
 font-family: 'proxima-regular';
 font-size: 15px;
+text-decoration: none;
 line-height: 25px;
 color: #fff;
 text-align: justify;
@@ -1062,7 +1066,7 @@ section.main-section.charge_zahlen .counter-box:hover, .stand_in:hover{
   border: 0;
 }
 section.main-section.charge_zahlen .col-counter:nth-child(4) .counter-box .added_details{
-  left: -97% !important;
+  left: -98% !important;
 }
 .col-counter {
   position: relative;
