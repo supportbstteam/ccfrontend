@@ -53,7 +53,7 @@ useEffect(() => {
 }, [slug, subcategory]);
 console.log(mainpost);
 //   console.log('this is the list of value '+mainpost.category[0].name);
-  const { id, title,metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = mainpost;
+  const { id, title,metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = mainpost[0];
 
     var settings = {
         dots: false, // Show dots navigation
@@ -84,7 +84,7 @@ console.log(mainpost);
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
      data-aos-duration="1000">
                    <div className="podcast-post">
-                   {image?<img className="img-fluid" src={image?`${process.env.imgpath}/blogPost/${image}`:''} alt={post_title}/>:''}
+                   {image?<img className="img-fluid" src={image?`${process.env.imgpath}/project/${image}`:''} alt={post_title}/>:''}
                    </div>
                     </div>
                 </div>
