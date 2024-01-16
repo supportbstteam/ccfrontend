@@ -827,7 +827,7 @@ letter-spacing: 0em;
 }
 footer h5{
   font-family: 'proxima-bold';
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -868,10 +868,15 @@ footer .footer-col ul.fot-box li.certifications ul {
   display: flex;
   flex-flow: row;
   padding: 0;
+  justify-content: center;
+}
+footer .footer-col ul.fot-box li.certifications ul li{
+  width: 15%;
 }
 footer .footer-col ul.fot-box li.certifications ul li img {
-  width: 45px;
   max-width: max-content;
+    object-fit: cover;
+    width: 100%;
 }
 footer ul{
   list-style: none;
