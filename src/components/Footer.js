@@ -53,7 +53,7 @@ function footer(){
         case 3:
         return(contentdata > 0 && <li className="socialprofile"><h5>Socials</h5> <SocialProfile type="follow"/></li>);
         case 4:
-        return(contentdata > 0 && <li className="newsletter"><Newsletter/></li>)
+        return(contentdata > 0 && <li className="newsletter"><h5>Newsletter</h5><Newsletter/></li>)
         case 5:
           return(contentdata > 0 && <li className="certifications"><Certifications/></li>)
         case 6:
