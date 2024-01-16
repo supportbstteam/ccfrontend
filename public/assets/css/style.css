@@ -873,6 +873,13 @@ footer .footer-col ul.fot-box li.certifications ul {
 footer .footer-col ul.fot-box li.certifications ul li{
   width: 75px;
 }
+footer .footer-col ul.fot-box ul.social-follow li{
+  width: 30px;
+}
+footer .footer-col ul.fot-box ul.social-follow li img {
+  width: 100%;
+  max-width: 100%;
+}
 footer .footer-col ul.fot-box li.certifications ul li img {
   max-width: max-content;
     object-fit: cover;
