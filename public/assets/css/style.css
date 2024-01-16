@@ -70,6 +70,9 @@ div#__next {
     font-family: 'proxima-medium';
     text-decoration: none;
     }
+    .home-nav ul li a:hover{
+      color: var(--primary-clr);
+    }
 .home-nav ul li{
   margin-right: 23px;
 }
