@@ -831,6 +831,9 @@ footer h5{
   margin-bottom: 20px;
   text-transform: uppercase;
 }
+footer h5:first-letter {
+  font-size: 19px;
+}
 .expertise_profit{
   padding-left: 70px !important;
 }
