@@ -971,10 +971,11 @@ display: block;
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .newsletter-mark .checkmark::after {
-  content: "✔";
+  content: "✓";
   position: absolute;
   display: none;
-  font-size: 10px;
+  font-size: 13px;
+  font-weight: 600;
   color: #fff;
 }
 
@@ -985,8 +986,8 @@ display: block;
 
 /* Style the checkmark/indicator */
 .newsletter-mark .checkmark::after {
-  left: 0px;
-  top: -18px;
+  left: 2px;
+  top: -19px;
   width: 2px;
   height: 5px;
   border-width: 0 2px 2px 0;
