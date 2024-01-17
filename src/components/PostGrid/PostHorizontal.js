@@ -21,7 +21,7 @@ data-aos-duration="1100">
 <div className="col-md-5 top-posts-card">
 <div className="card-body ">
 <p className="post-published"><span>{categorydata.name}</span>, <span>{new Date(Horpostdata.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>
-<Link className="card-title" href={`blog/${Horpostdata.slug}`}>{Horpostdata.post_title}</Link>
+<h5>{Horpostdata.post_title}</h5>
 <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea c</p>
 <div className="posts-authors">
 <ul>

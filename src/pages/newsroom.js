@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import Aos from "aos";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "@/components/Button";
 import HomeForm from "@/components/HomForm";
+import { fetchData } from "../apiConnection/apiService";
 import Layout from "@/components/Layout";
 import NewReleasePost from "@/components/Newsroom/NewRelease";
 import ProjectInsights from "@/components/Newsroom/ProjectInsights";
@@ -11,10 +12,32 @@ import Whitepaper from "@/components/Newsroom/WhitePaper";
 import AllinSIghts from "@/components/Newsroom/AllSights";
 import PostSlider from "@/components/Newsroom/PostSlider";
 function NewsRoom(){
-
+  const [secData, setSecData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
     useEffect(()=>{
         Aos.init({duration: 1700});
     },[])
+
+    useEffect(() => {
+      async function fetchDataFromAPI() {
+        try {
+          const responseSection = await fetchData('/news-room');
+          setSecData(responseSection);
+          setLoading(false);
+        } catch (error) {
+          setError(error);
+          setLoading(false);
+        }
+      }
+      fetchDataFromAPI();
+    }, []);
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
 
     return(
         <Layout title="Charge Construct Newsroom" metaDescription="Wir errichten die Ladeinfrastruktur von und für morgen. Steckerfertig, ganzheitlich und aus einer Hand.">

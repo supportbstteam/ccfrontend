@@ -11,7 +11,7 @@ function ProjectInsights(){
     useEffect(() => {
         async function fetchDataFromAPI() {
           try {
-            const responsehomenews = await fetchData('/category-blog/project/bau');
+            const responsehomenews = await fetchData('/project/bau');
             setProjectInsightData(responsehomenews);
             setLoading(false);
           } catch (error) {
@@ -31,9 +31,9 @@ function ProjectInsights(){
      data-aos-duration="1000">Project Insights</h2>
                 </div>
         {projectInsightsdata && projectInsightsdata.map((item,index) => (
-                <>
+               
 <div className="col-lg-6 col-md-6 col-sm-12 col-12 overlay-posts" data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1500">
+     data-aos-duration="1500" key={index}>
                     <div className="card bg-dark text-white border-0 rounded-0">
   <img src={`${process.env.imgpath}/blogPost/${item.banner_img}`} alt={item.post_title} className="card-img"/>
   <div className="card-img-overlay">
@@ -43,7 +43,6 @@ function ProjectInsights(){
   </div>
 </div>
 </div>
-</>
     ))}
             </div>
         </div>

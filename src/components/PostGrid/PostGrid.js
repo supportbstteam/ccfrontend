@@ -19,9 +19,7 @@ function GridPostList(props){
   </div>
   <div className="card-body">
     <p className="post-published">{categoryPostdata.name && <span>{categoryPostdata.name}, </span>}<span>{new Date(postdata.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>
-    <Link className="card-title text-decoration-none" href={`/${categoryPostdata && categoryPostdata.name.toLowerCase()}/${postdata.slug && postdata.slug}`}>
-      <h4>{postdata.post_title}</h4>
-    </Link>
+     <h4 className="card-title">{postdata.post_title}</h4>
     <p className="authors">{categoryPostdata.author && categoryPostdata.author.toUpperCase()}</p>
     </div>
 </div>

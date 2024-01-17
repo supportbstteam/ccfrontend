@@ -1,7 +1,6 @@
 import { useEffect,useState } from 'react';
 import Aos from 'aos';
 import { fetchData } from "../apiConnection/apiService";
-import Button from '@/components/Button';
 import Layout from '@/components/Layout';
 import QuotationSection from '@/components/Quotations/Quotationsection'
 const sliderbg = {
