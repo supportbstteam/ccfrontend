@@ -33,7 +33,7 @@ function HomeNewsRoom(){
   //console.log(homenewsdata)
     return(
        
-        <div className="d-flex mb-3 w-100 home_news_posts gap-1">
+        <div className="d-flex mb-3 w-100 home_news_posts gap-2">
              {homenewsdata.map((item, index) => (
         <React.Fragment key={index}>
 {item.order == 1 ?
@@ -54,12 +54,12 @@ function HomeNewsRoom(){
 
 </React.Fragment>
 ))}
-<div className="flex-column d-flex">
+<div className="flex-column d-flex justify-content-between">
 {homenewsdata.map((item, index) => (
     <React.Fragment key={index}>
 {item.order == 2?
 <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height mb-2"  style={{backgroundImage: `url(${process.env.imgpath}/blogPost/${item.banner_img})`}}>
+    <div className="align-self-end bd-highlight sub-height"  style={{backgroundImage: `url(${process.env.imgpath}/blogPost/${item.banner_img})`}}>
        <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">
@@ -95,12 +95,12 @@ function HomeNewsRoom(){
      ))}
 </div>
 
-<div className="flex-column d-flex">
+<div className="flex-column d-flex justify-content-between">
 {homenewsdata.map((item, index) => (
     <React.Fragment key={index}>
 {item.order == 4?
 <div className="newsroom-grids">
-    <div className="align-self-end bd-highlight sub-height mb-2" style={{backgroundImage: `url('${process.env.imgpath}/blogPost/${item.banner_img}')`}}>
+    <div className="align-self-end bd-highlight sub-height" style={{backgroundImage: `url('${process.env.imgpath}/blogPost/${item.banner_img}')`}}>
     <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>
         <div className="article_config">

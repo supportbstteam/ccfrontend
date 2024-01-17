@@ -6,6 +6,7 @@ import ContactDetails from "./GeneralDetails/ContactDetails";
 import SocialProfile from "./GeneralDetails/SocialProfile";
 import Aos from 'aos';
 import Newsletter from "./Newsletter";
+import CopyrightFooter from "./GeneralDetails/Copyright";
 function footer(){
 
   const [footerdata, setData] = useState(null);
@@ -45,17 +46,17 @@ function footer(){
   const renderSwitch = (param,contentdata) => {
     switch (param) {
         case 0:
-        return (contentdata != '' && <li><img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/></li>);
+        return (contentdata != '' && <li className="footer-colum"><img src={`${process.env.BASE_URL}/assets/images/footer_logo.png`} className="footer-logo" alt="Charge construct power on"/></li>);
         case 1:
-        return(contentdata !== '<p><br></p>' && contentdata != '' && <li><div dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
+        return(contentdata !== '<p><br></p>' && contentdata != '' && <li className="footer-colum"><div dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
         case 2:
-        return(contentdata !== '<p><br></p>' && contentdata != '' && <li><div className="footer-menu" dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
+        return(contentdata !== '<p><br></p>' && contentdata != '' && <li className="footer-colum"><div className="footer-menu" dangerouslySetInnerHTML={{ __html: contentdata }}></div></li>);
         case 3:
-        return(contentdata > 0 && <li className="socialprofile"><h5>Socials</h5> <SocialProfile type="follow"/></li>);
+        return(contentdata > 0 && <li className="footer-colum socialprofile"><h5>Socials</h5> <SocialProfile type="follow"/></li>);
         case 4:
-        return(contentdata > 0 && <li className="newsletter"><h5>Newsletter</h5><Newsletter/></li>)
+        return(contentdata > 0 && <li className="footer-colum newsletter"><h5>Newsletter</h5><Newsletter/></li>)
         case 5:
-          return(contentdata > 0 && <li className="certifications"><Certifications/></li>)
+          return(contentdata > 0 && <li className="footer-colum certifications"><Certifications/></li>)
         case 6:
         //return(contentdata > 0 && <li className="contact"><h3>Kontakt</h3> <ContactDetails/></li>);
      
@@ -97,6 +98,7 @@ return (
                  </ul>
                  </div>
         </div>
+        <CopyrightFooter/>
         </div>
     </footer>
 )

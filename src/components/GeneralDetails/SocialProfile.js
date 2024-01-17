@@ -31,7 +31,7 @@ function SocialProfile(props) {
         {BarData
           ? BarData.map((item, index) => (
               <li key={item.id}>
-                <a href={item.link}>
+                <a href={item.link} target="_blank">
                   <img src={`${process.env.imgpath}/social/${item.logo_icon}`} alt={item.title} />
                   {props.accept === 'title' ? <span>{item.title}</span> : ''}
                 </a>

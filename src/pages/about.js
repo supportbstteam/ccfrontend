@@ -72,7 +72,7 @@ function About(props) {
        <h2 className="section-title mb-4">{title}</h2>
       </div>
       <div className="col-12 justify-content-end d-flex">
-      <iframe className="about-video" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+      <iframe className="about-video" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/mCEob8Jyecw><img src=assets/images/teamwork.jpg alt=‘Your ALT Text'></a>" allowFullScreen></iframe>
       </div>
     </div>
   </div>
@@ -148,7 +148,7 @@ function About(props) {
   export async function getServerSideProps() {
     try {
       // Fetch data from an API or any other data source
-      const response = await fetch('https://teamwebdevelopers.com/charge_construct/api/about-us');
+      const response = await fetchData('/about-us');
       const data = await response.json(); // Parse the JSON content
        //console.log('hii testing tested...............................');
       if (!response.ok) {

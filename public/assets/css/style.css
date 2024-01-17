@@ -156,6 +156,12 @@ section.main-section.kundengruppen_sec {
     color: #fff;
     display: inline-block;
   }
+  .subscribe-btn{
+    padding: 6px 32px;
+    font-size: 18px;
+    line-height: 28px;
+    border-width: 1.2px;
+  }
   .cc-button.no-arrow svg{
     display: none;
   }
@@ -365,9 +371,16 @@ section.main-section.bekannt_sec h2.section-title{
 }
 ul.bekannt_logo_details {
   display: flex;
-  align-items: center;
-  list-style: none;
-  justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+ul.bekannt_logo_details li {
+  flex: 0 0 25%;
+  margin-bottom: 25px;
+  text-align: center;
 }
 section.main-section.bekannt_sec{
   min-height: 350px;
@@ -556,7 +569,7 @@ ul.custom_logo_details li {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    width: 255px;
+    width: 310px;
     height: auto;
     max-width: 380px;
     height: 440px;
@@ -695,7 +708,7 @@ ul.custom_logo_details li {
 
 .sub-height{
   height: 215px;
-  width: 300px;
+  width: 310px;
 }
 .bd-highlight img {
   display: none;
@@ -802,13 +815,16 @@ section.main-section.team_banner{
 footer {
   background: #2a2a2a;
   color: #fff;
-  padding: 6% 0;
+  padding: 4% 0;
 }
 footer .last-footer{
   margin-top: 45px;
 }
 .footer-logo{
   margin-bottom: 20px;
+}
+footer li.footer-colum {
+  min-height: 180px;
 }
 footer h3{
 font-size: 32px;
@@ -822,7 +838,6 @@ font-size: 15px;
 text-decoration: none;
 line-height: 25px;
 color: #fff;
-text-align: justify;
 letter-spacing: 0em;
 }
 footer h5{
@@ -930,6 +945,8 @@ form.newsletter-form input[type="text"], form.newsletter-form input[type="email"
   width: 95%;
   border-bottom: 1.2px solid #fff;
 }
+.gloabl_rating ul{display: inline-block;padding:0;}
+.gloabl_rating ul li {float: left;}
 .gloabl_rating span a {
   font-family: 'proxima-regular';
   font-size: 15px;

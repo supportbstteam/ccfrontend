@@ -220,7 +220,7 @@ function HomeForm() {
       </div>
             {/* Submit button and error/success messages */}
             <div className="col-lg-12 col-md-12 col-sm-12 submit-submission">
-              <button type="submit" className="btn cc-button cc-transbutton">
+              <button type="submit" className="main-btn border-6 cc-button cc-transbutton">
                 POWER - NOW!
               </button>
               <span className="errorshowing">

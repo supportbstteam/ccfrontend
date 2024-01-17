@@ -41,7 +41,7 @@ useEffect(()=>{
 
         <div className='container'>
             <div className='row'>
-                <div className={sec_type==='expertise_section'?"offset-md-6 col-md-6 col-12 expertise_profit":(sec_type==='why_sec'?"col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12":(sec_type==='how_sec'?"col-xl-10 offset-xl-2 col-lg-10 offset-lg-2 col-md-10 offset-md-2 col-sm-12 col-12":(sec_type==='what_sec'?"col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12":"col-12")))}>
+                <div className={sec_type==='expertise_section'?"offset-md-6 col-md-6 col-12 expertise_profit":(sec_type==='why_sec'?"col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12":(sec_type==='how_sec'?"col-xl-9 offset-xl-3 col-lg-9 offset-lg-3 col-md-9 offset-md-3 col-sm-12 col-12":(sec_type==='what_sec'?"col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12":"col-12")))}>
                 {title?<h2 className='section-title'>{title}</h2>:''} {/* data-aos="fade-up" */}
                 {subtitle?<h4 className='section-subtitle' data-aos="fade-up">{subtitle}</h4>:''}
                 

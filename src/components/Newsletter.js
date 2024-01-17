@@ -29,6 +29,9 @@ function Newsletter(){
             <input placeholder="" id="acceptcondition" name="acceptcondition" type="checkbox"/>
             <label htmlFor="acceptcondition">Ich kenne die Datenschutzrichtlinien und bin. *</label>
         </div>
+        <div className="col-lg-12 col-md-12 col-sm-12 submit-submission">
+            <button type="submit" className="border-6 cc-button cc-transbutton subscribe-btn">Subscribe</button>
+            </div>
         </form>
     )
 }
