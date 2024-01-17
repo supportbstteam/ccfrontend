@@ -221,7 +221,7 @@ function HomeForm() {
             {/* Submit button and error/success messages */}
             <div className="col-lg-12 col-md-12 col-sm-12 submit-submission">
               <button type="submit" className="main-btn border-6 cc-button cc-transbutton">
-                POWER - NOW!
+                POWER - ON NOW!
               </button>
               <span className="errorshowing">
                 {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
