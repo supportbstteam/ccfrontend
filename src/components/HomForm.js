@@ -1,8 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,setError } from "react";
 import Aos from 'aos';
-
+import { fetchData } from "../apiConnection/apiService";
 function HomeForm() {
   const [value, setValue] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchDataFromAPI() {
+      try {
+        const responsedetail = await fetchData('/get-contact'); // Replace '/data' with the API endpoint you want to fetch
+        setValue(responsedetail);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    }
+    fetchDataFromAPI();
+  }, []);
+
   const [errors, setErrors] = useState({
     iname: "",
     phone: "",
@@ -132,12 +149,7 @@ function HomeForm() {
       <div className="container">
         <div className="row">
         <div className="col-12">
-            <h2 data-aos="fade-up" className="section-title text-dark">Ihr Draht zu uns</h2>
-            <p className="text-dark section-desciption">Sie haben individuelle Anforderungen an 
-            die Errichtung der Ladeinfrastruktur? Kein Problem! Wir helfen Ihnen weiter 
-            und erarbeiten ein für Sie passendes Konzept.
-            Schreiben Sie uns, oder rufen Sie uns
-            an <a href="+4984149399122">+49-841-49399122</a></p>
+          {value.content && <div dangerouslySetInnerHTML={{__html: value.content}}></div>}
           </div>
           <form className="draht-forms row" onSubmit={handleSubmit}>
             {/* Your form fields */}

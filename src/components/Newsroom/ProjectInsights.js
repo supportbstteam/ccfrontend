@@ -2,7 +2,7 @@ import { fetchData } from "../../apiConnection/apiService";
 import Link from "next/link";
 import Button from "../Button";
 import { useState, useEffect } from 'react';
-function ProjectInsights(){
+function ProjectInsights(props){
 
     const [projectInsightsdata, setProjectInsightData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -27,8 +27,8 @@ function ProjectInsights(){
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                <h2 className='section-title text-dark mb-5' data-aos="fade-down" data-aos-easing="linear"
-     data-aos-duration="1000">Project Insights</h2>
+                {props.title && <h2 className='section-title text-dark mb-5' data-aos="fade-down" data-aos-easing="linear"
+     data-aos-duration="1000">{props.title}</h2> }
                 </div>
         {projectInsightsdata && projectInsightsdata.map((item,index) => (
                

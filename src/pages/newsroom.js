@@ -40,7 +40,7 @@ function NewsRoom(){
     }
 
     return(
-        <Layout title="Charge Construct Newsroom" metaDescription="Wir errichten die Ladeinfrastruktur von und für morgen. Steckerfertig, ganzheitlich und aus einer Hand.">
+        <Layout title={secData.metatitle} metaDescription={secData.metadesc}>
         <section className="news-post-fillter bg-dark">
             <div className="container" data-aos="fade-down" data-aos-easing="linear"
      data-aos-duration="1000">
@@ -51,43 +51,43 @@ function NewsRoom(){
         </div>
             </div>
         </section>
-     <PostSlider/>
+     <PostSlider title={secData.title} description={secData.description}/>
 
-        <section className="main-section">
+{secData.new_releases === 1 && <section className="main-section">
             <div className="container">
             <div className="col-12">
                 <h2 className='section-title text-dark mb-5'  data-aos="fade-down" data-aos-easing="linear"
-     data-aos-duration="1000">Neue Veröffentlichungen </h2>
+     data-aos-duration="1000">{secData.new_releases_title}</h2>
                 </div>
                 <NewReleasePost/>
                 </div>
                 </section>
-            <ProjectInsights/>
+                }
+                {secData.project_insights === 1 && <ProjectInsights title={secData.project_insights_title}/>}
 
-            <Whitepaper/>
+                {secData.project_insights === 1 && <Whitepaper title={secData.project_insights_title}/>}
     <section className="main-section min-height bg-dark d-flex align-items-center" data-aos="zoom-in" data-aos-easing="linear"
      data-aos-duration="1500">
         <div className="container">
             <div className="row">
                 <div className="col-lg-5 col-md-5 col-sm-12 col-12">
-                    <h2 className="section-title mb-4"> Who we are</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-                    <Button title="Ganzes Video anschauen" link="#"/>
+                {secData.who_title && <h2 className="section-title mb-4">{secData.who_title}</h2>}
+                  {secData.who_desc && <div dangerouslySetInnerHTML={{ __html: secData.who_desc }}></div>}
                 </div>
             </div>
         </div>
     </section>
-
-    <section className="main-section all-insights">
+{ secData.alle_insights === 1 && <section className="main-section all-insights">
         <div className="container">
             <div className="row">
             <div className="col-12">
-                <h2 className='section-title text-dark mb-5'>Alle Insights</h2>
+            {secData.alle_insights_title && <h2 className='section-title text-dark mb-5'>{secData.alle_insights_title}</h2> }
                 </div>
             </div>
            <AllinSIghts/>
         </div>
     </section>
+    }
   <HomeForm/>
         </Layout>
     )

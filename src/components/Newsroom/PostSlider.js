@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import { useState, useEffect } from 'react';
 import Link from "next/link";
 import { fetchData } from "../../apiConnection/apiService";
-function PostSlider(){
+function PostSlider(props){
     const [PostSliderdata, setPostSliderdata] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -89,13 +89,8 @@ var settings = {
             <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
             <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear"
 data-aos-duration="1000">
-            <h1 className='section-title text-dark mb-5'>Newsroom</h1>
-            <h4 className="text-dark">Fachwissen zu den Themengebieten Elektromobilität und Ladeinfrastruktur kompakt an einem Ort</h4>
-            <p className="text-dark">In unserem Newsroom findest du Beiträge zu den wichtigsten Themen im Bereich Elektromobilität und Ladeinfrastruktur. Außerdem findest Du hier unsere Empfehlungen für die Errichtung und den Betrieb von
-Ladeinfrastruktur. Zusätzlich findest du hier Pressemitteilungen und unsere Beiträge in den Medien.
-<br/>
-<br/>
-Alles kompakt und an einem Ort, sodass keine Fragen offen bleiben.</p>
+    { props.title && <h1 className='section-title text-dark mb-5'>{props.title}</h1>}
+    {props.description && <div dangerouslySetInnerHTML={{ __html: props.description }}></div>}
 </div>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
