@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import { fetchData } from "../../apiConnection/apiService";
-const sliderbg = {
-  backgroundImage: `url('../../assets/images/quotation/quotation-banner.jpg')`,
-}
 function QuotationSection() {
   const [secData, setSecData] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   useEffect(() => {
-    Aos.init({ duration: 1700 });
-  }, [])
+    if (typeof window !== 'undefined') {
+      const Aos = require('aos');
+      Aos.init({ duration: 1700 });
+    }
+  }, []);
   useEffect(() => {
     async function fetchDataFromAPI() {
       try {
@@ -24,13 +24,12 @@ function QuotationSection() {
     }
     fetchDataFromAPI();
   }, []);
-  console.log(secData);
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+  // if (error) {
+  //   return <div>Error: {error.message}</div>;
+  // }
 
   return (
     <>

@@ -16,14 +16,6 @@ function About(props) {
   const [error, setError] = useState(null);
 
   const { id, title, description,banner,video,metatitle,metadesc } = pageData;
-  //const [isHovered, setIsHovered] = useState(false);
-  
-  // const handleMouseOver = () => {
-  //   setIsHovered(true);
-  // };
-  // const handleMouseOut = () => {
-  //   setIsHovered(false);
-  // };
 
   useEffect(() => {
     async function fetchDataFromAPI() {
@@ -46,12 +38,11 @@ function About(props) {
     return <div>Error: {error.message}</div>;
   }
     return (
-      <Layout title={metatitle} metaDescription={metadesc}>
-    <section>
+<Layout title={pageData.metatitle && pageData.metatitle} metaDescription={pageData.metadesc && pageData.metadesc}>    <section>
       <div className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={`${process.env.imgpath}/banner/${banner}`} className="d-block w-100" alt="About us"/>
+      <img src={`${process.env.imgpath}/banner/${pageData.banner}`} className="d-block w-100" alt="About us"/>
     </div>
   </div>
 </div> 
@@ -59,7 +50,7 @@ function About(props) {
 <section className="main-section about_die" data-aoss="fade-right">
   <div className="container">
     <div className="row">
-  <div className="col-lg-8 col-md-8 col-sm-12 col-12" dangerouslySetInnerHTML={{ __html: description }}>
+  <div className="col-lg-8 col-md-8 col-sm-12 col-12" dangerouslySetInnerHTML={{ __html: pageData.description }}>
       </div>
     </div>
   </div>
@@ -69,10 +60,10 @@ function About(props) {
   <div className="container">
     <div className="row">
       <div className="col-lg-8 offset-lg-1 col-md-12 col-sm-12 col-12">
-       <h2 className="section-title mb-4">{title}</h2>
+       <h2 className="section-title mb-4">{pageData.title}</h2>
       </div>
       <div className="col-12 justify-content-end d-flex">
-      <iframe className="about-video" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/mCEob8Jyecw><img src=assets/images/teamwork.jpg alt=‘Your ALT Text'></a>" allowFullScreen></iframe>
+      <iframe className="about-video" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/mCEob8Jyecw><img src=assets/images/teamwork.jpg alt=‘Your ALT Text'></a>" allowFullScreen></iframe>
       </div>
     </div>
   </div>
@@ -84,7 +75,7 @@ function About(props) {
   <div className="container">
     <div className="row">
       <div className='offset-lg-6 col-lg-6 col-md-12 col-sm-12 col-xs-12'>
-      <h2 className="section-title mb-4 text-end">{item.title}</h2>
+      <h2 className="section-title mb-4">{item.title}</h2>
       </div>
       <div className="col-lg-6 col-md-12 col-sm-12 col-12">
       <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-img-to-right' title={item.title}/>
@@ -148,7 +139,7 @@ function About(props) {
   export async function getServerSideProps() {
     try {
       // Fetch data from an API or any other data source
-      const response = await fetchData('/about-us');
+      const response = await fetch('https://teamwebdevelopers.com/charge_construct/api/about-us');
       const data = await response.json(); // Parse the JSON content
        //console.log('hii testing tested...............................');
       if (!response.ok) {
@@ -165,6 +156,6 @@ function About(props) {
         },
       };
     }
-  }  
+  }
 
 export default About;

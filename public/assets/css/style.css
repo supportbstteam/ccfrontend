@@ -887,8 +887,8 @@ footer .footer-col ul.fot-box li.certifications ul {
   display: flex;
   flex-flow: row;
   padding: 0;
-  justify-content: center;
-  gap: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 footer .footer-col ul.fot-box li.certifications ul li{
   width: 75px;
@@ -1000,6 +1000,7 @@ footer .footer-menu li{
 }
 footer .footer-menu li a{
   color: #fff;
+  text-decoration: none;
 }
 form.newsletter-form input::placeholder,
 form.newsletter-form input:placeholder-shown,
@@ -1292,7 +1293,7 @@ transition: all 0.5s;
 /* About page start here */
 
 body header.innerpages{
-  position: relative;
+  position: unset;
   background: #F3F3EF;
 }
 body header.innerpages .home-nav ul li a:not(.cc-button)

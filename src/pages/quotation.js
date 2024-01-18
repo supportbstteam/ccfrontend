@@ -8,7 +8,7 @@ const sliderbg = {
 }
 function quotationContent(){
     const [secData, setSecData] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     useEffect(()=>{
         Aos.init({duration: 1700});
@@ -26,12 +26,12 @@ function quotationContent(){
         }
         fetchDataFromAPI();
       }, []);
-      if (loading) {
-        return <div>Loading...</div>;
-      }
-      if (error) {
-        return <div>Error: {error.message}</div>;
-      }
+      // if (loading) {
+      //   return <div>Loading...</div>;
+      // }
+      // if (error) {
+      //   return <div>Error: {error.message}</div>;
+      // }
 
     return(
         <Layout title={secData.meta_title} metaDescription={secData.meta_description}>

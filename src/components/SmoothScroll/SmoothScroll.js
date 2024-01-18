@@ -10,16 +10,22 @@ const Scroll = () => {
     };
 
     // Initialize the scrollbar on the document body using the ref
+    
     scrollbarRef.current = Scrollbar.init(document.body, options);
-
+    var elements = document.getElementsByClassName('navbar-light');
     // Add a listener to handle animations
     const handleScroll = () => {
       const scrollY = scrollbarRef.current.scrollTop;
 
       if (scrollY === 0) {
-        // Do something when scroll is at the top
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].style.position = 'relative';
+        }
+        
       } else {
-        // Do something when scroll is not at the top
+        for (var i = 0; i < elements.length; i++) {
+          elements[i].style.position = '';
+        }
       }
 
       // Check if an element with 'data-aos' attribute is visible

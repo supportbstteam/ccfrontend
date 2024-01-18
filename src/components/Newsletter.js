@@ -6,7 +6,6 @@ function Newsletter() {
 
   const handleCheckboxChange = () => {
     setChecked(!isChecked);
-    console.log(isChecked);
   };
 
   return (
@@ -35,12 +34,13 @@ function Newsletter() {
       </div>
 
       <div className="col-lg-12 col-md-12 col-sm-12 form-fields check-fields">
-        <label htmlFor="acceptcondition" className="newsletter-mark" onClick={handleCheckboxChange}>
+        <label htmlFor="acceptcondition" className="newsletter-mark m-0" onClick={handleCheckboxChange}>
           <input
             placeholder=""
             id="acceptcondition"
             name="acceptcondition"
             type="checkbox"
+            onChange={handleCheckboxChange}
             checked={isChecked}
           />
           <span className="checkmark"></span>
