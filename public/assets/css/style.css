@@ -1775,6 +1775,9 @@ left: 15px;
 }
 .main-section .overlay-posts .card img{
   transition: all .9s;
+  height: 550px;
+    width: 100%;
+    object-fit: cover;
 }
 .main-section .overlay-posts .card:hover img{
   transform: scale(1.08);
