@@ -228,16 +228,14 @@ font-size: 40px;
 line-height: 50px;
 letter-spacing: 0em;
 text-align: left;
-color: #000!important;
   }
-  
-  .main-section p{
+  /* .main-section p{
     font-family: proxima-regular;
     font-size: 17px;
     line-height: 27px;
     letter-spacing: 0em;
     word-spacing: 1px;
-    }
+    } */
     /* .main-section.home-sections p.section-desciption{
       font-size: 18px;
       line-height: 30px;
@@ -299,9 +297,16 @@ margin: 30px 0;
     section.service_second{
       position: relative;
     }
-    .main-section p.section-desciption {
+    .main-section .section-desciption {
       max-width: 85%;
       margin: 2% 0;
+    }
+    .main-section .section-desciption{
+      font-family: proxima-regular;
+      font-size: 17px;
+      line-height: 27px;
+      letter-spacing: 0;
+      word-spacing: 1px;
     }
     section.main-section.service_second:before {
       content: '';
