@@ -42,8 +42,7 @@ function QuotationSection() {
       {secData && secData.map((data) => {
         if (data.order_no === 1) {
           return (
-            <React.Fragment key={data.id}>
-              <section className="main-section about_die section-for-order-1" data-aos="fade-right" data-aos-easing="linear"
+              <section key={data.id} className="main-section about_die section-for-order-1" data-aos="fade-right" data-aos-easing="linear"
                 data-aos-duration="1000">
                 <div className="container">
                   <div className="row">
@@ -53,13 +52,12 @@ function QuotationSection() {
                   </div>
                 </div>
               </section>
-            </React.Fragment>
           );
         } else if (data.order_no === 2) {
           return (
-            <>
+            <React.Fragment key={data.id}>
             {data.description && 
-            <section key={data.id} className='main-section folgende-section'>
+            <section className='main-section folgende-section'>
               <div className="container">
                 <div className="row">
                   <div className='12'>
@@ -69,13 +67,13 @@ function QuotationSection() {
               </div>
             </section>
             }
-            </>
+            </React.Fragment>
           );
         } else if (data.order_no === 3) {
           return (
-            <>
+            <React.Fragment key={data.id}>
             {data.description && 
-            <section key={data.id} className='main-section versprechen'>
+            <section className='main-section versprechen'>
               <div className='container'>
                 <div className='row quotations' data-aos="fade-up" data-aos-easing="linear"
                   data-aos-duration="1000">
@@ -85,7 +83,7 @@ function QuotationSection() {
                 </div>
               </div>
             </section> }
-            </>
+            </React.Fragment>
           )
         }
         return null;

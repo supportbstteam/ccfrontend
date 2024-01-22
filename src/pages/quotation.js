@@ -3,9 +3,8 @@ import Aos from 'aos';
 import { fetchData } from "../apiConnection/apiService";
 import Layout from '@/components/Layout';
 import QuotationSection from '@/components/Quotations/Quotationsection'
-const sliderbg = {
-    backgroundImage: `url('../../assets/images/quotation/quotation-banner.jpg')`,
-}
+
+
 function quotationContent(){
     const [secData, setSecData] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -26,6 +25,10 @@ function quotationContent(){
         }
         fetchDataFromAPI();
       }, []);
+
+      const sliderbg = {
+        backgroundImage: `url(${process.env.imgpath}/pageQuotation/${secData.banner})`,
+      }
       // if (loading) {
       //   return <div>Loading...</div>;
       // }
