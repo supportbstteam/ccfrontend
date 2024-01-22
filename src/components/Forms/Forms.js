@@ -5,7 +5,7 @@ function Forms(){
     const [error, setError] = useState(null);
     const [isChecked, setChecked] = useState(false);
   const [errors, setErrors] = useState({
-    iname: "",
+    name: "",
     phone: "",
     buisness: "",
     email: "",
@@ -13,7 +13,7 @@ function Forms(){
     acceptcondition: false
   });
   const [formData, setFormData] = useState({
-    iname: "",
+    name: "",
     phone: "",
     buisness: "",
     email: "",
@@ -26,12 +26,14 @@ function Forms(){
   }, []);
 
   const handleSubmit = async (e) => {
+    console.log('hii');
     e.preventDefault();
+    console.log(formData);
     let isValid = true;
     const newErrors = { ...errors };
     // Define an array of required fields
-    const requiredFields = ["iname", "phone", "buisness", "email", "description", "acceptcondition"];
-  
+    const requiredFields = ["name", "phone", "buisness", "email", "description", "acceptcondition"];
+   
       // Validate each required field for emptiness
   requiredFields.forEach(key => {
     if (!formData[key] && key !== "acceptcondition") {
@@ -39,7 +41,6 @@ function Forms(){
       isValid = false;
     }
   });
-  
     // Check if any required field is empty
     if (!isValid) {
       setErrors(newErrors);
@@ -85,6 +86,7 @@ function Forms(){
     if (types === 'checkbox') {
       // Toggle the checked state
       setChecked(!isChecked);
+      setFormData({ ...formData, [id]: !isChecked });
     }
     // Validation logic based on input type and value
     validateInput(inputValue, types, id);
@@ -142,10 +144,10 @@ return(
         onChange={handleInputChange}
         minLength={5}
         maxLength={20}
-        id="iname"
+        id="name"
         autoComplete="off"
       />
-      {errors.iname && <p style={{ color: 'red' }}>{errors.iname}</p>}
+      {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
     </div>
 
     {/* Other input fields with similar error rendering logic */}

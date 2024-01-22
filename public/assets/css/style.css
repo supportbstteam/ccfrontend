@@ -240,11 +240,29 @@ text-align: left;
       font-size: 18px;
       line-height: 30px;
     } */
+
     section.main-section .banner-content p{
 font-size: 20px;
 font-family: 'proxima-bold';
 line-height: 1.3em;
 margin: 30px 0;
+    }
+    .banner-slider .banner-content a,.dynamic-banner-2 .banner-content-2 a{
+      font-size: 18px;
+    text-decoration: none;
+    font-family: 'proxima-medium';
+    border: 2px solid var(--primary-clr);
+    transition: 0.4s;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-clr);
+    }
+    .banner-slider .banner-content a:hover,
+    .dynamic-banner-2 .banner-content-2 a:hover{
+      background-color:var(--primary-clr) !important;
+      color: #fff;
     }
     a.navbar-brand{
       margin-right: 60px;
