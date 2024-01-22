@@ -20,17 +20,18 @@ const [error, setError] = useState(null);
       }, []);
 
     return(
-        <section className='main-section unsere-section'>
+      <>
+       {servicedata?<section className='main-section unsere-section'>
     <div className='container'>
         <div className='row'>
             <div className='col-12'>
             <h2 className='section-title text-dark mb-5' data-aos="fade-up" data-aos-duration="1000">Unsere Benefits</h2>
             </div>
             {servicedata && servicedata.map((item, index) => (  
-            <div className='col-lg-4 col-md-4 col-6 benefit-col' data-aos="zoom-in" data-aos-duration="1000" key={index}>
+            <div className='col-lg-4 col-md-6 col-sm-6 col-xs-12 col-12 benefit-col' data-aos="zoom-in" data-aos-duration="1000" key={index}>
                 <div className='benefit-box'>
-                    <h5>{item.title}</h5>
-                    <p>{item.description}</p>
+                {item.title && <h5>{item.title}</h5>}
+                {item.description && <p>{item.description}</p>}
                 </div>
             </div>
             ))
@@ -38,7 +39,8 @@ const [error, setError] = useState(null);
 
         </div>
     </div>
-  </section>
-    )
+  </section>:''}
+  </>  
+  )
 }
 export default Benefits;

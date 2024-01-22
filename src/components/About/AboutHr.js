@@ -30,14 +30,14 @@ function AboutHR(){
             <>
             <div className='col-lg-8 col-md-8 col-sm-12 col-12'>
             <div className='contact-partner'>
-            <h2 className='text-white mb-4' data-aos="fade-left" data-aos-duration="2100">{AboutHr.title}</h2>
-            <p className='text-white' data-aos="fade-left" data-aos-duration="2500" dangerouslySetInnerHTML={{ __html: AboutHr.description }}></p>
+            {AboutHr.title && <h2 className='text-white mb-4' data-aos="fade-left" data-aos-duration="2100">{AboutHr.title}</h2>}
+           {AboutHr.description && <p className='text-white' data-aos="fade-left" data-aos-duration="2500" dangerouslySetInnerHTML={{ __html: AboutHr.description }}></p>}
             </div>
         </div>
         <div className='col-lg-4 col-md-4 col-sm-12 col-12 text-center' data-aos="fade-right" data-aos-duration="2500">
-         <img src={`${process.env.imgpath}/partner/${AboutHr.image}`} alt={`${AboutHr.title}`} className='w-50' data-aos="zoom-in" data-aos-duration="1500"/>
-         <h5 data-aos="zoom-in" data-aos-duration="1500">{AboutHr.name}</h5>
-         <p className='text-center' data-aos="zoom-in" data-aos-duration="1500">{AboutHr.profession}</p>
+        {AboutHr.image && <img src={`${process.env.imgpath}/partner/${AboutHr.image}`} alt={`${AboutHr.title}`} className='w-50' data-aos="zoom-in" data-aos-duration="1500"/> }
+        {AboutHr.name && <h5 data-aos="zoom-in" data-aos-duration="1500">{AboutHr.name}</h5>}
+        {AboutHr.profession && <p className='text-center' data-aos="zoom-in" data-aos-duration="1500">{AboutHr.profession}</p>}
         </div>
         </>
           ):''}

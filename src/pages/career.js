@@ -21,15 +21,15 @@ function careerContent(props){
     },[])
 
     return(
-        <Layout title="About us" metaDescription="Wir errichten die Ladeinfrastruktur von und für morgen. Steckerfertig, ganzheitlich und aus einer Hand.">
+        <Layout title={pageData.metatitle} metaDescription={pageData.metadesc}>
          <section className='career-banner position-relative' style={sliderbg}>
       
         <div className="carousel-caption d-md-block"  data-aos="fade-up">
-        <h1 data-aos="fade-up" data-aos-easing="linear"
-     data-aos-duration="1000">{pageData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: pageData.description}}></div>
-        <Button link={pageData.btnlink} title={pageData.btntext} data-aos="fade-up"  data-aos-easing="linear"
-     data-aos-duration="1500"/>
+        {pageData.title && <h1 data-aos="fade-up" data-aos-easing="linear"
+     data-aos-duration="1000">{pageData.title}</h1> }
+        {pageData.description && <div dangerouslySetInnerHTML={{ __html: pageData.description}}></div> }
+        {pageData.btnlink && <Button link={pageData.btnlink} title={pageData.btntext} data-aos="fade-up"  data-aos-easing="linear"
+     data-aos-duration="1500"/>}
   </div>
   </section>
 
@@ -57,28 +57,16 @@ function careerContent(props){
     </div>
   </section>
 
-  <section className='vacancies_section pb-5'>
+  {/* <section className='vacancies_section pb-5'>
     <div className='container'>
         <div className='row justify-content-center'>
             <div className='col-lg-11 col-md-11 col-sm-12 col-12 bg-white vacancy-cols'>
-           {/* <VacancyPost/> */}
+            <VacancyPost/> 
             </div>
         </div>
     </div>
-  </section>
-
-  <section className='main-section emobili-section'>
-    <div className='container'>
-        <div className='row'>
-            <div className='col-12' data-aos="fade-up" data-aos-duration="1200">
-            <h2 className='section-title text-dark mb-5'>Volle Energie fur die E-Mobilitat</h2>
-            </div>
-        </div>
-    </div>
-    <div className='container-fluid'>
-        <ImageGallery />
-    </div>
-  </section>  
+  </section> */}
+  <ImageGallery /> 
 <Benefits/>
   <section className='position-relative warum-section bg-moredark d-flex align-items-end'>
   <video autoPlay loop muted className='w-100'>
@@ -95,23 +83,7 @@ function careerContent(props){
   </section>
 
   <AboutHR/>
-
-  <section className='main-section faq-section py-5'>
-    <div className='container'>
-        <div className='row'>
-        <div className='col-12'>
-            <h2 className='section-title text-dark mb-5 text-center' data-aos="fade-up" data-aos-duration="1500">FAQ</h2>
-        </div>
-        
-        <div className='col-lg-8 col-md-8 col-sm-12 col-12 offset-lg-2 offset-md-2 '>
-        <div className="accordion" id="faqlists">
-       <FaqList />
-            </div>
-            </div>
-        </div>
-    </div>
-  </section>
-
+  <FaqList />
   <BecomeTeam/>
   </Layout>
     );
@@ -120,7 +92,7 @@ function careerContent(props){
 export async function getServerSideProps() {
     try {
       // Fetch data from an API or any other data source
-      const response = await fetch('https://teamwebdevelopers.com/charge_construct/api/career');
+      const response = await fetch(`${process.env.API_URL}/career`);
       const data = await response.json(); // Parse the JSON content
        //console.log('hii testing tested...............................');
       if (!response.ok) {

@@ -63,9 +63,10 @@ function Tabs(){
                 {data.map((tab, i) =>
                     <div key={i} className={currentTab==i?'show container p-0':'hide container p-0'}>
                          <div className='row'>
+                          {tab.image &&
                             <div className='col-lg-4 col-md-6 col-sm-12 col-12 text-sm-center mb-4'>
-                            <img key={i} src={`${process.env.imgpath}/team/${tab.image}`} alt={tab.name} className='img-fluid border-6 founder-profile'/>
-                            </div>
+                            <img src={`${process.env.imgpath}/team/${tab.image}`} alt={tab.name} className='img-fluid border-6 founder-profile'/>
+                            </div>}
                             <div className='col-lg-7 col-md-6 mx-lg-4 mx-sm-0 mx-md-0 mx-0 col-sm-12 col-12'>
                             <h2 className="section-title">{tab.name}</h2>
                             <p>{tab.description}</p>

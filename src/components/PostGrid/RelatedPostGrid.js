@@ -12,18 +12,18 @@ function RelatedPostGridList(props){
     return(
 <div className="col-md-4 col-sm-12 col-12" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1500">
+      <Link className="card-title text-decoration-none" href={`/${postdata && postdata.category.toLowerCase()}/${postdata.slug && postdata.slug}`}>
     <div className="card mb-3 post-card">
     <div className="post-img">
   <img src={`${process.env.imgpath}/blogPost/${postdata.banner_img}`} className="card-img-top" alt={postdata.post_title}/>
   </div>
   <div className="card-body">
     <p className="post-published">{categoryPostdata.name && <span>{categoryPostdata.name}, </span>}<span>{new Date(postdata.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>
-    <Link className="card-title text-decoration-none" href={`/${postdata && postdata.category.toLowerCase()}/${postdata.slug && postdata.slug}`}>
-      <h4>{postdata.post_title}</h4>
-    </Link>
+     <h4>{postdata.post_title}</h4>
     <p className="authors">{categoryPostdata.author && categoryPostdata.author.toUpperCase()}</p>
     </div>
 </div>
+</Link>
 </div>
     )
 }

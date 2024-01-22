@@ -33,7 +33,6 @@ export default function Home() {
       <img src='../../assets/images/loader.gif' className='img-fluid'/>
       <h2>Charge Construct</h2></div>;
   }
-
   if (error) {
     return <div>Error: {error.message}</div>;
   }

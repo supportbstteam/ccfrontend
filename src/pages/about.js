@@ -42,7 +42,7 @@ function About(props) {
       <div className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={`${process.env.imgpath}/banner/${pageData.banner}`} className="d-block w-100" alt="About us"/>
+      { pageData.banner && <img src={`${process.env.imgpath}/banner/${pageData.banner}`} className="d-block w-100" alt={pageData.title}/> }
     </div>
   </div>
 </div> 
@@ -59,12 +59,13 @@ function About(props) {
 <section className="main-section about_who_we">
   <div className="container">
     <div className="row">
-      <div className="col-lg-8 offset-lg-1 col-md-12 col-sm-12 col-12">
+      {pageData.title && <div className="col-lg-8 offset-lg-1 col-md-12 col-sm-12 col-12">
        <h2 className="section-title mb-4">{pageData.title}</h2>
-      </div>
-      <div className="col-12 justify-content-end d-flex">
-      <iframe className="about-video" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/mCEob8Jyecw><img src=assets/images/teamwork.jpg alt=‘Your ALT Text'></a>" allowFullScreen></iframe>
-      </div>
+      </div>}
+      {pageData.video &&  <div className="col-12 justify-content-end d-flex">
+      <video className="about-video" height="515" src={`${process.env.imgpath}/video/${pageData.video}`} controls muted autoPlay></video>
+      {/* <iframe className="about-video" height="515" src="https://www.youtube.com/embed/mCEob8Jyecw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" srcDoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/mCEob8Jyecw><img src=assets/images/teamwork.jpg alt=‘Your ALT Text'></a>" allowFullScreen></iframe> */}
+      </div>}
     </div>
   </div>
 </section>
@@ -74,15 +75,21 @@ function About(props) {
 <section className="main-section why_we_exist">
   <div className="container">
     <div className="row">
+      {item.title && 
       <div className='offset-lg-6 col-lg-6 col-md-12 col-sm-12 col-xs-12'>
       <h2 className="section-title mb-4">{item.title}</h2>
       </div>
+      }
+      {item.image && 
       <div className="col-lg-6 col-md-12 col-sm-12 col-12">
       <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-img-to-right' title={item.title}/>
       </div>
+      }
+      {item.description && 
       <div className="col-lg-6 col-md-12 col-sm-12 col-12" data-aoss="fade-left">
       <div dangerouslySetInnerHTML={{__html: item.description}}></div>
       </div>
+      }
     </div>
     </div>
     </section>
@@ -90,16 +97,20 @@ function About(props) {
 <section className="main-section our_values">
   <div className="container">
     <div className="row">
+    {item.title && 
       <div className='col-12'>
       <h2 className="section-title mb-4">{item.title}</h2>
       </div>
+       }
+      {item.description &&
       <div className="col-lg-6 col-md-12 col-sm-12 col-12 cc-left-col"  data-aoss="fade-right">
       <div dangerouslySetInnerHTML={{__html: item.description}}></div>
-     </div>
-
+     </div> }
+        {item.image &&
       <div className="col-lg-6 col-md-12 col-sm-12 col-12">
         <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-left' alt={item.title}/>
       </div>
+      }
     </div>
     </div>
     </section>
@@ -139,7 +150,7 @@ function About(props) {
   export async function getServerSideProps() {
     try {
       // Fetch data from an API or any other data source
-      const response = await fetch('https://teamwebdevelopers.com/charge_construct/api/about-us');
+      const response = await fetch(`${process.env.API_URL}/about-us`);
       const data = await response.json(); // Parse the JSON content
        //console.log('hii testing tested...............................');
       if (!response.ok) {

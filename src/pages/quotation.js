@@ -35,20 +35,20 @@ function quotationContent(){
 
     return(
         <Layout title={secData.meta_title} metaDescription={secData.meta_description}>
-        <section className='main-section d-flex align-items-center quotation-banner ' style={sliderbg}>
+      {secData && <section className='main-section d-flex align-items-center quotation-banner ' style={sliderbg}>
       <div className='container'>
         <div className='row'>
             <div className='col-lg-7 col-md-7 col-12'>
       <div className="banner-content" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1000">
-        <h1>{secData.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: secData.description }}></div>
+       {secData.title && <h1>{secData.title}</h1> }
+       {secData.description && <div dangerouslySetInnerHTML={{ __html: secData.description }}></div>}
          </div>
         </div>
         </div>
 
   </div>
-  </section>
+  </section>}
 <QuotationSection/>
 </Layout>
     )

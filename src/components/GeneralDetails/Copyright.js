@@ -16,7 +16,7 @@ useEffect(() => {
       }
     }
     fetchDataFromAPI();
-    console.log(footercopy);
+    //console.log(footercopy);
   }, []);
   return (
     <div className="row">

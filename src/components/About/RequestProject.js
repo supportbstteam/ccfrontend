@@ -38,10 +38,10 @@ return(
     <div className="container">
     <div className="row">
       <div className='col-lg-6 col-md-6 col-12'>
-        <img src={`${process.env.imgpath}/request/logo/${secProject.logo}`} alt={secProject.title} className='w-50 mb-4'/>
-        <h2 className='section-title'>{secProject.title}</h2>
-        <div dangerouslySetInnerHTML={{ __html: secProject.description }}></div>
-        <Button link={`${secProject.btnlink}`} title={secProject.btntext} classs='no-arrow'/>
+        {secProject.logo && <img src={`${process.env.imgpath}/request/logo/${secProject.logo}`} alt={secProject.title} className='w-50 mb-4'/> }
+        {secProject.title && <h2 className='section-title'>{secProject.title}</h2>}
+        {secProject.description && <div dangerouslySetInnerHTML={{ __html: secProject.description }}></div> }
+       {secProject.btnlink && <Button link={`${secProject.btnlink}`} title={secProject.btntext} classs='no-arrow'/> }
       </div>
       </div>
       </div>

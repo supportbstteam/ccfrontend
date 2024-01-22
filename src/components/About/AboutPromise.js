@@ -26,6 +26,8 @@ function AboutPromise(){
       return <div>Error: {error.message}</div>;
     }
     return(
+      <>
+      {secPromise.description &&
         <section className="main-section usp_section about_usp">
     <div className="container">
     <div className="row">
@@ -34,6 +36,8 @@ function AboutPromise(){
       </div>
       </div>
     </section>
+  }
+  </>
     )
 }
 

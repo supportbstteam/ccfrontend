@@ -19,7 +19,6 @@ const [error, setError] = useState(null);
         }
         fetchDataFromAPI();
       }, []);
-      console.log(servicedata && servicedata);
     return(
       <>
       {servicedata && servicedata.map((teams, index) => (
@@ -27,9 +26,9 @@ const [error, setError] = useState(null);
         <div className='container'>
               <div className='row'>
               <div className='col-lg-6 col-md-6 col-sm-12 col-12' data-aos="fade-up" data-aos-duration="1800">
-                  <h2 className='section-title mb-5'>{teams.title}</h2>
-     <div dangerouslySetInnerHTML={{ __html: teams.description }}></div>
-          <Button title={teams.btntext} classs='no-arrow' link={teams.btnlink}/>
+              {teams.title && <h2 className='section-title mb-5'>{teams.title}</h2>}
+     {teams.description && <div dangerouslySetInnerHTML={{ __html: teams.description }}></div>}
+         {teams.btnlink && <Button title={teams.btntext} classs='no-arrow' link={teams.btnlink}/> }
               </div>
               </div>
               </div>

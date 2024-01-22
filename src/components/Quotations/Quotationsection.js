@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Aos from 'aos';
 import { fetchData } from "../../apiConnection/apiService";
 function QuotationSection() {
@@ -39,58 +39,53 @@ function QuotationSection() {
       </div>
       ))} */}
 
-      {secData.map((data) => {
+      {secData && secData.map((data) => {
         if (data.order_no === 1) {
           return (
-            <section key={data.id} className="section-for-order-1">
-              <section className="main-section about_die" data-aos="fade-right" data-aos-easing="linear"
+            <React.Fragment key={data.id}>
+              <section className="main-section about_die section-for-order-1" data-aos="fade-right" data-aos-easing="linear"
                 data-aos-duration="1000">
                 <div className="container">
                   <div className="row">
                     <div className="col-lg-10 col-md-10 col-12">
-                      <h4> <div dangerouslySetInnerHTML={{ __html: data.description }} /></h4>
+                     <div dangerouslySetInnerHTML={{ __html: data.description }} />
                     </div>
                   </div>
                 </div>
               </section>
-            </section>
+            </React.Fragment>
           );
         } else if (data.order_no === 2) {
           return (
+            <>
+            {data.description && 
             <section key={data.id} className='main-section folgende-section'>
               <div className="container">
                 <div className="row">
                   <div className='12'>
-                    <h2> <div dangerouslySetInnerHTML={{ __html: data.description }} /></h2>
-                    {/* <h2 className='section-title text-dark mb-4' data-aos="fade-up" data-aos-easing="linear"
-                      data-aos-duration="1000">Folgende Leistungen sind im Power Readiness Check enthalten:</h2>
-                    <ul className='services-list'>
-                      <li data-aos="fade-up" data-aos-easing="linear"
-                        data-aos-duration="1000">An- und Abreise zu Ihrem Standort</li>
-                      <li data-aos="fade-up" data-aos-easing="linear"
-                        data-aos-duration="1200">Durchführung Standortbegehung durch einen unserer Experten</li>
-                      <li data-aos="fade-up" data-aos-easing="linear"
-                        data-aos-duration="1500">Dokumentation der Standortbegehung inkl. einer Konzeptplanung</li>
-                      <li data-aos="fade-up" data-aos-easing="linear"
-                        data-aos-duration="1600">Passgenaues Angebot</li>
-                    </ul> */}
+                   <div dangerouslySetInnerHTML={{ __html: data.description }} />
                   </div>
                 </div>
               </div>
             </section>
+            }
+            </>
           );
         } else if (data.order_no === 3) {
           return (
+            <>
+            {data.description && 
             <section key={data.id} className='main-section versprechen'>
               <div className='container'>
                 <div className='row quotations' data-aos="fade-up" data-aos-easing="linear"
                   data-aos-duration="1000">
                   <div className="col-lg-10 col-md-10 offset-lg-1 offset-md-1 col-12 text-center form-header">
-                  <p> <div dangerouslySetInnerHTML={{ __html: data.description }} /></p>
+                  <div dangerouslySetInnerHTML={{ __html: data.description }} />
                   </div>
                 </div>
               </div>
-            </section>
+            </section> }
+            </>
           )
         }
         return null;

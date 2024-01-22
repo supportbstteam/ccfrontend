@@ -77,23 +77,33 @@ function ImageGallery() {
     
   
     return (
-      <>
+     <section className='main-section emobili-section'>
+    <div className='container'>
+        <div className='row'>
+            <div className='col-12' data-aos="fade-up" data-aos-duration="1200">
+            <h2 className='section-title text-dark mb-5'>Volle Energie fur die E-Mobilitat</h2>
+            </div>
+        </div>
+    </div>
+    <div className='container-fluid'>
         <div className="row position-relative">
           {
           lightboxDisplay ? 
           <div id="lightbox" onClick={hideLightBox}>
             <div className="popuplight-box">
             <button onClick={showPrev}>⭠</button>
+            {imageToShow &&
             <img id="lightbox-img" src={`${process.env.imgpath}/gallery/${imageToShow}`} className="img-fluid" alt="Charge Construct Gallery"/>
-            <button onClick={showNext}>⭢</button>
+          }
+          <button onClick={showNext}>⭢</button>
             </div>
           </div>
          : ""
         }
         {imageCards}
           </div>
-       
-      </>
+          </div>
+  </section>  
     );
   }
 

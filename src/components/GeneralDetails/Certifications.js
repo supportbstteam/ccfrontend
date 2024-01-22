@@ -18,16 +18,19 @@ function Certifications() {
     }
     fetchDataFromAPI();
   }, []);
+  //console.log('Again list : '+CertificationData.length);
   
   return (
     <ul>
-   {CertificationData?CertificationData.map((item, index) => (
+   {CertificationData && CertificationData.map((item, index) => (
     <React.Fragment key={index}>
+      {item.image &&
   <li>
     <img src={`${process.env.imgpath}/certificate/${item.image}`} alt={item.title} data-aos="zoom-in" className="img-fluid"/>
     </li>
+    }
   </React.Fragment>
-   )):''}
+   ))}
    </ul>
   );
 }

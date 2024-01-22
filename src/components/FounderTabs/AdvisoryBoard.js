@@ -36,9 +36,9 @@ function AdvisoryBoard(){
         <h3 className='text-dark'>Advisory Board</h3>
             {board.map((tab, i) =>
              <div className='col-lg-3 col-md-6 col-sm-6 col-6 text-vs-center mb-5 px-0 member-col' data-aos="fade-up" data-aos-duration={1300*(i+2)} key={i}>
-    <img src={`${process.env.imgpath}/team/${tab.image}`} alt={tab.name} className='img-fluid border-6 mb-3'/>
-                <h5>{tab.name}</h5>
-                <h6>{tab.profession}</h6>
+    { tab.image && <img src={`${process.env.imgpath}/team/${tab.image}`} alt={tab.name} className='img-fluid border-6 mb-3'/> }
+               {tab.name &&  <h5>{tab.name}</h5> }
+                {tab.profession && <h6>{tab.profession}</h6>}
                 {/* <span class="follow_linked"><a href={tab.linkedin_profile}><img src="../../assets/images/linkedin.png" className='img-fluid'/></a></span> */}
                 </div>
             )}

@@ -32,6 +32,14 @@ function FaqList(){
   },[])
     return (
       <>
+     {servicedata?<section className='main-section faq-section py-5'>
+    <div className='container'>
+        <div className='row'>
+        <div className='col-12'>
+            <h2 className='section-title text-dark mb-5 text-center' data-aos="fade-up" data-aos-duration="1500">FAQ</h2>
+        </div>
+        <div className='col-lg-8 col-md-8 col-sm-12 col-12 offset-lg-2 offset-md-2 '>
+        <div className="accordion" id="faqlists">
       {servicedata && servicedata.map((que, index) => (
         <div className="accordion-item" data-aos="fade-up" data-aos-duration="1500" onClick={() =>toggleOpened(que.id)} key={index}>
           <h2 className="accordion-header" id="headingOne">
@@ -46,8 +54,12 @@ function FaqList(){
           </div>
         </div>
      ))
-    }
-    </>
+    }</div>
+</div>
+            </div>
+        </div>
+  </section>:''} 
+  </>
     )
 }
 

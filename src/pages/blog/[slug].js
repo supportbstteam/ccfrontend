@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useState, useEffect } from "react";  
 import Button from "@/components/Button";
 import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
 import { useRouter } from 'next/router';
 import { fetchData } from '@/apiConnection/apiService';
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import SocialProfile from "@/components/GeneralDetails/SocialProfile";
 import RelatedPostGridList from "@/components/PostGrid/RelatedPostGrid";
 function Blog() {
@@ -53,15 +54,32 @@ useEffect(() => {
 //   console.log('this is the list of value '+relatedpost.category[0].name);
   const { id, post_title,metatitle, metadesc, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = relatedpost.post ? relatedpost.post[0] : {};
 
-    var settings = {
-        dots: false, // Show dots navigation
-        infinite: true, // Loop the carousel
-        speed: 500, // Transition speed in milliseconds
-        autoplay: true, // Enable autoplay
-        autoplaySpeed: 6000, // Autoplay interval in milliseconds
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
+  };
     return (
         <Layout title={metatitle} metaDescription={metadesc}>
         <section className="main-section pt-0">
@@ -91,7 +109,7 @@ useEffect(() => {
     <div className="container">
         <div className="row">
             <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: post_content }}></div>
-            <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-center">
+            <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-end">
                 <div className="post-btn-group">
                 <Button link="/quotation" title="Entdecke Sie wie unser Team auch Ihnen helfen kann" classs="withoutbtn no-arrow kann-btn"/>
             <Button link="/contact" title="Kontakt aufnahmen" classs="withoutbtn no-arrow"/>
@@ -124,6 +142,7 @@ useEffect(() => {
                 <Button link={`../${category?category.toLowerCase():''}`} title={`Mehr ${category&&category}`} classs="withoutbtn blog-insights"/>
             </div>
             { related && related.map((item, index) => (
+              // <Slider {...settings}></Slider>
             <RelatedPostGridList key={index} postdata={item}/>
             ))}   
           </div>

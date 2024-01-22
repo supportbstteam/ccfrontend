@@ -12,7 +12,7 @@ import { useParallax } from "react-scroll-parallax";
 import Button from './Button';
 function Sections(data){
    // console.log(data);
-   const { id, bg_img, title,subtitle,description,sec_type,bg_color} = data.section;
+   const { id, bg_img, title,subtitle,description,sec_type,bg_color,secbutton,secbuttonlink} = data.section;
    const sliderbg = {
     // Check if bg_img exists, and if it does, set backgroundImage
   ...(bg_img ? { backgroundImage: `url(${process.env.imgpath}/section/${bg_img})` } : {backgroundColor: bg_color}),
@@ -45,14 +45,13 @@ useEffect(()=>{
                 {title?<h2 className='section-title'>{title}</h2>:''} {/* data-aos="fade-up" */}
                 {/* {subtitle ?<h4 className='section-subtitle' data-aos="fade-up">{subtitle}</h4>:''} */}
                 
-                {description !== '<p><br></p>' && (
+                {description !== '<p><br></p>' && description && (
   <div className="section-desciption" dangerouslySetInnerHTML={{ __html: description }}></div>
 )}
-                    
+                {secbutton != null && secbuttonlink != null && <Button classs={sec_type==='team_banner'?"zum-team":"no-arrow w-auto"} title={secbutton} link={secbuttonlink} />}
+
                 </div>
-                {sec_type==='team_banner'?(
-                    <Button classs="no-arrow zum-team" title="Zum Team" link="/"/>
-                ):(<></>)}
+
                 {sec_type==='service_second'?(
                     <ServiceCard/>
                 ):(<></>)}

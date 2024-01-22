@@ -30,14 +30,18 @@ function SocialProfile(props) {
       <ul className="social-follow">
         {BarData
           ? BarData.map((item, index) => (
+            <React.Fragment key={index}>
+            {item.link &&
               <li key={item.id}>
                 <a href={item.link} target="_blank">
                   <img src={`${process.env.imgpath}/social/${item.logo_icon}`} alt={item.title} />
                   {props.accept === 'title' ? <span>{item.title}</span> : ''}
                 </a>
-              </li>
+              </li>}
+              </React.Fragment>
             ))
           : ''}
+
       </ul>
     );
   } else if (props.type === 'share') {

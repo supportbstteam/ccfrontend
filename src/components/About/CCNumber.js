@@ -59,11 +59,11 @@ function InNumber(){
          <React.Fragment key={index}>
       <div className='col-lg-4 col-md-4 col-12 col-counter'>
         <div className='counter-box'>
-          <h4>{item.number}</h4>
-          <p>{item.title}</p>
-          <div className='added_details'>
+        {item.number && <h4>{item.number}</h4> }
+        {item.title && <p>{item.title}</p> }
+         {item.description && <div className='added_details'>
           <div dangerouslySetInnerHTML={{ __html: item.description }}></div>
-        </div>
+        </div>}
         </div>
       </div>
         </React.Fragment>
