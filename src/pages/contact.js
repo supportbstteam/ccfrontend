@@ -13,7 +13,16 @@ function contactpag(props){
 
     return(
         <Layout title={pageData.meta_title} metaDescription={pageData.meta_desc}>
-            <section className="main-section">
+         { pageData.image &&  <section>
+      <div className="carousel slide" data-bs-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src={`${process.env.imgpath}/contact_image/${pageData.image}`} className="d-block w-100" alt="Contact Detail"/> 
+    </div>
+  </div>
+</div> 
+</section> }
+  <section className="main-section">
       <div className="container">
         <div className="row">
         <div className="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">

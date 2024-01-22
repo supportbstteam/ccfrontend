@@ -38,15 +38,16 @@ function About(props) {
     return <div>Error: {error.message}</div>;
   }
     return (
-<Layout title={pageData.metatitle && pageData.metatitle} metaDescription={pageData.metadesc && pageData.metadesc}>    <section>
+<Layout title={pageData.metatitle && pageData.metatitle} metaDescription={pageData.metadesc && pageData.metadesc}>
+{ pageData.banner &&  <section>
       <div className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      { pageData.banner && <img src={`${process.env.imgpath}/banner/${pageData.banner}`} className="d-block w-100" alt={pageData.title}/> }
+      <img src={`${process.env.imgpath}/banner/${pageData.banner}`} className="d-block w-100" alt={pageData.title}/>
     </div>
   </div>
 </div> 
-</section>
+</section> }
 <section className="main-section about_die" data-aoss="fade-right">
   <div className="container">
     <div className="row">
