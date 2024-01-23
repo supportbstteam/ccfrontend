@@ -58,6 +58,15 @@ function Forms(){
       });
   
       if (response.ok) {
+        setFormData({
+        name: "",
+        phone: "",
+        buisness: "",
+        email: "",
+        description: "",
+        acceptcondition: false
+      });
+      setChecked(false);
         // Handle success
         console.log("Formulardaten erfolgreich übermittelt");
         // Clear any previous errors and show success message
