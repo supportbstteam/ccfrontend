@@ -5,20 +5,20 @@ function Newsletter() {
   const [formDataNews, setformDataNews] = useState({
     name: "",
     email: "",
-    acceptConditionNews: false,
+    subscribe: false,
   });
   
   const [formErrors, setFormErrors] = useState({
     name: "",
     email: "",
-    acceptConditionNews: "",
+    subscribe: "",
   });
   
   const handleCheckboxChangeNews = () => {
     setChecked(!isChecked);
-    setformDataNews({ ...formDataNews, acceptConditionNews: !formDataNews.acceptConditionNews });
+    setformDataNews({ ...formDataNews, subscribe: !formDataNews.subscribe });
     console.log(isChecked);
-    setFormErrors({ ...formErrors, acceptConditionNews: "" });
+    setFormErrors({ ...formErrors, subscribe: "" });
   };
 
   const handleInputChange = (field, value) => {
@@ -40,8 +40,8 @@ function Newsletter() {
   
     // Add email validation logic here
   
-    if (!formDataNews.acceptConditionNews) {
-      errors.acceptConditionNews = "Sie müssen die Bedingungen akzeptieren.";
+    if (!formDataNews.subscribe) {
+      errors.subscribe = "Sie müssen die Bedingungen akzeptieren.";
     }
   
     setFormErrors(errors);
@@ -59,12 +59,12 @@ function Newsletter() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+  console.log(formDataNews);
     if (validateForm()) {
       try {
         // Perform AJAX submission here
         // For example, using fetch or axios
-        const response = await fetch("https://teamwebdevelopers.com/charge_construct/api/contact-us", {
+        const response = await fetch(`${process.env.API_URL}/news-latter`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -73,7 +73,10 @@ function Newsletter() {
         });
   
         // Handle the response as needed
-        console.log("Form submitted successfully");
+        const successElements = document.getElementsByClassName('successshowing');
+        for (let i = 0; i < successElements.length; i++) {
+          successElements[i].innerHTML = 'Formulardaten erfolgreich übermittelt';
+        }
       } catch (error) {
         console.error("Error submitting form:", error);
       }
@@ -117,10 +120,10 @@ function Newsletter() {
             name="acceptcondition2"
             type="checkbox"
             onChange={handleCheckboxChangeNews}
-            value={formDataNews.acceptConditionNews}
+            value={formDataNews.subscribe}
             checked={isChecked}
           />
-          {formErrors.acceptConditionNews && <p style={{ color: 'red' }}>{formErrors.acceptConditionNews}</p>}
+          {formErrors.subscribe && <p style={{ color: 'red' }}>{formErrors.subscribe}</p>}
           <span className="checkmark"></span>
           <p>
             Ich kenne die Datenschutzrichtlinien und bin damit einverstanden E-Mails von Mawave zu erhalten. Du kannst deine Anmeldung jederzeit widerrufen. *
@@ -133,6 +136,7 @@ function Newsletter() {
           Subscribe
         </button>
       </div>
+      <div className="successshowing"></div>
     </form>
   );
 }

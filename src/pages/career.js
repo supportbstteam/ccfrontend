@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import Button from '@/components/Button';
 import Aos from 'aos';
 import ImageGallery from '@/components/GalleryView';
-import VacancyPost from '@/components/Vacancy/vacancyPost';
 import Certifications from '@/components/GeneralDetails/Certifications';
 import FaqList from '@/components/Faq';
 import Layout from '@/components/Layout';
@@ -20,10 +19,21 @@ function careerContent(props){
         Aos.init({duration: 1700});
     },[])
 
+    useEffect(()=>{
+      window.addEventListener('message', function(e) {
+        var iframe = document.querySelector('#personio-iframe');
+        var eventName = e.data[0];
+        var data = e.data[1];
+        switch(eventName) {
+            case 'setHeight':
+                iframe.style.height = data + 'px';
+                break;
+        }
+    }, false);
+    })
     return(
         <Layout title={pageData.metatitle} metaDescription={pageData.metadesc}>
          <section className='career-banner position-relative' style={sliderbg}>
-      
         <div className="carousel-caption d-md-block"  data-aos="fade-up">
         {pageData.title && <h1 data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1000">{pageData.title}</h1> }
@@ -47,7 +57,7 @@ function careerContent(props){
   </div>
   </section>
 
-  <section  data-aos="fade-up"  data-aos-easing="ease-in-sine">
+  {/* <section  data-aos="fade-up"  data-aos-easing="ease-in-sine">
     <div className='container'>
         <div className='row'>
             <div className='col-12 text-center py-5 career-post-detail'>
@@ -55,17 +65,17 @@ function careerContent(props){
             </div>
         </div>
     </div>
-  </section>
+  </section> */}
 
-  {/* <section className='vacancies_section pb-5'>
+  <section className='vacancies_section pb-5'>
     <div className='container'>
         <div className='row justify-content-center'>
             <div className='col-lg-11 col-md-11 col-sm-12 col-12 bg-white vacancy-cols'>
-            <VacancyPost/> 
+            <iframe id="personio-iframe" src="https://charge-construct-gmbh.jobs.personio.de/" width="100%"></iframe>
             </div>
         </div>
     </div>
-  </section> */}
+  </section>
   <ImageGallery /> 
 <Benefits/>
   <section className='position-relative warum-section bg-moredark d-flex align-items-end'>

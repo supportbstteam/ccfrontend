@@ -37,7 +37,7 @@ function HomeNewsRoom(){
              {homenewsdata.map((item, index) => (
         <React.Fragment key={index}>
 {item.order == 1 ?
-<div className="newsroom-grids news-first-post">
+<div className="newsroom-grids">
 <div className="bd-highlight" style={{backgroundImage: `url(${process.env.imgpath}/blogPost/${item.banner_img})`}}>
     <Link href={`${item.post_category.name.toLowerCase()}/${item.slug}`} className="newshome_content">
         <h3>{item.post_title}</h3>

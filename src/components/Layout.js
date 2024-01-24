@@ -17,8 +17,11 @@ export default function Layout({ children,title,metaDescription,viewClass }) {
   return (
       <>
          <Head>
+          <></>
         <title>{title}</title>
         <meta name="description" content={metaDescription ? metaDescription : 'Charge Construct'} />
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon.png"/>
+
       </Head>
         <NavMenu addedCLass={viewClass}/>
      
