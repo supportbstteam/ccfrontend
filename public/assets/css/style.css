@@ -1029,10 +1029,12 @@ display: block;
 /* Style the checkmark/indicator */
 .newsletter-mark .checkmark::after {
   left: 2px;
-  top: -19px;
   width: 2px;
   height: 5px;
   border-width: 0 2px 2px 0;
+}
+.newsform-mark.newsletter-mark .checkmark::after {
+  top: -19px !important;
 }
 .draht-forms .checkmark::after{
 top:-3px;
