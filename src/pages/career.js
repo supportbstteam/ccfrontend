@@ -9,7 +9,7 @@ import AboutHR from '@/components/About/AboutHr';
 import Benefits from '@/components/Benefits'
 import SocialProfile from '@/components/GeneralDetails/SocialProfile';
 import BecomeTeam from '@/components/BecomeTeam';
-
+import Iframe from 'react-iframe'
 function careerContent(props){
   const [pageData, setPageData] = useState(props.data);
   const sliderbg = {
@@ -57,7 +57,7 @@ function careerContent(props){
   </div>
   </section>
 
-  {/* <section  data-aos="fade-up"  data-aos-easing="ease-in-sine">
+   <section  data-aos="fade-up"  data-aos-easing="ease-in-sine">
     <div className='container'>
         <div className='row'>
             <div className='col-12 text-center py-5 career-post-detail'>
@@ -65,17 +65,17 @@ function careerContent(props){
             </div>
         </div>
     </div>
-  </section> */}
+  </section>  
 
-  <section className='vacancies_section pb-5'>
+  {/* <section className='vacancies_section pb-5'>
     <div className='container'>
         <div className='row justify-content-center'>
             <div className='col-lg-11 col-md-11 col-sm-12 col-12 bg-white vacancy-cols'>
-            <iframe id="personio-iframe" src="https://charge-construct-gmbh.jobs.personio.de/" width="100%"></iframe>
+            <Iframe id="personio-iframe" display="block" position="relative"  url="https://charge-construct-gmbh.jobs.personio.de/" width="100%"></Iframe>
             </div>
         </div>
     </div>
-  </section>
+  </section> */}
   <ImageGallery /> 
 <Benefits/>
   <section className='position-relative warum-section bg-moredark d-flex align-items-end'>

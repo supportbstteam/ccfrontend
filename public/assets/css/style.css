@@ -1884,7 +1884,9 @@ font-family: 'proxima-medium';
 }
 .branche-figure .bar-charts{
   background: #fff;
-  padding: 1.5% 5%;
+  padding: 40px 0;
+  border-right: 1px solid #dadada;
+  border-left: 1px solid #dadada;
 }
 .branche-figure .bar-charts .recharts-wrapper{
 margin: 0 auto;
@@ -1892,10 +1894,14 @@ margin: 0 auto;
 .bar-charts .progress {
   border-radius: 0;
   height: auto;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 20px;
   background: transparent;
   align-items: self-start;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+}
+.bar-charts .progress:last-child{
+  margin-bottom: 0;
 }
 
 .bar-charts .progress img {
@@ -1908,8 +1914,10 @@ margin: 0 auto;
 background-color: var(--primary-clr);
 font-family: 'proxima-medium';
 text-align: left;
-padding: 1px 27px;
-font-size: 14px;
+padding: 12px 27px;
+font-size: 16px;
+border-bottom-right-radius: 6px;
+border-top-right-radius: 6px;
 }
 .branche-figure .barcharts-footer {
   background: var(--primary-clr);

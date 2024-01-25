@@ -37,6 +37,16 @@ const Scroll = () => {
           el.classList.remove('aos-animate');
         }
       });
+
+      // const elementsWithiframe = document.querySelectorAll('progress-bar');
+      // elementsWithiframe.forEach((el) => {
+      //   if (scrollbarRef.current.isVisible(el)) {
+      //     el.classList.add('overfollow-scroll');
+      //   } else {
+      //     el.classList.remove('overfollow-scroll');
+      //   }
+      // });
+
     };
 
     scrollbarRef.current.addListener(handleScroll);

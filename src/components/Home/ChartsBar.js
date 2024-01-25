@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import { fetchData } from "../../apiConnection/apiService";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+const gridcolor = ['#895364','#f39178','#e2b747','#88b6ba','#ff6c86']
 // const data = [
 //   {
 //     name: 'Page Af',
@@ -65,6 +66,17 @@ function Bars() {
     }
     fetchDataFromAPI();
   }, []);
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledColors = shuffleArray(gridcolor);
+
 //console.log(BarData?BarData:'');
   const {title,footer_content,infracat} = BarData?BarData:'';
   //console.log(title);
@@ -75,14 +87,15 @@ function Bars() {
       <h5>{title?title:''}</h5>
       </div> 
    <div className="bar-charts"> 
-   {/* {infracat?infracat.map((item, index) => (
+   {infracat?infracat.map((item, index) => (
     <div className="progress" key={index}>
-  <img src={`https://teamwebdevelopers.com/charge_construct/public/images/infracat/${item.image}`}/>
-  <div className="progress-bar" role="progressbar" style={{ width: `${(item.number / 1000) * 100}%` }} aria-valuenow="5" aria-valuemin="0" aria-valuemax="1000">{item.number}</div>
+<div className="progress-bar" role="progressbar" style={{ width: `${(item.number / 500) * 100}%`, background: `${shuffledColors[index % shuffledColors.length]}` }} aria-valuenow="5" aria-valuemin="0" aria-valuemax="500">
+    {item.number} </div>
+    <div><img src={`https://teamwebdevelopers.com/charge_construct/public/images/infracat/${item.image}`}/></div>
 </div>
-   )):''} */}
+   )):''}
 
-<BarChart width={600}
+{/* <BarChart width={600}
           height={400}
           data={BarData?BarData.infracat:''}
           margin={{
@@ -98,32 +111,7 @@ function Bars() {
           <Tooltip />
           <Legend />
           <Bar dataKey="number" fill="#fbb900" background={{ fill: '#eee' }} animationBegin={0} animationDuration={1000}/>
-        </BarChart>
-
- {/* <div className="progress">
-  <img src="assets/images/enbw.png"/>
-  <div className="progress-bar" role="progressbar" style={{width : '25%'}} aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">523</div>
-</div>
-<div className="progress">
-<img src="assets/images/bppu.png"/>
-  <div className="progress-bar" role="progressbar" style={{width : '50%'}} aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">245</div>
-</div>
-<div className="progress">
-<img src="assets/images/tesla.png"/>
-  <div className="progress-bar" role="progressbar" style={{width : '75%'}} aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">160</div>
-</div>
-<div className="progress">
-<img src="assets/images/ionity.png"/>
-  <div className="progress-bar" role="progressbar" style={{width : '33%'}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">240</div>
-</div>
-<div className="progress">
-<img src="assets/images/pealzwerke.png"/>
-  <div className="progress-bar" role="progressbar" style={{width : '20%'}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">240</div>
-</div>
-<div className="progress">
-<img src="assets/images/citywatt.png"/>
-  <div className="progress-bar" role="progressbar" style={{width : '50%'}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">240</div>
-</div> */}
+        </BarChart> */}
    </div>
    <div className="barcharts-footer">
    <p>{footer_content?footer_content:''}</p>
