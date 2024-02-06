@@ -61,7 +61,7 @@ function ServiceCard() {
           {selectedService && (
             <>
               <h2>{selectedService.src_title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: selectedService.src_des }}></div>
+              <div dangerouslySetInnerHTML={{ __html: selectedService.s_desc }}></div>
             </>
           )}
         </Modal>

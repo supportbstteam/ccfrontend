@@ -86,10 +86,10 @@ function Bars() {
       <div className="branche-cols">
       <h5>{title?title:''}</h5>
       </div> 
-   <div className="bar-charts"> 
+   <div className="bar-charts">
    {infracat?infracat.map((item, index) => (
     <div className="progress" key={index}>
-<div className="progress-bar" role="progressbar" style={{ width: `${(item.number / 500) * 100}%`, background: `${shuffledColors[index % shuffledColors.length]}` }} aria-valuenow="5" aria-valuemin="0" aria-valuemax="500">
+<div className="progress-bar" role="progressbar" datawidth={(item.number / 500) * 100} style={{ width: `0%`, background: `${shuffledColors[index % shuffledColors.length]}` }} aria-valuenow="5" aria-valuemin="0" aria-valuemax="500">
     {item.number} </div>
     <div><img src={`https://teamwebdevelopers.com/charge_construct/public/images/infracat/${item.image}`}/></div>
 </div>

@@ -1903,7 +1903,9 @@ margin: 0 auto;
 .bar-charts .progress:last-child{
   margin-bottom: 0;
 }
-
+.bar-charts .progress-bar {
+  transition: width 2s ease-in-out; /* Smooth transition for width change */
+}
 .bar-charts .progress img {
   width: auto;
   height: 30px;

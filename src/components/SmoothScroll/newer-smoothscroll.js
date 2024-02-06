@@ -1,35 +1,28 @@
 import { useEffect, useState, useRef } from "react";
 import Scrollbar from "smooth-scrollbar";
+
 const Scroll = () => {
   const scrollbarRef = useRef(null);
-  const [executedElements, setExecutedElements] = useState(true);
+  const [executedElements, setExecutedElements] = useState([]);
 
   useEffect(() => {
     const options = {
       damping: 0.07,
     };
 
-    // Initialize the scrollbar on the document body using the ref
-
     scrollbarRef.current = Scrollbar.init(document.body, options);
-    var elements = document.getElementsByClassName('navbar-light');
-    // Add a listener to handle animations
+    const elementsWithAOS = document.querySelectorAll('[data-aos]');
 
     const handleScroll = () => {
       const scrollY = scrollbarRef.current.scrollTop;
+      const elements = document.getElementsByClassName('navbar-light');
 
-      if (scrollY === 0) {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].style.position = 'relative';
-        }
-      } else {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].style.position = '';
-        }
+      // Handle navbar position
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].style.position = scrollY === 0 ? 'relative' : '';
       }
 
       // Check if an element with 'data-aos' attribute is visible
-      const elementsWithAOS = document.querySelectorAll('[data-aos]');
       elementsWithAOS.forEach((el) => {
         if (scrollbarRef.current.isVisible(el)) {
           el.classList.add('aos-animate');
@@ -40,43 +33,29 @@ const Scroll = () => {
 
       // Handle progress scrolling
       const elementwithbarcharts = document.querySelectorAll('.bar-charts');
-      var stprog;
       elementwithbarcharts.forEach((el) => {
         if (scrollbarRef.current.isVisible(el)) {
-          if (executedElements == true) {
-            stprog = true;
-            progressScrolling(el, stprog);
-          }
+          el.classList.add('active');
         } else {
-          stprog = false;
-          setExecutedElements(el,stprog);
+          el.classList.remove('active');
         }
       });
-
     };
 
-    const progressScrolling = (el,stprog) => {
+    const progressScrolling = (el) => {
       const progressBars = el.querySelectorAll('.progress-bar');
 
       progressBars.forEach(bar => {
-        if(stprog){
-        var width = parseFloat(bar.getAttribute('datawidth'));
-        }
-        else{
-        var width = 0;
-        }
+        const width = parseFloat(bar.style.width);
         const duration = 2000; // Animation duration in milliseconds
-        //console.log(width);
+        console.log(width);
 
         // Set initial width to 0 and then animate to specified width
-        //bar.style.width = '0%';
+        bar.style.width = '0%';
         setTimeout(() => {
           bar.style.width = width + '%';
-          //console.log(width);
-        }, 10);
+        }, 100);
       });
-      setExecutedElements(false);
-
     };
 
     scrollbarRef.current.addListener(handleScroll);
@@ -86,9 +65,8 @@ const Scroll = () => {
         scrollbarRef.current.destroy();
       }
     };
-  }, []); // Add dependencies if needed
+  }, []);
 
-  // Render something if necessary
   return null;
 };
 
