@@ -414,6 +414,7 @@ section.main-section.bekannt_sec{
   padding: 0;
   list-style: none;
   gap: 18px;
+  flex-wrap: wrap;
 }
 .tabs-container ul li {
     Height: 44px;
@@ -617,7 +618,6 @@ ul.custom_logo_details li {
   position:relative;
 }
 .newsroom-post-slides{
-  position: absolute;
   bottom: 0;
   background: #CBA157;
   width: 100%;
@@ -1374,11 +1374,14 @@ span.follow_linked {
   bottom: 90px;
 }
 /* Career page style start here */
-.career-banner,
-.quotation-banner{
+.career-banner{
   max-height: 900px;
   height: 650px;
   min-height: 300px;
+}
+
+.quotation-banner{
+  min-height: 350px;
 }
 .stand-banner{
   max-height: 900px;
@@ -2098,6 +2101,7 @@ section.post-category-banners .carousel-caption h1{
 .home-tabs-content{
   color: #000;
 }
+
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
     right: -79%;
@@ -2113,8 +2117,24 @@ section.post-category-banners .carousel-caption h1{
 .navbar-expand-md .navbar-nav{
   margin: 0 auto !important;
 }
+.career-banner .carousel-caption{
+  top: 20% !important;
+}
 }
 @media screen and (max-width: 768px) {
+  .career-banner .carousel-caption{
+    position: unset;
+    text-align: center;
+  }
+  .main-section .section-desciption{
+    width: 100%;
+  }
+  .newsroom-col{
+    padding: 0;
+  }
+  .career-banner:before{
+    display: none;
+  }
   footer{
     padding: 10% 0;
   }

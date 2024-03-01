@@ -3,6 +3,7 @@ import Aos from 'aos';
 import { fetchData } from "../apiConnection/apiService";
 import Layout from '@/components/Layout';
 import QuotationSection from '@/components/Quotations/Quotationsection'
+import HomeForm from '@/components/HomForm';
 
 
 function quotationContent(){
@@ -53,6 +54,7 @@ function quotationContent(){
   </div>
   </section>}
 <QuotationSection/>
+<HomeForm/>
 </Layout>
     )
 

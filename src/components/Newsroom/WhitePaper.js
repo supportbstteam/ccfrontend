@@ -52,7 +52,7 @@ function Whitepaper() {
   <div className="card-img-overlay">
     <p className="post-published"><span>{item.category}</span></p>
     <h4 className="card-title">{item.title}</h4>
-    <Button link={`blog/${item.slug}`} title="Zum Whitepaper" />
+    <Button link={`whitepaper/${item.slug}`} title="Zum Whitepaper" />
   </div>
 </div>
 </div>

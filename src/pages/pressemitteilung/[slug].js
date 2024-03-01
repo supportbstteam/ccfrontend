@@ -1,30 +1,31 @@
-import { useState, useEffect } from "react";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { useState, useEffect } from "react";  
 import Button from "@/components/Button";
 import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
 import { useRouter } from 'next/router';
 import { fetchData } from '@/apiConnection/apiService';
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import SocialProfile from "@/components/GeneralDetails/SocialProfile";
 import RelatedPostGridList from "@/components/PostGrid/RelatedPostGrid";
 function Blog() {
 
   const router = useRouter();
   const {slug} = router.query;
-
-const [mainpost, setmainpost] = useState({});
+const [relatedpost, setmainpost] = useState({});
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 const [related, setrelated] = useState(null);
-const subcategory = mainpost?.post && mainpost.post.length > 0 ? mainpost.post[0].category : null;
-console.log(subcategory);
+const subcategory = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
+//console.log(subcategory);
 
 useEffect(() => {
   if (slug) {
     async function fetchDataFromAPI() {
       try {
-        const responsehomenews = await fetchData(`/project/${slug}`);
+        const responsehomenews = await fetchData(`/blogPost/${slug}`);
+        console.log(responsehomenews);
         setmainpost(responsehomenews);
         setLoading(false);
       } catch (error) {
@@ -35,11 +36,11 @@ useEffect(() => {
     fetchDataFromAPI();
   }
     async function fetchDataAPI() {
-      if(mainpost.post && mainpost.post.length > 0) {
-        const relCat = mainpost.post[0].category;
+      if(relatedpost.post && relatedpost.post.length > 0) {
+        const relCat = relatedpost.post[0].category;
         console.log(relCat);
         try {
-          const relpost = await fetchData(`/project/${subcategory}`);
+          const relpost = await fetchData(`/category-blog/${subcategory}`);
           setrelated(relpost);
           setLoading(false);
         } catch (error) {
@@ -48,42 +49,56 @@ useEffect(() => {
         }
       }
     }
-    //fetchDataAPI();
+    fetchDataAPI();
 }, [slug, subcategory]);
-//   console.log('this is the list of value '+mainpost.category[0].name);
-console.log(mainpost[0]);
-const { id, title, metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = mainpost && mainpost.length > 0 ? mainpost[0] : {};
-  
-    var settings = {
-        dots: false, // Show dots navigation
-        infinite: true, // Loop the carousel
-        speed: 500, // Transition speed in milliseconds
-        autoplay: true, // Enable autoplay
-        autoplaySpeed: 6000, // Autoplay interval in milliseconds
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
+//   console.log('this is the list of value '+relatedpost.category[0].name);
+  const { id, post_title,metatitle, metadesc, banner_img, post_content, post_date, post_author, tags, category, recommendation_blog } = relatedpost.post ? relatedpost.post[0] : {};
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+    ],
+  };
     return (
         <Layout title={metatitle} metaDescription={metadesc}>
         <section className="main-section pt-0">
             <div className="container-fluid p-0">
                 <div className="row single-blog-row">
                     <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
-                    <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear"
-     data-aos-duration="1000">
+                    <div className="newsroom-col">
       
          {/* <div className="post-category">
-            {mainpost['category'].map((datas) =>
+            {relatedpost['category'].map((datas) =>
             (<span key={datas.id}>{datas.name}</span>))
             } - {post_date}
             </div> */}
-        <h1 className="text-white">{title}</h1>
+        <h1 className="text-white">{post_title}</h1>
             </div>
                     </div>
-                    <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
-     data-aos-duration="1000">
+                    <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" >
                    <div className="podcast-post">
-                   {image?<img className="img-fluid" src={image?`${process.env.imgpath}/project/${image}`:''} alt={title}/>:''}
+                   {banner_img?<img className="img-fluid" src={banner_img?`${process.env.imgpath}/blogPost/${banner_img}`:''} alt={post_title}/>:''}
                    </div>
                     </div>
                 </div>
@@ -93,10 +108,10 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
     <section className="single-post">
     <div className="container">
         <div className="row">
-            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: content }}></div>
-            <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-center">
+            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: post_content }}></div>
+            <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-end">
                 <div className="post-btn-group">
-            <Button link="/quotation" title="Entdecke Sie wie unser Team auch Ihnen helfen kann" classs="withoutbtn no-arrow kann-btn"/>
+                <Button link="/quotation" title="Entdecke Sie wie unser Team auch Ihnen helfen kann" classs="withoutbtn no-arrow kann-btn"/>
             <Button link="/contact" title="Kontakt aufnahmen" classs="withoutbtn no-arrow"/>
             </div>
             </div>
@@ -106,7 +121,7 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
             <div className="col-lg-7 col-md-7 col-sm-12">
                 <h4>Ähnliche Themen</h4>
                 <ul className="blog-tags">
-                {mainpost.tags && mainpost.tags.map((datas, index) =>
+                {relatedpost.tags && relatedpost.tags.map((datas, index) =>
             (<li key={index}><a href={`${process.env.BASE_URL}/${datas.link}`} className="post-tags">{datas.name}</a></li>))
                 }
                 </ul>
@@ -127,14 +142,15 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
                 <Button link={`../${category?category.toLowerCase():''}`} title={`Mehr ${category&&category}`} classs="withoutbtn blog-insights"/>
             </div>
             { related && related.map((item, index) => (
+              // <Slider {...settings}></Slider>
             <RelatedPostGridList key={index} postdata={item}/>
             ))}   
           </div>
         </div>
     </section>
-   
+    
     <HomeForm/>
-
+ 
         </Layout>
     )
 }

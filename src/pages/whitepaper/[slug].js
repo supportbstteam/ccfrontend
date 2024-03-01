@@ -8,24 +8,24 @@ import { useRouter } from 'next/router';
 import { fetchData } from '@/apiConnection/apiService';
 import SocialProfile from "@/components/GeneralDetails/SocialProfile";
 import RelatedPostGridList from "@/components/PostGrid/RelatedPostGrid";
-function Blog() {
+function Whitepaper() {
 
   const router = useRouter();
   const {slug} = router.query;
-
-const [mainpost, setmainpost] = useState({});
+const [relatedpost, setmainpost] = useState({});
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 const [related, setrelated] = useState(null);
-const subcategory = mainpost?.post && mainpost.post.length > 0 ? mainpost.post[0].category : null;
+const subcategory = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
 console.log(subcategory);
 
 useEffect(() => {
   if (slug) {
     async function fetchDataFromAPI() {
       try {
-        const responsehomenews = await fetchData(`/project/${slug}`);
-        setmainpost(responsehomenews);
+        const responsehomenews = await fetchData(`/whitepaper-slug/${slug}`);
+        console.log(responsehomenews[0]);
+        setmainpost(responsehomenews[0]);
         setLoading(false);
       } catch (error) {
         setError(error);
@@ -35,11 +35,11 @@ useEffect(() => {
     fetchDataFromAPI();
   }
     async function fetchDataAPI() {
-      if(mainpost.post && mainpost.post.length > 0) {
-        const relCat = mainpost.post[0].category;
+      if(relatedpost.post && relatedpost.post.length > 0) {
+        const relCat = relatedpost.post[0].category;
         console.log(relCat);
         try {
-          const relpost = await fetchData(`/project/${subcategory}`);
+          const relpost = await fetchData(`/whitepaper-slug/${subcategory}`);
           setrelated(relpost);
           setLoading(false);
         } catch (error) {
@@ -48,12 +48,12 @@ useEffect(() => {
         }
       }
     }
-    //fetchDataAPI();
+    fetchDataAPI();
 }, [slug, subcategory]);
-//   console.log('this is the list of value '+mainpost.category[0].name);
-console.log(mainpost[0]);
-const { id, title, metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = mainpost && mainpost.length > 0 ? mainpost[0] : {};
-  
+console.log(related);
+//   console.log('this is the list of value '+relatedpost.category[0].name);
+  const { id, title,metatitle, metadesc, image, description, post_date, post_author, tags, category, recommendation_blog } = relatedpost ? relatedpost : {};
+
     var settings = {
         dots: false, // Show dots navigation
         infinite: true, // Loop the carousel
@@ -73,7 +73,7 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
      data-aos-duration="1000">
       
          {/* <div className="post-category">
-            {mainpost['category'].map((datas) =>
+            {relatedpost['category'].map((datas) =>
             (<span key={datas.id}>{datas.name}</span>))
             } - {post_date}
             </div> */}
@@ -83,7 +83,7 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
                     <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
      data-aos-duration="1000">
                    <div className="podcast-post">
-                   {image?<img className="img-fluid" src={image?`${process.env.imgpath}/project/${image}`:''} alt={title}/>:''}
+                   {image?<img className="img-fluid" src={image?`${process.env.imgpath}/whitepaper/${image}`:''} alt={title}/>:''}
                    </div>
                     </div>
                 </div>
@@ -93,7 +93,7 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
     <section className="single-post">
     <div className="container">
         <div className="row">
-            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: content }}></div>
+            <div className="col-lg-7 col-mg-7 col-12 post-content" dangerouslySetInnerHTML={{ __html: description }}></div>
             <div className="col-lg-5 col-mg-5 col-12 d-flex justify-content-center">
                 <div className="post-btn-group">
             <Button link="/quotation" title="Entdecke Sie wie unser Team auch Ihnen helfen kann" classs="withoutbtn no-arrow kann-btn"/>
@@ -106,7 +106,7 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
             <div className="col-lg-7 col-md-7 col-sm-12">
                 <h4>Ähnliche Themen</h4>
                 <ul className="blog-tags">
-                {mainpost.tags && mainpost.tags.map((datas, index) =>
+                {relatedpost.tags && relatedpost.tags.map((datas, index) =>
             (<li key={index}><a href={`${process.env.BASE_URL}/${datas.link}`} className="post-tags">{datas.name}</a></li>))
                 }
                 </ul>
@@ -132,14 +132,27 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
           </div>
         </div>
     </section>
-   
+    <section className="main-section">
+    <div className="container">
+    <div className="row">
+      <div className='col-12'>
+     <h2 data-aos="fade-down" className='section-title text-dark'>Ihr Draht zu uns</h2>
+    <p className='text-dark section-desciption' data-aos="fade-down">Sie haben individuelle Anforderungen an die Errichtung der Ladeinfrastruktur? Kein Problem! Wir helfen Ihnen weiter und erarbeiten ein für Sie passendes Konzept.
+    <br/>
+    <br/>
+    Schreiben Sie uns, oder rufen Sie uns an <a href='+4984149399122'>+49-841-49399122</a></p>
+      </div>
+    <div className='col-12'>
     <HomeForm/>
-
+    </div>
+    </div>
+    </div>
+    </section>
         </Layout>
     )
 }
 
-export default Blog;
+export default Whitepaper;
 
 // export async function getServerSideProps(context) {
 //   var {slug} = context.query;

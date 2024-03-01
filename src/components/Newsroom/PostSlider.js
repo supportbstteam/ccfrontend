@@ -12,6 +12,7 @@ function PostSlider(props){
           try {
             const responsehomenews = await fetchData('/category-blog/podcast'); // Replace '/data' with the API endpoint you want to fetch
             setPostSliderdata(responsehomenews);
+            console.log('list grid start here '+JSON.stringify(responsehomenews));
             setLoading(false);
           } catch (error) {
             setError(error);
@@ -98,7 +99,7 @@ data-aos-duration="1000">
             <Slider {...settings}>
                 {PostSliderdata && PostSliderdata.map((news,i) => (
                 <div className="podcast-post" key={i}>
-                    <img src="../assets/images/newsroom/post.jpg"/>
+                    <img src={`${process.env.imgpath}/blogPost/${news.banner_img}`} class="img-fluid"/>
                     <div className="newsroom-post-slides">
                         <Link href={news.category?`../${news.category.toLowerCase()}/${news.slug}`:''}>
                     <p><span>{news.category}</span>, <span>{new Date(news.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>
