@@ -19,6 +19,9 @@ function NavMenu(props){
 
     <div className={`collapse navbar-collapse home-nav ${NavMenu?'show':''}`} id="navbarColor01">
       <ul className="navbar-nav ms-auto align-items-center">
+      <li className="nav-item">
+        <Link href="/">Home</Link>
+        </li>
         <li className="nav-item">
         <Link href="/about">About</Link>
         </li>
