@@ -49,7 +49,7 @@ function Forms(){
   
     // Make a POST request to your API here
     try {
-      const response = await fetch(`${process.env.API_URL}/contact-us`, {
+      const response = await fetch(`${process.env.API_URL}/query`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
