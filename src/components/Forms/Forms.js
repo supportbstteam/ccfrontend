@@ -72,9 +72,15 @@ function Forms(){
         // Clear any previous errors and show success message
         setErrors({ ...errors, ...Object.fromEntries(Object.keys(newErrors).map(key => [key, ""])) });
         const successElements = document.getElementsByClassName('successshowing');
+        
         for (let i = 0; i < successElements.length; i++) {
           successElements[i].innerHTML = 'Formulardaten erfolgreich übermittelt';
         }
+        let chkinput = document.querySelectorAll('input[type="checkbox"]');
+ 
+            for (let i = 0; i < chkinput.length; i++) {
+                chkinput[i].checked = false;
+            }
 var inputs = document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"], textarea');
 inputs.forEach(function(input) {
  input.value = '';
