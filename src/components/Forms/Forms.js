@@ -75,6 +75,10 @@ function Forms(){
         for (let i = 0; i < successElements.length; i++) {
           successElements[i].innerHTML = 'Formulardaten erfolgreich übermittelt';
         }
+var inputs = document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"], textarea');
+inputs.forEach(function(input) {
+ input.value = '';
+});
       } else {
         // Handle error
         console.error("Das Absenden der Formulardaten ist fehlgeschlagen");
