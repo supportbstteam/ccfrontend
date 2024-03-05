@@ -78,7 +78,7 @@ function KundengruppenCard(){
 
               <div className="flip-card-back">
               {item.title?<h4>{item.title}</h4>:''}
-      <p>{item.description}</p>
+      <p>{item.s_description}</p>
       <a  href="#" className="main-btn border-6 cc-button cc-transbutton text-decoration-none" onClick={() => onOpenModal(item)}>{item.button}
     <svg width="18px" height="18px" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g id="icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">

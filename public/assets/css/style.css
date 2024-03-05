@@ -455,7 +455,14 @@ section.main-section.project_insight {
   color: #000;
   line-height: 40px;
   letter-spacing: 0em;
-  text-align: left;  
+  text-align: left; 
+  margin-bottom: 20px;
+}
+.newsroom-sliders .row{
+background:  rgb(243, 243, 239);
+}
+section.main-section.newsroom-sliders{
+  padding: 0;
 }
 .with_image_view h3 {
   color: #fff;
@@ -475,8 +482,8 @@ section.main-section.project_insight {
     width: 49%;
 }
 .with_image_view{
-  margin: 0 auto!important;
-  width: 70%;
+  margin: 0 auto !important;
+  width: 80%;
   margin-bottom: 30px !important;
 }
 .tabs-container ul li.active{
@@ -1787,6 +1794,14 @@ text-align: center;
   font-family: 'proxima-bold';
   line-height: 26px;
 }
+.card-post-grids .post-card h4.card-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    height: 55px;
+    -webkit-box-orient: vertical;
+}
 .card-post-grids .post-card p.post-published{
   text-transform: uppercase;
     font-size: 13px;
@@ -2100,8 +2115,22 @@ section.post-category-banners .carousel-caption h1{
 }
 .home-tabs-content{
   color: #000;
+  overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 5;
+-webkit-box-orient: vertical;
+margin-bottom: 20px;
 }
-
+section.main-section.versprechen{
+  background: rgb(243, 243, 239);
+}
+section.main-section.newsroom-project-insights {
+  background: rgb(243, 243, 239);
+}
+section.main-section.all-insights {
+  padding-bottom: 0;
+}
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
     right: -79%;
@@ -2128,6 +2157,7 @@ section.post-category-banners .carousel-caption h1{
   }
   .main-section .section-desciption{
     width: 100%;
+    max-width: 100%;
   }
   .newsroom-col{
     padding: 0;
@@ -2138,9 +2168,21 @@ section.post-category-banners .carousel-caption h1{
   footer{
     padding: 10% 0;
   }
-  .added_details{
-    position: unset;
+  .added_details,
+  section.main-section.charge_zahlen .col-counter:nth-child(4) .counter-box .added_details{
+    right:0;
+    left: 0 !important;
   }
+  .career-banner{
+    max-height: auto; 
+     height: auto; 
+     min-height: auto; 
+    padding-bottom: 15px;
+  }
+  section.career-subbanner-content {
+    padding-right: 8px;
+    padding-left: 8px;
+}
   form.draht-forms {
     gap: 15px !important;
   }
@@ -2149,6 +2191,9 @@ section.post-category-banners .carousel-caption h1{
   }
   footer li.footer-colum {
     min-height: auto;
+  }
+  section.main-section.newsroom-sliders .row{
+    padding: 15% 0 20% !important;
   }
   body header.innerpages .home-nav ul li a:not(.cc-button){
     color: #fff;
@@ -2213,7 +2258,7 @@ section.usp_section .section-subtitle{
     height: 400px;
 }
 section.main-section.expertise_section{
-  min-height: 960px;
+  min-height: auto;
   background-size: cover !important;
   background-position: center !important;}
 ul.bekannt_logo_details {
@@ -2252,6 +2297,7 @@ footer .footer-col {
   padding: 0 3%;
   margin-bottom: 30px;
 }
+
 form.draht-forms.newsletter-form {
   margin: 5% 0;
 }
@@ -2259,7 +2305,18 @@ form.draht-forms.newsletter-form div{
   padding: 0;
 }
 .project-details {
-  padding: 5% 10%;
+  padding: 5%;
+}
+.main-section .projects-insights-details h1 {
+  font-size: 30px;
+  line-height: 40px;
+}
+.main-section .project-details h3{
+  font-size: 21px;
+  line-height: 31px;
+}
+.with_image_view{
+  width: 100%;
 }
 section.main-section.charge_zahlen .counter-box{
   margin: 15px auto;
@@ -2272,6 +2329,20 @@ section.about_die:after{
 .projects-row .projects-col{
   width: 100%;
 }
+section.main-section{
+  min-height: auto;
+  padding: 20% 0;
+}
+.expertise_profit {
+  padding: 0 10px !important;
+}
+section.main-section.why_sec h2, section.main-section.what_sec h2, section.main-section.how_sec h2{
+  margin-bottom: 10px;
+}
+section.main-section.charge_zahlen .counter-box{
+  position: relative;
+}
+
 }
 @media screen and (max-width: 992px){
   .kundengrup-card{
@@ -2328,6 +2399,11 @@ footer .footer-col {
 /* .home-nav ul li {
   margin-right: 18px;
 } */
+}
+@media screen and (max-width: 560px){
+.main-section .section-desciption{
+text-align: center;
+}
 }
 @media screen and (min-width: 991px) and (max-width: 1250px){
   .float-img-to-right, .float-left{

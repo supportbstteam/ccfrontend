@@ -84,7 +84,7 @@ var settings = {
   };
 
   return(
-    <section className="main-section pt-0">
+    <section className="main-section newsroom-sliders">
     <div className="container-fluid p-xl-0 p-lg-0 p-md-0">
         <div className="row">
             <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
