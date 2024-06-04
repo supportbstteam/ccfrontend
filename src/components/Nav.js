@@ -11,7 +11,7 @@ function NavMenu(props){
           <div className={`container ${NavMenu?'open-menu':''}`}>
 <nav className="navbar navbar-expand-lg dynamic-Navbar">
 <Link href="/" className="navbar-brand" >
-  <img src="../../assets/images/logo.svg" className='img-fluid' alt="Charge construct power on"/>
+  <img src="../../assets/images/logo.png" className='img-fluid' alt="Charge construct power on"/>
   </Link>
     <button className="navbar-toggler ms-auto" onClick={toggleMenu}  type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
