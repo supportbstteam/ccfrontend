@@ -51,7 +51,7 @@ function NewsRoom(){
         </div>
             </div>
         </section>
-     <PostSlider title={secData.title} description={secData.description}/>
+     <PostSlider title={secData.title} description={secData.description} banner={secData.banner}/>
 
 {secData.new_releases === 1 && <section className="main-section">
             <div className="container">

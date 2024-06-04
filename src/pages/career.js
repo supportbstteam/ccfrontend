@@ -63,6 +63,10 @@ function careerContent(props){
             <div className='col-12 text-center py-5 career-post-detail'>
 <h2 className=' py-5'>Offene Stellen</h2>
             </div>
+
+            <div className='col-12'>
+            
+            </div>
         </div>
     </div>
   </section>  

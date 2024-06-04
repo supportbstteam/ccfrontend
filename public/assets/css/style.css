@@ -706,6 +706,9 @@ ul.custom_logo_details li {
 .entdecken-gap select option{
   color: #000;
 }
+.barchats_section .section-desciption {
+  display: none;
+}
 @keyframes zoomInOut {
   0%, 100% {
     transform: scale(1);

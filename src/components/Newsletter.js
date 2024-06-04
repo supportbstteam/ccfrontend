@@ -75,7 +75,7 @@ function Newsletter() {
         // Handle the response as needed
         const successElements = document.getElementsByClassName('successshowing');
         for (let i = 0; i < successElements.length; i++) {
-          successElements[i].innerHTML = 'Formulardaten erfolgreich übermittelt';
+          successElements[i].innerHTML = 'Sie haben den Newsletter erfolgreich abonniert';
         }
       } catch (error) {
         console.error("Error submitting form:", error);

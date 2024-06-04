@@ -96,7 +96,8 @@ data-aos-duration="1000">
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear"
 data-aos-duration="1000">
-            <Slider {...settings}>
+   {props.banner &&  <img src={`${process.env.imgpath}/newsroom/${props.banner}`} class="img-fluid"/> }
+            {/* <Slider {...settings}>
                 {PostSliderdata && PostSliderdata.map((news,i) => (
                 <div className="podcast-post" key={i}>
                     <img src={`${process.env.imgpath}/blogPost/${news.banner_img}`} class="img-fluid"/>
@@ -109,7 +110,7 @@ data-aos-duration="1000">
                 </div>
                 ))
                 }
-            </Slider>
+            </Slider> */}
             </div>
         </div>
     </div>
