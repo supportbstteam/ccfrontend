@@ -23,7 +23,7 @@ function NavMenu(props){
         <Link href="/">Home</Link>
         </li>
         <li className="nav-item">
-        <Link href="/about">About</Link>
+        <Link href="/ueber-uns">Über uns</Link>
         </li>
         <li className="nav-item">
         <Link href="/career">Karriere</Link>
