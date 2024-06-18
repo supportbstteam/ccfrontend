@@ -267,6 +267,7 @@ margin: 30px 0;
     a.navbar-brand{
       margin-right: 60px;
     }
+    a.navbar-brand img{width: 70%;}
     .card-service {
       position: relative;
       margin-bottom: 5px;
@@ -439,7 +440,7 @@ section.main-section.project_insight {
   padding: 5% 15%;
 }
 .projects-insights-details {
-  margin: 20% 0;
+  margin: 10% 0;
 }
 .project-details h5{
   font-family: 'proxima-bold';
@@ -480,6 +481,7 @@ section.main-section.newsroom-sliders{
     max-height: 580px;
     background-color: #E8E8E8;
     width: 49%;
+    overflow: hidden;
 }
 .with_image_view{
   margin: 0 auto !important;
@@ -1582,6 +1584,7 @@ ul.tabsview.founders-tabs li.actives{
   margin-top: -15px;
   padding-bottom: 15px;
 }
+
 .search-vacancy img{
   width: 19px;
     height: 19px;
@@ -2121,7 +2124,7 @@ section.post-category-banners .carousel-caption h1{
   overflow: hidden;
 text-overflow: ellipsis;
 display: -webkit-box;
--webkit-line-clamp: 5;
+-webkit-line-clamp: 3;
 -webkit-box-orient: vertical;
 margin-bottom: 20px;
 }
@@ -2134,6 +2137,11 @@ section.main-section.newsroom-project-insights {
 
 section.main-section.all-insights {
   padding-bottom: 0;
+}
+.template-section-banner {
+ height: 430px;
+ object-fit: cover;
+ object-position: center center;
 }
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{

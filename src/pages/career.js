@@ -10,6 +10,7 @@ import Benefits from '@/components/Benefits'
 import SocialProfile from '@/components/GeneralDetails/SocialProfile';
 import BecomeTeam from '@/components/BecomeTeam';
 import Iframe from 'react-iframe'
+import Link from 'next/link';
 function careerContent(props){
   const [pageData, setPageData] = useState(props.data);
   const sliderbg = {
@@ -57,7 +58,7 @@ function careerContent(props){
   </div>
   </section>
 
-   <section  data-aos="fade-up"  data-aos-easing="ease-in-sine">
+   {/* <section  data-aos="fade-up"  data-aos-easing="ease-in-sine">
     <div className='container'>
         <div className='row'>
             <div className='col-12 text-center py-5 career-post-detail'>
@@ -65,13 +66,14 @@ function careerContent(props){
             </div>
 
             <div className='col-12'>
-            
+            <Button link={'https://charge-construct-gmbh.jobs.personio.de/'} title={'Apply for Job'} data-aos="fade-up"  data-aos-easing="linear"
+                data-aos-duration="1500"/>
             </div>
         </div>
     </div>
-  </section>  
+  </section>   */}
 
-  {/* <section className='vacancies_section pb-5'>
+  <section className='vacancies_section pb-5'>
     <div className='container'>
         <div className='row justify-content-center'>
             <div className='col-lg-11 col-md-11 col-sm-12 col-12 bg-white vacancy-cols'>
@@ -79,7 +81,7 @@ function careerContent(props){
             </div>
         </div>
     </div>
-  </section> */}
+  </section>
   
   <ImageGallery /> 
 <Benefits/>

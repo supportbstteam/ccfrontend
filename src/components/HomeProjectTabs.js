@@ -68,7 +68,7 @@ const HomeprojectTabs = () => {
                 style={index === 0 || index === index + 2 ? { backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})` } : {}}
               >
                 <div className='project-details'>
-                  {index === 0 || index === index + 2 ? "" : tab.logo && <img src={`${process.env.imgpath}/project/logo/${tab.logo}`} alt={tab.sub_title} />}
+                  {/* {index === 0 || index === index + 2 ? "" : tab.logo && <img src={`${process.env.imgpath}/project/logo/${tab.logo}`} alt={tab.sub_title} />} */}
                   <div className={index === 0 || index === index + 2 ? "projects-insights-details with_image_view" : "projects-insights-details"}>
                     {tab.sub_title && <h5>{tab.sub_title}</h5>}
                     {tab.title && <h3>{tab.title}</h3>}
