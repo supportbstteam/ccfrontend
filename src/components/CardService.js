@@ -2,6 +2,7 @@ import Button from './Button';
 import { fetchData } from "../apiConnection/apiService";
 import { useState, useEffect } from 'react';
 import 'react-responsive-modal/styles.css';
+//import Modal from './Modal';
 import { Modal } from 'react-responsive-modal';
 import Aos from 'aos';
 function ServiceCard() {
@@ -88,7 +89,7 @@ function ServiceCard() {
               <div className="flip-card-back">
       <h4>{item.src_title}</h4>
       <div dangerouslySetInnerHTML={{ __html: item.src_des }}></div>
-<a  href="#" className="main-btn border-6 cc-button cc-transbutton text-decoration-none" onClick={() => onOpenModal(item)}>{item.ser_btn_label}
+<button className="main-btn border-6 cc-button cc-transbutton text-decoration-none" onClick={() => onOpenModal(item)}>{item.ser_btn_label}
     <svg width="18px" height="18px" viewBox="0 -6.5 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <g id="icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g transform="translate(-212.000000, -159.000000)" fill="#fff" fillRule="nonzero">
@@ -98,7 +99,8 @@ function ServiceCard() {
             </g>
         </g>
     </g>
-</svg></a>
+</svg>
+</button>
 
     </div>
               </div>

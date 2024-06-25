@@ -5,6 +5,20 @@ const Scroll = () => {
   const [executedElements, setExecutedElements] = useState(true);
 
   useEffect(() => {
+
+    window.addEventListener('message', function(e) {
+      var iframe = document.querySelector('#personio-iframe');
+      var vsec = document.querySelector('.vacancy-cols');
+      var eventName = e.data[0];
+      var data = e.data[1];
+      switch(eventName) {
+          case 'setHeight':
+              iframe.style.height = data + 'px';
+              // vsec.style.height = data + 'px';
+              break;
+      }
+  }, false);
+  
     const options = {
       damping: 0.07,
     };
@@ -29,14 +43,14 @@ const Scroll = () => {
       }
 
       // Check if an element with 'data-aos' attribute is visible
-      const elementsWithAOS = document.querySelectorAll('[data-aos]');
-      elementsWithAOS.forEach((el) => {
-        if (scrollbarRef.current.isVisible(el)) {
-          el.classList.add('aos-animate');
-        } else {
-          el.classList.remove('aos-animate');
-        }
-      });
+      // const elementsWithAOS = document.querySelectorAll('[data-aos]');
+      // elementsWithAOS.forEach((el) => {
+      //   if (scrollbarRef.current.isVisible(el)) {
+      //     el.classList.add('aos-animate');
+      //   } else {
+      //     el.classList.remove('aos-animate');
+      //   }
+      // });
 
       // Handle progress scrolling
       const elementwithbarcharts = document.querySelectorAll('.bar-charts');
