@@ -2240,6 +2240,7 @@ section.main-section.all-insights {
     position: unset;
     text-align: center;
   }
+  .custom-modal-content{width: 100%;}
   .main-section .section-desciption{
     width: 100%;
     max-width: 100%;
