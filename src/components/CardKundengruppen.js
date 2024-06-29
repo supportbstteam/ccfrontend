@@ -1,7 +1,7 @@
 import Button from "./Button";
 import { fetchData } from "@/apiConnection/apiService";
 import { useState, useEffect } from 'react';
-import { Modal } from 'react-responsive-modal';
+import CustomModal from './CustomModal';
 function KundengruppenCard(){
   const [animated, setAnimate] = useState(1000);
     const [kundengruppendata, setData] = useState(null);
@@ -48,20 +48,21 @@ function KundengruppenCard(){
 
     return(
         <> 
-         <Modal open={openModal} onClose={onCloseModal} center classNames="w-100" styles={{
-    modal: {
-      backgroundImage: `linear-gradient(to right, rgb(0 0 0 / 70%), rgb(0 0 0 / 70%)), url(${modalBackgroundImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center center',
-    },
-  }}>
+
+<CustomModal
+          show={openModal}
+          onClose={onCloseModal}
+          backgroundImage={modalBackgroundImage}
+        >
           {selectedService && (
             <>
               <h2>{selectedService.title}</h2>
               <div dangerouslySetInnerHTML={{ __html: selectedService.description }}></div>
             </>
           )}
-        </Modal>
+        </CustomModal>
+
+      
         {kundengruppendata.map((item, index) => (
  <div key={index} className='col-lg-4 col-md-6 col-sm-12 col-12 ' data-aos="fade-up"
  data-aos-anchor-placement="top-bottom" data-aos-duration={1000*(index+1)}>

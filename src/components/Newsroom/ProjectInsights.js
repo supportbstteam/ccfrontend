@@ -11,8 +11,9 @@ function ProjectInsights(props){
     useEffect(() => {
         async function fetchDataFromAPI() {
           try {
-            const responsehomenews = await fetchData('/project/bau');
+            const responsehomenews = await fetchData('/project/enbw');
             setProjectInsightData(responsehomenews);
+            //console.log('Data to submission: '+JSON.stringify(responsehomenews));
             setLoading(false);
           } catch (error) {
             setError(error);
@@ -20,9 +21,10 @@ function ProjectInsights(props){
           }
         }
         fetchDataFromAPI();
+        
       }, []);
-//console.log(projectInsightsdata && JSON.stringify(projectInsightsdata)+' these are the list of posts to show');
-    return(
+
+      return(
         <section className="main-section newsroom-project-insights">
         <div className="container">
             <div className="row">
@@ -37,9 +39,9 @@ function ProjectInsights(props){
                     <div className="card bg-dark text-white border-0 rounded-0">
   <img src={`${process.env.imgpath}/project/${item.image}`} alt={item.post_title} className="card-img"/>
   <div className="card-img-overlay">
-  <p className="post-published"><span>Errichtung</span> - <span>Ladeinfrastruktur Betreiber</span></p>
-    <h4 className="card-title">{item.post_title}</h4>
-   <Button link={`insight/${item.slug}`} title="Ganzer Beitrag"/>
+  <p className="post-published"><span>{item.category}</span></p>
+  {item.title && <h4 className="card-title">{item.title}</h4>}
+   { item.slug && <Button link={`insight/${item.slug}`} title="Ganzer Beitrag"/>}
   </div>
 </div>
 </div>

@@ -77,7 +77,7 @@ function NewsRoom(){
             </div>
         </div>
     </section>
-{ secData.alle_insights === 1 && <section className="main-section all-insights">
+      { secData.alle_insights === 1 && <section className="main-section all-insights">
         <div className="container">
             <div className="row">
             <div className="col-12">

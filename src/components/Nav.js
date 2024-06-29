@@ -26,7 +26,7 @@ function NavMenu(props){
         <Link href="/ueber-uns">Über uns</Link>
         </li>
         <li className="nav-item">
-        <Link href="/career">Karriere</Link>
+        <Link href="/karriere">Karriere</Link>
         </li>
         <li className="nav-item">
         <Link href="/quotation">Angebotsanfrage</Link>

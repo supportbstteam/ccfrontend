@@ -25,7 +25,7 @@ useEffect(() => {
     async function fetchDataFromAPI() {
       try {
         const responsehomenews = await fetchData(`/blogPost/${slug}`);
-        console.log(responsehomenews);
+        //console.log(responsehomenews);
         setmainpost(responsehomenews);
         setLoading(false);
       } catch (error) {

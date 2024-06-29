@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { fetchData } from '@/apiConnection/apiService';
 import Layout from '@/components/Layout';
+import Iframe from 'react-iframe';
 
 const SlugPage = ({ data }) => {
   const [secData, setSecData] = useState([]);
@@ -23,7 +24,7 @@ const SlugPage = ({ data }) => {
             setLoading(false);
           }
         } catch (error) {
-          setError(error);
+          //setError(error);
           setLoading(false);
           router.push('/404'); // Redirect to 404 page on error
         }
@@ -95,37 +96,29 @@ const SlugPage = ({ data }) => {
         </section>
       ))}
 
-      {secData.template_no === 1 && secData.section2 && (
-        <section className='dynamic-page-section'>
+      {secData.template_no === 1 && secData.section2 && secData.section2.map((section, index) => (
+        <section className='dynamic-page-section' key={index}>
           <div className='container py-5'>
-            <div className='row' data-value={`${secData.section2[0].direction}`}>
-              {secData.section2[0].direction1 === 1 && secData.section2[0].image1 && (
+            <div className='row' data-value={`${section.direction}`}>
+              {section.image1 && (
                 <div className='col-5'>
                   <img
-                    src={`${process.env.imgpath}/create_page_image/${secData.section2[0].image1}`}
+                    src={`${process.env.imgpath}/create_page_image2/${section.image1}`}
                     className="d-block w-100 template-section-banner"
                     alt={secData.title}
                   />
                 </div>
               )}
-              <div className={`col-${secData.section2[0].image1 && secData.section2[0].direction1 ? '7' : '12'}`}>
-                <div className='sec-para' dangerouslySetInnerHTML={{ __html: secData.section2[0].description1 }}></div>
+              <div className="col-7">
+                <div className='sec-para' dangerouslySetInnerHTML={{ __html: section.description1 }}></div>
               </div>
-              {secData.section2[0].direction1 === 2 && secData.section2[0].image1 && (
-                <div className='col-5'>
-                  <img
-                    src={`${process.env.imgpath}/create_page_image/${secData.section2[0].image1}`}
-                    className="d-block w-100 template-section-banner"
-                    alt={secData.title}
-                  />
-                </div>
-              )}
+             
             </div>
           </div>
         </section>
-      )}
+      ))}
 
-      {secData.template_no === 2 && (
+      {secData.template_no === 2 && secData.section1[0] && secData.section1[0].description && (
         <section className='dynamic-page-section'>
          <div className='container py-5'>
            <div className='row'>
@@ -138,6 +131,18 @@ const SlugPage = ({ data }) => {
            </div>
           </section>
       )}
+
+      {secData.template_no === 2 && secData.pdf && (
+        <section className='dynamic-page-section'>
+         <div className='container py-5'>
+           <div className='row'>
+           <div className="col-12">
+            <Iframe src={`${process.env.imgpath}/main_banner/${secData.pdf}`} width="100%" height="750"></Iframe>
+           </div>
+           </div>
+         </div>
+         </section>
+        )}
     </Layout>
   );
 };

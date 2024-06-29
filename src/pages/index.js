@@ -28,7 +28,6 @@ export default function Home(props) {
 
     fetchDataFromAPI();
   }, []);
-console.log(meta.metatitle);
   if (loading) {
     return <div className='preloading_view'>
       <img src='../../assets/images/loader.gif' className='img-fluid'/>
