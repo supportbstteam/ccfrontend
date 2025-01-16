@@ -9,7 +9,7 @@ import RelatedPostGridList from "@/components/PostGrid/RelatedPostGrid";
 
 function Blog({ mainpost, related, error }) {
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div>Error: {error} </div>;
   }
 
 const { id, title, metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = mainpost && mainpost[0] || {};
