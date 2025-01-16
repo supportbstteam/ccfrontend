@@ -38,7 +38,7 @@ export default function Home(props) {
   }
   return (
     <Layout viewClass="home-page" title={meta.meta_title && meta.meta_title} metaDescription={meta.meta_desc && meta.meta_desc}>
-   <MainSlider slider={data}/>
+        <MainSlider slider={data}/>
          {sectionData.map((Secdata, index) => (
         <Sections key={index} section={Secdata}/>
         ))}
