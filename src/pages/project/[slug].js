@@ -74,7 +74,7 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
         <div className="container">
           <div className="row">
             <div className="col-lg-7 col-md-7 col-12">
-              <h2 className='section-title text-dark mb-5'>Das könnte dir auch gefallen...</h2>
+              <h2 className='section-title text-dark mb-5'>Setting Here Das könnte dir auch gefallen...</h2>
             </div>
             <div className="col-lg-5 col-md-5 col-12">
               <Button link={`../${category ? category.toLowerCase() : ''}`} title={`Mehr ${category && category}`} classs="withoutbtn blog-insights" />
