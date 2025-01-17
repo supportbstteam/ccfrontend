@@ -552,6 +552,7 @@ button.navbar-toggler.ms-auto{
   position: relative;
   top: 80px;
 }
+
 .open-menu button.navbar-toggler .navbar-toggler-icon{
 background-image: url('../images/x.svg');
 }
@@ -1417,9 +1418,10 @@ span.follow_linked {
 /* Career page style start here */
 .career-banner{
   max-height: 900px;
-  height: 650px;
+  height: 500px;
   min-height: 300px;
 }
+
 
 .quotation-banner{
   min-height: 350px;
@@ -2183,7 +2185,9 @@ section.main-section.all-insights {
   overflow: auto;
    background-color:rgb(26 26 26 / 81%);
  }
- 
+ /* body.modal-open {
+  overflow: hidden;
+} */
  .custom-modal-content {
   position: relative;
     background-color: #fefefe;
@@ -2275,6 +2279,10 @@ header.navbar.navbar-expand-md {
 .custom_our_values_image {
   padding: 0;
 }
+.quotation-banner .banner-content .quotation_banner-text p:last-child{
+ margin: 0 !important;
+ font-size: 0 !important;
+}
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
     right: -79%;
@@ -2282,6 +2290,9 @@ header.navbar.navbar-expand-md {
   .newshome_content{
     width: 240px;
   }
+  .newsroom-col {
+    margin-top: 40px;
+}
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
   .navbar-expand-md .navbar-collapse{

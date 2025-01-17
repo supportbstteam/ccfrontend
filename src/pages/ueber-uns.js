@@ -127,7 +127,7 @@ function About(props) {
   <div className="container">
     <div className="row">
       <div className="col-12">
-      <h2 className="section-title mb-4">Meet the team</h2>
+      <h2 className="section-title mb-4">Lerne unser Team kennen</h2>
       <div className='col-12'>
         <Tabs/>
       </div>

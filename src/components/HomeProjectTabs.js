@@ -59,7 +59,7 @@ const HomeprojectTabs = () => {
       </ul>
       <div className="tab-content overflow-hidden">
         <div className='tab-pane active' data-cat={ProjectTabdata[activeTab]?.slug}>
-          <div className='row projects-row gap-1'>
+          <div className='row projects-row gap-1 1212'>
             {Projectdata[ProjectTabdata[activeTab]?.slug]?.map((tab, index) => (
               <div
                 key={index}
