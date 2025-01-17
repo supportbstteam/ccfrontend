@@ -35,7 +35,7 @@ function TeamLeiter(){
     return(
         <div className='container teams-boards-member'>
             <div className='row'>
-            <h3 className='text-dark'>Teamleiter</h3>
+            <h3 className='text-dark 121121'>Teamleiter</h3>
                 {servicedata.map((tab, i) =>
                  <div className='col-lg-3 col-md-6 col-sm-6 col-6 text-vs-center mb-5 px-0 member-col' data-aos="fade-up" data-aos-duration={1000*(i+2)} key={i}>
         {tab.image && <img src={`${process.env.imgpath}/team/${tab.image}`} alt={tab.name} className='img-fluid border-6 mb-3'/> }

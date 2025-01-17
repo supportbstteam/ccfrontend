@@ -75,15 +75,17 @@ function About(props) {
   { item.order%2 ===0 ?
 <section className="main-section why_we_exist">
   <div className="container">
-    <div className="row">
-      {item.title && 
-      <div className='offset-lg-6 col-lg-6 col-md-12 col-sm-12 col-xs-12'>
-      <h2 className="section-title mb-4">{item.title}</h2>
+    <div className="row custom-image-row-text">
+     
+      {item.image && 
+      <div className="custom-image-text col-lg-6 col-md-12 col-sm-12 col-12">
+      <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-img-to-right' title={item.title}/>
       </div>
       }
-      {item.image && 
-      <div className="col-lg-6 col-md-12 col-sm-12 col-12">
-      <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-img-to-right' title={item.title}/>
+      <div className="section-image-text">
+       {item.title && 
+      <div className='offset-lg-6 col-lg-6 col-md-12 col-sm-12 col-xs-12'>
+      <h2 className="section-title mb-4">{item.title}</h2>
       </div>
       }
       {item.description && 
@@ -91,13 +93,15 @@ function About(props) {
       <div dangerouslySetInnerHTML={{__html: item.description}}></div>
       </div>
       }
+      </div>
     </div>
     </div>
     </section>
 :
 <section className="main-section our_values">
   <div className="container">
-    <div className="row">
+    <div className="row custom_our_values-text">
+     <div class="our_values_image_custom">
     {item.title && 
       <div className='col-12'>
       <h2 className="section-title mb-4">{item.title}</h2>
@@ -107,8 +111,9 @@ function About(props) {
       <div className="col-lg-6 col-md-12 col-sm-12 col-12 cc-left-col"  data-aoss="fade-right">
       <div dangerouslySetInnerHTML={{__html: item.description}}></div>
      </div> }
+     </div>
         {item.image &&
-      <div className="col-lg-6 col-md-12 col-sm-12 col-12">
+      <div className="custom_our_values_image col-lg-6 col-md-12 col-sm-12 col-12">
         <img src={`${process.env.imgpath}/aboutsection/${item.image}`} className='img-fluid float-left' alt={item.title}/>
       </div>
       }
