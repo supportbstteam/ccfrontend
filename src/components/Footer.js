@@ -98,7 +98,7 @@ return (
                  </ul>
                  </div>
         </div>
-        <CopyrightFooter/>
+       
         </div>
     </footer>
 )
