@@ -22,7 +22,9 @@ useEffect(() => {
     <div className="row">
           <div className="col-12 text-center">
 <div className="gloabl_rating">
-    {footercopy && <div dangerouslySetInnerHTML={{ __html: footercopy.copyright}}/>}
+    {footercopy && <div dangerouslySetInnerHTML={{ __html: footercopy.copyright}}/>} 
+
+     <P>Hello ok </P>
             {/* <ul>
                 <li><img src="../../assets/images/star.png"/></li>
                 <li><img src="../../assets/images/star.png"/></li>
