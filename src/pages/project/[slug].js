@@ -31,7 +31,7 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
           <div className="row single-blog-row">
             <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
               <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
-                <h1 className="text-white">{title} aa</h1>
+                <h1 className="text-white">{title}</h1>
               </div>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
