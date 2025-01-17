@@ -73,11 +73,11 @@ const HomeprojectTabs = () => {
                     {tab.sub_title && <h5>{tab.sub_title}</h5>}
                     {tab.title && <h3>{tab.title}</h3>}
                     {index === 0 || index === index + 2 ? "" : <div className="home-tabs-content" dangerouslySetInnerHTML={{ __html: tab.content }} />}
-                    <Button title="Ganzer Beitrag" link={tab.category ? `../project/${tab.slug}` : ''} target="_blank" />
+                    <Button title="Ganzer Beitrag" link={tab.category ? `../projects/${tab.slug}` : ''} target="_blank" />
                   </div>
                 </div>
               </div>
-            ))}
+            ))} 
           </div>
         </div>
       </div>
