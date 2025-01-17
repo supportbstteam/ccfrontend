@@ -129,11 +129,15 @@ export async function getStaticPaths() {
     const paths = projects.map(project => ({
       params: { slug: project.slug },
     }));
+
+
+   
     return {
       paths,
       fallback: false,
     };
-
+    
+   
    
   } catch (error) {
     return {
