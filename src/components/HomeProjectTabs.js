@@ -77,7 +77,7 @@ const HomeprojectTabs = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))} 
           </div>
         </div>
       </div>

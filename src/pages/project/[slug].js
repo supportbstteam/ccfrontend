@@ -93,6 +93,8 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
+  
+
   try {
     const responsehomenews = await fetchData(`/project/${slug}`);
     const mainpost = responsehomenews;
@@ -102,7 +104,7 @@ export async function getStaticProps({ params }) {
     if (subcategory) {
       const relpost = await fetchData(`/project/${subcategory}`);
       related = relpost;
-    }
+    } 
 
     return {
       props: {
