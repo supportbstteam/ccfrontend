@@ -106,8 +106,6 @@ export async function getStaticProps({ params }) {
       related = relpost;
     } 
 
-    console.log(responsehomenews)
-
     return {
       props: {
         mainpost,
