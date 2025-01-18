@@ -101,7 +101,7 @@ function About(props) {
 <section className="main-section our_values">
   <div className="container">
     <div className="row custom_our_values-text">
-     <div class="our_values_image_custom">
+     <div className="our_values_image_custom">
     {item.title && 
       <div className='col-12'>
       <h2 className="section-title mb-4">{item.title}</h2>

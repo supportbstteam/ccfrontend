@@ -39,7 +39,7 @@ function AdvisoryBoard(){
     { tab.image && <img src={`${process.env.imgpath}/team/${tab.image}`} alt={tab.name} className='img-fluid border-6 mb-3'/> }
                {tab.name &&  <h5>{tab.name}</h5> }
                 {tab.profession && <h6>{tab.profession}</h6>}
-                {/* <span class="follow_linked"><a href={tab.linkedin_profile}><img src="../../assets/images/linkedin.png" className='img-fluid'/></a></span> */}
+                {/* <span className="follow_linked"><a href={tab.linkedin_profile}><img src="../../assets/images/linkedin.png" className='img-fluid'/></a></span> */}
                 </div>
             )}
             

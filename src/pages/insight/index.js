@@ -25,7 +25,7 @@ function ArticleList() {
   <div className="carousel-inner">
     <div className="carousel-item active">
       <img className="d-block w-100" src="assets/images/post-banners.jpg" alt="First slide"/>
-      <div class="carousel-caption d-none d-md-block">
+      <div className="carousel-caption d-none d-md-block">
     <h1>Insight</h1>
   </div>
     </div>

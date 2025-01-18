@@ -46,7 +46,7 @@ function quotationContent(){
       <div className="banner-content" data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1000">
        {secData.title && <h1>{secData.title}</h1> }
-       {secData.description && <div class="quotation_banner-text" dangerouslySetInnerHTML={{ __html: secData.description }}></div>}
+       {secData.description && <div className="quotation_banner-text" dangerouslySetInnerHTML={{ __html: secData.description }}></div>}
          </div>
         </div>
         </div>

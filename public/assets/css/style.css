@@ -2283,6 +2283,7 @@ header.navbar.navbar-expand-md {
  margin: 0 !important;
  font-size: 0 !important;
 }
+.miin-height{min-height: 250px;}
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
     right: -79%;
