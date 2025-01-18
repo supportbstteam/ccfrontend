@@ -1,20 +1,62 @@
+import { useState, useEffect } from "react";  
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Button from "@/components/Button";
 import HomeForm from "@/components/HomForm";
 import Layout from "@/components/Layout";
+import { useRouter } from 'next/router';
 import { fetchData } from '@/apiConnection/apiService';
 import SocialProfile from "@/components/GeneralDetails/SocialProfile";
 import RelatedPostGridList from "@/components/PostGrid/RelatedPostGrid";
 
-function Blog({ mainpost, related, error }) {
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
+function Blog() {
+  const router = useRouter();
+  const { slug } = router.query;
+  
+  const [relatedpost, setmainpost] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [related, setrelated] = useState(null);
 
-const { id, title, metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = mainpost && mainpost[0] || {};
-//console.log(mainpost[0].title);
-  var settings = {
+  const subcategory = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
+
+  useEffect(() => {
+    if (slug) {
+      async function fetchDataFromAPI() {
+        try {
+          const responsehomenews = await fetchData(`/project/${slug}`);
+          console.log(responsehomenews);
+          setmainpost(responsehomenews);
+          setLoading(false);
+        } catch (error) {
+          setError(error);
+          setLoading(false);
+        }
+      }
+      fetchDataFromAPI();
+    }
+
+    async function fetchDataAPI() {
+      if (relatedpost.post && relatedpost.post.length > 0) {
+        const relCat = relatedpost.post[0].category;
+        try {
+          const relpost = await fetchData(`/category-blog/${subcategory}`);
+          setrelated(relpost);
+          setLoading(false);
+        } catch (error) {
+          setError(error);
+          setLoading(false);
+        }
+      }
+    }
+
+    fetchDataAPI();
+  }, [slug, subcategory]);
+
+  const { id, title, metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = relatedpost[0] ? relatedpost[0] : {};
+  console.log(relatedpost[0]);
+
+  const settings = {
     dots: false,
     infinite: true,
     speed: 500,
@@ -30,13 +72,24 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
         <div className="container-fluid p-0">
           <div className="row single-blog-row">
             <div className="offset-lg-1 offset-md-1 col-lg-6 col-md-6 col-sm-12 col-12 d-flex align-items-center">
-              <div className="newsroom-col" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000">
+              <div
+                className="newsroom-col"
+                data-aos="fade-right"
+                data-aos-easing="linear"
+                data-aos-duration="1000"
+              >
                 <h1 className="text-white">{title}</h1>
               </div>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12 col-12 top-post-slider" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
               <div className="podcast-post">
-                {image ? <img className="img-fluid" src={image ? `${process.env.imgpath}/project/${image}` : ''} alt={title} /> : ''}
+                {image ? (
+                  <img
+                    className="img-fluid"
+                    src={`${process.env.imgpath}/project/${image}`}
+                    alt={title}
+                  />
+                ) : ''}
               </div>
             </div>
           </div>
@@ -60,16 +113,17 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
               <h4>Ähnliche Themen</h4>
               <ul className="blog-tags">
                 {tags && tags.map((datas, index) => (
-                  <li key={index}><a href={`${process.env.BASE_URL}/${datas.link}`} className="post-tags">{datas.name}</a></li>
+                  <li key={index}>
+                    <a href={`${process.env.BASE_URL}/${datas.link}`} className="post-tags">{datas.name}</a>
+                  </li>
                 ))}
               </ul>
             </div>
-            <div className="col-lg-5 col-md-5 col-sm-12">
-            </div>
+            <div className="col-lg-5 col-md-5 col-sm-12"></div>
           </div>
         </div>
       </section>
-    {/* this is section */}
+
       <section className="main-section single-suggest-posts all-insights">
         <div className="container">
           <div className="row">
@@ -88,59 +142,7 @@ const { id, title, metatitle, metadesc, image, content, post_date, post_author, 
 
       <HomeForm />
     </Layout>
-  )
-}
-
-export async function getStaticProps({ params }) {
-  const { slug } = params;
-  
-
-  try {
-    const responsehomenews = await fetchData(`/project/${slug}`);
-    const mainpost = responsehomenews;
-    const subcategory = mainpost?.post && mainpost.post.length > 0 ? mainpost.post[0].category : null;
-    let related = null;
-
-    if (subcategory) {
-      const relpost = await fetchData(`/project/${subcategory}`);
-      related = relpost;
-    } 
-
-    console.log(responsehomenews)
-
-    return {
-      props: {
-        mainpost,
-        related,
-      },
-    };
-  } catch (error) {
-    return {
-      props: {
-        error: error.message,
-      },
-    };
-  }
-}
-
-export async function getStaticPaths() {
-  try {
-    const projects = await fetchData(`/projects`);
-    const paths = projects.map(project => ({
-      params: { slug: project.slug },
-    }));
-    return {
-      paths,
-      fallback: false,
-    };
-
-   
-  } catch (error) {
-    return {
-      paths: [],
-      fallback: false,
-    };
-  }
+  );
 }
 
 export default Blog;
