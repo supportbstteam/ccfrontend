@@ -88,7 +88,7 @@ div#__next {
     color: #000 !important;
   }
   .home-nav ul li a{
-    color: #fff;
+    color: #fff !important;
     font-size: 19px !important;
     font-family: 'proxima-medium';
     text-decoration: none;
@@ -1390,7 +1390,7 @@ transition: all 0.5s;
 
 body header.innerpages{
   position: unset;
-  background: #F3F3EF !important;
+  /* background: #F3F3EF !important; */
 }
 body header.innerpages .home-nav ul li a:not(.cc-button)
 {
@@ -1399,9 +1399,9 @@ body header.innerpages .home-nav ul li a:not(.cc-button)
 body header.innerpages .home-nav ul li a:not(.cc-button):hover{
   color: var(--primary-clr) !important;
 }
-body header.innerpages img{
+/* body header.innerpages img{
   filter: grayscale(1) invert(1);
-}
+} */
 .main-btn svg{
   position: relative;
     left: 10px;
@@ -2372,7 +2372,7 @@ nav.navbar.navbar-expand-lg {
     max-height: max-content;
     width: 50%;
 }
-.home-page .navbar-toggler-icon {
+ .navbar-toggler-icon {
   background-color: #fff;
 }
 .open-menu span.navbar-toggler-icon {
