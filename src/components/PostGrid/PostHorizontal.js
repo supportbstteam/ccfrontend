@@ -16,8 +16,9 @@ function GridPostHorizontal(props){
                 <Link className="card-title text-decoration-none" href={`blog/${Horpostdata.slug}`}>
 <div className="card mb-4" data-aos="fade-up"
 data-aos-duration="1100">
-<div className="row g-0 miin-height">
-<div className="col-md-7 top-posts" style={sliderbg}></div>
+<div className="row g-0 miin-height ">
+<div className="col-md-7 top-posts post-main-custom">
+<img src={`${process.env.imgpath}/blogPost/${Horpostdata.banner_img}`}/></div>
 <div className="col-md-5 top-posts-card">
 <div className="card-body ">
 <p className="post-published"><span>{categorydata.name}</span>, <span>{new Date(Horpostdata.post_date).toLocaleString('default', { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>

@@ -65,7 +65,7 @@ function footer(){
   };
   
 return (
-    <footer>
+    <footer class="footer-main">
         <div className="container">
         <div className="row mb-4">
                 

@@ -289,9 +289,7 @@ margin: 30px 0;
       background-color:var(--primary-clr) !important;
       color: #fff;
     }
-    a.navbar-brand{
-      margin-right: 60px;
-    }
+  
     a.navbar-brand img{width: 70%;}
     .card-service {
       position: relative;
@@ -586,6 +584,7 @@ section.main-section{
   overflow:hidden;
   position: relative;
 }
+
 section.main-section.expertise_section{
   min-height: 563px;
     background-image: url('../images/expertise.png'), linear-gradient(115deg, #f29c2f, #f8dd70) !important;
@@ -680,8 +679,12 @@ ul.custom_logo_details li {
 .top-posts-card{
   background: #FFE499;
 }
-.top-posts img{
-  height: 350px;
+.top-posts img {
+  height: 100%;
+  width: 100%;
+}
+.top-posts.post-main-custom img {
+  animation: none;
 }
 .posts-authors ul{
   list-style:none;
@@ -867,7 +870,7 @@ section.main-section.team_banner{
 }
 .team_banner a.zum-team{
   position: absolute;
-    bottom: -35px;
+    bottom: -30px;
     width: 200px;
     display: flex;
     align-items: center;
@@ -875,10 +878,11 @@ section.main-section.team_banner{
     right: 0;
     left: 0;
     margin: 0 auto;
-    height: 70px;
+    height: auto;
     z-index: 99;
     background: var(--primary-clr) !important;
     color: #fff !important;
+    padding: 15px 15px;
 }
 footer {
   background: #2a2a2a;
@@ -1216,9 +1220,9 @@ section.about_die:after {
   top: 0;
   z-index: -1;
   box-shadow: 0px 4px 4px 0px #00000040;
-  min-height: 300px;
-  height: 321px;
-  max-height: 450px;
+  min-height: -webkit-fill-available;
+  height: 100%;
+  max-height: 100%;
 }
 section.main-section.why_we_exist{
   background-size: 45%;
@@ -1823,7 +1827,8 @@ text-align: center;
 }
 .card-post-grids .post-card .post-published,
 .card-post-grids .post-card .card-title {
-  color: #8D5D2D;
+  /* color: #8D5D2D; */
+  color: #fff;
   font-size: 1.25rem;
   font-weight: 500;
   text-decoration: none;
@@ -1851,11 +1856,13 @@ text-align: center;
   font-size: 13px;
   font-family: 'proxima-bold';
   margin-bottom:0.5rem;
-  color: #8D5D2D;
+  /* color: #8D5D2D; */
+  color: #fff;
 }
 .card-post-grids .post-card .card-text{
   display: -webkit-box;
-  color: #8D5D2D;
+  /* color: #8D5D2D; */
+  color: #fff;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
@@ -1993,13 +2000,13 @@ section.main-section.why_we_exist p, section.main-section.our_values p {
 .single-blog-row {
   background: #CBA157;
   align-items: center;
-  min-height: 300px;
-  height: 450px;
+  /* min-height: 300px;
+  height: 450px; */
   overflow: hidden;
-  overflow: hidden;
+  /* overflow: hidden;
   background-size: contain;
   background-position: right center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 ul.share-blogs{
   display: flex;
@@ -2067,7 +2074,7 @@ margin-top: 20px;
   right:0;
 }
 .about-video{
-  width: 92%;
+  width: 100%;
 }
 .company-award ul{
   list-style: none;
@@ -2284,6 +2291,11 @@ header.navbar.navbar-expand-md {
  font-size: 0 !important;
 }
 .miin-height{min-height: 250px;}
+a.navbar-brand{
+  margin-right: 60px;
+}
+
+
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
     right: -79%;
@@ -2291,9 +2303,9 @@ header.navbar.navbar-expand-md {
   .newshome_content{
     width: 240px;
   }
-  .newsroom-col {
+  /* .newsroom-col {
     margin-top: 40px;
-}
+} */
 }
 @media screen and (max-width: 991px) and (min-width: 768px){
   .navbar-expand-md .navbar-collapse{
@@ -2312,6 +2324,13 @@ header.navbar.navbar-expand-md {
     max-width: 100%;
     margin-top: 20px;
 }
+a.navbar-brand{
+  margin-right: 0px;
+}
+nav.navbar.navbar-expand-lg {
+  padding: 10px 0;
+}
+
 .custom_our_values-text .our_values_image_custom {
   width: 100%;
   max-width: 100%;
@@ -2322,8 +2341,65 @@ header.navbar.navbar-expand-md {
 .custom-image-row-text h2.section-title.mb-4 {
   text-align: center;
 }
+.main-section h1 {
+  font-size: 40px;
+}
+}
+@media screen and (max-width: 992px){
+
+  footer .row.mb-4 {
+    display: flex;
+    justify-content: space-between;
+}
+  .kundengrup-card{
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .float-img-to-right, .float-left{
+    position: unset;
+    width: 100%;
+  }
+  .teams-boards-member .member-col{
+    text-align: center;
+  }
+  section.main-section.charge_zahlen .counter-box, .stand_in{
+    width: auto;
+  }
 }
 @media screen and (max-width: 768px) {
+  .projects-row .projects-col {
+    height: auto;
+    max-height: max-content;
+    width: 50%;
+}
+.home-page .navbar-toggler-icon {
+  background-color: #fff;
+}
+.open-menu span.navbar-toggler-icon {
+  background-color: transparent;
+}
+  .team_banner a.zum-team {
+    bottom: -25px;
+    padding: 10px 15px;
+}
+.main-form {
+  padding-bottom: 50px;
+}
+.row.single-blog-row .newsroom-col {
+  margin-top: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+section.main-section.d-flex.align-items-center.quotation-banner {
+  padding: 30px 0;
+}
+  section.main-section.about_die {
+    background-color: #FBB900;
+}
+  section.main-section.home-sections.kundengruppen_sec {
+    padding-top: 0;
+    border: 0;
+}
   .career-banner .carousel-caption{
     position: unset;
     text-align: center;
@@ -2340,8 +2416,18 @@ header.navbar.navbar-expand-md {
     display: none;
   }
   footer{
-    padding: 10% 0;
+    padding: 5% 0;
   }
+  section.usp_section {
+    min-height: auto;
+    padding: 5% 0;
+}
+.career-banner .carousel-caption h1 {
+  font-size: 35px;
+}
+section.main-section.service_second {
+  padding-top: 10%;
+}
   .added_details,
   section.main-section.charge_zahlen .col-counter:nth-child(4) .counter-box .added_details{
     right:0;
@@ -2363,11 +2449,15 @@ header.navbar.navbar-expand-md {
   form.draht-forms .form-fields{
     padding-right: 0;
   }
+  .carousel-caption.d-md-block {
+    padding-left: 10px;
+    padding-right: 10px;
+}
   footer li.footer-colum {
     min-height: auto;
   }
   section.main-section.newsroom-sliders .row{
-    padding: 15% 0 20% !important;
+    padding: 10% 0 10% !important;
   }
   body header.innerpages .home-nav ul li a:not(.cc-button){
     color: #fff;
@@ -2503,10 +2593,10 @@ section.about_die:after{
 .projects-row .projects-col{
   width: 100%;
 }
-section.main-section{
-  min-height: auto;
-  padding: 20% 0;
-}
+/* section.main-section{
+  padding:  0;
+} */
+
 .expertise_profit {
   padding: 0 10px !important;
 }
@@ -2516,24 +2606,16 @@ section.main-section.why_sec h2, section.main-section.what_sec h2, section.main-
 section.main-section.charge_zahlen .counter-box{
   position: relative;
 }
+.navbar .carousel-caption h1 {
+  font-size: 40px !important;
+}
+section.about_die:after {
 
+  height: 100%;
+   max-height:100%;
 }
-@media screen and (max-width: 992px){
-  .kundengrup-card{
-    margin-right: 0;
-    margin-bottom: 30px;
-  }
-  .float-img-to-right, .float-left{
-    position: unset;
-    width: 100%;
-  }
-  .teams-boards-member .member-col{
-    text-align: center;
-  }
-  section.main-section.charge_zahlen .counter-box, .stand_in{
-    width: auto;
-  }
 }
+
 @media screen and (min-width: 767px) and (max-width:991px){
   .newsletter-form input {
     margin-bottom: 15px;
@@ -2578,6 +2660,16 @@ footer .footer-col {
 .main-section .section-desciption{
 text-align: center;
 }
+.banner-slider {
+  padding: 45% 0 20%;
+}
+.tabs-container ul li {
+  Height: 44px;
+  min-width: 90px;
+}
+.tabs-container ul {
+  gap: 10px;
+}
 }
 @media screen and (min-width: 991px) and (max-width: 1250px){
   .float-img-to-right, .float-left{
@@ -2586,4 +2678,5 @@ text-align: center;
 }
 @media screen and (max-width: 375px){
   a.navbar-brand { margin-right: 0 !important; }
+
 }
