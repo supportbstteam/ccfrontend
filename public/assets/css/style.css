@@ -473,7 +473,7 @@ section.main-section.project_insight {
   color: #000;
   line-height: 26px;
   letter-spacing: 0em;
-  text-align: justify;
+  text-align: center;
 }
 .project-details h3{
   font-family: 'proxima-bold';
@@ -824,7 +824,7 @@ font-size: 16px;
 color: #7B735B;
 line-height: 25px;
 letter-spacing: 0em;
-text-align: justify;
+text-align: center;
 background: none;
 }
 
@@ -1127,7 +1127,7 @@ form.newsletter-form input[type="text"], form.newsletter-form input[type="email"
   font-weight: 500;
   line-height: 8px;
   color: #C8B274;
-  text-align: justify;
+  text-align: center;
   text-decoration: underline;
   margin-left: 8px;
 }
@@ -1163,7 +1163,7 @@ p.copyright_txt{
   color: #fff !important;
   text-overflow: ellipsis;
   display: -webkit-box;
-  text-align: justify;
+  text-align: center;
 }
 .flip-card-back .main-btn svg {
   position: absolute;
@@ -1994,7 +1994,7 @@ border-top-right-radius: 6px;
   line-height: 24px;
 }
 section.main-section.why_we_exist p, section.main-section.our_values p {
-  text-align: justify;
+  text-align: center;
 }
 /* branche bar charts end here */
 .single-blog-row {
@@ -2025,7 +2025,7 @@ ul.share-blogs li img {
 section.single-post .post-content p{
   font-size: 16px;
     font-family: 'proxima-medium';
-    text-align: justify;
+    text-align: center;
     line-height: 28px;
     margin-bottom: 30px;
 }
@@ -2255,6 +2255,24 @@ header.navbar.navbar-expand-md {
   align-items: center;
   justify-content: space-between;
 }
+.flip-card-back div[style="text-align: justify;"] {
+  text-align: center !important;
+}
+.card-service .flip-card-back p {
+  text-align: center !important;
+}
+.kundengrup-card .flip-card-back p {
+  text-align: center !important;
+}
+.card-service .flip-card-back > * {
+  text-align: center !important;
+}
+section.main-section.home-sections.why_sec p {
+  text-align: left !important;
+}
+.main-section .section-desciption p {
+  text-align: left !important;
+}
 .section-image-text .offset-lg-6 {
   margin: 0;
   width: 100%;
@@ -2294,7 +2312,9 @@ header.navbar.navbar-expand-md {
 a.navbar-brand{
   margin-right: 60px;
 }
-
+.row.custom-image-row-text p, .our_values_image_custom p{
+  text-align: left !important;
+}
 
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
@@ -2371,6 +2391,14 @@ nav.navbar.navbar-expand-lg {
     height: auto;
     max-height: max-content;
     width: 50%;
+}
+.flip-card-back h4 {
+  text-align: center;
+}
+
+
+.main-section .section-desciption p {
+  text-align: center !important;
 }
  .navbar-toggler-icon {
   background-color: #fff;

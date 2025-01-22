@@ -46,7 +46,7 @@ useEffect(()=>{
                 {/* {subtitle ?<h4 className='section-subtitle' data-aos="fade-up">{subtitle}</h4>:''} */}
                 
                 {description !== '<p><br></p>' && description && (
-  <div className="section-desciption 121" dangerouslySetInnerHTML={{ __html: description }}></div>
+  <div className="section-desciption" dangerouslySetInnerHTML={{ __html: description }}></div>
 )}
                 {secbutton != null && secbuttonlink != null && <Button classs={sec_type==='team_banner'?"zum-team":"no-arrow w-auto"} title={secbutton} link={secbuttonlink} />}
 
