@@ -2287,11 +2287,12 @@ section.main-section.home-sections.why_sec p {
 }
 .row.custom_our_values-text {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 .custom_our_values-text .our_values_image_custom {
   width: 50%;
-  max-width: 50%;
-  padding-right: 30px;
+  max-width: 48%;
 }
 .our_values_image_custom .col-lg-6 {
   width: 100%;
@@ -2305,6 +2306,7 @@ section.main-section.home-sections.why_sec p {
 }
 .custom_our_values_image {
   padding: 0;
+  max-width: 48% !important;
 }
 .quotation-banner .banner-content .quotation_banner-text p:last-child{
  margin: 0 !important;
