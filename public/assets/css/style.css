@@ -248,13 +248,14 @@ text-align: left;
   .min-height{
     min-height: 600px;
   }
-  .main-section h2{
+.main-section h2 {
     font-family: proxima-bold;
-font-size: 40px;
-line-height: 50px;
-letter-spacing: 0em;
-text-align: left;
-  }
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0;
+    text-align: left;
+    margin-bottom: 8px !important;
+}
   /* .main-section p{
     font-family: proxima-regular;
     font-size: 17px;
