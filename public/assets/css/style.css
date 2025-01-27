@@ -2303,6 +2303,7 @@ section.main-section.home-sections.why_sec p {
   height: auto !important;
   position: relative;
   left: inherit;
+  padding: 0 12px;
 }
 .custom_our_values_image {
   padding: 0;
