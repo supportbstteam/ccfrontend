@@ -2170,7 +2170,10 @@ display: -webkit-box;
 margin-bottom: 20px;
 }
 .home-tabs-content p span {
-  color: #fff;
+  color: #fff !important;
+}
+.home-tabs-content p {
+  color: #fff !important;
 }
 section.main-section.versprechen{
   background: rgb(243, 243, 239);
