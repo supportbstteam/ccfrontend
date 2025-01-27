@@ -61,12 +61,19 @@ const HomeprojectTabs = () => {
         <div className='tab-pane active' data-cat={ProjectTabdata[activeTab]?.slug}>
           <div className='row projects-row gap-1'>
             {Projectdata[ProjectTabdata[activeTab]?.slug]?.map((tab, index) => (
-              <div
+              //<div
+              //  key={index}
+              //  className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4"
+              //  data-cat={index}
+              //  style={index === 0 || index === index + 2 ? { backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})` } : {}}
+             // >
+               <div
                 key={index}
                 className="col-lg-6 col-md-6 col-sm-12 projects-col mb-4"
                 data-cat={index}
-                style={index === 0 || index === index + 2 ? { backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})` } : {}}
+                style={{ backgroundImage: `url(https://teamwebdevelopers.com/charge_construct/public/images/project/${tab.image})`}}
               >
+              
                 <div className='project-details'>
                   {/* {index === 0 || index === index + 2 ? "" : tab.logo && <img src={`${process.env.imgpath}/project/logo/${tab.logo}`} alt={tab.sub_title} />} */}
                   <div className={index === 0 || index === index + 2 ? "projects-insights-details with_image_view" : "projects-insights-details"}>
