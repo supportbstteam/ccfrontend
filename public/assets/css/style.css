@@ -236,6 +236,7 @@ text-align: left;
   }
   .main-section h1 {
     font-size: 45px;
+    color:#fff;
 }
   section.main-section.why_sec,
   section.main-section.how_sec{
@@ -480,7 +481,7 @@ section.main-section.project_insight {
 .project-details h3{
   font-family: 'proxima-bold';
   font-size: 30px;
-  color: #000;
+  color: #fff;
   line-height: 40px;
   letter-spacing: 0em;
   text-align: left; 
@@ -2160,13 +2161,16 @@ section.post-category-banners .carousel-caption h1{
   padding-bottom: 90px;
 }
 .home-tabs-content{
-  color: #000;
+  color: #fff;
   overflow: hidden;
 text-overflow: ellipsis;
 display: -webkit-box;
 -webkit-line-clamp: 3;
 -webkit-box-orient: vertical;
 margin-bottom: 20px;
+}
+.home-tabs-content p span {
+  color: #fff;
 }
 section.main-section.versprechen{
   background: rgb(243, 243, 239);
