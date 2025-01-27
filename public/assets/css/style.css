@@ -2243,7 +2243,8 @@ header.navbar.navbar-expand-md {
 
 .custom-image-text {
   width: 50%;
-  max-width: 48%;
+  max-width: 48% !important;
+  padding: 0 !important;
 }
 .custom-image-text img {
   width: 100%;
@@ -2253,7 +2254,7 @@ header.navbar.navbar-expand-md {
 .row.custom-image-row-text {
   display: flex;
   flex-wrap: wrap;
-  align-items: space-between;
+  align-items: flex-start;
   justify-content: space-between;
 }
 .flip-card-back div[style="text-align: justify;"] {
@@ -2284,6 +2285,7 @@ section.main-section.home-sections.why_sec p {
 .custom-image-row-text .section-image-text {
   width: 50%;
   max-width: 48%;
+  padding: 0;
 }
 .row.custom_our_values-text {
   display: flex;
@@ -2293,6 +2295,7 @@ section.main-section.home-sections.why_sec p {
 .custom_our_values-text .our_values_image_custom {
   width: 50%;
   max-width: 48%;
+  padding: 0;
 }
 .our_values_image_custom .col-lg-6 {
   width: 100%;
@@ -2303,10 +2306,10 @@ section.main-section.home-sections.why_sec p {
   height: auto !important;
   position: relative;
   left: inherit;
-  padding: 0 12px;
+  padding: 0;
 }
 .custom_our_values_image {
-  padding: 0;
+  padding: 0  !important;
   max-width: 48% !important;
 }
 .quotation-banner .banner-content .quotation_banner-text p:last-child{
@@ -2372,6 +2375,7 @@ nav.navbar.navbar-expand-lg {
 .custom-image-text {
   width: 100%;
   max-width: 100%;
+  padding: 0;
 }
 .custom_our_values_image {
   padding: 0;
