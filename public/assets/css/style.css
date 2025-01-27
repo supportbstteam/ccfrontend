@@ -291,7 +291,7 @@ margin: 30px 0;
       color: #fff;
     }
   
-    a.navbar-brand img{width: 70%;}
+    a.navbar-brand img{width: 40%;}
     .card-service {
       position: relative;
       margin-bottom: 5px;
@@ -2253,7 +2253,7 @@ header.navbar.navbar-expand-md {
 .row.custom-image-row-text {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: space-between;
   justify-content: space-between;
 }
 .flip-card-back div[style="text-align: justify;"] {
@@ -2291,6 +2291,7 @@ section.main-section.home-sections.why_sec p {
 .custom_our_values-text .our_values_image_custom {
   width: 50%;
   max-width: 50%;
+  padding-right: 30px;
 }
 .our_values_image_custom .col-lg-6 {
   width: 100%;
