@@ -520,13 +520,16 @@ section.main-section.newsroom-sliders{
   background: #FBB900;
 }
 section.main-section.project_insight h2,
-section.main-section.project_insight p,
 section.main-section.newsroom_section h2,
 section.main-section.newsroom_section p,
 section.main-section.OurCustomer_section h2,
 section.barchats_section h2,
 section.main-section.OurCustomer_section p{
 color: #000;
+}
+
+section.main-section.project_insight p{
+  color: #fff;
 }
 section.usp_section{
 min-height: auto;
