@@ -238,6 +238,9 @@ text-align: left;
     font-size: 45px;
     color:#fff;
 }
+.home-tabs-content h2 {
+  color: #fff !important;
+}
   section.main-section.why_sec,
   section.main-section.how_sec{
     min-height: 600px;
@@ -466,6 +469,7 @@ section.main-section.project_insight {
 }
 .project-details {
   padding: 5% 15%;
+  width: 100%;
 }
 .projects-insights-details {
   margin: 10% 0;
@@ -2627,6 +2631,7 @@ form.draht-forms.newsletter-form div{
 }
 .project-details {
   padding: 5%;
+
 }
 .main-section .projects-insights-details h1 {
   font-size: 30px;
