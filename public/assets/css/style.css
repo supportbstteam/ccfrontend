@@ -115,7 +115,7 @@ section.main-section.kundengruppen_sec {
 }
 .banner-slider{
     width: 100%;
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
 }
@@ -1237,12 +1237,12 @@ section.about_die:after {
 section.main-section.why_we_exist{
   background-size: 45%;
   background-position: 0% 45px;
-  padding: 4.5% 0;
+  padding: 4.5% 10px;
 }
 section.main-section.our_values{
   background-size: 50%;
   background-position: 100% 35%;
-  padding: 4.5% 0;
+  padding: 4.5% 10px;
 }
 .tabs.founders-tabs img {
   width: 50px;
@@ -2388,8 +2388,8 @@ nav.navbar.navbar-expand-lg {
   font-size: 40px;
 }
 .custom-image-text {
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
+  max-width: 100%  !important;;
   padding: 0;
 }
 .custom_our_values_image {
