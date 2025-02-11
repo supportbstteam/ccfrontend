@@ -2360,6 +2360,7 @@ li.footer-colum ul li {
 font-size: 28px;
 line-height: 30px;
 }
+
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
     right: -79%;
