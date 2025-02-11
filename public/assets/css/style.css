@@ -252,14 +252,6 @@ text-align: left;
   .min-height{
     min-height: 600px;
   }
-  .projects-insights-details  .home-tabs-content h2, .projects-insights-details .home-tabs-content h1{
-    font-size: 30px;
-    line-height: 30px;
-}
-.project-details .projects-insights-details h3 {
-  font-size: 28px;
-  line-height: 30px;
-}
 
 .main-section h2 {
     font-family: proxima-bold;
@@ -2347,6 +2339,8 @@ a.navbar-brand{
 .row.custom-image-row-text p, .our_values_image_custom p{
   text-align: left !important;
 }
+
+
 .footer-main .footer-colum p span {
   font-weight: normal;
   font-family: 'proxima-regular' !important;
@@ -2358,7 +2352,14 @@ li.footer-colum ul li {
 .footer-colum h3 span {
   font-family: 'proxima-bold' !important;
 }
-
+.projects-insights-details  .home-tabs-content h2, .projects-insights-details .home-tabs-content h1{
+  font-size: 30px;
+  line-height: 30px;
+}
+.project-details .projects-insights-details h3 {
+font-size: 28px;
+line-height: 30px;
+}
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
     right: -79%;
