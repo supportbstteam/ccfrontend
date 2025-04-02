@@ -81,7 +81,7 @@ function ImageGallery() {
     <div className='container'>
         <div className='row'>
             <div className='col-12' data-aos="fade-up" data-aos-duration="1200">
-            <h2 className='section-title text-dark mb-5'>Volle Energie fur die E-Mobilitat</h2>
+            <h2 className='section-title text-dark mb-5'>Werde Teil unserer einmaligen Team-Kultur</h2>
             </div>
         </div>
     </div>

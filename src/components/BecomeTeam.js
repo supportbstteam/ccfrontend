@@ -28,7 +28,17 @@ const [error, setError] = useState(null);
               <div className='col-lg-6 col-md-6 col-sm-12 col-12' data-aos="fade-up" data-aos-duration="1800">
               {teams.title && <h2 className='section-title mb-5'>{teams.title}</h2>}
      {teams.description && <div dangerouslySetInnerHTML={{ __html: teams.description }}></div>}
-         {teams.btnlink && <Button title={teams.btntext} classs='no-arrow' link={teams.btnlink}/> }
+         {teams.btnlink && 
+         
+        //  <Button title={teams.btntext} classs='no-arrow' link={teams.btnlink}/>
+
+        <a href="mailto:karriere@chargeconstruct.de" target='_blank' title={teams.btntext} 
+   data-aos="fade-up" lasss='no-arrow' data-aos-easing="linear" data-aos-duration="1500">
+  {teams.btntext}
+</a>
+         
+         
+         }
               </div>
               </div>
               </div>
