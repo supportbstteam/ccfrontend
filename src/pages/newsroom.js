@@ -74,9 +74,12 @@ function NewsRoom(){
 
                 {secData.project_insights === 1 && 
                   <>
+                    <div className="container">
                      <h2>{filteredData[0].title}</h2>
                      <p dangerouslySetInnerHTML={{ __html: filteredData[0].description }}></p>
+                  
                     <HomeprojectTabs />
+                    </div>
                   </>
                 
                 }

@@ -259,7 +259,7 @@ text-align: left;
     line-height: 50px;
     letter-spacing: 0;
     text-align: left;
-    margin-bottom: 8px !important;
+    margin-bottom: 20px !important;
 }
   /* .main-section p{
     font-family: proxima-regular;
@@ -2360,6 +2360,31 @@ li.footer-colum ul li {
 font-size: 28px;
 line-height: 30px;
 }
+.custom_image.carousel-item.active img.d-block.w-100 {
+  display: none !important;
+}
+.carousel-inner .content_carousel-inner h1 {
+  font-size: 54px;
+}
+.carousel-inner .content_carousel-inner {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+}
+
+.carousel-inner .content_carousel-inner p {
+  font-size: 18px;
+  font-family: 'proxima-bold';
+}
+.main-section .section-desciption p span {
+  font-family: proxima-regular !important;
+}
+section.main-section.deine-section.py-5 h5.aos-init.aos-animate {
+  margin-top: 10px;
+}
 
 @media screen and (min-width: 786px) and (max-width: 1400px) {
   section.main-section.charge_zahlen .counter-box:hover .added_details{
@@ -2508,6 +2533,16 @@ section.main-section.d-flex.align-items-center.quotation-banner {
 .career-banner .carousel-caption h1 {
   font-size: 35px;
 }
+.custom_image_slider .carousel-inner .content_carousel-inner h1 {
+  font-size: 35px;
+}
+.custom_image_slider .carousel-inner .content_carousel-inner {
+  width: 100%;
+  padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+}
+
 section.main-section.service_second {
   padding-top: 10%;
 }

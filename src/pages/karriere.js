@@ -31,10 +31,10 @@ function careerContent(props){
                 break;
         }
     }, false);
-    })
+    }) 
     return(
         <Layout title={pageData.metatitle} metaDescription={pageData.metadesc}>
-         <section className='career-banner position-relative' style={sliderbg}>
+         <section className='qqq career-banner position-relative' style={sliderbg}>
         <div className="carousel-caption d-md-block"  data-aos="fade-up">
         {pageData.title && <h1 data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1000">{pageData.title}</h1> }

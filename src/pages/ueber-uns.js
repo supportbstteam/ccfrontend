@@ -40,22 +40,31 @@ function About(props) {
     return (
 <Layout title={pageData.metatitle && pageData.metatitle} metaDescription={pageData.metadesc && pageData.metadesc}>
 { pageData.banner &&  <section>
-      <div className="carousel slide" data-bs-ride="carousel">
-  <div className="carousel-inner">
-    <div className="carousel-item active">
+      <div className="custom_image_slider carousel slide" data-bs-ride="carousel">
+  <div className="carousel-inner" style={{
+        backgroundImage: `url('${`${process.env.imgpath}/banner/${pageData.banner}`}')`,
+        backgroundSize: 'cover', // Example of additional styles you may want
+        backgroundPosition: 'center',
+        height: '100vh' // Example height
+      }}>
+    <div className=" custom_image carousel-item active">
       <img src={`${process.env.imgpath}/banner/${pageData.banner}`} className="d-block w-100" alt={pageData.title}/>
+    </div>
+    <div className="content_carousel-inner">
+      <h1>Lerne uns kennen</h1>
+      <p>Bei Charge Construct arbeiten hoch qualifizierte und motivierte Persönlichkeiten an einer gemeineinsamen Mission: Den Hochlauf der Ladeinfrastruktur und damit den Wandel hinzu einer elektrischen Mobilität beschleunigen.</p>
     </div>
   </div>
 </div> 
 </section> }
-<section className="main-section about_die" data-aoss="fade-right">
+{/* <section className="main-section about_die" data-aoss="fade-right">
   <div className="container">
     <div className="row">
   <div className="col-lg-8 col-md-8 col-sm-12 col-12" dangerouslySetInnerHTML={{ __html: pageData.description }}>
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 <section className="main-section about_who_we">
   <div className="container">
