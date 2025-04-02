@@ -16,15 +16,17 @@ const [relatedpost, setmainpost] = useState({});
 const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 const [related, setrelated] = useState(null);
-const subcategory = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
-console.log(subcategory);
+const subcategorys = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
+// console.log(subcategory);
+
+const subcategory = 'pressemitteilung';
 
 useEffect(() => {
   if (slug) {
     async function fetchDataFromAPI() {
       try {
         const responsehomenews = await fetchData(`/whitepaper-slug/${slug}`);
-        console.log(responsehomenews[0]);
+        // console.log(responsehomenews[0]);
         setmainpost(responsehomenews[0]);
         setLoading(false);
       } catch (error) {
@@ -35,22 +37,17 @@ useEffect(() => {
     fetchDataFromAPI();
   }
     async function fetchDataAPI() {
-      if(relatedpost.post && relatedpost.post.length > 0) {
-        const relCat = relatedpost.post[0].category;
-        console.log(relCat);
         try {
-          const relpost = await fetchData(`/whitepaper-slug/${subcategory}`);
+          const relpost = await fetchData(`/category-blog/${subcategory}`);
           setrelated(relpost);
           setLoading(false);
         } catch (error) {
           setError(error);
           setLoading(false);
         }
-      }
     }
     fetchDataAPI();
 }, [slug, subcategory]);
-console.log(related);
 //   console.log('this is the list of value '+relatedpost.category[0].name);
   const { id, title,metatitle, metadesc, image, description, post_date, post_author, tags, category, recommendation_blog } = relatedpost ? relatedpost : {};
 
@@ -63,6 +60,9 @@ console.log(related);
         slidesToShow: 1,
         slidesToScroll: 1,
     };
+
+
+    console.log(related);
     return (
         <Layout title={metatitle} metaDescription={metadesc}>
         <section className="main-section pt-0">
@@ -112,7 +112,7 @@ console.log(related);
                 </ul>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12">
-            <SocialProfile type="share" path={`${process.env.BASE_URL}/${category && category.toLowerCase()}/${slug}`}/>
+            {/* <SocialProfile type="share" path={`${process.env.BASE_URL}/${category && category.toLowerCase()}/${slug}`}/> */}
             </div>
         </div>
     </div>
@@ -124,7 +124,7 @@ console.log(related);
                 <h2 className='section-title text-dark mb-5'>Das könnte dir auch gefallen...</h2>
                 </div>
                 <div className="col-lg-5 col-md-5 col-12">
-                <Button link={`../${category?category.toLowerCase():''}`} title={`Mehr ${category&&category}`} classs="withoutbtn blog-insights"/>
+                {/* <Button link={`../${category?category.toLowerCase():''}`} title={`Mehr ${category&&category}`} classs="withoutbtn blog-insights"/> */}
             </div>
             { related && related.map((item, index) => (
             <RelatedPostGridList key={index} postdata={item}/>

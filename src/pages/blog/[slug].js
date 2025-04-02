@@ -18,7 +18,7 @@ const [loading, setLoading] = useState(true);
 const [error, setError] = useState(null);
 const [related, setrelated] = useState(null);
 const subcategory = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
-//console.log(subcategory);
+console.log(subcategory);
 
 useEffect(() => {
   if (slug) {

@@ -18,14 +18,15 @@ function Blog() {
   const [error, setError] = useState(null);
   const [related, setrelated] = useState(null);
 
-  const subcategory = relatedpost?.post && relatedpost.post.length > 0 ? relatedpost.post[0].category : null;
+  const subcategorye = relatedpost && relatedpost.length > 0 ? relatedpost[0].category : null;
+
+  const subcategory = 'pressemitteilung';
 
   useEffect(() => {
     if (slug) {
       async function fetchDataFromAPI() {
         try {
           const responsehomenews = await fetchData(`/project/${slug}`);
-          console.log(responsehomenews);
           setmainpost(responsehomenews);
           setLoading(false);
         } catch (error) {
@@ -37,8 +38,6 @@ function Blog() {
     }
 
     async function fetchDataAPI() {
-      if (relatedpost.post && relatedpost.post.length > 0) {
-        const relCat = relatedpost.post[0].category;
         try {
           const relpost = await fetchData(`/category-blog/${subcategory}`);
           setrelated(relpost);
@@ -47,14 +46,14 @@ function Blog() {
           setError(error);
           setLoading(false);
         }
-      }
+     
     }
 
     fetchDataAPI();
   }, [slug, subcategory]);
 
   const { id, title, metatitle, metadesc, image, content, post_date, post_author, tags, category, recommendation_blog } = relatedpost[0] ? relatedpost[0] : {};
-  console.log(relatedpost[0]);
+
 
   const settings = {
     dots: false,
@@ -65,6 +64,8 @@ function Blog() {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+  console.log(related);
 
   return (
     <Layout title={metatitle} metaDescription={metadesc}>
@@ -131,7 +132,7 @@ function Blog() {
               <h2 className='section-title text-dark mb-5'>Das könnte dir auch gefallen...</h2>
             </div>
             <div className="col-lg-5 col-md-5 col-12">
-              <Button link={`../${category ? category.toLowerCase() : ''}`} title={`Mehr ${category && category}`} classs="withoutbtn blog-insights" />
+              {/* <Button link={`../${category ? category.toLowerCase() : ''}`} title={`Mehr ${category && category}`} classs="withoutbtn blog-insights" /> */}
             </div>
             {related && related.map((item, index) => (
               <RelatedPostGridList key={index} postdata={item} />
