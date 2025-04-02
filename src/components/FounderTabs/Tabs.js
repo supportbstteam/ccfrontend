@@ -69,7 +69,7 @@ function Tabs(){
                             </div>}
                             <div className='col-lg-7 col-md-6 mx-lg-4 mx-sm-0 mx-md-0 mx-0 col-sm-12 col-12'>
                             <h2 className="section-title">{tab.name}</h2>
-                            <p>{tab.description}</p>
+                            <p dangerouslySetInnerHTML={{ __html: tab.description }}></p>
                             </div>
                         </div>
                     </div>

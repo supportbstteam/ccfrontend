@@ -214,8 +214,9 @@ return(
 
 <div className="col-lg-12 col-md-12 col-sm-12 form-fields">
 <textarea
-  rows={6}
-  placeholder="Beschreiben Sie Ihr Vorhaben"
+  rows={2}
+  // placeholder="Beschreiben Sie Ihr Vorhaben"
+  placeholder="Beschreibe dein Vorhaben."
   onChange={handleDescriptionChange}
   autoComplete="off"></textarea>
 </div>

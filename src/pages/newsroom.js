@@ -11,8 +11,10 @@ import ProjectInsights from "@/components/Newsroom/ProjectInsights";
 import Whitepaper from "@/components/Newsroom/WhitePaper";
 import AllinSIghts from "@/components/Newsroom/AllSights";
 import PostSlider from "@/components/Newsroom/PostSlider";
+import HomeprojectTabs from "@/components/HomeProjectTabs";
 function NewsRoom(){
   const [secData, setSecData] = useState([]);
+  const [sectionData, setSectionData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
     useEffect(()=>{
@@ -23,7 +25,9 @@ function NewsRoom(){
       async function fetchDataFromAPI() {
         try {
           const responseSection = await fetchData('/news-room');
+          const Section = await fetchData('/section');
           setSecData(responseSection);
+          setSectionData(Section);
           setLoading(false);
         } catch (error) {
           setError(error);
@@ -32,13 +36,16 @@ function NewsRoom(){
       }
       fetchDataFromAPI();
     }, []);
+
+    const filteredData = sectionData.filter(section => section.sec_type === "project_insight");
+
     if (loading) {
       return <div>Loading...</div>;
     }
     if (error) {
       return <div>Error: {error.message}</div>;
     }
-
+     console.log(filteredData);
     return(
         <Layout title={secData.metatitle} metaDescription={secData.metadesc}>
         <section className="news-post-fillter bg-dark">
@@ -46,7 +53,7 @@ function NewsRoom(){
      data-aos-duration="1000">
                 <div className="row align-items-center py-3">
         <div className="col-12">
-        <h5 className="text-white mb-0 text-center">“Entdecken Sie unsere Beiträge und seien Sie immer auf den neusten Stand”</h5>
+        <h5 className="text-white mb-0 text-center">{`"${secData.ttitle}"`}</h5>
         </div>     
         </div>
             </div>
@@ -63,7 +70,16 @@ function NewsRoom(){
                 </div>
                 </section>
                 }
-                {secData.project_insights === 1 && <ProjectInsights title={secData.project_insights_title}/>}
+                {/* {secData.project_insights === 1 && <ProjectInsights title={secData.project_insights_title}/>} */}
+
+                {secData.project_insights === 1 && 
+                  <>
+                     <h2>{filteredData[0].title}</h2>
+                     <p dangerouslySetInnerHTML={{ __html: filteredData[0].description }}></p>
+                    <HomeprojectTabs />
+                  </>
+                
+                }
 
                 {secData.project_insights === 1 && <Whitepaper title={secData.project_insights_title}/>}
     <section className="main-section min-height bg-dark d-flex align-items-center" data-aos="zoom-in" data-aos-easing="linear"

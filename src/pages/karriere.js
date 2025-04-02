@@ -39,8 +39,10 @@ function careerContent(props){
         {pageData.title && <h1 data-aos="fade-up" data-aos-easing="linear"
      data-aos-duration="1000">{pageData.title}</h1> }
         {pageData.description && <div dangerouslySetInnerHTML={{ __html: pageData.description}}></div> }
-        {pageData.btnlink && <Button link={pageData.btnlink} title={pageData.btntext} data-aos="fade-up"  data-aos-easing="linear"
-     data-aos-duration="1500"/>}
+        {pageData.btnlink && <a href="mailto:karriere@chargeconstruct.de" title={pageData.btntext} 
+   data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+   Erstberatung anfragen
+</a>}
   </div>
   </section>
 

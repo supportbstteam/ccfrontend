@@ -127,7 +127,7 @@ useEffect(() => {
                 </ul>
             </div>
             <div className="col-lg-5 col-md-5 col-sm-12">
-            <SocialProfile type="share" path={`${process.env.BASE_URL}/${category && category.toLowerCase()}/${slug}`}/>
+            {/* <SocialProfile type="share" path={`${process.env.BASE_URL}/${category && category.toLowerCase()}/${slug}`}/> */}
             </div>
         </div>
     </div>
@@ -139,7 +139,7 @@ useEffect(() => {
                 <h2 className='section-title text-dark mb-5'>Das könnte dir auch gefallen...</h2>
                 </div>
                 <div className="col-lg-5 col-md-5 col-12">
-                <Button link={`../${category?category.toLowerCase():''}`} title={`Mehr ${category&&category}`} classs="withoutbtn blog-insights"/>
+                {/* <Button link={`../${category?category.toLowerCase():''}`} title={`Mehr ${category&&category}`} classs="withoutbtn blog-insights"/> */}
             </div>
             { related && related.map((item, index) => (
               // <Slider {...settings}></Slider>

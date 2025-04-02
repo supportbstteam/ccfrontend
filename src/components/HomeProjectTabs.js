@@ -79,7 +79,7 @@ const HomeprojectTabs = () => {
                   <div className={index === 0 || index === index + 2 ? "projects-insights-details with_image_view" : "projects-insights-details"}>
                     {tab.sub_title && <h5>{tab.sub_title}</h5>}
                     {tab.title && <h3>{tab.title}</h3>}
-                    {index === 0 || index === index + 2 ? "" : <div className="home-tabs-content" dangerouslySetInnerHTML={{ __html: tab.content }} />}
+                    {/* {index === 0 || index === index + 2 ? "" : <div className="home-tabs-content" dangerouslySetInnerHTML={{ __html: tab.content }} />} */}
                     <Button title="Ganzer Beitrag" link={tab.category ? `../project/${tab.slug}` : ''} target="_blank" />
                   </div>
                 </div>
