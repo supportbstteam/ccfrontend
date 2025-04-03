@@ -33,7 +33,7 @@ const [error, setError] = useState(null);
         //  <Button title={teams.btntext} classs='no-arrow' link={teams.btnlink}/>
 
         <a href="mailto:karriere@chargeconstruct.de" target='_blank' title={teams.btntext} 
-   data-aos="fade-up" lasss='no-arrow' data-aos-easing="linear" data-aos-duration="1500">
+   data-aos="fade-up" lasss='no-arrow' className='custom_button cc-button' data-aos-easing="linear" data-aos-duration="1500">
   {teams.btntext}
 </a>
          

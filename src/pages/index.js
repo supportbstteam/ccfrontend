@@ -5,6 +5,7 @@ import MainSlider from '@/components/Slider';
 import Sections from '@/components/Section';
 import { fetchData } from '@/apiConnection/apiService';
 import Layout from '@/components/Layout';
+import Cookies from '@/components/Cookies';
 export default function Home(props) {
   const [meta,setMeta] = useState(props.data);
   const [data, setData] = useState(null);
@@ -42,6 +43,7 @@ export default function Home(props) {
          {sectionData.map((Secdata, index) => (
         <Sections key={index} section={Secdata}/>
         ))}
+        <Cookies/>
     </Layout>
   )
 }

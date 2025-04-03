@@ -2799,3 +2799,10 @@ text-align: center;
   a.navbar-brand { margin-right: 0 !important; }
 
 }
+
+
+a.custom_button.cc-button {
+  background-color: transparent;
+}
+
+
