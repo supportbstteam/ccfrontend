@@ -43,7 +43,7 @@ export default function Home(props) {
          {sectionData.map((Secdata, index) => (
         <Sections key={index} section={Secdata}/>
         ))}
-        <Cookies/>
+       
     </Layout>
   )
 }
